@@ -1,4 +1,4 @@
-"""Policy recommendation agent — pre-compute (Groq) and deep-dive (Gemini) modes."""
+"""Policy recommendation agent — pre-compute and deep-dive via Anthropic Claude."""
 
 import json
 import logging
@@ -6,13 +6,10 @@ import re
 import time
 
 import anthropic
-from google import genai
 
 from app.config import (
-    GEMINI_API_KEY,
     ANTHROPIC_API_KEY,
     ANTHROPIC_MODEL,
-    POLICY_MODEL,
     POLICY_PRECOMPUTE_TEMP,
     POLICY_DEEPDIVE_TEMP,
     POLICY_MAX_TOKENS,
@@ -178,8 +175,8 @@ def _repair_json(text: str) -> str:
     return text.strip()
 
 
-def _call_haiku_json(prompt: str, max_retries: int = 5) -> list[dict]:
-    """Call Claude Haiku via Anthropic API, parse JSON response."""
+def _call_llm_json(prompt: str, max_retries: int = 5) -> list[dict]:
+    """Call Claude via Anthropic API, parse JSON response."""
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     last_error = None
 
@@ -213,53 +210,11 @@ def _call_haiku_json(prompt: str, max_retries: int = 5) -> list[dict]:
 
         except Exception as e:
             last_error = e
-            logger.warning("Haiku JSON call attempt %d/%d failed: %s", attempt + 1, max_retries, e)
+            logger.warning("LLM JSON call attempt %d/%d failed: %s", attempt + 1, max_retries, e)
             if attempt < max_retries - 1:
                 time.sleep(2 ** (attempt + 1))
 
-    raise RuntimeError(f"Failed to get valid JSON from Haiku after {max_retries} attempts: {last_error}")
-
-
-def _call_gemini_json(prompt: str, max_retries: int = 5) -> list[dict]:
-    """Call LLM for JSON generation. Uses Haiku (primary), Gemini (fallback)."""
-    # Try Haiku first (no rate limit issues)
-    if ANTHROPIC_API_KEY:
-        try:
-            return _call_haiku_json(prompt, max_retries)
-        except Exception as e:
-            logger.warning("Haiku failed, falling back to Gemini: %s", e)
-
-    # Gemini fallback
-    client = genai.Client(api_key=GEMINI_API_KEY)
-    last_error = None
-
-    for attempt in range(max_retries):
-        try:
-            response = client.models.generate_content(
-                model=POLICY_MODEL,
-                contents=[{"role": "user", "parts": [{"text": prompt}]}],
-                config={
-                    "system_instruction": SYSTEM_PROMPT,
-                    "max_output_tokens": POLICY_MAX_TOKENS,
-                    "temperature": POLICY_PRECOMPUTE_TEMP,
-                    "response_mime_type": "application/json",
-                },
-            )
-            text = _strip_markdown_fences(response.text)
-            try:
-                recs = json.loads(text)
-            except json.JSONDecodeError:
-                recs = json.loads(_repair_json(text))
-            if not isinstance(recs, list):
-                raise ValueError(f"Expected JSON array, got {type(recs).__name__}")
-            return recs
-        except Exception as e:
-            last_error = e
-            logger.warning("Gemini attempt %d/%d failed: %s", attempt + 1, max_retries, e)
-            if attempt < max_retries - 1:
-                time.sleep(2 ** (attempt + 1))
-
-    raise RuntimeError(f"Failed after {max_retries} attempts: {last_error}")
+    raise RuntimeError(f"Failed to get valid JSON after {max_retries} attempts: {last_error}")
 
 
 # ---------------------------------------------------------------------------
@@ -284,7 +239,7 @@ def generate_borough_recs(
         ),
         top_lsoas=_format_top_lsoas(borough_data.get("top_lsoas", [])),
     )
-    return _call_gemini_json(prompt, max_retries=max_retries)
+    return _call_llm_json(prompt, max_retries=max_retries)
 
 
 def generate_london_recs(
@@ -304,7 +259,7 @@ def generate_london_recs(
         ),
         top_lsoas=_format_top_lsoas(london_data.get("top_lsoas", [])),
     )
-    return _call_gemini_json(prompt, max_retries=max_retries)
+    return _call_llm_json(prompt, max_retries=max_retries)
 
 
 # ---------------------------------------------------------------------------
@@ -354,39 +309,32 @@ def stream_deep_dive(
         "Provide a detailed, evidence-based response grounded in the data above."
     )
 
-    # Build Gemini contents: history + current question
+    # Build Anthropic messages: history + current question
     history = history[-CHAT_HISTORY_LIMIT:]
-    contents = []
+    messages = []
     for msg in history:
-        role = "model" if msg.get("role") == "assistant" else "user"
-        contents.append({"role": role, "parts": [{"text": msg.get("content", "")}]})
-    contents.append({"role": "user", "parts": [{"text": question}]})
+        messages.append({"role": msg.get("role", "user"), "content": msg.get("content", "")})
+    messages.append({"role": "user", "content": question})
 
-    if not GEMINI_API_KEY:
-        yield f"event: token\ndata: {json.dumps({'text': 'API key not configured. Please set GEMINI_API_KEY in your .env file.'})}\n\n"
+    if not ANTHROPIC_API_KEY:
+        yield f"event: token\ndata: {json.dumps({'text': 'API key not configured. Please set ANTHROPIC_API_KEY in your .env file.'})}\n\n"
         yield "event: done\ndata: {}\n\n"
         return
 
     try:
-        client = genai.Client(api_key=GEMINI_API_KEY)
-        response = client.models.generate_content_stream(
-            model=POLICY_MODEL,
-            contents=contents,
-            config={
-                "system_instruction": system,
-                "max_output_tokens": POLICY_DEEPDIVE_MAX_TOKENS,
-                "temperature": POLICY_DEEPDIVE_TEMP,
-            },
-        )
-        for chunk in response:
-            if chunk.text:
-                yield f"event: token\ndata: {json.dumps({'text': chunk.text})}\n\n"
+        client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+        with client.messages.stream(
+            model=ANTHROPIC_MODEL,
+            max_tokens=POLICY_DEEPDIVE_MAX_TOKENS,
+            system=system,
+            messages=messages,
+        ) as stream:
+            for text in stream.text_stream:
+                yield f"event: token\ndata: {json.dumps({'text': text})}\n\n"
+    except anthropic.AuthenticationError:
+        yield f"event: token\ndata: {json.dumps({'text': 'Invalid API key. Please check ANTHROPIC_API_KEY in your .env file.'})}\n\n"
     except Exception as e:
-        error_msg = str(e)
-        logger.error("Deep-dive streaming error: %s", error_msg)
-        if "API_KEY_INVALID" in error_msg or "api key" in error_msg.lower():
-            yield f"event: token\ndata: {json.dumps({'text': 'Invalid API key. Please check GEMINI_API_KEY in your .env file.'})}\n\n"
-        else:
-            yield f"event: token\ndata: {json.dumps({'text': f'Error generating response: {error_msg}'})}\n\n"
+        logger.error("Deep-dive streaming error: %s", e)
+        yield f"event: token\ndata: {json.dumps({'text': f'Error generating response: {str(e)}'})}\n\n"
 
     yield "event: done\ndata: {}\n\n"
