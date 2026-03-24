@@ -31,3 +31,14 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 CHAT_MODEL = "gemini-2.5-flash"
 CHAT_MAX_TOKENS = 1500
 CHAT_HISTORY_LIMIT = 10
+
+# Policy recommendation settings
+POLICY_MODEL = CHAT_MODEL  # reuse same Gemini model
+POLICY_PRECOMPUTE_TEMP = 0.3
+POLICY_DEEPDIVE_TEMP = 0.7
+POLICY_MAX_TOKENS = 4096
+POLICY_DEEPDIVE_MAX_TOKENS = 2000
+POLICY_RATE_LIMIT = 20  # requests per hour per IP
+POLICY_MAX_QUESTION_LEN = 1000
+POLICY_SIGNALS_PATH = BASE_DIR / "policy_signals.json"
+POLICY_RECS_PATH = BASE_DIR / "policy_recommendations.json"
