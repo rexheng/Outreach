@@ -43,7 +43,7 @@ SERVICES = [
      "postcode": "SE13 7DW", "borough": "Lewisham",
      "address": "91 Granville Park, Lewisham"},
     {"name": "South East London Mind - Lambeth & Southwark", "type": "mental_health_charity", "subtype": "Mind",
-     "postcode": "SW9 7QE", "borough": "Lambeth",
+     "postcode": "SW9 7DE", "borough": "Lambeth",
      "address": "International House"},
     {"name": "West Central London Mind", "type": "mental_health_charity", "subtype": "Mind",
      "postcode": "SW1P 2AE", "borough": "Westminster",
@@ -96,7 +96,7 @@ SERVICES = [
      "postcode": "KT1 1HT", "borough": "Kingston upon Thames",
      "address": "Samaritans Centre, Kingston"},
     {"name": "Bromley & Orpington Samaritans", "type": "mental_health_charity", "subtype": "Samaritans",
-     "postcode": "BR1 1PX", "borough": "Bromley",
+     "postcode": "BR1 1HA", "borough": "Bromley",
      "address": "Samaritans Centre, Bromley"},
     {"name": "Harrow Samaritans", "type": "mental_health_charity", "subtype": "Samaritans",
      "postcode": "HA1 1BA", "borough": "Harrow",
@@ -154,7 +154,7 @@ SERVICES = [
      "postcode": "E1 1BJ", "borough": "Tower Hamlets",
      "address": "212 Whitechapel Road"},
     {"name": "The Connection at St Martin's", "type": "homelessness_service", "subtype": "Day Centre",
-     "postcode": "WC2N 4JJ", "borough": "Westminster",
+     "postcode": "WC2N 4JS", "borough": "Westminster",
      "address": "12 Adelaide Street"},
     {"name": "Glass Door Homeless Charity", "type": "homelessness_service", "subtype": "Night Shelter",
      "postcode": "SW11 3AD", "borough": "Wandsworth",
@@ -210,7 +210,7 @@ SERVICES = [
      "postcode": "NW9 5HR", "borough": "Barnet",
      "address": "St Matthias Church, Rushgrove Avenue"},
     {"name": "Ealing Foodbank", "type": "foodbank", "subtype": "Trussell Trust",
-     "postcode": "W5 2BP", "borough": "Ealing",
+     "postcode": "W5 2HL", "borough": "Ealing",
      "address": "St John's Church, Mattock Lane"},
     {"name": "Greenwich Foodbank", "type": "foodbank", "subtype": "Trussell Trust",
      "postcode": "SE18 6ST", "borough": "Greenwich",
@@ -255,7 +255,7 @@ SERVICES = [
      "postcode": "E1 4AA", "borough": "Tower Hamlets",
      "address": "Tower Hamlets Community Hub"},
     {"name": "Waltham Forest Foodbank", "type": "foodbank", "subtype": "Trussell Trust",
-     "postcode": "E17 5QP", "borough": "Waltham Forest",
+     "postcode": "E17 5BY", "borough": "Waltham Forest",
      "address": "Walthamstow Assembly Hall area"},
 
     # ── CITIZENS ADVICE ──
@@ -281,7 +281,7 @@ SERVICES = [
      "postcode": "SW9 8PS", "borough": "Lambeth",
      "address": "336-338 Brixton Road"},
     {"name": "Citizens Advice Southwark", "type": "citizens_advice", "subtype": "Citizens Advice",
-     "postcode": "SE5 0HF", "borough": "Southwark",
+     "postcode": "SE5 0HG", "borough": "Southwark",
      "address": "97 Peckham High Street"},
     {"name": "Citizens Advice Barnet", "type": "citizens_advice", "subtype": "Citizens Advice",
      "postcode": "EN5 5TH", "borough": "Barnet",
@@ -290,7 +290,7 @@ SERVICES = [
      "postcode": "HA9 6AG", "borough": "Brent",
      "address": "270 High Road, Wembley"},
     {"name": "Citizens Advice Bromley", "type": "citizens_advice", "subtype": "Citizens Advice",
-     "postcode": "BR1 1PX", "borough": "Bromley",
+     "postcode": "BR1 1HA", "borough": "Bromley",
      "address": "Community House, South Street"},
     {"name": "Citizens Advice Croydon", "type": "citizens_advice", "subtype": "Citizens Advice",
      "postcode": "CR0 1RX", "borough": "Croydon",
@@ -501,7 +501,7 @@ SERVICES = [
      "postcode": "CR4 4TP", "borough": "Merton",
      "address": "Wilson Hospital, Cranmer Road, Mitcham"},
     {"name": "Richmond Talking Therapies", "type": "nhs_talking_therapy", "subtype": "IAPT",
-     "postcode": "TW1 3QJ", "borough": "Richmond upon Thames",
+     "postcode": "TW11 0JL", "borough": "Richmond upon Thames",
      "address": "Teddington Memorial Hospital"},
     {"name": "Sutton Talking Therapies", "type": "nhs_talking_therapy", "subtype": "IAPT",
      "postcode": "SM5 1AA", "borough": "Sutton",
@@ -617,6 +617,17 @@ def main():
     print(f"Loading master_lsoa from {gpkg_path}...")
     gdf = gpd.read_file(gpkg_path, layer="master_lsoa")
     print(f"  Loaded {len(gdf)} LSOAs, CRS={gdf.crs}")
+
+    # Drop any previous enrichment columns to ensure clean merge
+    prev_cols = [c for c in gdf.columns if any(
+        c.startswith(p) for p in [
+            "community_services_", "cs_", "dist_to_nearest_",
+            "nearest_community_service_",
+        ]
+    )]
+    if prev_cols:
+        print(f"  Dropping {len(prev_cols)} previous enrichment columns")
+        gdf = gdf.drop(columns=prev_cols)
 
     # --- Step 1: Build services DataFrame ---
     print(f"\nBuilding services dataset ({len(SERVICES)} services)...")

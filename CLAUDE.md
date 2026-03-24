@@ -2,7 +2,7 @@
 
 ## Project Context
 
-Application workspace for the **Wellcome Mental Health Data Prize 2026-2028** (Social Finance / Wellcome). Building a data tool that links spatial, transport, and socioeconomic indicators at LSOA level across London to mental health outcomes -- enabling researchers, policymakers, and practitioners to explore neighbourhood-level determinants of mental health.
+Application workspace for the **Wellcome Mental Health Data Prize 2026-2028** (Social Finance / Wellcome). Building a data tool that links mental health indicators, socioeconomic deprivation, health/disability data, and community service accessibility at LSOA level across London -- enabling researchers, policymakers, and practitioners to explore neighbourhood-level determinants of mental health.
 
 **Application deadline: 8 May 2026, 12 pm.**
 
@@ -18,11 +18,24 @@ The tool must be **in scope** for the prize:
 
 | File | Role |
 |---|---|
-| `master_lsoa.gpkg` | Assembled GeoPackage -- 4,994 London LSOAs, two tables |
+| `master_lsoa.gpkg` | Assembled GeoPackage -- 4,994 London LSOAs, single table `master_lsoa`, 120 columns |
+| `app/` | FastAPI Loneliness Risk Dashboard (LRI) -- run with `uvicorn app.main:app` |
+| `app/main.py` | FastAPI entry point with lifespan data loading |
+| `app/config.py` | Configuration: GPKG paths, display columns, API keys, chat settings |
+| `app/api/routes.py` | Data API: `/api/geojson`, `/api/boroughs`, `/api/lsoa/{code}`, `/api/metadata` |
+| `app/api/chat.py` | LLM chat endpoint: `POST /api/chat` (SSE streaming via Anthropic Claude) |
+| `app/data/loader.py` | GPKG loading, LRI computation, GeoJSON cache (`_gdf_cache`, `_borough_cache`) |
+| `app/data/chat_context.py` | Entity detection, intent classification, data extraction for chat context |
+| `app/static/` | Frontend: index.html, CSS (style.css, chat.css), JS (map.js, controls.js, sidebar.js, chat.js) |
+| `.env` | `ANTHROPIC_API_KEY` (gitignored, required for chatbot) |
+| `dashboard/index.html` | Legacy static dashboard (serve via HTTP) |
+| `build_dashboard.py` | Regenerates legacy dashboard data files from GPKG |
 | `SF_WELLCOME_MHDP_FINAL10Feb.pdf` | Prize information pack (28 pages, full evaluation criteria) |
 | `Application-Documents.zip` | Sample application form PDF + budget template XLSX |
 | `data RAW/` | Source CSVs/Excel -- do not modify |
+| `data_downloads/` | Downloaded enrichment datasets (SAMHI, Census TS037/38/39, LSOA lookup) |
 | `Project_Overview.md` | Full project documentation and data dictionary |
+| `References_and_Research_Data.md` | Full dataset provenance, methodology, citations, ethical considerations |
 | `tasks/todo.md` | Current task tracking |
 | `tasks/lessons.md` | Lessons learned from corrections |
 
@@ -37,38 +50,57 @@ All project data **must** live in a single file: `master_lsoa.gpkg`. This is non
 - When adding new data, write it back to the GPKG. Use geopandas `to_file()` with `driver='GPKG'` and `layer=` parameter, or sqlite3 for non-spatial tables.
 
 ### GPKG Structure
-- **Preferred table**: `master_lsoa_enriched_with_route_pressure` (snake_case, fully enriched)
-- **Legacy table**: `master_lsoa` (original column names, for traceability)
+- **Single table**: `master_lsoa` (120 columns). The old `master_lsoa_enriched_with_route_pressure` table was dropped.
 - New feature tables should follow the naming pattern: `master_lsoa_{feature_group}`
-- **Geometry**: MULTIPOLYGON in `geom` column, CRS EPSG:4326 (WGS84)
+- **Geometry**: MULTIPOLYGON in `geometry` column, CRS EPSG:27700 (British National Grid)
 
 ### Data Integrity
-- **LSOA vintage**: Boundaries are 2021; IMD data is 2011-vintage mapped forward
-- **Known gap**: 335 LSOAs (new 2021 codes, e.g. Havering splits) have null IMD scores -- no 2011 match. These have full Census/transport data.
+- **LSOA vintage**: Boundaries are 2021; IMD data is 2011-vintage mapped forward; SAMHI mapped from 2011→2021 via ONS lookup
+- **Known gap**: 335 LSOAs (new 2021 codes, e.g. Havering splits) have null IMD scores -- no 2011 match. These DO have SAMHI data (interpolated via lookup) and full Census data.
 - **Coverage**: 33 London boroughs + City of London (4,994 LSOAs). England total: ~33,000+.
 - Raw files in `data RAW/` are read-only reference copies. Never modify them.
+- Downloaded enrichment files in `data_downloads/` are cached copies. Re-download if needed.
 
 ## Column Conventions
 
 - IMD: `{domain}_score`, `{domain}_rank_where_1_is_most_deprived`, `{domain}_decile_where_1_is_most_deprived_10_of_lsoas`
-- Transport: `dist_to_station_m`, `mean_ptal_ai`, `bus_stop_density_per_km2`
-- Derived composites: `bus_vs_rail_gap_index`, `route_pressure_x_employment`, `crowding_pressure`
+- SAMHI: `samhi_index_{year}`, `samhi_dec_{year}`, `antidep_rate_{year}`, `est_qof_dep_{year}`, `mh_hospital_rate_{year}`, `dla_pip_pct_{year}`
+- Census health: `health_very_good` through `health_very_bad`, `health_bad_or_very_bad_pct`
+- Census disability: `disabled_limited_a_lot`, `disabled_limited_a_little`, `disability_rate_pct`
+- Census unpaid care: `unpaid_care_19h_or_less`, `unpaid_care_20_to_49h`, `unpaid_care_50h_plus`, `unpaid_care_rate_pct`
+- Community services: `dist_to_nearest_{service_type}_m`, `cs_{service_type}_count`
 - Census economic activity: `total_16plus`, `econ_active`, `in_employment`, `unemployed`, `long_term_sick`, etc.
 
 ## Analysis Guardrails
 
 - **Ecological data**: LSOA-level aggregates, not individual-level. Do not make individual-level inferences.
 - **IMD direction**: Rank 1 = most deprived. Higher rank = less deprived.
-- **PTAL direction**: Higher AI = better public transport accessibility.
-- **Health deprivation scores**: Negative = less deprived, positive = more deprived. Range in dataset: -3.22 to 1.57.
+- **SAMHI direction**: Higher index = greater mental health need. Decile 10 = highest need.
+- **Health deprivation scores**: Negative = less deprived, positive = more deprived. Range: -3.22 to 1.57.
 - **IMD score range**: 2.3 to 64.7 (mean ~21.3).
-- When building the mental health case, the Health Deprivation & Disability domain is the closest proxy available in the current dataset. A proper mental health dataset (meeting Annex 3 criteria) still needs to be sourced.
+- **SAMHI index range**: -2.01 to 4.67 (mean -0.28). London generally scores below England average (negative = lower need).
+- **Antidepressant rate**: Per 1,000 population. Range: 8.6 to 42.5. Outer London boroughs often score higher than inner.
+- **COVID impact**: Every borough's SAMHI worsened between 2019 and 2022. Use `samhi_index_2019` for pre-COVID baseline.
+- SAMHI is a composite of 4 sub-indicators (antidepressants, QOF depression, MH hospital admissions, DLA/PIP). The sub-indicators are also available individually for decomposed analysis.
+- A proper mental health dataset meeting Annex 3 criteria (individual-level cohort, <30 respondents, 3+ waves) still needs to be sourced.
 
 ## Tooling
 
 - **Data**: Python with geopandas, pandas; sqlite3 for quick queries
-- **Viz**: folium for interactive maps, matplotlib/seaborn for static
+- **Viz**: Leaflet + Chart.js (dashboard), matplotlib/seaborn for static analysis
+- **LRI Dashboard**: `uvicorn app.main:app` — FastAPI serving Leaflet choropleth with LRI scores, sidebar detail, and LLM chatbot
+- **Legacy Dashboard**: `dashboard/index.html` — static HTML, served via any HTTP server. Rebuild data with `python build_dashboard.py`
+- **LLM Chat**: Anthropic Claude API via `anthropic` SDK. Requires `ANTHROPIC_API_KEY` in `.env`. Model: `claude-sonnet-4-20250514`
 - **Output**: All derived data goes back into `master_lsoa.gpkg`; document new columns in Project_Overview.md
+
+## Chatbot Architecture
+
+The LRI Dashboard includes an AI policy chatbot (`POST /api/chat`):
+- **Data context**: `app/data/chat_context.py` detects boroughs/LSOAs/intent from user messages, extracts targeted data slices from `loader._gdf_cache` and `loader._borough_cache`
+- **Streaming**: FastAPI SSE → Anthropic streaming SDK → token-by-token to frontend
+- **Entity links**: Claude outputs `[[borough:Name]]` / `[[lsoa:CODE|Display]]` markers; frontend renders as clickable spans that trigger map zoom
+- **Z-index**: toggle/panel at 850 (between controls at 800 and sidebar at 900)
+- **Config**: `CHAT_MODEL`, `CHAT_MAX_TOKENS`, `CHAT_HISTORY_LIMIT` in `app/config.py`
 
 ## Frontend Design Direction
 

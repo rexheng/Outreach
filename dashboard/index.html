@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>London Mental Health Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --teal-900: #0a3d3d;
+  --teal-800: #0d5252;
+  --teal-700: #107070;
+  --teal-600: #148f8f;
+  --teal-500: #17a2a2;
+  --teal-400: #3dbdbd;
+  --teal-300: #6dd3d3;
+  --teal-200: #a8e6e6;
+  --teal-100: #d4f3f3;
+  --teal-50:  #eefafa;
+  --warm-950: #1a1714;
+  --warm-900: #2d2822;
+  --warm-800: #44403a;
+  --warm-700: #5c5650;
+  --warm-600: #78716c;
+  --warm-500: #a8a29e;
+  --warm-400: #c8c2bc;
+  --warm-300: #ddd8d3;
+  --warm-200: #ece9e4;
+  --warm-100: #f5f3f0;
+  --warm-50:  #faf9f7;
+  --red-700:  #b91c1c;
+  --red-500:  #dc3545;
+  --amber-600:#d97706;
+  --serif: 'Source Serif 4', 'Georgia', serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  color: var(--warm-900);
+  background: var(--warm-50);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography ─────────────────────── */
+.serif { font-family: var(--serif); }
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; }
+
+/* ── Layout ─────────────────────────── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 3rem); }
+.container--wide { max-width: 1400px; margin: 0 auto; padding: 0 clamp(1rem, 3vw, 2rem); }
+
+/* ── Header ─────────────────────────── */
+.site-header {
+  padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(1.5rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--warm-200);
+}
+.site-header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--teal-900);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+.site-header .subtitle {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--warm-600);
+  font-weight: 300;
+  max-width: 640px;
+  font-style: italic;
+}
+.header-meta {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--warm-500);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* ── KPI strip ──────────────────────── */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  background: var(--warm-200);
+  margin: 0;
+}
+.kpi-item {
+  background: var(--warm-50);
+  padding: clamp(1.2rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem);
+}
+.kpi-item:first-child { padding-left: clamp(1rem, 4vw, 3rem); }
+.kpi-item:last-child { padding-right: clamp(1rem, 4vw, 3rem); }
+.kpi-value {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--teal-800);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.kpi-label {
+  font-size: 0.75rem;
+  color: var(--warm-600);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* ── Map section ────────────────────── */
+.map-section {
+  position: relative;
+  background: var(--warm-100);
+  border-bottom: 1px solid var(--warm-200);
+}
+#map {
+  width: 100%;
+  height: clamp(500px, 70vh, 800px);
+}
+.map-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  background: var(--warm-50);
+  border: 1px solid var(--warm-200);
+  padding: 1rem;
+  max-width: 220px;
+}
+.map-controls label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--warm-600);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.map-controls select {
+  width: 100%;
+  padding: 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  border: 1px solid var(--warm-300);
+  background: white;
+  color: var(--warm-900);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%2378716c'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+}
+.map-legend {
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+  z-index: 1000;
+  background: var(--warm-50);
+  border: 1px solid var(--warm-200);
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+}
+.map-legend-title {
+  font-weight: 600;
+  color: var(--warm-800);
+  margin-bottom: 0.4rem;
+}
+.legend-scale {
+  display: flex;
+  height: 12px;
+  width: 200px;
+  margin-bottom: 0.25rem;
+}
+.legend-scale span {
+  flex: 1;
+}
+.legend-labels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--warm-600);
+  font-size: 0.65rem;
+}
+.lsoa-tooltip {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  max-width: 280px;
+}
+.lsoa-tooltip strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  color: var(--teal-900);
+  margin-bottom: 0.3rem;
+}
+.lsoa-tooltip .tt-borough {
+  font-size: 0.7rem;
+  color: var(--warm-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.lsoa-tooltip .tt-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.15rem 0;
+  border-bottom: 1px solid var(--warm-100);
+}
+.lsoa-tooltip .tt-label { color: var(--warm-600); }
+.lsoa-tooltip .tt-val { font-weight: 600; color: var(--warm-900); }
+
+/* ── Insight section ────────────────── */
+.insights-section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  border-bottom: 1px solid var(--warm-200);
+}
+.insights-section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--teal-900);
+  margin-bottom: 0.5rem;
+}
+.insights-section .section-intro {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--warm-600);
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  font-weight: 300;
+}
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+.insight-item {
+  border-top: 2px solid var(--teal-500);
+  padding-top: 1.2rem;
+}
+.insight-item h3 {
+  font-size: 1.05rem;
+  color: var(--teal-800);
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+.insight-item p {
+  font-size: 0.9rem;
+  color: var(--warm-700);
+  line-height: 1.7;
+}
+.insight-tag {
+  display: inline-block;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--teal-600);
+  margin-bottom: 0.5rem;
+}
+
+/* ── Charts section ─────────────────── */
+.charts-section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  border-bottom: 1px solid var(--warm-200);
+}
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: start;
+}
+@media (max-width: 768px) { .charts-grid { grid-template-columns: 1fr; } }
+
+.chart-block h3 {
+  font-size: 1.1rem;
+  color: var(--teal-900);
+  margin-bottom: 0.3rem;
+}
+.chart-block .chart-desc {
+  font-size: 0.8rem;
+  color: var(--warm-500);
+  margin-bottom: 1.2rem;
+}
+.chart-block canvas {
+  width: 100% !important;
+  max-height: 400px;
+}
+
+/* ── Critical areas table ───────────── */
+.critical-section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  border-bottom: 1px solid var(--warm-200);
+}
+.critical-section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--teal-900);
+  margin-bottom: 0.3rem;
+}
+.critical-section .section-desc {
+  font-size: 0.9rem;
+  color: var(--warm-600);
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+.critical-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.critical-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.critical-table th {
+  text-align: left;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--warm-500);
+  font-weight: 600;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 2px solid var(--warm-300);
+  white-space: nowrap;
+}
+.critical-table td {
+  padding: 0.55rem 0.8rem;
+  border-bottom: 1px solid var(--warm-100);
+  color: var(--warm-800);
+  white-space: nowrap;
+}
+.critical-table tr:hover td {
+  background: var(--teal-50);
+}
+.critical-table .rank-col {
+  font-family: var(--serif);
+  font-weight: 600;
+  color: var(--teal-700);
+  width: 2rem;
+}
+.samhi-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-left: 3px solid;
+}
+.samhi-badge--high { border-color: var(--red-500); color: var(--red-700); background: #fef2f2; }
+.samhi-badge--mid  { border-color: var(--amber-600); color: #92400e; background: #fffbeb; }
+.critical-table .borough-cell {
+  font-size: 0.7rem;
+  color: var(--warm-500);
+}
+
+/* ── Footer ─────────────────────────── */
+.site-footer {
+  padding: 2.5rem 0;
+  font-size: 0.75rem;
+  color: var(--warm-500);
+  line-height: 1.8;
+}
+.site-footer a { color: var(--teal-600); text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+
+/* ── Map highlight state ────────────── */
+.leaflet-interactive.highlighted {
+  stroke: var(--warm-950) !important;
+  stroke-width: 2 !important;
+}
+
+/* ── Loading ────────────────────────── */
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--warm-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--warm-600);
+  font-style: italic;
+  transition: opacity 0.4s ease;
+}
+.loading-overlay.hidden { opacity: 0; pointer-events: none; }
+
+/* Leaflet overrides */
+.leaflet-control-zoom a {
+  font-family: var(--sans) !important;
+  color: var(--warm-800) !important;
+  border-color: var(--warm-200) !important;
+}
+.leaflet-popup-content-wrapper {
+  border-radius: 0 !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12) !important;
+}
+.leaflet-popup-tip { display: none; }
+</style>
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────── -->
+<header class="site-header">
+  <div class="container">
+    <h1>London Mental Health Atlas</h1>
+    <p class="subtitle">Mapping neighbourhood-level mental health need, deprivation, and wellbeing across 4,994 LSOAs</p>
+    <div class="header-meta">
+      <span>Wellcome Mental Health Data Prize 2026</span>
+      <span>4,994 Lower Super Output Areas</span>
+      <span>33 London Boroughs</span>
+    </div>
+  </div>
+</header>
+
+<!-- ── KPI Strip ──────────────────────── -->
+<div class="kpi-strip" id="kpiStrip"></div>
+
+<!-- ── Map ─────────────────────────────── -->
+<section class="map-section">
+  <div class="loading-overlay" id="mapLoading">Loading 4,994 neighbourhoods&hellip;</div>
+  <div id="map"></div>
+  <div class="map-controls">
+    <label for="layerSelect">Choropleth layer</label>
+    <select id="layerSelect">
+      <option value="samhi_index_2022">SAMHI Index 2022</option>
+      <option value="antidep_rate_2022">Antidepressant Rate</option>
+      <option value="est_qof_dep_2022">GP Depression Prevalence</option>
+      <option value="health_bad_or_very_bad_pct">Bad/Very Bad Health %</option>
+      <option value="disability_rate_pct">Disability Rate %</option>
+      <option value="unpaid_care_rate_pct">Unpaid Care Rate %</option>
+      <option value="imd_score">IMD Score</option>
+    </select>
+  </div>
+  <div class="map-legend" id="mapLegend">
+    <div class="map-legend-title" id="legendTitle">SAMHI Index 2022</div>
+    <div class="legend-scale" id="legendScale"></div>
+    <div class="legend-labels" id="legendLabels"></div>
+  </div>
+</section>
+
+<!-- ── AI Insights ────────────────────── -->
+<section class="insights-section">
+  <div class="container">
+    <h2>What the data reveals</h2>
+    <p class="section-intro">Key patterns and findings drawn from 120 indicators across London's neighbourhoods.</p>
+    <div class="insight-grid" id="insightGrid"></div>
+  </div>
+</section>
+
+<!-- ── Charts ──────────────────────────── -->
+<section class="charts-section">
+  <div class="container">
+    <div class="charts-grid">
+      <div class="chart-block">
+        <h3>Borough mental health ranking</h3>
+        <p class="chart-desc">Mean SAMHI Index by London borough, 2022. Higher = greater need.</p>
+        <canvas id="boroughChart"></canvas>
+      </div>
+      <div class="chart-block">
+        <h3>Deprivation vs mental health need</h3>
+        <p class="chart-desc">Each dot is an LSOA. IMD score (x) vs SAMHI Index (y).</p>
+        <canvas id="scatterChart"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Critical Areas ─────────────────── -->
+<section class="critical-section">
+  <div class="container--wide">
+    <h2>Neighbourhoods of highest concern</h2>
+    <p class="section-desc">The 20 LSOAs with the highest SAMHI mental health need index in London, 2022.</p>
+    <div class="critical-table-wrap">
+      <table class="critical-table" id="criticalTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Neighbourhood</th>
+            <th>Borough</th>
+            <th>SAMHI Index</th>
+            <th>Antidepressant Rate</th>
+            <th>Depression %</th>
+            <th>Bad Health %</th>
+            <th>Disability %</th>
+            <th>IMD Score</th>
+          </tr>
+        </thead>
+        <tbody id="criticalBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────── -->
+<footer class="site-footer">
+  <div class="container">
+    <p>Data sources: <a href="https://pldr.org/dataset/2noyv" target="_blank">SAMHI v5.00</a> (Place-based Longitudinal Data Resource, University of Bristol) &middot;
+    <a href="https://www.nomisweb.co.uk/sources/census_2021" target="_blank">Census 2021</a> (ONS via Nomis) &middot;
+    <a href="https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019" target="_blank">English Indices of Deprivation 2019</a> (MHCLG)</p>
+    <p>LSOA boundaries: ONS 2021 vintage. SAMHI mapped from 2011 to 2021 LSOAs via ONS lookup table. 335 LSOAs with new 2021 codes have interpolated SAMHI values.</p>
+    <p>Built for the Wellcome Mental Health Data Prize 2026&ndash;2028.</p>
+  </div>
+</footer>
+
+<!-- ── Data scripts ───────────────────── -->
+<script src="lsoa_data.js"></script>
+<script src="borough_data.js"></script>
+<script src="critical_data.js"></script>
+<script src="insights_data.js"></script>
+<script src="scatter_data.js"></script>
+
+<script>
+/* ── Colour scales ──────────────────── */
+const LAYERS = {
+  samhi_index_2022: {
+    label: 'SAMHI Index 2022',
+    colors: ['#d4f3f3','#a8e6e6','#6dd3d3','#3dbdbd','#17a2a2','#107070','#0d5252','#0a3d3d'],
+    breaks: [-1.5, -1.0, -0.5, 0, 0.3, 0.7, 1.2],
+    fmt: v => v != null ? v.toFixed(2) : '—',
+    minLabel: '-2.0 (lower need)', maxLabel: '4.7 (higher need)'
+  },
+  antidep_rate_2022: {
+    label: 'Antidepressant Prescribing Rate',
+    colors: ['#fef3c7','#fde68a','#fbbf24','#f59e0b','#d97706','#b45309','#92400e','#78350f'],
+    breaks: [12, 16, 20, 24, 28, 32, 36],
+    fmt: v => v != null ? v.toFixed(1) : '—',
+    minLabel: '8.6 per 1,000', maxLabel: '42.5 per 1,000'
+  },
+  est_qof_dep_2022: {
+    label: 'GP Depression Prevalence %',
+    colors: ['#fce7f3','#f9a8d4','#f472b6','#ec4899','#db2777','#be185d','#9d174d','#831843'],
+    breaks: [5, 6.5, 8, 9.5, 11, 12.5, 14],
+    fmt: v => v != null ? v.toFixed(1) + '%' : '—',
+    minLabel: '3.5%', maxLabel: '16.8%'
+  },
+  health_bad_or_very_bad_pct: {
+    label: 'Bad or Very Bad Health %',
+    colors: ['#ecfdf5','#a7f3d0','#6ee7b7','#34d399','#10b981','#059669','#047857','#064e3b'],
+    breaks: [1.5, 2.5, 3.5, 4.5, 5.5, 7, 9],
+    fmt: v => v != null ? v.toFixed(1) + '%' : '—',
+    minLabel: '0.5%', maxLabel: '12.4%'
+  },
+  disability_rate_pct: {
+    label: 'Disability Rate %',
+    colors: ['#ede9fe','#c4b5fd','#a78bfa','#8b5cf6','#7c3aed','#6d28d9','#5b21b6','#4c1d95'],
+    breaks: [7, 9, 11, 13, 15, 18, 22],
+    fmt: v => v != null ? v.toFixed(1) + '%' : '—',
+    minLabel: '4.1%', maxLabel: '28.4%'
+  },
+  unpaid_care_rate_pct: {
+    label: 'Unpaid Care Rate %',
+    colors: ['#fff7ed','#fed7aa','#fdba74','#fb923c','#f97316','#ea580c','#c2410c','#9a3412'],
+    breaks: [4, 5, 6, 7, 8, 9, 11],
+    fmt: v => v != null ? v.toFixed(1) + '%' : '—',
+    minLabel: '1.6%', maxLabel: '14.5%'
+  },
+  imd_score: {
+    label: 'IMD Deprivation Score',
+    colors: ['#f0f9ff','#bae6fd','#7dd3fc','#38bdf8','#0ea5e9','#0284c7','#0369a1','#075985'],
+    breaks: [10, 15, 20, 25, 30, 40, 50],
+    fmt: v => v != null ? v.toFixed(1) : '—',
+    minLabel: '2.3 (least deprived)', maxLabel: '64.7 (most deprived)'
+  }
+};
+
+function getColor(value, layerKey) {
+  if (value == null) return '#e5e5e5';
+  const { colors, breaks } = LAYERS[layerKey];
+  for (let i = 0; i < breaks.length; i++) {
+    if (value < breaks[i]) return colors[i];
+  }
+  return colors[colors.length - 1];
+}
+
+/* ── KPI strip ──────────────────────── */
+(function renderKPIs() {
+  const h = INSIGHTS_DATA.headline;
+  const kpis = [
+    { value: h.total_lsoas.toLocaleString(), label: 'Neighbourhoods mapped' },
+    { value: h.antidep_rate.toFixed(1), label: 'Avg antidepressant rate per 1,000' },
+    { value: h.qof_depression.toFixed(1) + '%', label: 'Avg GP depression prevalence' },
+    { value: h.bad_health_pct.toFixed(1) + '%', label: 'Avg bad/very bad health' },
+    { value: h.disability_pct.toFixed(1) + '%', label: 'Avg disability rate' },
+    { value: h.crisis_pop.toLocaleString(), label: 'Adults in high-need areas (decile 8-10)' },
+  ];
+  const el = document.getElementById('kpiStrip');
+  el.innerHTML = kpis.map(k =>
+    `<div class="kpi-item"><div class="kpi-value">${k.value}</div><div class="kpi-label">${k.label}</div></div>`
+  ).join('');
+})();
+
+/* ── Map ────────────────────────────── */
+let currentLayer = 'samhi_index_2022';
+let geoLayer;
+
+const map = L.map('map', {
+  zoomControl: true,
+  scrollWheelZoom: true,
+  attributionControl: false
+}).setView([51.505, -0.09], 10);
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+  maxZoom: 16
+}).addTo(map);
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+  maxZoom: 16, pane: 'overlayPane'
+}).addTo(map);
+
+function styleFeature(feature) {
+  const val = feature.properties[currentLayer];
+  return {
+    fillColor: getColor(val, currentLayer),
+    weight: 0.3,
+    color: '#b8b0a8',
+    fillOpacity: 0.82,
+  };
+}
+
+function buildTooltip(p) {
+  const layer = LAYERS[currentLayer];
+  return `<div class="lsoa-tooltip">
+    <strong>${p.lsoa_name}</strong>
+    <div class="tt-borough">${p.borough}</div>
+    <div class="tt-row"><span class="tt-label">${layer.label}</span><span class="tt-val">${layer.fmt(p[currentLayer])}</span></div>
+    <div class="tt-row"><span class="tt-label">SAMHI Index</span><span class="tt-val">${p.samhi_index_2022 != null ? p.samhi_index_2022.toFixed(2) : '—'}</span></div>
+    <div class="tt-row"><span class="tt-label">IMD Score</span><span class="tt-val">${p.imd_score != null ? p.imd_score.toFixed(1) : '—'}</span></div>
+    <div class="tt-row"><span class="tt-label">Antidepressant Rate</span><span class="tt-val">${p.antidep_rate_2022 != null ? p.antidep_rate_2022.toFixed(1) : '—'}</span></div>
+    <div class="tt-row"><span class="tt-label">Depression %</span><span class="tt-val">${p.est_qof_dep_2022 != null ? p.est_qof_dep_2022.toFixed(1) + '%' : '—'}</span></div>
+    <div class="tt-row"><span class="tt-label">Bad Health %</span><span class="tt-val">${p.health_bad_or_very_bad_pct != null ? p.health_bad_or_very_bad_pct.toFixed(1) + '%' : '—'}</span></div>
+  </div>`;
+}
+
+function onEachFeature(feature, layer) {
+  layer.on({
+    mouseover(e) {
+      e.target.setStyle({ weight: 2, color: '#1a1714', fillOpacity: 0.95 });
+      e.target.bringToFront();
+    },
+    mouseout(e) { geoLayer.resetStyle(e.target); },
+    click(e) {
+      const p = feature.properties;
+      L.popup({ maxWidth: 300, offset: [0, -5] })
+        .setLatLng(e.latlng)
+        .setContent(buildTooltip(p))
+        .openOn(map);
+    }
+  });
+}
+
+function updateLegend() {
+  const layer = LAYERS[currentLayer];
+  document.getElementById('legendTitle').textContent = layer.label;
+  const scaleEl = document.getElementById('legendScale');
+  scaleEl.innerHTML = layer.colors.map(c => `<span style="background:${c}"></span>`).join('');
+  const labelsEl = document.getElementById('legendLabels');
+  labelsEl.innerHTML = `<span>${layer.minLabel}</span><span>${layer.maxLabel}</span>`;
+}
+
+// Render map
+geoLayer = L.geoJSON(LSOA_DATA, {
+  style: styleFeature,
+  onEachFeature: onEachFeature,
+}).addTo(map);
+
+map.fitBounds(geoLayer.getBounds(), { padding: [20, 20] });
+updateLegend();
+document.getElementById('mapLoading').classList.add('hidden');
+
+document.getElementById('layerSelect').addEventListener('change', function() {
+  currentLayer = this.value;
+  geoLayer.setStyle(styleFeature);
+  updateLegend();
+});
+
+/* ── Insights ───────────────────────── */
+(function renderInsights() {
+  const typeLabels = {
+    geographic: 'Geographic pattern',
+    correlation: 'Statistical relationship',
+    temporal: 'Temporal change',
+    scale: 'Scale of need',
+    intersection: 'Intersecting burdens'
+  };
+  const el = document.getElementById('insightGrid');
+  el.innerHTML = INSIGHTS_DATA.narratives.map(n =>
+    `<div class="insight-item">
+      <span class="insight-tag">${typeLabels[n.type] || n.type}</span>
+      <h3>${n.title}</h3>
+      <p>${n.body}</p>
+    </div>`
+  ).join('');
+})();
+
+/* ── Borough chart ──────────────────── */
+(function renderBoroughChart() {
+  const sorted = [...BOROUGH_DATA].sort((a, b) => b.samhi_mean - a.samhi_mean);
+  const ctx = document.getElementById('boroughChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: sorted.map(b => b.borough),
+      datasets: [{
+        data: sorted.map(b => b.samhi_mean),
+        backgroundColor: sorted.map(b =>
+          b.samhi_mean > 0 ? '#0d5252' :
+          b.samhi_mean > -0.3 ? '#17a2a2' :
+          b.samhi_mean > -0.5 ? '#6dd3d3' : '#a8e6e6'
+        ),
+        borderWidth: 0,
+        borderRadius: 2,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#faf9f7',
+          titleColor: '#2d2822',
+          bodyColor: '#5c5650',
+          borderColor: '#ddd8d3',
+          borderWidth: 1,
+          titleFont: { family: "'Source Serif 4', Georgia, serif", weight: 600 },
+          bodyFont: { family: "'DM Sans', system-ui, sans-serif" },
+          callbacks: {
+            label: ctx => `SAMHI: ${ctx.raw.toFixed(3)}`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: '#ece9e4' },
+          ticks: { font: { family: "'DM Sans', system-ui", size: 11 }, color: '#78716c' },
+          title: { display: true, text: 'Mean SAMHI Index', font: { family: "'DM Sans'", size: 11 }, color: '#a8a29e' }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { font: { family: "'DM Sans', system-ui", size: 10 }, color: '#5c5650' }
+        }
+      }
+    }
+  });
+  document.getElementById('boroughChart').parentElement.style.height = '700px';
+})();
+
+/* ── Scatter chart ──────────────────── */
+(function renderScatter() {
+  const ctx = document.getElementById('scatterChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        data: SCATTER_DATA.map(d => ({ x: d.imd_score, y: d.samhi_index_2022 })),
+        backgroundColor: 'rgba(13, 82, 82, 0.15)',
+        borderColor: 'rgba(13, 82, 82, 0.3)',
+        pointRadius: 1.8,
+        pointHoverRadius: 5,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      aspectRatio: 1,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#faf9f7',
+          titleColor: '#2d2822',
+          bodyColor: '#5c5650',
+          borderColor: '#ddd8d3',
+          borderWidth: 1,
+          bodyFont: { family: "'DM Sans', system-ui, sans-serif" },
+          callbacks: {
+            label: ctx => {
+              const d = SCATTER_DATA[ctx.dataIndex];
+              return `${d.lsoa_name} (${d.borough}) — IMD: ${d.imd_score}, SAMHI: ${d.samhi_index_2022}`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: '#ece9e4' },
+          ticks: { font: { family: "'DM Sans'", size: 11 }, color: '#78716c' },
+          title: { display: true, text: 'IMD Deprivation Score', font: { family: "'DM Sans'", size: 11 }, color: '#a8a29e' }
+        },
+        y: {
+          grid: { color: '#ece9e4' },
+          ticks: { font: { family: "'DM Sans'", size: 11 }, color: '#78716c' },
+          title: { display: true, text: 'SAMHI Index 2022', font: { family: "'DM Sans'", size: 11 }, color: '#a8a29e' }
+        }
+      }
+    }
+  });
+})();
+
+/* ── Critical areas table ───────────── */
+(function renderCritical() {
+  const tbody = document.getElementById('criticalBody');
+  const top20 = CRITICAL_DATA.slice(0, 20);
+  tbody.innerHTML = top20.map((d, i) => {
+    const badgeClass = d.samhi_index_2022 > 2 ? 'samhi-badge--high' : 'samhi-badge--mid';
+    return `<tr>
+      <td class="rank-col">${i + 1}</td>
+      <td>${d.lsoa_name}</td>
+      <td class="borough-cell">${d.borough}</td>
+      <td><span class="samhi-badge ${badgeClass}">${d.samhi_index_2022.toFixed(2)}</span></td>
+      <td>${d.antidep_rate_2022.toFixed(1)}</td>
+      <td>${d.est_qof_dep_2022.toFixed(1)}%</td>
+      <td>${d.health_bad_or_very_bad_pct.toFixed(1)}%</td>
+      <td>${d.disability_rate_pct.toFixed(1)}%</td>
+      <td>${d.imd_score.toFixed(1)}</td>
+    </tr>`;
+  }).join('');
+})();
+</script>
+</body>
+</html>

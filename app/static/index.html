@@ -6,6 +6,7 @@
   <title>London Loneliness Risk Dashboard</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="stylesheet" href="/static/css/chat.css" />
 </head>
 <body>
   <!-- Header -->
@@ -69,11 +70,30 @@
       <h4 id="legend-title">Loneliness Risk Index</h4>
       <div id="legend-items"></div>
     </div>
+
+    <!-- Chat -->
+    <button id="chat-toggle" aria-label="Open AI assistant">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+    </button>
+    <div id="chat-panel" class="chat-closed">
+      <div class="chat-header">
+        <span>Policy Assistant</span>
+        <button id="chat-minimize">&minus;</button>
+      </div>
+      <div id="chat-messages"></div>
+      <div class="chat-input-bar">
+        <textarea id="chat-input" placeholder="Ask about loneliness risk..." rows="1"></textarea>
+        <button id="chat-send" aria-label="Send">&#10148;</button>
+      </div>
+    </div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="/static/js/map.js"></script>
   <script src="/static/js/sidebar.js"></script>
   <script src="/static/js/controls.js"></script>
+  <script src="/static/js/chat.js"></script>
 </body>
 </html>

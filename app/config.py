@@ -1,4 +1,8 @@
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 GPKG_PATH = BASE_DIR / "master_lsoa.gpkg"
@@ -21,3 +25,9 @@ DISPLAY_COLUMNS = [
     "disability_rate_pct",
     "unpaid_care_rate_pct",
 ]
+
+# Chat / LLM settings
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+CHAT_MODEL = "gemini-2.5-flash"
+CHAT_MAX_TOKENS = 1500
+CHAT_HISTORY_LIMIT = 10
