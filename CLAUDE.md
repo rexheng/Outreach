@@ -19,7 +19,7 @@ The tool must be **in scope** for the prize:
 | File | Role |
 |---|---|
 | `master_lsoa.gpkg` | Assembled GeoPackage -- 4,994 London LSOAs, single table `master_lsoa`, 120 columns |
-| `app/` | FastAPI Loneliness Risk Dashboard (LRI) -- run with `uvicorn app.main:app` |
+| `app/` | FastAPI "Outreach" dashboard -- run with `uvicorn app.main:app` |
 | `app/main.py` | FastAPI entry point with lifespan data loading |
 | `app/config.py` | Configuration: GPKG paths, display columns, API keys, chat settings |
 | `app/api/routes.py` | Data API: `/api/geojson`, `/api/boroughs`, `/api/lsoa/{code}`, `/api/metadata` |
@@ -88,7 +88,7 @@ All project data **must** live in a single file: `master_lsoa.gpkg`. This is non
 
 - **Data**: Python with geopandas, pandas; sqlite3 for quick queries
 - **Viz**: Leaflet + Chart.js (dashboard), matplotlib/seaborn for static analysis
-- **LRI Dashboard**: `uvicorn app.main:app` — FastAPI serving Leaflet choropleth with LRI scores, sidebar detail, and LLM chatbot
+- **Outreach Dashboard**: `uvicorn app.main:app` — FastAPI serving Leaflet choropleth with Composite Need Index, editorial sidebar, and LLM chatbot
 - **Legacy Dashboard**: `dashboard/index.html` — static HTML, served via any HTTP server. Rebuild data with `python build_dashboard.py`
 - **LLM Chat**: Anthropic Claude API via `anthropic` SDK. Requires `ANTHROPIC_API_KEY` in `.env`. Model: `claude-sonnet-4-20250514`
 - **Output**: All derived data goes back into `master_lsoa.gpkg`; document new columns in Project_Overview.md
@@ -104,14 +104,44 @@ The LRI Dashboard includes an AI policy chatbot (`POST /api/chat`):
 
 ## Frontend Design Direction
 
-The webapp should draw from the visual language of charity/social-impact organisations like **London Community Foundation** (londoncf.org.uk):
-- Clean, warm, approachable aesthetic -- not clinical or corporate
-- Generous whitespace, clear typography hierarchy
-- Teal/turquoise accent palette (consistent with Wellcome/Social Finance branding)
-- Human-centred storytelling: data presented alongside narrative context, not raw tables
-- Accessible, responsive, WCAG-compliant
-- Map-forward: interactive geospatial views as the primary interface, with drill-down into LSOA detail
-- Avoid: dark dashboards, dense data grids, overly technical UI. The audience includes policymakers and lived experience experts, not just data scientists
+**Brand name**: Outreach -- "The Geography of Wellbeing"
+
+The webapp uses a **warm terracotta/earth-tone palette** inspired by editorial wellness design. No teal. The aesthetic is closer to a magazine feature than a SaaS dashboard.
+
+### Colour Palette
+| Token | Hex | Usage |
+|---|---|---|
+| `--terra` | `#B5725A` | Primary accent: radio buttons, indicator bars, hover states, drop caps |
+| `--terra-dark` | `#7D5A48` | Sidebar headers, dark card surfaces |
+| `--terra-deep` | `#6B4A3A` | Deepest accent: close buttons, critical need tier, chat header |
+| `--terra-light` | `#C4805A` | Badges, hover states, links |
+| `--clay` | `#D4A574` | Moderate need tier, warm midtone |
+| `--sand` | `#E5D5C5` | Low need tier, light fills |
+| `--cream` | `#FAF7F3` | Page background |
+| `--linen` | `#F5F0EB` | Card backgrounds, alternating rows |
+| `--text` | `#3D3530` | Headlines, primary text |
+| `--text-body` | `#5A504A` | Body paragraphs |
+| `--text-muted` | `#9A8E85` | Labels, captions |
+| `--border` | `#E5DDD5` | Dividers, borders |
+
+### Choropleth Ramp (warm, sequential)
+Lowest need `#F5F0EB` → `#E5D5C5` → `#D4A574` → `#B5725A` → Highest need `#6B4A3A`
+
+### Typography
+- **Playfair Display** (serif): headlines, KPI values, drop caps, editorial text
+- **DM Sans** (sans-serif): body text, UI labels, controls, tooltips
+
+### Layout
+- Left editorial panel with "Outreach" branding, introductory narrative, radio-card layer selector, borough filter
+- Full-width Leaflet map as centrepiece
+- Right sidebar slides in on LSOA click with brown header strip, KPI cards, indicator bars, editorial paragraph, nearest services
+- Floating chat panel (bottom-right) with terracotta styling
+
+### Key Terminology
+- "Composite Need Index" (not "Loneliness Risk Index")
+- Need tiers: "Critical Need", "High Need", "Elevated", "Lower Need"
+- "Neighbourhoods" (not "LSOAs" in UI)
+- See `FRONTEND_DESIGN_PROMPT.md` for full design specification
 
 ## Task Management
 

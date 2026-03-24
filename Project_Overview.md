@@ -37,7 +37,7 @@ The tool proposal should fall within one of these prize-scoped categories:
 All data is centralised in a **single GeoPackage file** (`master_lsoa.gpkg`). The webapp reads directly from this file -- no intermediate exports, no separate databases. This keeps the data pipeline simple and the tool self-contained.
 
 ### Frontend Direction
-The webapp draws from the visual language of charity/social-impact orgs (e.g. London Community Foundation). Clean, warm, map-forward design with teal/turquoise accents. Accessible to policymakers and lived experience experts, not just data scientists.
+The webapp ("Outreach -- The Geography of Wellbeing") uses a warm terracotta/earth-tone editorial aesthetic. Playfair Display + DM Sans typography. Colour palette: terracotta `#B5725A`, deep brown `#6B4A3A`, warm cream `#FAF7F3`. Choropleth ramp runs cream-to-brown (not teal). Accessible to policymakers and lived experience experts, not just data scientists. Full spec in `FRONTEND_DESIGN_PROMPT.md`.
 
 ## Repository Structure
 
@@ -92,6 +92,7 @@ aamental health data/
 |-- community_services.csv           # 175 geocoded community services
 |-- enrich_community_services.py     # Community services enrichment script
 |-- References_and_Research_Data.md   # Full dataset provenance, methodology, citations
+|-- FRONTEND_DESIGN_PROMPT.md        # Full frontend design specification (colours, typography, layout)
 |-- .env                             # API keys (gitignored)
 |-- tasks/
 |   |-- todo.md                      # Current task tracking
@@ -318,14 +319,14 @@ An interactive web dashboard is available at `dashboard/index.html`. Serve via a
 - **Critical areas table**: Top 20 neighbourhoods ranked by SAMHI mental health need
 
 ### Design
-Editorial/magazine aesthetic with teal/turquoise palette (Wellcome branding). Source Serif 4 + DM Sans typography. Map-forward layout, WCAG-accessible, responsive.
+Editorial/magazine aesthetic with warm terracotta/earth-tone palette. Playfair Display + DM Sans typography. Map-forward layout, WCAG-accessible, responsive. Left editorial panel with narrative introduction and radio-card layer selector. Sidebar with brown header strip, KPI cards, auto-generated editorial paragraph, and nearest services. See `FRONTEND_DESIGN_PROMPT.md` for full design specification.
 
 ### Data pipeline
 `build_dashboard.py` preprocesses `master_lsoa.gpkg` into simplified GeoJSON and JSON files for the dashboard. Run it to regenerate after any GPKG changes.
 
 ## LLM Policy Chatbot (added 2026-03-24)
 
-An AI-powered chatbot integrated into the Loneliness Risk Dashboard that helps policymakers ask natural-language questions about loneliness risk data, with streaming responses and clickable map navigation.
+An AI-powered chatbot integrated into the Outreach dashboard that helps policymakers ask natural-language questions about mental health need data, with streaming responses and clickable map navigation.
 
 ### Architecture
 

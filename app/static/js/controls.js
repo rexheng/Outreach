@@ -1,5 +1,6 @@
 /**
- * controls.js — Borough filter, risk tier toggles, layer switcher, legend
+ * controls.js — Borough filter, need level toggles, layer switcher, legend
+ * Outreach: The Geography of Wellbeing
  */
 
 // Populate borough dropdown from stats
@@ -23,12 +24,12 @@ window.updateLegend = function () {
   const field = window.APP.currentField;
 
   if (field === 'lri_score') {
-    title.textContent = 'Loneliness Risk Index';
+    title.textContent = 'Composite Need Index';
     items.innerHTML = [
-      { color: '#d32f2f', label: 'Critical (8–10)' },
-      { color: '#f57c00', label: 'High (6–8)' },
-      { color: '#fdd835', label: 'Moderate (3–6)' },
-      { color: '#388e3c', label: 'Low (0–3)' },
+      { color: '#6B4A3A', label: 'Critical Need (8\u201310)' },
+      { color: '#B5725A', label: 'High Need (6\u20138)' },
+      { color: '#D4A574', label: 'Elevated (3\u20136)' },
+      { color: '#E5D5C5', label: 'Lower Need (0\u20133)' },
     ].map(i => `
       <div class="legend-item">
         <div class="legend-swatch" style="background:${i.color}"></div>
@@ -36,17 +37,22 @@ window.updateLegend = function () {
       </div>
     `).join('');
   } else {
-    // Continuous scale legend
-    const label = document.getElementById('layer-select')
-      .selectedOptions[0]?.textContent || field;
+    // Determine label from the selected radio card
+    const selectedRadio = document.querySelector('#layer-selector input[type="radio"]:checked');
+    let label = field;
+    if (selectedRadio) {
+      const card = selectedRadio.closest('.radio-card');
+      const titleEl = card ? card.querySelector('.radio-card-title') : null;
+      if (titleEl) label = titleEl.textContent;
+    }
     title.textContent = label;
 
     const range = window.APP._fieldRange || { min: 0, max: 1 };
     items.innerHTML = `
-      <div style="display:flex;align-items:center;gap:8px;font-size:0.8rem">
+      <div style="display:flex;align-items:center;gap:8px;font-size:0.78rem;color:var(--text-body)">
         <span>${range.min.toFixed(2)}</span>
-        <div style="flex:1;height:12px;border-radius:3px;
-          background:linear-gradient(to right, #e0f4f4, #065a64)"></div>
+        <div style="flex:1;height:12px;border-radius:4px;
+          background:linear-gradient(to right, #F5F0EB, #D4A574, #B5725A, #6B4A3A)"></div>
         <span>${range.max.toFixed(2)}</span>
       </div>
     `;
@@ -70,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Risk tier filters
+  // Need level filters
   document.querySelectorAll('#tier-filters input[type="checkbox"]').forEach(cb => {
     cb.addEventListener('change', () => {
       if (cb.checked) {
@@ -82,9 +88,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Layer switcher
-  document.getElementById('layer-select').addEventListener('change', (e) => {
-    window.APP.currentField = e.target.value;
-    renderGeoJSON();
+  // Layer switcher — radio cards
+  const radioCards = document.querySelectorAll('#layer-selector .radio-card');
+  radioCards.forEach(card => {
+    const radio = card.querySelector('input[type="radio"]');
+    card.addEventListener('click', () => {
+      // Update selected state
+      radioCards.forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      radio.checked = true;
+
+      // Update map layer
+      window.APP.currentField = radio.value;
+      renderGeoJSON();
+    });
   });
 });

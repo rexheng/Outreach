@@ -1,5 +1,5 @@
 /**
- * map.js — Leaflet choropleth map for Loneliness Risk Index
+ * map.js — Leaflet choropleth map for Outreach: Composite Need Index
  */
 
 // Global state
@@ -15,22 +15,25 @@ window.APP = {
   boroughStats: null,
 };
 
-// Risk tier colour scale for LRI
+// Warm need-level colour scale
 const TIER_COLORS = {
-  Critical: '#d32f2f',
-  High: '#f57c00',
-  Moderate: '#fdd835',
-  Low: '#388e3c',
+  Critical: '#6B4A3A',
+  High:     '#B5725A',
+  Moderate: '#D4A574',
+  Low:      '#E5D5C5',
 };
 
-// Continuous colour scale for non-LRI layers (teal gradient)
+/**
+ * Continuous colour scale for non-CNI layers.
+ * Interpolates from warm cream (#F5F0EB) to deep brown (#6B4A3A).
+ */
 function continuousColor(value, min, max) {
-  if (value == null || isNaN(value)) return '#ccc';
+  if (value == null || isNaN(value)) return '#E5DDD5';
   const t = Math.max(0, Math.min(1, (value - min) / (max - min || 1)));
-  // Interpolate from light (#e0f4f4) to dark teal (#065a64)
-  const r = Math.round(224 + (6 - 224) * t);
-  const g = Math.round(244 + (90 - 244) * t);
-  const b = Math.round(244 + (100 - 244) * t);
+  // From: #F5F0EB (245, 240, 235)  To: #6B4A3A (107, 74, 58)
+  const r = Math.round(245 + (107 - 245) * t);
+  const g = Math.round(240 + (74  - 240) * t);
+  const b = Math.round(235 + (58  - 235) * t);
   return `rgb(${r},${g},${b})`;
 }
 
@@ -68,10 +71,10 @@ function featureStyle(feature) {
 
   return {
     fillColor,
-    fillOpacity: 0.7,
+    fillOpacity: 0.72,
     weight: 0.5,
-    color: '#fff',
-    opacity: 0.8,
+    color: '#FFFFFF',
+    opacity: 0.6,
   };
 }
 
@@ -85,11 +88,22 @@ function shouldShow(feature) {
 }
 
 function highlightStyle() {
-  return { weight: 3, color: '#065a64', fillOpacity: 0.85 };
+  return { weight: 3, color: '#7D5A48', fillOpacity: 0.88 };
 }
 
 function resetStyle(layer) {
   window.APP.geojsonLayer.resetStyle(layer);
+}
+
+/** Determine tier label for tooltip display */
+function tierLabel(tier) {
+  const labels = {
+    Critical: 'Critical Need',
+    High:     'High Need',
+    Moderate: 'Elevated',
+    Low:      'Lower Need',
+  };
+  return labels[tier] || tier;
 }
 
 function onEachFeature(feature, layer) {
@@ -99,14 +113,14 @@ function onEachFeature(feature, layer) {
   const ttContent = `
     <div class="lsoa-tooltip">
       <div class="tt-name">${p.lsoa_name}</div>
-      <div class="tt-score">LRI: ${p.lri_score} — ${p.risk_tier}</div>
+      <div class="tt-score">Need Index: ${p.lri_score} &mdash; ${tierLabel(p.risk_tier)}</div>
     </div>`;
   layer.bindTooltip(ttContent, { sticky: true, className: 'lsoa-tooltip-wrapper' });
 
   // Hover
   layer.on('mouseover', () => {
     if (layer !== window.APP.selectedLayer) {
-      layer.setStyle({ weight: 2, color: '#0a7e8c', fillOpacity: 0.85 });
+      layer.setStyle({ weight: 2, color: '#B5725A', fillOpacity: 0.85 });
       layer.bringToFront();
     }
   });
@@ -156,7 +170,7 @@ async function initMap() {
   // Show loading
   const loading = document.createElement('div');
   loading.id = 'loading';
-  loading.innerHTML = '<div class="spinner"></div><span>Loading London data…</span>';
+  loading.innerHTML = '<div class="spinner"></div><span>Mapping London\'s wellbeing landscape\u2026</span>';
   document.getElementById('app').appendChild(loading);
 
   // Init Leaflet
@@ -190,7 +204,7 @@ async function initMap() {
     renderGeoJSON();
   } catch (err) {
     console.error('Failed to load data:', err);
-    loading.innerHTML = '<span style="color:#d32f2f">Failed to load data. Is the server running?</span>';
+    loading.innerHTML = '<span style="color:#6B4A3A;font-family:var(--font-serif)">Unable to load data. Is the server running?</span>';
     return;
   }
 
