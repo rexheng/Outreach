@@ -2,7 +2,7 @@
 
 An interactive data tool mapping neighbourhood-level mental health need across London's 4,994 Lower Super Output Areas (LSOAs).
 
-**Live demo:** https://london-mental-health-atlas-production.up.railway.app/
+**Live demo:** outreach-claude.up.railway.app
 
 ## What it does
 
