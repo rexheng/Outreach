@@ -330,46 +330,51 @@ An AI-powered chatbot integrated into the Outreach dashboard that helps policyma
 
 ### Architecture
 
-- **Backend**: FastAPI SSE streaming endpoint (`POST /api/chat`) calls Anthropic Claude API with dynamically-extracted data context from the cached GeoDataFrame
+- **Backend**: FastAPI SSE streaming endpoint (`POST /api/chat`) calls Google Gemini API with dynamically-extracted data context from the cached GeoDataFrame
 - **Frontend**: Floating chat panel (vanilla JS) with entity-link parsing that triggers map zoom/highlight actions via the existing `window.APP` global state
-- **Data context**: Instead of sending all 4,994 LSOAs to Claude, the `chat_context.py` module detects entities (boroughs/LSOAs) and intent from the user's message, then extracts only the relevant data slice (~500-2000 tokens)
+- **Data context**: `chat_context.py` always sends all 33 borough summaries (~300 words) so the LLM can resolve landmarks/institutions to boroughs using world knowledge. When a specific borough or LSOA is detected, detailed drill-down data is appended (~150 extra words)
 
 ### Files
 
 | File | Role |
 |---|---|
-| `app/api/chat.py` | SSE streaming endpoint — orchestrates context + Claude API |
+| `app/api/chat.py` | SSE streaming endpoint — orchestrates context + Gemini API |
 | `app/data/chat_context.py` | Entity detection (borough/LSOA/intent), data extraction from cached GDF, system prompt assembly |
 | `app/static/js/chat.js` | Chat panel UI, SSE consumption, message rendering, entity link → map navigation |
 | `app/static/css/chat.css` | Chat panel styles (toggle button, panel, messages, entity links) |
-| `.env` | `ANTHROPIC_API_KEY` (gitignored, server-side only) |
+| `.env` | `GEMINI_API_KEY` (gitignored, server-side only) |
 
 ### Entity Link Syntax
 
-Claude is instructed to format references as:
+The LLM is instructed to format references as:
 - `[[borough:Hackney]]` — rendered as clickable link that sets borough dropdown + zooms map
 - `[[lsoa:E01001110|Hackney 001A]]` — rendered as clickable link that zooms to LSOA + opens sidebar detail
 
 ### Intent Classification
 
-The system classifies user questions into 4 intents to tailor the data context sent to Claude:
-- **Ranking**: "worst", "top", "prioritize" → sends top-N borough ranking
-- **Comparison**: "compare", "vs" → sends side-by-side borough stats
-- **Drill-down**: "why", "what drives" → sends detailed borough/LSOA indicators
-- **Overview**: default → sends London-wide summary
+The system classifies user questions into 4 intents to tailor supplementary data sent to the LLM (all 33 boroughs are always included):
+- **Comparison**: "compare", "vs" → appends side-by-side borough stats
+- **Drill-down**: "why", "what drives" → appends detailed borough/LSOA indicators
+- **Overview**: default → London-wide summary with all boroughs is sufficient
 
 ### Configuration
 
 | Setting | Value | Location |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | Required | `.env` file |
-| `CHAT_MODEL` | `claude-sonnet-4-20250514` | `app/config.py` |
+| `GEMINI_API_KEY` | Required | `.env` file |
+| `CHAT_MODEL` | `gemini-2.5-flash` | `app/config.py` |
 | `CHAT_MAX_TOKENS` | 1500 | `app/config.py` |
 | `CHAT_HISTORY_LIMIT` | 10 turns | `app/config.py` |
 
+### Deployment
+
+Live at **https://london-mental-health-atlas-production.up.railway.app/**
+
+Deployed on Railway (persistent FastAPI server). Config files: `Procfile`, `runtime.txt` (Python 3.11), `nixpacks.toml` (system deps: libexpat, GDAL). `GEMINI_API_KEY` set as Railway environment variable.
+
 ### Dependencies Added
 
-- `anthropic>=0.42.0` — Anthropic Python SDK for Claude API
+- `google-genai>=1.0.0` — Google Gemini SDK for LLM chat
 - `python-dotenv>=1.0.0` — Environment variable loading from `.env`
 
 ## Outstanding Work
