@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-03-24T18:13:13.017155+00:00",
+  "signals_generated_at": null,
+  "recommendations": [
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Rapid Response for Critical Need Neighbourhoods",
+      "description": "Immediately deploy targeted outreach and support services to the 48 LSOAs identified as 'Critical Need' across London, with a particular focus on the top 10 highest-risk LSOAs. This should involve mobile teams from organisations like Mind and Samaritans, alongside NHS Community Mental Health Teams (CMHTs), to provide urgent mental health support and connect residents with essential services like foodbanks and Citizens Advice bureaux.",
+      "evidence": [
+        {
+          "signal": "Total LSOAs in 'Critical Need' tier",
+          "value": "48"
+        },
+        {
+          "signal": "Top 10 LSOAs by risk",
+          "value": "E01001021 (Croydon), E01001080 (Croydon), E01000386 (Bexley), E01002277 (Havering), E01002280 (Havering), E01000720 (Bromley), E01002276 (Havering), E01002283 (Havering), E01001364 (Ealing), E01001079 (Croydon)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001021",
+        "E01001080",
+        "E01000386",
+        "E01002277",
+        "E01002280",
+        "E01000720",
+        "E01002276",
+        "E01002283",
+        "E01001364",
+        "E01001079"
+      ],
+      "id": "london-short-term-1",
+      "borough": "London",
+      "scope": "london_wide"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Boost Services in High-Risk, Worsening Boroughs",
+      "description": "Prioritise increased funding and staffing for NHS Talking Therapies (formerly IAPT) and local council wellbeing hubs in boroughs identified as both 'highest risk' and having a 'worsening trajectory'. This includes Barking and Dagenham, Bexley, Enfield, Greenwich, and Havering, to manage immediate demand and prevent further decline in mental wellbeing across their populations (estimated at 8,237,043.0 London-wide in mid-2015).",
+      "evidence": [
+        {
+          "signal": "Boroughs with highest risk",
+          "value": "Barking and Dagenham, Havering, Enfield, Bexley, Greenwich"
+        },
+        {
+          "signal": "Boroughs with worsening trajectory",
+          "value": "Barking and Dagenham, Bexley, Enfield, Greenwich, Havering (overlap)"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "london-short-term-2",
+      "borough": "London",
+      "scope": "london_wide"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Strengthen Community Support Networks",
+      "description": "Invest in existing community-led initiatives and services within the 544 'High Need' LSOAs to provide accessible, non-clinical support. This involves enhancing the capacity of local foodbanks, Age UK branches, and Citizens Advice bureaux, as well as promoting council wellbeing hubs, to address social determinants of mental health and offer immediate practical assistance.",
+      "evidence": [
+        {
+          "signal": "Total LSOAs in 'High Need' tier",
+          "value": "544"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "london-short-term-3",
+      "borough": "London",
+      "scope": "london_wide"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop Integrated Mental Health Pathways",
+      "description": "Establish comprehensive, integrated mental health care pathways across all 18 boroughs experiencing a 'worsening trajectory'. This strategy should link primary care, Community Mental Health Teams (CMHTs), homelessness services, and council wellbeing hubs, ensuring seamless transitions and holistic support for individuals with complex needs over the next 1-5 years.",
+      "evidence": [
+        {
+          "signal": "Boroughs with worsening trajectory",
+          "value": "Barking and Dagenham, Barnet, Bexley, Brent, Bromley, Croydon, Ealing, Enfield, Greenwich, Hammersmith and Fulham, Haringey, Harrow, Havering, Hillingdon, Lambeth, Lewisham, Redbridge, Richmond upon Thames"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "london-long-term-4",
+      "borough": "London",
+      "scope": "london_wide"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Data-Driven Prevention and Resource Allocation",
+      "description": "Implement a robust, borough-level data collection and analysis system to monitor mental health indicators, including SAMHI scores, and service utilisation more granularly. This will allow for proactive, evidence-based resource allocation and the development of targeted preventative programmes, particularly in the 2899 'Elevated' LSOAs, aiming to prevent escalation to 'High' or 'Critical Need' tiers.",
+      "evidence": [
+        {
+          "signal": "Mean SAMHI 2022 (London-wide)",
+          "value": "-0.288"
+        },
+        {
+          "signal": "Total LSOAs in 'Elevated' tier",
+          "value": "2899"
+        },
+        {
+          "signal": "SAMHI data missing for top LSOAs",
+          "value": "N/A for E01001021, E01001080, etc."
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "london-long-term-5",
+      "borough": "London",
+      "scope": "london_wide"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Sustainable Workforce Development and Capacity Building",
+      "description": "Invest strategically in the recruitment, training, and retention of mental health professionals across London over the next 1-5 years. This includes expanding the workforce for NHS Talking Therapies and CMHTs, as well as providing sustained funding and support for community organisations like Mind and Samaritans to grow their volunteer base and reach, ensuring long-term capacity to meet the needs of London's diverse population.",
+      "evidence": [
+        {
+          "signal": "Total estimated population (mid-2015)",
+          "value": "8,237,043.0"
+        },
+        {
+          "signal": "Total LSOAs in 'Elevated' tier",
+          "value": "2899"
+        },
+        {
+          "signal": "Total LSOAs in 'High Need' tier",
+          "value": "544"
+        },
+        {
+          "signal": "Total LSOAs in 'Critical Need' tier",
+          "value": "48"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "london-long-term-6",
+      "borough": "London",
+      "scope": "london_wide"
+    }
+  ]
+}
