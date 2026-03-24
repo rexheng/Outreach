@@ -72,9 +72,20 @@ window.applyBoroughFromURL = function () {
 
 document.addEventListener('DOMContentLoaded', () => {
   // Borough filter
+  const briefingBtn = document.getElementById('download-briefing');
   document.getElementById('borough-select').addEventListener('change', (e) => {
     window.APP.currentBorough = e.target.value;
     renderGeoJSON();
+
+    // Show/hide briefing download button
+    if (briefingBtn) {
+      if (e.target.value) {
+        briefingBtn.href = '/api/briefing/' + encodeURIComponent(e.target.value);
+        briefingBtn.style.display = 'block';
+      } else {
+        briefingBtn.style.display = 'none';
+      }
+    }
 
     // Fit bounds to borough
     if (e.target.value && window.APP.geojsonLayer) {

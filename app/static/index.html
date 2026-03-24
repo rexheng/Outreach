@@ -16,7 +16,6 @@
   <!-- Header -->
   <header id="header">
     <div class="header-left">
-      <a href="/" class="back-to-overview" aria-label="Back to overview">&larr; Overview</a>
       <div class="header-brand">
         <div class="brand-icon" aria-hidden="true">
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,6 +29,10 @@
           <p class="subtitle">The Geography of Wellbeing</p>
         </div>
       </div>
+      <nav class="header-nav">
+        <a href="/" class="header-nav-link">Dashboard</a>
+        <span class="header-nav-link active">Map Explorer</span>
+      </nav>
     </div>
     <div class="header-right">
       <span class="header-meta">4,994 neighbourhoods across London</span>
@@ -60,6 +63,8 @@
         <select id="borough-select">
           <option value="">All London</option>
         </select>
+        <a id="download-briefing" class="btn-briefing" style="display:none"
+           href="#" download>Download Briefing</a>
       </div>
 
       <!-- Layer selector as radio cards -->

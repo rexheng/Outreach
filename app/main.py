@@ -9,6 +9,7 @@ from pathlib import Path
 from app.api.routes import router as api_router
 from app.api.chat import router as chat_router
 from app.api.policy_routes import router as policy_router
+from app.api.briefing import router as briefing_router
 from app.data.loader import load_and_prepare
 
 
@@ -27,6 +28,7 @@ app = FastAPI(
 app.include_router(api_router)
 app.include_router(chat_router)
 app.include_router(policy_router)
+app.include_router(briefing_router)
 
 static_dir = Path(__file__).parent / "static"
 app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
