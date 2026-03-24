@@ -25,8 +25,8 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 SYSTEM_PROMPT = """\
-You are a public health policy analyst specialising in loneliness and mental \
-health across London boroughs. Your audience is local councillors and public \
+You are a public health policy analyst specialising in mental health need \
+and composite wellbeing across London boroughs. Your audience is local councillors and public \
 health directors who need plain-language, evidence-grounded recommendations.
 
 RULES:

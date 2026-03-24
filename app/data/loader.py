@@ -1,4 +1,4 @@
-"""Data pipeline: load GeoPackage, compute LRI, prepare GeoJSON payload."""
+"""Data pipeline: load GeoPackage, compute Composite Need Index, prepare GeoJSON payload."""
 
 import json
 import geopandas as gpd
@@ -21,7 +21,7 @@ BOROUGH_COL = "Local Authority District name (2019)"
 
 
 def load_and_prepare() -> tuple[dict, gpd.GeoDataFrame, list]:
-    """Load GPKG, compute LRI, simplify geometry, build GeoJSON.
+    """Load GPKG, compute CNI scores, simplify geometry, build GeoJSON.
 
     Returns (geojson_dict, full_gdf, borough_stats).
     """
@@ -29,17 +29,17 @@ def load_and_prepare() -> tuple[dict, gpd.GeoDataFrame, list]:
     if _geojson_cache is not None:
         return _geojson_cache, _gdf_cache, _borough_cache
 
-    # 1. Load GeoPackage (use fiona engine for compatibility)
-    gdf = gpd.read_file(str(GPKG_PATH), layer=GPKG_LAYER, engine="fiona")
+    # 1. Load GeoPackage (pyogrio is the default engine, no extra system deps)
+    gdf = gpd.read_file(str(GPKG_PATH), layer=GPKG_LAYER)
 
     # 2. Reproject to WGS84 for Leaflet
     gdf = gdf.to_crs(epsg=4326)
 
-    # 3. Compute LRI scores
+    # 3. Compute Composite Need Index scores
     config = load_config(RISK_CONFIG_PATH)
     lri_df = compute_lri(gdf, config)
 
-    # Merge LRI columns into GeoDataFrame
+    # Merge CNI columns into GeoDataFrame
     for col in lri_df.columns:
         gdf[col] = lri_df[col]
 

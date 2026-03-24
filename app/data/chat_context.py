@@ -106,23 +106,23 @@ def get_london_overview() -> str:
     moderate = (gdf["risk_tier"] == "Moderate").sum()
     low = (gdf["risk_tier"] == "Low").sum()
 
-    # Top 5 boroughs by mean LRI
+    # Top 5 boroughs by mean CNI
     top5 = sorted(_borough_cache, key=lambda b: b["mean_lri"], reverse=True)[:5]
     top5_str = "\n".join(
-        f"  - {b['borough']}: mean LRI {b['mean_lri']:.2f}, {b['critical_count']} Critical + {b['high_count']} High-risk LSOAs"
+        f"  - {b['borough']}: mean CNI {b['mean_lri']:.2f}, {b['critical_count']} Critical + {b['high_count']} High-need LSOAs"
         for b in top5
     )
 
     return f"""LONDON OVERVIEW:
 - Total LSOAs: {total}
-- Mean LRI: {mean_lri:.2f}, Median: {median_lri:.2f}
-- Risk distribution: {critical} Critical, {high} High, {moderate} Moderate, {low} Low
-- Top 5 highest-risk boroughs:
+- Mean CNI: {mean_lri:.2f}, Median: {median_lri:.2f}
+- Need distribution: {critical} Critical, {high} High, {moderate} Moderate, {low} Low
+- Top 5 highest-need boroughs:
 {top5_str}"""
 
 
 def get_top_boroughs(n: int = 10) -> str:
-    """Top N boroughs ranked by mean LRI."""
+    """Top N boroughs ranked by mean CNI."""
     if _borough_cache is None:
         return "Data not loaded."
 
@@ -130,12 +130,12 @@ def get_top_boroughs(n: int = 10) -> str:
     lines = []
     for i, b in enumerate(top, 1):
         lines.append(
-            f"{i}. {b['borough']}: mean LRI {b['mean_lri']:.2f} "
+            f"{i}. {b['borough']}: mean CNI {b['mean_lri']:.2f} "
             f"(median {b['median_lri']:.2f}, max {b['max_lri']:.2f}) — "
             f"{b['lsoa_count']} LSOAs, {b['critical_count']} Critical, {b['high_count']} High"
         )
 
-    return f"TOP {n} BOROUGHS BY LONELINESS RISK:\n" + "\n".join(lines)
+    return f"TOP {n} BOROUGHS BY COMPOSITE NEED:\n" + "\n".join(lines)
 
 
 def get_borough_summary(borough: str) -> str:
@@ -171,11 +171,11 @@ def get_borough_summary(borough: str) -> str:
     lsoa_lines = []
     for _, row in top_lsoas.iterrows():
         lsoa_lines.append(
-            f"  - {row['lsoa_name']} ({row['lsoa_code']}): LRI {row['lri_score']:.2f} [{row['risk_tier']}]"
+            f"  - {row['lsoa_name']} ({row['lsoa_code']}): CNI {row['lri_score']:.2f} [{row['risk_tier']}]"
         )
 
     return f"""BOROUGH SUMMARY: {borough}
-- Mean LRI: {bstat['mean_lri']:.2f}, Median: {bstat['median_lri']:.2f}, Max: {bstat['max_lri']:.2f}
+- Mean CNI: {bstat['mean_lri']:.2f}, Median: {bstat['median_lri']:.2f}, Max: {bstat['max_lri']:.2f}
 - LSOAs: {bstat['lsoa_count']}, Population (16+): {bstat['total_population']:,.0f}
 - Risk breakdown: {bstat['critical_count']} Critical, {bstat['high_count']} High
 - Indicators (borough avg vs London avg):
@@ -194,7 +194,7 @@ def get_borough_comparison(boroughs: list[str]) -> str:
         bstat = next((b for b in _borough_cache if b["borough"] == name), None)
         if bstat:
             lines.append(
-                f"- {name}: mean LRI {bstat['mean_lri']:.2f}, "
+                f"- {name}: mean CNI {bstat['mean_lri']:.2f}, "
                 f"{bstat['critical_count']} Critical, {bstat['high_count']} High, "
                 f"{bstat['lsoa_count']} LSOAs, pop {bstat['total_population']:,.0f}"
             )
@@ -224,7 +224,7 @@ def get_lsoa_detail_for_chat(lsoa_code: str) -> str:
 
     return f"""LSOA DETAIL: {r.get('lsoa_name', lsoa_code)} ({lsoa_code})
 - Borough: {r.get(BOROUGH_COL, 'Unknown')}
-- LRI: {r.get('lri_score', 'N/A'):.2f}, Tier: {r.get('risk_tier', 'N/A')}
+- CNI: {r.get('lri_score', 'N/A'):.2f}, Tier: {r.get('risk_tier', 'N/A')}
 - IMD Score: {r.get('imd_score', 'N/A')}, SAMHI: {r.get('samhi_index_2022', 'N/A')}
 - Population (16+): {r.get('total_16plus', 'N/A'):,.0f}
 - Pop Density: {r.get('pop_density_2021', 'N/A'):,.0f}

@@ -10,7 +10,7 @@ from app.config import GEMINI_API_KEY, CHAT_MODEL, CHAT_MAX_TOKENS, CHAT_HISTORY
 
 router = APIRouter(prefix="/api")
 
-SYSTEM_PROMPT = """You are a policy advisor for the London Loneliness Risk Dashboard. You help policymakers, researchers, and practitioners understand neighbourhood-level loneliness risk across London's 4,994 Lower Layer Super Output Areas (LSOAs).
+SYSTEM_PROMPT = """You are a policy advisor for the Outreach dashboard. You help policymakers, researchers, and practitioners understand neighbourhood-level mental health need across London's 4,994 Lower Layer Super Output Areas (LSOAs).
 
 GROUNDING DATA:
 {context_json}
@@ -22,7 +22,7 @@ RULES:
 4. When referencing a specific LSOA, format it as [[lsoa:LSOA_CODE|Display Name]] (e.g. [[lsoa:E01001110|Hackney 001A]]).
 5. These entity markers will become clickable links in the dashboard — use them whenever you mention a specific place.
 6. Keep responses concise and actionable. Suggest specific areas for intervention where the data supports it.
-7. The Loneliness Risk Index (LRI) ranges from 0–10. Tiers: Critical (8–10), High (6–8), Moderate (3–6), Low (0–3).
+7. The Composite Need Index (CNI) ranges from 0–10. Tiers: Critical (8–10), High (6–8), Moderate (3–6), Low (0–3).
 8. Remember: this is ecological (area-level) data, not individual-level. Do not make individual-level inferences.
 9. IMD Rank 1 = most deprived. Health deprivation scores: negative = less deprived, positive = more deprived.
 """
@@ -41,7 +41,7 @@ async def chat(req: ChatRequest):
         ctx = build_chat_context(req.message, req.history)
     except ImportError:
         ctx = {
-            "context_text": "London-wide: 4,994 LSOAs, mean LRI 3.65, 71 High-risk LSOAs.",
+            "context_text": "London-wide: 4,994 LSOAs, mean CNI 3.65, 71 High-need LSOAs.",
             "entities": {"boroughs": [], "lsoa_codes": []},
         }
 

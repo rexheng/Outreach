@@ -1,4 +1,4 @@
-"""API endpoints for the Loneliness Risk Dashboard."""
+"""API endpoints for the Outreach dashboard."""
 
 from fastapi import APIRouter, HTTPException
 from app.data.loader import load_and_prepare, get_lsoa_detail
@@ -10,7 +10,7 @@ router = APIRouter(prefix="/api")
 
 @router.get("/geojson")
 def geojson():
-    """Full London GeoJSON with LRI scores as properties."""
+    """Full London GeoJSON with Composite Need Index scores as properties."""
     geojson_data, _, _ = load_and_prepare()
     return geojson_data
 

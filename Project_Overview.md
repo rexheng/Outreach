@@ -70,15 +70,15 @@ aamental health data/
 |   |-- scatter_data.js              # SAMHI vs IMD scatter data
 |   |-- insights_data.js             # Pre-computed narrative insights
 |   |-- critical_data.js             # Top 50 critical areas
-|-- app/                             # FastAPI Loneliness Risk Dashboard (LRI)
+|-- app/                             # FastAPI Outreach Dashboard (CNI)
 |   |-- main.py                      # FastAPI entry point + lifespan
 |   |-- config.py                    # Configuration (GPKG paths, API keys, chat settings)
 |   |-- api/
 |   |   |-- routes.py                # Data API endpoints (geojson, boroughs, lsoa detail)
 |   |   |-- chat.py                  # LLM chat SSE streaming endpoint
 |   |-- data/
-|   |   |-- loader.py                # GPKG data loading, LRI computation, GeoJSON cache
-|   |   |-- risk_model.py            # Loneliness Risk Index model (configurable weights)
+|   |   |-- loader.py                # GPKG data loading, CNI computation, GeoJSON cache
+|   |   |-- risk_model.py            # Composite Need Index model (configurable weights)
 |   |   |-- chat_context.py          # Entity detection, intent classification, data extraction
 |   |-- static/
 |   |   |-- index.html               # Dashboard HTML (map + sidebar + chat panel)

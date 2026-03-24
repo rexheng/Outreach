@@ -1,4 +1,4 @@
-"""FastAPI entry point for the London Loneliness Risk Dashboard."""
+"""FastAPI entry point for the Outreach dashboard."""
 
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
@@ -8,6 +8,7 @@ from pathlib import Path
 
 from app.api.routes import router as api_router
 from app.api.chat import router as chat_router
+from app.api.policy_routes import router as policy_router
 from app.data.loader import load_and_prepare
 
 
@@ -19,12 +20,13 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="London Loneliness Risk Dashboard",
+    title="Outreach",
     lifespan=lifespan,
 )
 
 app.include_router(api_router)
 app.include_router(chat_router)
+app.include_router(policy_router)
 
 static_dir = Path(__file__).parent / "static"
 app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")

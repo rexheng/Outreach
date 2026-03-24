@@ -24,7 +24,7 @@ The tool must be **in scope** for the prize:
 | `app/config.py` | Configuration: GPKG paths, display columns, API keys, chat settings |
 | `app/api/routes.py` | Data API: `/api/geojson`, `/api/boroughs`, `/api/lsoa/{code}`, `/api/metadata` |
 | `app/api/chat.py` | LLM chat endpoint: `POST /api/chat` (SSE streaming via Anthropic Claude) |
-| `app/data/loader.py` | GPKG loading, LRI computation, GeoJSON cache (`_gdf_cache`, `_borough_cache`) |
+| `app/data/loader.py` | GPKG loading, CNI computation, GeoJSON cache (`_gdf_cache`, `_borough_cache`) |
 | `app/data/chat_context.py` | Entity detection, intent classification, data extraction for chat context |
 | `app/static/` | Frontend: index.html, CSS (style.css, chat.css), JS (map.js, controls.js, sidebar.js, chat.js) |
 | `.env` | `ANTHROPIC_API_KEY` (gitignored, required for chatbot) |
@@ -95,7 +95,7 @@ All project data **must** live in a single file: `master_lsoa.gpkg`. This is non
 
 ## Chatbot Architecture
 
-The LRI Dashboard includes an AI policy chatbot (`POST /api/chat`):
+The Outreach dashboard includes an AI policy chatbot (`POST /api/chat`):
 - **Data context**: `app/data/chat_context.py` detects boroughs/LSOAs/intent from user messages, extracts targeted data slices from `loader._gdf_cache` and `loader._borough_cache`
 - **Streaming**: FastAPI SSE → Anthropic streaming SDK → token-by-token to frontend
 - **Entity links**: Claude outputs `[[borough:Name]]` / `[[lsoa:CODE|Display]]` markers; frontend renders as clickable spans that trigger map zoom

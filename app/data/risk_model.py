@@ -1,8 +1,8 @@
-"""Loneliness Risk Index (LRI) computation engine.
+"""Composite Need Index (CNI) computation engine.
 
 Reads indicator weights from risk_config.yaml, normalises each indicator
 to 0-1 via min-max scaling, computes weighted pillar scores, and produces
-a final LRI on a 0-10 scale with risk tier labels.
+a final CNI on a 0-10 scale with risk tier labels.
 """
 
 import yaml
@@ -25,7 +25,7 @@ def _min_max(series: pd.Series) -> pd.Series:
 
 
 def compute_lri(gdf, config: dict) -> pd.DataFrame:
-    """Compute Loneliness Risk Index scores.
+    """Compute Composite Need Index scores.
 
     Returns a DataFrame with columns: lri_score, risk_tier, risk_color,
     plus normalised pillar scores and individual indicator values.
@@ -65,7 +65,7 @@ def compute_lri(gdf, config: dict) -> pd.DataFrame:
         pillar_scores[pillar_name] = pillar_score
         result[f"pillar_{pillar_name}"] = pillar_score
 
-    # Final LRI: weighted combination of pillars, scaled to 0-10
+    # Final CNI: weighted combination of pillars, scaled to 0-10
     lri_raw = sum(
         pillar_scores[name] * cfg["weight"]
         for name, cfg in pillars_cfg.items()

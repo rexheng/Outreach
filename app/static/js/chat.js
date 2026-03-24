@@ -78,7 +78,7 @@
     div.innerHTML = `
       <div class="chat-welcome">
         <h3>Policy Assistant</h3>
-        <p>Ask me about loneliness risk across London's neighbourhoods.</p>
+        <p>Ask me about mental health need across London's neighbourhoods.</p>
         <div class="chat-suggestions">
           ${suggestions.map(s => `<button class="chat-suggestion">${s}</button>`).join('')}
         </div>
