@@ -3,7 +3,7 @@
 Usage:
     python build_policy_recs.py              # full build
     python build_policy_recs.py --resume     # skip boroughs already in output
-    python build_policy_recs.py --signals-only  # only compute signals, skip Gemini
+    python build_policy_recs.py --signals-only  # only compute signals, skip LLM
 """
 
 import argparse
@@ -78,7 +78,7 @@ def _adapt_london(london_data: dict, boroughs: dict) -> dict:
 def main():
     parser = argparse.ArgumentParser(description="Build policy recommendations")
     parser.add_argument("--resume", action="store_true", help="Skip boroughs already in output file")
-    parser.add_argument("--signals-only", action="store_true", help="Only compute signals, skip Gemini")
+    parser.add_argument("--signals-only", action="store_true", help="Only compute signals, skip LLM")
     args = parser.parse_args()
 
     gpkg_path = BASE_DIR / "master_lsoa.gpkg"

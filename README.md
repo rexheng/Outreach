@@ -1,6 +1,6 @@
 # Outreach -- The Geography of Wellbeing
 
-An interactive data tool mapping neighbourhood-level mental health need across London's 4,994 Lower Super Output Areas (LSOAs). Built for the [Wellcome Mental Health Data Prize 2026-2028](https://wellcome.org/).
+An interactive data tool mapping neighbourhood-level mental health need across London's 4,994 Lower Super Output Areas (LSOAs).
 
 **Live demo:** https://london-mental-health-atlas-production.up.railway.app/
 
@@ -20,6 +20,7 @@ The tool helps researchers, policymakers, and practitioners:
 - **Borough and risk-tier filtering** -- drill into any of London's 33 boroughs or filter by need severity (Critical / High / Moderate / Low)
 - **LSOA detail sidebar** -- click any neighbourhood for a full breakdown: need score, indicator bars, borough comparison, nearest community services
 - **AI policy chatbot** -- ask questions like "Which boroughs should we prioritise?" or "What drives risk in Hackney?" and get streamed, data-grounded responses with clickable map links
+- **Borough briefing packs** -- downloadable one-page PDFs with headline KPIs, priority neighbourhoods, and policy-ready summaries
 - **Composite Need Index** -- two-pillar weighted model combining socioeconomic (IMD health, income, employment, housing, crime) and demographic (long-term sickness, economic inactivity, unemployment) indicators
 
 ## Data sources
@@ -44,7 +45,7 @@ python -m venv .venv && source .venv/bin/activate  # or .venv\Scripts\activate o
 pip install -r requirements.txt
 
 # Set up API key for chatbot (optional)
-echo "GEMINI_API_KEY=your-key-here" > .env
+echo "ANTHROPIC_API_KEY=your-key-here" > .env
 
 # Run
 uvicorn app.main:app --reload
@@ -55,7 +56,7 @@ uvicorn app.main:app --reload
 
 - **Backend:** FastAPI, geopandas, pyogrio
 - **Frontend:** Vanilla JS, Leaflet, Chart.js
-- **LLM:** Google Gemini 2.5 Flash (SSE streaming)
+- **LLM:** Anthropic Claude (SSE streaming)
 - **Data:** Single GeoPackage file (no database)
 - **Deployment:** Railway
 
@@ -67,6 +68,7 @@ app/
   config.py            # Settings, display columns, API keys
   api/routes.py        # Data API (/api/geojson, /api/boroughs, /api/lsoa/{code})
   api/chat.py          # LLM chat endpoint (POST /api/chat, SSE)
+  api/policy_agent.py  # Policy recommendation engine
   data/loader.py       # GPKG loading, CNI computation, GeoJSON cache
   data/risk_model.py   # Composite Need Index model
   data/chat_context.py # Entity detection, intent classification
@@ -89,4 +91,4 @@ Risk tiers: **Critical** (8-10), **High** (6-8), **Moderate** (3-6), **Low** (0-
 
 ## Licence
 
-Built for the Wellcome Mental Health Data Prize 2026-2028. Data sources are Crown Copyright (ONS, MHCLG) and University of Bristol (SAMHI), used under open government licence.
+Data sources are Crown Copyright (ONS, MHCLG) and University of Bristol (SAMHI), used under open government licence.
