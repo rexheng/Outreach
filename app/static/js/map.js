@@ -204,7 +204,7 @@ async function initMap() {
     renderGeoJSON();
   } catch (err) {
     console.error('Failed to load data:', err);
-    loading.innerHTML = '<span style="color:#6B4A3A;font-family:var(--font-serif)">Unable to load data. Is the server running?</span>';
+    loading.innerHTML = '<span style="color:#6B4A3A;font-family:var(--font-sans)">Unable to load data. Is the server running?</span>';
     return;
   }
 
