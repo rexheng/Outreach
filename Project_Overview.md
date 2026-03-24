@@ -19,25 +19,19 @@ Full details: `SF_WELLCOME_MHDP_FINAL10Feb.pdf`
 
 ## Research Motivation
 
-There is growing evidence that neighbourhood-level factors -- deprivation, transport accessibility, economic activity, housing conditions -- shape mental health outcomes. However, these relationships are difficult to explore because the relevant data sits across disconnected sources (ONS Census, MHCLG deprivation indices, TfL transport data, NHS mental health datasets) at different geographic granularities and vintages.
+There is growing evidence that neighbourhood-level factors -- deprivation, economic activity, housing conditions, disability, and access to community services -- shape mental health outcomes. However, these relationships are difficult to explore because the relevant data sits across disconnected sources (ONS Census, MHCLG deprivation indices, SAMHI mental health indicators, community service directories) at different geographic granularities and vintages.
 
 This project assembles these sources into a single, analysis-ready geospatial dataset at LSOA level for London, enabling researchers, policymakers, and mental health practitioners to:
 
-- Explore spatial patterns linking transport isolation, deprivation, and mental health
-- Identify underserved neighbourhoods where transport barriers may compound mental health risk
+- Explore spatial patterns linking deprivation, disability, and mental health need
+- Identify underserved neighbourhoods where service gaps compound mental health risk
 - Inform resource allocation and early intervention targeting at a neighbourhood level
-
-The tool proposal should fall within one of these prize-scoped categories:
-- Data discovery or documentation
-- Data analysis
-- Facilitating data analysis (cleaning, manipulation)
-- Sharing insights from data analysis to researchers, policymakers, practitioners
 
 ### Architecture Principle
 All data is centralised in a **single GeoPackage file** (`master_lsoa.gpkg`). The webapp reads directly from this file -- no intermediate exports, no separate databases. This keeps the data pipeline simple and the tool self-contained.
 
 ### Frontend Direction
-The webapp ("Outreach -- The Geography of Wellbeing") uses a warm terracotta/earth-tone editorial aesthetic. Playfair Display + DM Sans typography. Colour palette: terracotta `#B5725A`, deep brown `#6B4A3A`, warm cream `#FAF7F3`. Choropleth ramp runs cream-to-brown (not teal). Accessible to policymakers and lived experience experts, not just data scientists. Full spec in `FRONTEND_DESIGN_PROMPT.md`.
+The webapp ("Outreach -- The Geography of Wellbeing") uses a warm terracotta/earth-tone editorial aesthetic. Fraunces (brand) + Sora (headings) + DM Sans (body) typography. Colour palette: terracotta `#B5725A`, deep brown `#6B4A3A`, warm cream `#FAF7F3`. Choropleth ramp runs cream-to-brown. Accessible to policymakers and lived experience experts, not just data scientists.
 
 ## Repository Structure
 
@@ -219,10 +213,7 @@ Joined via ONS LSOA 2011→2021 lookup table. For split LSOAs (2011→multiple 2
 
 #### Transport Columns (removed 2026-03-24)
 
-The following 8 transport columns were removed as the project pivoted from transport-focus to mental health focus:
-`dist_to_station_m`, `mean_ptal_ai`, `median_ptal_ai`, `min_ptal_ai`, `max_ptal_ai`, `mean_ptal_level`, `nearest_station_ann_total`, `crowding_pressure`.
-
-The former `master_lsoa_enriched_with_route_pressure` table (containing 32 additional transport composite columns) was also dropped entirely. Original data is preserved in `master_lsoa.gpkg.backup`.
+8 transport columns and the `master_lsoa_enriched_with_route_pressure` table were removed as the project pivoted to mental health focus. Original data preserved in `master_lsoa.gpkg.backup`.
 
 #### Administrative (2 columns)
 `Local Authority District code (2019)`, `Local Authority District name (2019)` from IMD mapping.
@@ -319,7 +310,7 @@ An interactive web dashboard is available at `dashboard/index.html`. Serve via a
 - **Critical areas table**: Top 20 neighbourhoods ranked by SAMHI mental health need
 
 ### Design
-Editorial/magazine aesthetic with warm terracotta/earth-tone palette. Playfair Display + DM Sans typography. Map-forward layout, WCAG-accessible, responsive. Left editorial panel with narrative introduction and radio-card layer selector. Sidebar with brown header strip, KPI cards, auto-generated editorial paragraph, and nearest services. See `FRONTEND_DESIGN_PROMPT.md` for full design specification.
+Editorial/magazine aesthetic with warm terracotta/earth-tone palette. Fraunces + Sora + DM Sans typography. Map-forward layout, WCAG-accessible, responsive.
 
 ### Data pipeline
 `build_dashboard.py` preprocesses `master_lsoa.gpkg` into simplified GeoJSON and JSON files for the dashboard. Run it to regenerate after any GPKG changes.
