@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-03-24T18:13:13.017155+00:00",
+  "generated_at": "2026-03-24T18:33:40.201834+00:00",
   "signals_generated_at": null,
   "recommendations": [
     {
@@ -137,6 +137,150 @@
       "id": "london-long-term-6",
       "borough": "London",
       "scope": "london_wide"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Conduct Rapid Needs Assessment and Data Improvement for High-Risk LSOAs",
+      "description": "Given the lack of specific SAMHI data for the top LSOAs and N/A service coverage, a rapid assessment is crucial. This will involve gathering up-to-date local data on mental health needs and existing informal support networks in areas like E01000601 (Brent 021B) and E01000485 (Brent 006C) to inform targeted interventions.",
+      "evidence": [
+        {
+          "signal": "Top LSOAs by risk (SAMHI, tier, pop_16plus)",
+          "value": "N/A for all listed top LSOAs"
+        },
+        {
+          "signal": "Service coverage",
+          "value": "N/A for all listed service types"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000601",
+        "E01000485",
+        "E01000599",
+        "E01000605",
+        "E01000509"
+      ],
+      "id": "brent-lt-1",
+      "borough": "Brent",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Enhance Accessible Early Intervention and Crisis Support Promotion",
+      "description": "With a worsening mental health trajectory and a mean SAMHI of -0.389 (worse than London average), immediate access to support is vital. Promote existing services like Samaritans and NHS Talking Therapies more widely, especially in the 137 LSOAs identified as 'Elevated' or 'High Need', to ensure residents know where to turn for help.",
+      "evidence": [
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.389 (London average: -0.288)"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        },
+        {
+          "signal": "Tier breakdown",
+          "value": "116 'Elevated' and 21 'High Need' LSOAs"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "brent-lt-2",
+      "borough": "Brent",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Strengthen Community Outreach for Basic Wellbeing and Advice",
+      "description": "Focus on proactive outreach in the 137 'Elevated' and 'High Need' LSOAs, which represent a significant portion of Brent's approximate 307,474 population. Partner with local community groups to promote Citizens Advice bureaux and foodbanks, addressing immediate social and financial stressors that impact mental wellbeing.",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "116 'Elevated' and 21 'High Need' LSOAs"
+        },
+        {
+          "signal": "Estimated population (mid-2015)",
+          "value": "307,474.0"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "brent-lt-3",
+      "borough": "Brent",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Establish Integrated Community Wellbeing Hubs Across Brent",
+      "description": "To address the borough's overall high mental health need and worsening trajectory, develop new council wellbeing hubs or Mind centres. These hubs should co-locate services like NHS Talking Therapies, Citizens Advice, and potentially Age UK branches, creating accessible, holistic support points for residents in the 137 LSOAs with 'Elevated' or 'High Need'.",
+      "evidence": [
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.389 (London average: -0.288)"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        },
+        {
+          "signal": "Tier breakdown",
+          "value": "116 'Elevated' and 21 'High Need' LSOAs"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "brent-lt-4",
+      "borough": "Brent",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Increase Capacity and Accessibility of Community Mental Health Teams (CMHTs)",
+      "description": "With a large population of approximately 307,474 and a worsening mental health trajectory, Brent needs robust support for more complex mental health needs. Invest in increasing the capacity of Community Mental Health Teams (CMHTs) and improving referral pathways, ensuring timely and sustained care for residents across the borough.",
+      "evidence": [
+        {
+          "signal": "Estimated population (mid-2015)",
+          "value": "307,474.0"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        },
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.389 (London average: -0.288)"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "brent-lt-5",
+      "borough": "Brent",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Integrate Mental Health Support with Socio-Economic Services",
+      "description": "Recognising that socio-economic factors heavily influence mental wellbeing, develop stronger, integrated pathways between mental health services and support for housing and financial stability. This includes closer collaboration with homelessness services, foodbanks, and Citizens Advice bureaux to provide comprehensive support for vulnerable residents, particularly in areas like E01000601 (Brent 021B) and E01000485 (Brent 006C).",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "116 'Elevated' and 21 'High Need' LSOAs"
+        },
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.389 (London average: -0.288)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000601",
+        "E01000485",
+        "E01000599",
+        "E01000605",
+        "E01000509"
+      ],
+      "id": "brent-lt-6",
+      "borough": "Brent",
+      "scope": "borough"
     }
   ]
 }

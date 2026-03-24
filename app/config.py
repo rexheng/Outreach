@@ -33,7 +33,7 @@ CHAT_MAX_TOKENS = 1500
 CHAT_HISTORY_LIMIT = 10
 
 # Policy recommendation settings
-POLICY_MODEL = CHAT_MODEL  # reuse same Gemini model
+POLICY_MODEL = "gemini-2.0-flash-lite"  # use lite for higher rate limits during build
 POLICY_PRECOMPUTE_TEMP = 0.3
 POLICY_DEEPDIVE_TEMP = 0.7
 POLICY_MAX_TOKENS = 4096

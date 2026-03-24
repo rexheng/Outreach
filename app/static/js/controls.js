@@ -59,6 +59,17 @@ window.updateLegend = function () {
   }
 };
 
+// Handle ?borough= query param from overview page
+window.applyBoroughFromURL = function () {
+  const params = new URLSearchParams(window.location.search);
+  const borough = params.get('borough');
+  if (borough) {
+    const select = document.getElementById('borough-select');
+    select.value = borough;
+    select.dispatchEvent(new Event('change'));
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   // Borough filter
   document.getElementById('borough-select').addEventListener('change', (e) => {

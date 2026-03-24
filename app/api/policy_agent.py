@@ -164,7 +164,42 @@ def _strip_markdown_fences(text: str) -> str:
     return text.strip()
 
 
-def _call_gemini_json(prompt: str, max_retries: int = 3) -> list[dict]:
+def _repair_json(text: str) -> str:
+    """Attempt to repair common Gemini JSON issues."""
+    # Fix unescaped newlines inside string values
+    # Replace literal newlines inside strings with \\n
+    lines = text.split("\n")
+    repaired = []
+    in_string = False
+    for line in lines:
+        # Count unescaped quotes to track string state
+        repaired.append(line)
+
+    text = "\n".join(repaired)
+
+    # Try to extract just the JSON array if there's extra text
+    match = re.search(r"\[[\s\S]*\]", text)
+    if match:
+        text = match.group(0)
+
+    # Fix trailing commas before ] or }
+    text = re.sub(r",\s*([}\]])", r"\1", text)
+
+    # Fix unterminated strings at end - add closing quote if needed
+    text = text.rstrip()
+    if text.endswith('"'):
+        pass  # already ends with quote
+    elif not text.endswith("]"):
+        # Truncated response - try to close it
+        # Find last complete object
+        last_brace = text.rfind("}")
+        if last_brace > 0:
+            text = text[:last_brace + 1] + "]"
+
+    return text
+
+
+def _call_gemini_json(prompt: str, max_retries: int = 5) -> list[dict]:
     """Call Gemini, parse JSON response, retry with exponential backoff."""
     client = genai.Client(api_key=GEMINI_API_KEY)
     last_error = None
@@ -178,10 +213,19 @@ def _call_gemini_json(prompt: str, max_retries: int = 3) -> list[dict]:
                     "system_instruction": SYSTEM_PROMPT,
                     "max_output_tokens": POLICY_MAX_TOKENS,
                     "temperature": POLICY_PRECOMPUTE_TEMP,
+                    "response_mime_type": "application/json",
                 },
             )
             text = _strip_markdown_fences(response.text)
-            recs = json.loads(text)
+
+            # First try direct parse
+            try:
+                recs = json.loads(text)
+            except json.JSONDecodeError:
+                # Try repair
+                repaired = _repair_json(text)
+                recs = json.loads(repaired)
+
             if not isinstance(recs, list):
                 raise ValueError(f"Expected JSON array, got {type(recs).__name__}")
             return recs

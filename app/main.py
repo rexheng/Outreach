@@ -33,5 +33,10 @@ app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
 
 
 @app.get("/")
-def index():
+def overview():
+    return FileResponse(str(static_dir / "overview.html"))
+
+
+@app.get("/explore")
+def explore():
     return FileResponse(str(static_dir / "index.html"))

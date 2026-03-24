@@ -202,6 +202,9 @@ async function initMap() {
 
     // Render
     renderGeoJSON();
+
+    // Apply ?borough= from URL if navigating from overview
+    if (window.applyBoroughFromURL) window.applyBoroughFromURL();
   } catch (err) {
     console.error('Failed to load data:', err);
     loading.innerHTML = '<span style="color:#6B4A3A;font-family:var(--font-sans)">Unable to load data. Is the server running?</span>';
