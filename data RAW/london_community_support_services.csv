@@ -1,0 +1,214 @@
+name,type,category,address,postcode,borough,latitude,longitude,source
+Mind Head Office,mental_health_charity,Mental Health Charity,2 Redman Place,E20 1JQ,Newham,51.5467,-0.0128,mind.org.uk
+Mind in Camden,mental_health_charity,Mental Health Charity,"Barnes House, 9-15 Camden Road",NW1 9LQ,Camden,51.5394,-0.1384,mindincamden.org.uk
+Islington Mind,mental_health_charity,Mental Health Charity,"Unit 4 Archway Business Centre, 19-23 Wedmore Street",N19 4RU,Islington,51.5641,-0.1334,islingtonmind.org.uk
+Mind in Haringey,mental_health_charity,Mental Health Charity,"Station House, 73c Stapleton Hall Road",N4 3QF,Haringey,51.5690,-0.1006,mindinharingey.org.uk
+Mind in Brent Wandsworth and Westminster,mental_health_charity,Mental Health Charity,6 Osbert Street,SW1P 2QU,Westminster,51.4946,-0.1297,bwwmind.org.uk
+Mind in Croydon,mental_health_charity,Mental Health Charity,"Orchard House, 15a Purley Road",CR2 6EZ,Croydon,51.3543,-0.0997,mindincroydon.org.uk
+Richmond Borough Mind,mental_health_charity,Mental Health Charity,"1st Floor Rear UK House, 82 Heath Road",TW1 4BW,Richmond upon Thames,51.4490,-0.3289,rbmind.org
+Mind in Harrow,mental_health_charity,Mental Health Charity,"4th floor, 132-134 College Road",HA1 1BQ,Harrow,51.5789,-0.3374,mindinharrow.org.uk
+Hammersmith Fulham Ealing and Hounslow Mind,mental_health_charity,Mental Health Charity,309 Lillie Road,SW6 7LL,Hammersmith and Fulham,51.4827,-0.2067,hfehmind.org.uk
+HFEH Mind Ealing Hub,mental_health_charity,Mental Health Charity,"St Andrew's Church, Mount Park Road",W5 2RS,Ealing,51.5131,-0.3033,hfehmind.org.uk
+Mind in the City Hackney and Waltham Forest,mental_health_charity,Mental Health Charity,"12 Orsman Road, Haggerston",N1 5QJ,Hackney,51.5346,-0.0775,mindchwf.org.uk
+Mind in Enfield and Barnet,mental_health_charity,Mental Health Charity,55 Christchurch Avenue,N12 0DG,Barnet,51.6147,-0.1776,mind.org.uk
+Mind in Tower Hamlets Newham and Redbridge,mental_health_charity,Mental Health Charity,"Open House, 13 Whitethorn Street",E3 4DA,Tower Hamlets,51.5287,-0.0293,mindthnr.org.uk
+Havering Mind,mental_health_charity,Mental Health Charity,"Harrow Lodge House, Hornchurch Road",RM11 1JU,Havering,51.5676,0.2099,haveringmind.org.uk
+South East London Mind - Head Office,mental_health_charity,Mental Health Charity,"Anchor House, 5 Station Road, Orpington",BR6 0RZ,Bromley,51.3745,0.0988,selmind.org.uk
+South East London Mind - Bromley Recovery Works,mental_health_charity,Mental Health Charity,"Stepping Stones, 38 Masons Hill",BR2 9JG,Bromley,51.4052,0.0150,selmind.org.uk
+South East London Mind - Beckenham Centre,mental_health_charity,Mental Health Charity,20b Hayne Road,BR3 4HY,Bromley,51.4086,0.0269,selmind.org.uk
+South East London Mind - Greenwich,mental_health_charity,Mental Health Charity,"Forum at Greenwich, Trafalgar Road",SE10 9EQ,Greenwich,51.4815,0.0015,selmind.org.uk
+South East London Mind - Lewisham,mental_health_charity,Mental Health Charity,91 Granville Park,SE13 7DW,Lewisham,51.4554,-0.0111,selmind.org.uk
+Lambeth and Southwark Mind,mental_health_charity,Mental Health Charity,"4th Floor, 336 Brixton Road",SW9 7AA,Lambeth,51.4625,-0.1143,selmind.org.uk
+Rethink Mental Illness Head Office,mental_health_charity,Mental Health Charity,"15th Floor, 28 Albert Embankment",SE1 7GR,Lambeth,51.4930,-0.1197,rethink.org
+SANE,mental_health_charity,Mental Health Charity,"St Mark's Studios, 14 Chillingworth Road",N7 8QJ,Islington,51.5559,-0.1139,sane.org.uk
+Central London Samaritans - Marylebone,mental_health_charity,Mental Health Charity,46 Marshall Street,W1F 9BF,Westminster,51.5127,-0.1389,samaritans.org
+Central London Samaritans - Salisbury Place,mental_health_charity,Mental Health Charity,13 Salisbury Place,W1H 1FJ,Westminster,51.5218,-0.1606,samaritans.org
+North London Samaritans,mental_health_charity,Mental Health Charity,"Shaftesbury Hall, Herbert Road, Bounds Green",N11 2QN,Haringey,51.6088,-0.1224,samaritans.org
+Ealing Hammersmith and Hounslow Samaritans,mental_health_charity,Mental Health Charity,26 Junction Road,W5 4XL,Ealing,51.5085,-0.3032,samaritans.org
+Samaritans Kingston upon Thames,mental_health_charity,Mental Health Charity,2 Wheatfield Way,KT1 2QS,Kingston upon Thames,51.4118,-0.2996,samaritans.org
+Samaritans London City Hub,mental_health_charity,Mental Health Charity,London Bridge Area,SE1,Southwark,51.5055,-0.0880,samaritans.org
+Crisis Skylight London,homelessness_service,Homelessness Service,"50-52 Commercial Street",E1 6LT,Tower Hamlets,51.5188,-0.0740,crisis.org.uk
+Crisis Skylight Brent,homelessness_service,Homelessness Service,"1-2 Bank Buildings, High Street, Harlesden",NW10 4LT,Brent,51.5364,-0.2575,crisis.org.uk
+Crisis Skylight Croydon,homelessness_service,Homelessness Service,12 Surrey Street,CR0 1RG,Croydon,51.3725,-0.0993,crisis.org.uk
+St Mungo's Head Office,homelessness_service,Homelessness Service,3 Thomas More Square,E1W 1YW,Tower Hamlets,51.5085,-0.0673,mungos.org
+St Mungo's - Esmond Road,homelessness_service,Homelessness Service,15 Esmond Road,NW6 7HF,Camden,51.5418,-0.1990,mungos.org
+St Mungo's - St Gothard Road,homelessness_service,Homelessness Service,"St Gothard Road, West Norwood",SE27 9QR,Lambeth,51.4316,-0.0924,mungos.org
+Thames Reach Head Office,homelessness_service,Homelessness Service,"The Employment Academy, 29 Peckham Road",SE5 8UA,Southwark,51.4752,-0.0812,thamesreach.org.uk
+Thames Reach Deptford Reach,homelessness_service,Homelessness Service,64 Speedwell Street,SE8 4AT,Lewisham,51.4773,-0.0285,thamesreach.org.uk
+Thames Reach Greenhouse Walk-In Centre,homelessness_service,Homelessness Service,19 Tudor Road,E9 7SN,Hackney,51.5420,-0.0383,thamesreach.org.uk
+Shelter Head Office,homelessness_service,Homelessness Service,88 Old Street,EC1V 9HU,Islington,51.5254,-0.0880,shelter.org.uk
+Centrepoint Berwick Street,homelessness_service,Homelessness Service,25 Berwick Street,W1F 8RF,Westminster,51.5137,-0.1347,centrepoint.org.uk
+The Passage,homelessness_service,Homelessness Service,"St Vincent's Centre, Carlisle Place",SW1P 1NL,Westminster,51.4960,-0.1404,passage.org.uk
+The Connection at St Martin's,homelessness_service,Homelessness Service,12 Adelaide Street,WC2N 4HW,Westminster,51.5088,-0.1259,connection-at-stmartins.org.uk
+Providence Row Dellow Centre,homelessness_service,Homelessness Service,82 Wentworth Street,E1 7SA,Tower Hamlets,51.5157,-0.0700,providencerow.org.uk
+Whitechapel Mission,homelessness_service,Homelessness Service,212 Whitechapel Road,E1 1BJ,Tower Hamlets,51.5186,-0.0618,whitechapel.org.uk
+New Horizon Youth Centre,homelessness_service,Homelessness Service,68 Chalton Street,NW1 1JR,Camden,51.5297,-0.1284,nhyouthcentre.org.uk
+West London Day Centre,homelessness_service,Homelessness Service,"134 Seymour Place",W1H 1NT,Westminster,51.5188,-0.1653,wldc.org.uk
+Cardinal Hume Centre,homelessness_service,Homelessness Service,"7 Arneway Street, Horseferry Road",SW1P 2BG,Westminster,51.4954,-0.1319,cardinalhumecentre.org.uk
+Manna Day Centre,homelessness_service,Homelessness Service,6 Melior Street,SE1 3QP,Southwark,51.5014,-0.0838,mannasociety.org.uk
+Spires Drop-in Tooting,homelessness_service,Homelessness Service,"St Nicholas Church, Church Lane, Tooting",SW17 9PP,Wandsworth,51.4303,-0.1607,spires.org.uk
+Spires Drop-in West Norwood,homelessness_service,Homelessness Service,"St Luke's Church, 13 Norwood High Street",SE27 0DT,Lambeth,51.4315,-0.0878,spires.org.uk
+All Saints Day Centre,homelessness_service,Homelessness Service,"Carnegie Street off Caledonian Road",N1 9QW,Islington,51.5393,-0.1155,homeless.org.uk
+American Church Day Centre,homelessness_service,Homelessness Service,79A Tottenham Court Road,W1 4TD,Camden,51.5212,-0.1345,homeless.org.uk
+Bloomsbury Baptist Church,homelessness_service,Homelessness Service,235 Shaftesbury Avenue,WC2H 8EP,Camden,51.5166,-0.1279,homeless.org.uk
+Church Army Women's Day Centre,homelessness_service,Homelessness Service,1-5 Cosway Street,NW1 5NR,Westminster,51.5233,-0.1640,homeless.org.uk
+Holy Cross Church Crypt,homelessness_service,Homelessness Service,"Crypt, Cromer Street",WC1 8JU,Camden,51.5289,-0.1228,homeless.org.uk
+St Gabriel's Day Centre,homelessness_service,Homelessness Service,21 Hatchard Road,N19 4NG,Islington,51.5649,-0.1318,homeless.org.uk
+Union Chapel Margins,homelessness_service,Homelessness Service,"Crompton Terrace, Upper Street",N1 2XD,Islington,51.5462,-0.1020,homeless.org.uk
+Women at the Well,homelessness_service,Homelessness Service,54-55 Birkenhead Street,WC1H 8BB,Camden,51.5300,-0.1254,homeless.org.uk
+Dunloe Centre,homelessness_service,Homelessness Service,"St Saviours Priory, Dunloe Street",E2 8NS,Hackney,51.5296,-0.0621,homeless.org.uk
+Dress for Success,community_support,Community Support,"Unit 1, 89 Sheperton Road",N1 3DF,Islington,51.5380,-0.0929,homeless.org.uk
+Health E1 Homeless,homelessness_service,Homelessness Service,9-11 Brick Lane,E1 6PU,Tower Hamlets,51.5177,-0.0723,homeless.org.uk
+Citizens Advice Hackney,citizens_advice,Citizens Advice,300 Mare Street,E8 1HE,Hackney,51.5468,-0.0567,eastendcab.org.uk
+Citizens Advice Tower Hamlets,citizens_advice,Citizens Advice,32 Greatorex Street,E1 5NP,Tower Hamlets,51.5171,-0.0693,eastendcab.org.uk
+Citizens Advice Islington,citizens_advice,Citizens Advice,222 Upper Street,N1 1XR,Islington,51.5448,-0.1023,islingtoncab.org
+Citizens Advice Camden,citizens_advice,Citizens Advice,141a Robert Street,NW1 3QT,Camden,51.5305,-0.1405,camdencabservice.org.uk
+Citizens Advice Westminster,citizens_advice,Citizens Advice,"258 Harrow Road, The Stowe Centre",W2 5ES,Westminster,51.5222,-0.1819,westminstercab.org.uk
+Citizens Advice Merton and Lambeth - Mitcham,citizens_advice,Citizens Advice,326 London Road,CR4 3ND,Merton,51.3967,-0.1540,caml.org.uk
+Citizens Advice Merton and Lambeth - Morden,citizens_advice,Citizens Advice,"7 Crown Parade, Crown Lane",SM4 5DA,Merton,51.3972,-0.2002,caml.org.uk
+Citizens Advice Merton and Lambeth - Kennington,citizens_advice,Citizens Advice,91 Kennington Lane,SE11 4HQ,Lambeth,51.4906,-0.1095,caml.org.uk
+Citizens Advice Wandsworth - Battersea,citizens_advice,Citizens Advice,"Battersea Library, 265 Lavender Hill",SW11 1JB,Wandsworth,51.4617,-0.1675,cawandsworth.org
+Citizens Advice Wandsworth - Roehampton,citizens_advice,Citizens Advice,"Picasso Building, Minstead Gardens",SW15 4EE,Wandsworth,51.4479,-0.2405,cawandsworth.org
+Citizens Advice Croydon,citizens_advice,Citizens Advice,"Southbridge House, Southbridge Place",CR0 4HA,Croydon,51.3744,-0.0982,citizensadvicecroydon.org
+Citizens Advice Southwark,citizens_advice,Citizens Advice,97 Peckham High Street,SE15 5RS,Southwark,51.4732,-0.0698,citizensadvicesouthwark.org.uk
+Citizens Advice Barnet,citizens_advice,Citizens Advice,40-42 Church End,NW4 4JT,Barnet,51.5797,-0.2237,barnetcab.org.uk
+Citizens Advice Enfield,citizens_advice,Citizens Advice,"Unit 3, Vincent House, 2e Nags Head Road, Ponders End",EN3 7FN,Enfield,51.6470,-0.0381,citizensadviceenfield.org.uk
+Citizens Advice Brent,citizens_advice,Citizens Advice,270-272 High Road,NW10 2EY,Brent,51.5352,-0.2480,citizensadvicebrent.org.uk
+Hackney Foodbank - Homerton,foodbank,Foodbank,"4A Gilpin Road, Homerton",E5 0HL,Hackney,51.5470,-0.0444,hackney.foodbank.org.uk
+Hackney Foodbank - Dalston,foodbank,Foodbank,"100a Balls Pond Road, Dalston",N1 4AG,Hackney,51.5444,-0.0745,hackney.foodbank.org.uk
+Hackney Foodbank - Upper Clapton,foodbank,Foodbank,"St Andrews Church, 106 Bethune Road, Stoke Newington",N16 5DU,Hackney,51.5620,-0.0680,hackney.foodbank.org.uk
+Hackney Foodbank - Stoke Newington,foodbank,Foodbank,"St Mary's Church, Stoke Newington Church Street",N16 9ES,Hackney,51.5623,-0.0727,hackney.foodbank.org.uk
+Hackney Foodbank - Hoxton,foodbank,Foodbank,"Museum of the Home, Geffrye Street, Hoxton",E2 8EA,Hackney,51.5318,-0.0765,hackney.foodbank.org.uk
+Hackney Foodbank - Pembury,foodbank,Foodbank,"Pembury Community Centre, 1 Atkins Square, Dalston Lane",E8 1FA,Hackney,51.5477,-0.0507,hackney.foodbank.org.uk
+Lewisham Foodbank - Deptford,foodbank,Foodbank,"Salvation Army Deptford, Mary Ann Gardens",SE8 3DP,Lewisham,51.4770,-0.0266,lewisham.foodbank.org.uk
+Lewisham Foodbank - Lewisham,foodbank,Foodbank,"Salvation Army Lewisham, 4 Albion Way",SE13 6BT,Lewisham,51.4574,-0.0120,lewisham.foodbank.org.uk
+Lewisham Foodbank - Downham,foodbank,Foodbank,"St John the Baptist Church, 353 Bromley Road",SE6 2RP,Lewisham,51.4223,0.0048,lewisham.foodbank.org.uk
+Lewisham Foodbank - Forest Hill,foodbank,Foodbank,"Perry Rise Baptist Church, Perry Rise",SE23 2QL,Lewisham,51.4393,-0.0493,lewisham.foodbank.org.uk
+Lewisham Foodbank - Catford,foodbank,Foodbank,"Salvation Army Catford, 23-25 Brownhill Road",SE6 2HE,Lewisham,51.4444,-0.0227,lewisham.foodbank.org.uk
+Southwark Foodbank - Bermondsey,foodbank,Foodbank,"City Hope Church, 121 Drummond Road",SE16 2JY,Southwark,51.4930,-0.0487,southwark.foodbank.org.uk
+Southwark Foodbank - Peckham,foodbank,Foodbank,"Peckham Methodist Church, 2 Wood's Road",SE15 2PX,Southwark,51.4710,-0.0706,southwark.foodbank.org.uk
+Southwark Foodbank - Bermondsey Methodist,foodbank,Foodbank,"Bermondsey Methodist Church, Bermondsey Street",SE1 3UJ,Southwark,51.4987,-0.0816,southwark.foodbank.org.uk
+Wandsworth Foodbank - Battersea Rise,foodbank,Foodbank,"St Mark's Church, Battersea Rise (entrance Boutflower Road)",SW11 1EJ,Wandsworth,51.4622,-0.1690,wandsworth.foodbank.org.uk
+Wandsworth Foodbank - Battersea Doddington,foodbank,Foodbank,"Shaftesbury Christian Centre, 2 Austin Road",SW11 5JP,Wandsworth,51.4680,-0.1500,wandsworth.foodbank.org.uk
+Wandsworth Foodbank - Putney,foodbank,Foodbank,"The Yard, 401-403 Tildesley Road",SW15 3BD,Wandsworth,51.4520,-0.2150,wandsworth.foodbank.org.uk
+Wandsworth Foodbank - Furzedown,foodbank,Foodbank,"Mitcham Lane Baptist Church, 230 Mitcham Lane",SW16 6NT,Wandsworth,51.4275,-0.1475,wandsworth.foodbank.org.uk
+Wandsworth Foodbank - Wimbledon Park,foodbank,Foodbank,"St Michael's Church, 71 Wimbledon Park Road",SW18 5TT,Wandsworth,51.4478,-0.1916,wandsworth.foodbank.org.uk
+Wandsworth Foodbank - Roehampton,foodbank,Foodbank,"Roehampton Methodist Church, Minstead Gardens",SW15 4EP,Wandsworth,51.4465,-0.2380,wandsworth.foodbank.org.uk
+Greenwich Foodbank - Plumstead,foodbank,Foodbank,"East Plumstead Baptist Church, Griffin Road",SE18 7PZ,Greenwich,51.4857,0.0767,greenwich.foodbank.org.uk
+Greenwich Foodbank - Kidbrooke,foodbank,Foodbank,"St James Church Hall, 62 Kidbrooke Park Road",SE3 0DU,Greenwich,51.4574,0.0278,greenwich.foodbank.org.uk
+Greenwich Foodbank - Woolwich,foodbank,Foodbank,"St Peter's Catholic Church, Woolwich New Road",SE18 6EF,Greenwich,51.4890,0.0650,greenwich.foodbank.org.uk
+Greenwich Foodbank - Blackheath Charlton,foodbank,Foodbank,"Blackheath & Charlton Baptist Church, Marlborough Lane, Charlton",SE7 7DF,Greenwich,51.4810,0.0270,greenwich.foodbank.org.uk
+Greenwich Foodbank - East Greenwich,foodbank,Foodbank,"Christ Church, Forum @ Greenwich, Trafalgar Road",SE10 9EQ,Greenwich,51.4815,0.0015,greenwich.foodbank.org.uk
+Greenwich Foodbank - Eltham,foodbank,Foodbank,"57 Tudor Parade, Eltham",SE9 6SZ,Greenwich,51.4500,0.0520,greenwich.foodbank.org.uk
+Greenwich Foodbank - Blackheath Standard,foodbank,Foodbank,"St Johns Church, Stratheden Road, Blackheath",SE3 7TH,Greenwich,51.4650,0.0080,greenwich.foodbank.org.uk
+Greenwich Foodbank - Coldharbour,foodbank,Foodbank,"Coldharbour Community Hall, William Barefoot Drive",SE9 3JD,Greenwich,51.4448,0.0632,greenwich.foodbank.org.uk
+Brent Foodbank - Neasden,foodbank,Foodbank,"St Mary's Church, Church End, Neasden Lane",NW10 2TS,Brent,51.5514,-0.2476,brent.foodbank.org.uk
+Brent Foodbank - Kingsbury,foodbank,Foodbank,"Lindsay Park Baptist Church, The Mall, Kenton",HA3 9TG,Brent,51.5870,-0.3120,brent.foodbank.org.uk
+Ealing Foodbank - Greenford,foodbank,Foodbank,"Greenford Baptist Church, Beechwood Ave, Greenford",UB6 9UA,Ealing,51.5370,-0.3430,ealing.foodbank.org.uk
+Ealing Foodbank - Hanwell,foodbank,Foodbank,"St Mellitus Hall, 1 Church Road, Hanwell",W7 3BA,Ealing,51.5100,-0.3380,ealing.foodbank.org.uk
+Ealing Foodbank - Southall Thursday,foodbank,Foodbank,"St Anselm's RC Church, The Green, Southall",UB2 4BE,Ealing,51.5060,-0.3778,ealing.foodbank.org.uk
+Ealing Foodbank - Northolt,foodbank,Foodbank,"St Barnabas C of E Church, The Fairway, Northolt",UB5 4SX,Ealing,51.5483,-0.3672,ealing.foodbank.org.uk
+Ealing Foodbank - Acton,foodbank,Foodbank,"Oak Tree Anglican Fellowship, 216 High Street, Acton",W3 9NX,Ealing,51.5060,-0.2700,ealing.foodbank.org.uk
+Ealing Foodbank - Perivale,foodbank,Foodbank,"St Nicholas Church, Federal Road, Perivale",UB6 7AP,Ealing,51.5370,-0.3220,ealing.foodbank.org.uk
+Ealing Foodbank - Southall Saturday,foodbank,Foodbank,"Unit 13, Cranleigh Gardens Industrial Estate, Southall",UB1 2BZ,Ealing,51.5066,-0.3807,ealing.foodbank.org.uk
+North Enfield Foodbank,foodbank,Foodbank,"Unit 2, Lumina Way",EN1 1FS,Enfield,51.6579,-0.0651,northenfield.foodbank.org.uk
+Islington Foodbank,foodbank,Foodbank,"Highbury Roundhouse Youth and Community Centre",N5 1XB,Islington,51.5540,-0.0982,islington.foodbank.org.uk
+Camden Foodbank,foodbank,Foodbank,"RCCG City Church, Pratt Mews",NW1 0AD,Camden,51.5340,-0.1460,camden.foodbank.org.uk
+Westminster Foodbank,foodbank,Foodbank,"Westminster Chapel, Buckingham Gate",SW1E 6BS,Westminster,51.4981,-0.1368,westminsterchapel.org.uk
+Kensington and Chelsea Foodbank,foodbank,Foodbank,"Notting Hill Methodist Church, 240 Lancaster Road",W11 4AH,Kensington and Chelsea,51.5143,-0.2072,kensingtonchelsea.foodbank.org.uk
+Lambeth and Croydon Foodbank,foodbank,Foodbank,"Oasis St Martin's Village, 155 Tulse Hill",SW2 3UP,Lambeth,51.4388,-0.1103,lambethcroydon.foodbank.org.uk
+Euston Foodbank,foodbank,Foodbank,28 Phoenix Road,NW1 1TA,Camden,51.5291,-0.1337,euston.foodbank.org.uk
+Sufra NW London Foodbank,foodbank,Foodbank,"St Raphael's Estate, Brent",NW10,Brent,51.5540,-0.2600,sufra-nwlondon.org.uk
+Tower Hamlets Foodbank - Bow,foodbank,Foodbank,"Wellington Primary School, Wellington Way, Bow",E3 4NE,Tower Hamlets,51.5282,-0.0190,trussell.org.uk
+Tower Hamlets Foodbank - Bethnal Green,foodbank,Foodbank,"Globe Primary School",E2 0JH,Tower Hamlets,51.5246,-0.0607,trussell.org.uk
+Age UK London,community_support,Community Support,"Arc House, 82 Tanner Street",SE1 3GN,Southwark,51.5000,-0.0810,ageuk.org.uk/london
+Age UK East London,community_support,Community Support,655 Barking Road,E13 9EX,Newham,51.5291,0.0666,ageuk.org.uk/eastlondon
+Age UK Wandsworth,community_support,Community Support,549 Old York Road,SW18 1TQ,Wandsworth,51.4563,-0.1860,ageuk.org.uk/wandsworth
+Age UK Wandsworth Day Centre,community_support,Community Support,"Gwynneth Morgan Day Centre, 52 East Hill",SW18 2HJ,Wandsworth,51.4565,-0.1780,ageuk.org.uk/wandsworth
+Age UK Bromley and Greenwich,community_support,Community Support,"Community House, South Street, Bromley",BR1 1RH,Bromley,51.4044,0.0149,ageuk.org.uk/bromleyandgreenwich
+Age UK Lambeth,community_support,Community Support,"10 Acre Lane, Brixton",SW2 5SG,Lambeth,51.4613,-0.1130,ageuk.org.uk/lambeth
+Age UK Redbridge Barking and Havering,community_support,Community Support,"4th Floor, 103 Cranbrook Road, Ilford",IG1 4PU,Redbridge,51.5575,0.0710,ageuk.org.uk
+Age UK Camden,community_support,Community Support,"Henderson Court, 102 Fitzjohn's Avenue",NW3 6NS,Camden,51.5530,-0.1764,ageuk.org.uk/camden
+Age UK Islington,community_support,Community Support,6-9 Manor Gardens,N7 6LA,Islington,51.5590,-0.1200,ageuk.org.uk/islington
+Age UK Croydon,community_support,Community Support,"81 Brigstock Road, Thornton Heath",CR7 7JH,Croydon,51.3986,-0.1003,ageuk.org.uk/croydon
+Age UK Lewisham and Southwark,community_support,Community Support,"Stones End Day Centre, 11 Scovell Road",SE1 1QQ,Southwark,51.4987,-0.1005,ageuk.org.uk/lewishamandsouthwark
+Age UK Enfield,community_support,Community Support,"John Jackson Library, 35 Agricola Place, Bush Hill Park",EN1 1DW,Enfield,51.6470,-0.0630,ageuk.org.uk/enfield
+Age UK Hackney,community_support,Community Support,22 Dalston Lane,E8 3AZ,Hackney,51.5464,-0.0621,ageuk.org.uk/eastlondon
+Age UK Hillingdon Harrow and Brent,community_support,Community Support,"Hillingdon Office, Uxbridge",UB8,Hillingdon,51.5465,-0.4761,ageuk.org.uk/hillingdonharrowandbrent
+CMHT Walworth Southwark,nhs_mental_health,NHS Mental Health,"Chaucer Resource Centre, 13 Ann Moss Way",SE16 2TH,Southwark,51.4926,-0.0522,slam.nhs.uk
+CMHT Camberwell and Peckham Southwark,nhs_mental_health,NHS Mental Health,"St Giles House, 1 St Giles Road, Camberwell",SE5 7UD,Southwark,51.4740,-0.0858,slam.nhs.uk
+CMHT Borough Bermondsey and Rotherhithe Southwark,nhs_mental_health,NHS Mental Health,"Maudsley Hospital area, Denmark Hill",SE5 8AZ,Southwark,51.4689,-0.0893,slam.nhs.uk
+CMHT Dulwich Southwark,nhs_mental_health,NHS Mental Health,"Maudsley area, Denmark Hill",SE5 8AZ,Southwark,51.4689,-0.0893,slam.nhs.uk
+CMHT Lewisham Neighbourhood 1,nhs_mental_health,NHS Mental Health,62 Speedwell Street,SE8 4AT,Lewisham,51.4773,-0.0285,slam.nhs.uk
+Queens Resource Centre Croydon CMHT,nhs_mental_health,NHS Mental Health,66a Queens Road,CR0 2PR,Croydon,51.3740,-0.0957,slam.nhs.uk
+Croydon University Hospital Mental Health Liaison,nhs_mental_health,NHS Mental Health,"530 London Road, Thornton Heath",CR7 7YE,Croydon,51.3985,-0.1026,slam.nhs.uk
+Central Islington CMHT,nhs_mental_health,NHS Mental Health,"Islington area, North London",N7,Islington,51.5559,-0.1139,northlondonmentalhealth.nhs.uk
+Haringey IAPT,nhs_mental_health,NHS Mental Health,"Crouch End Health Centre, 45 Middle Lane",N8 8PH,Haringey,51.5791,-0.1230,lets-talk-iapt.nhs.uk
+Crisis Cafe City and Hackney,nhs_mental_health,NHS Mental Health,"The Raybould Centre, Homerton Row",E9 6SR,Hackney,51.5450,-0.0429,elft.nhs.uk
+Together Cafe Newham,nhs_mental_health,NHS Mental Health,"Stratford Advice Arcade, 107-109 The Grove",E15 1HP,Newham,51.5394,0.0009,elft.nhs.uk
+Mental Health Crisis Hub Goodmayes,nhs_mental_health,NHS Mental Health,"Block 8, Goodmayes Hospital, Barley Lane, Ilford",IG3 8XJ,Redbridge,51.5618,0.1140,nelft.nhs.uk
+Barnsley Street Neighbourhood MH Centre,nhs_mental_health,NHS Mental Health,53-55 Barnsley Street,E1 5RB,Tower Hamlets,51.5170,-0.0650,elft.nhs.uk
+Redbridge Recovery Hub,nhs_mental_health,NHS Mental Health,"Ilford Engagement Hub, Jubilee Gardens, Ilford Lane",IG1 2HX,Redbridge,51.5541,0.0733,hestia.org
+Safe Haven Crisis Hub Haringey - Finsbury Park,nhs_mental_health,NHS Mental Health,"Mind in Haringey, 73c Stapleton Hall Road",N4 3QF,Haringey,51.5690,-0.1006,mindinharingey.org.uk
+Safe Haven Crisis Hub Haringey - Mulberry Junction,nhs_mental_health,NHS Mental Health,"332 High Road, Tottenham",N15 4BN,Haringey,51.5860,-0.0730,mindinharingey.org.uk
+Bromley Mental Health Hub,nhs_mental_health,NHS Mental Health,"Beckenham Beacon Hospital, First Floor, 379 Croydon Road",BR3 3QL,Bromley,51.4060,0.0160,mentalhealthhubs.org.uk
+Bromley Health and Wellbeing Centre,council_hub,Council Wellbeing Hub,"Ravensleigh House, 22 Westmoreland Place",BR1 1DS,Bromley,51.4058,0.0165,selondonics.org
+South West London Recovery Cafe,nhs_mental_health,NHS Mental Health,966 Garratt Lane,SW17 0ND,Wandsworth,51.4340,-0.1720,hestia.org
+Tower Hamlets Together Cafe,nhs_mental_health,NHS Mental Health,86 Old Montague Street,E1 5NN,Tower Hamlets,51.5183,-0.0690,hestia.org
+Sanctuary in Barnet (Mind),crisis_cafe,Crisis Cafe,Barnet area,N,Barnet,51.6252,-0.1517,hestia.org
+Bexley Crisis Cafe (Mind),crisis_cafe,Crisis Cafe,Bexley area,DA,Bexley,51.4549,0.1505,hestia.org
+Brent Cove (Hestia),crisis_cafe,Crisis Cafe,Brent area,NW10,Brent,51.5364,-0.2575,hestia.org
+Camden Crisis Sanctuary (Hestia),crisis_cafe,Crisis Cafe,Camden area,NW1,Camden,51.5394,-0.1384,hestia.org
+Recovery Space Croydon (Mind),crisis_cafe,Crisis Cafe,Croydon area,CR0,Croydon,51.3725,-0.0993,hestia.org
+Circle Cafe Ealing (Mind),crisis_cafe,Crisis Cafe,"46 South Ealing Road",W5 4QA,Ealing,51.5049,-0.3062,hfehmind.org.uk
+Enfield Sanctuary (Mind),crisis_cafe,Crisis Cafe,Enfield area,EN,Enfield,51.6579,-0.0651,hestia.org
+The Harbour Greenwich (Certitude),crisis_cafe,Crisis Cafe,Greenwich area,SE10,Greenwich,51.4815,0.0015,hestia.org
+Safe Space Hammersmith and Fulham (Mind),crisis_cafe,Crisis Cafe,Hammersmith and Fulham area,W6,Hammersmith and Fulham,51.4927,-0.2252,hestia.org
+Crisis Cove Harrow (Hestia),crisis_cafe,Crisis Cafe,Harrow area,HA1,Harrow,51.5789,-0.3374,hestia.org
+Havering Reset Hub (Hestia),crisis_cafe,Crisis Cafe,Havering area,RM,Havering,51.5676,0.2099,hestia.org
+Crisis Cove Hillingdon (Hestia),crisis_cafe,Crisis Cafe,Hillingdon area,UB8,Hillingdon,51.5465,-0.4761,hestia.org
+Hounslow Safe Space (Mind),crisis_cafe,Crisis Cafe,Hounslow area,TW3,Hounslow,51.4685,-0.3611,hestia.org
+The Lantern Islington (Hestia),crisis_cafe,Crisis Cafe,Islington area,N1,Islington,51.5380,-0.1020,hestia.org
+Crisis Cove Kensington and Chelsea (Hestia),crisis_cafe,Crisis Cafe,Kensington and Chelsea area,SW7,Kensington and Chelsea,51.4975,-0.1745,hestia.org
+Evening Sanctuary Lambeth (Mosaic Clubhouse),crisis_cafe,Crisis Cafe,"65 Effra Road, Brixton",SW2 1BZ,Lambeth,51.4600,-0.1140,mosaic-clubhouse.org
+Bridge Cafe Lewisham (999 Club/SLaM),crisis_cafe,Crisis Cafe,"21 Deptford Broadway",SE8 4PA,Lewisham,51.4748,-0.0261,999club.org
+The Harbour Lewisham (Certitude),crisis_cafe,Crisis Cafe,Lewisham area,SE13,Lewisham,51.4574,-0.0120,hestia.org
+Together Cafe Newham (Mind),crisis_cafe,Crisis Cafe,"Stratford Advice Arcade, 107-109 The Grove",E15 1HP,Newham,51.5394,0.0009,hestia.org
+Waltham Forest MH Drop-in (Hestia),crisis_cafe,Crisis Cafe,Waltham Forest area,E17,Waltham Forest,51.5886,-0.0200,hestia.org
+Southwark Community Sanctuary,crisis_cafe,Crisis Cafe,Southwark area,SE1,Southwark,51.5000,-0.0880,hestia.org
+Crisis Cove Westminster (Hestia),crisis_cafe,Crisis Cafe,Westminster area,W1,Westminster,51.5188,-0.1653,hestia.org
+Richmond Wellbeing Centre (Mind),crisis_cafe,Crisis Cafe,Richmond area,TW1,Richmond upon Thames,51.4490,-0.3289,hestia.org
+Sunshine Recovery Cafe Kingston (NHS),crisis_cafe,Crisis Cafe,Kingston area,KT1,Kingston upon Thames,51.4118,-0.2996,hestia.org
+Sunshine Recovery Cafe Merton (NHS),crisis_cafe,Crisis Cafe,Merton area,SW19,Merton,51.4175,-0.1868,hestia.org
+SWL Recovery Cafe Sutton (Hestia),crisis_cafe,Crisis Cafe,Sutton area,SM1,Sutton,51.3614,-0.1955,hestia.org
+Bromley Haven Cafe,crisis_cafe,Crisis Cafe,Bromley area,BR1,Bromley,51.4044,0.0149,hestia.org
+Barnes Children's Centre,council_hub,Council Family Hub,"67b Lower Richmond Road, Mortlake",SW14 7HJ,Richmond upon Thames,51.4686,-0.2526,richmond.gov.uk
+Heathfield Children's Centre,council_hub,Council Family Hub,"Powder Mill Lane, Whitton",TW2 6EX,Richmond upon Thames,51.4395,-0.3552,richmond.gov.uk
+Ham Children's Centre,council_hub,Council Family Hub,"Ashburnham Road, Ham",TW10 7BG,Richmond upon Thames,51.4323,-0.3098,richmond.gov.uk
+White House Family Hub Hampton,council_hub,Council Family Hub,"45 The Avenue, Hampton",TW12 3RN,Richmond upon Thames,51.4160,-0.3614,richmond.gov.uk
+Fulham Family Hub Stephen Wiltshire Centre,council_hub,Council Family Hub,"Queensmill Road, Fulham",SW6,Hammersmith and Fulham,51.4806,-0.1990,lbhf.gov.uk
+Old Oak Community Centre Family Hub,council_hub,Council Family Hub,"76 Braybrook Street",W12 0AP,Hammersmith and Fulham,51.5160,-0.2340,lbhf.gov.uk
+Seddon Centre Waltham Forest,council_hub,Council Family Hub,"Seddon Centre, Waltham Forest",E17,Waltham Forest,51.5886,-0.0200,walthamforest.gov.uk
+Higham Hill Centre,council_hub,Council Wellbeing Hub,"Higham Hill, Waltham Forest",E17,Waltham Forest,51.5886,-0.0200,walthamforest.gov.uk
+Bromley by Bow Centre,community_support,Community Support,"St Leonard's Street, Bromley-by-Bow",E3 3BT,Tower Hamlets,51.5242,-0.0126,bbbc.org.uk
+Brandon Centre Camden,community_support,Community Support,"26 Prince of Wales Road, Kentish Town",NW5 3LG,Camden,51.5487,-0.1434,brandon-centre.org.uk
+Sufra Community Kitchen Brent,community_support,Community Support,"St Raphael's Estate, Brent",NW10,Brent,51.5540,-0.2600,sufra-nwlondon.org.uk
+Holy Trinity Foodbank Stroud Green,foodbank,Foodbank,"Holy Trinity Church Hall, Stapleton Hall Road",N4 4RR,Haringey,51.5680,-0.1050,holytrinityfoodbank.org.uk
+St Matthew's Food Bank Bayswater,foodbank,Foodbank,"29 St Petersburgh Place",W2 4LA,Westminster,51.5133,-0.1875,trussell.org.uk
+Hounslow Foodbank,foodbank,Foodbank,"High Street, Hounslow",TW3 1HG,Hounslow,51.4685,-0.3611,trussell.org.uk
+Crisis Charity Shop Archway,community_support,Community Support,Archway,N19 5RE,Islington,51.5655,-0.1353,crisis.org.uk
+Crisis Charity Shop Brick Lane,community_support,Community Support,Brick Lane,E1 6SW,Tower Hamlets,51.5197,-0.0714,crisis.org.uk
+Crisis Charity Shop Camberwell Green,community_support,Community Support,Camberwell Green,SE5 8FF,Southwark,51.4740,-0.0922,crisis.org.uk
+Crisis Charity Shop Camden,community_support,Community Support,Camden,NW1 7HL,Camden,51.5394,-0.1418,crisis.org.uk
+Crisis Charity Shop Dalston,community_support,Community Support,Dalston,E8 2NS,Hackney,51.5489,-0.0746,crisis.org.uk
+Crisis Charity Shop Elephant and Castle,community_support,Community Support,Elephant and Castle,SE17 1RL,Southwark,51.4933,-0.1014,crisis.org.uk
+Crisis Charity Shop Finsbury Park,community_support,Community Support,Finsbury Park,N4 3FB,Haringey,51.5647,-0.1068,crisis.org.uk
+Crisis Charity Shop Hackney,community_support,Community Support,Hackney,E8 1HA,Hackney,51.5462,-0.0566,crisis.org.uk
+Crisis Charity Shop Hammersmith,community_support,Community Support,Hammersmith,W6 0QP,Hammersmith and Fulham,51.4927,-0.2252,crisis.org.uk
+Crisis Charity Shop Islington,community_support,Community Support,Islington,N1 1RL,Islington,51.5340,-0.1060,crisis.org.uk
+Crisis Charity Shop Kilburn,community_support,Community Support,Kilburn,NW6 4JD,Camden,51.5418,-0.1990,crisis.org.uk
+Crisis Charity Shop Muswell Hill,community_support,Community Support,Muswell Hill,N10 3RS,Haringey,51.5914,-0.1449,crisis.org.uk
+Crisis Charity Shop Peckham,community_support,Community Support,Peckham,SE15 4NB,Southwark,51.4710,-0.0706,crisis.org.uk
+Crisis Charity Shop Putney,community_support,Community Support,Putney,SW15 1SS,Wandsworth,51.4612,-0.2161,crisis.org.uk
+Crisis Charity Shop Streatham,community_support,Community Support,Streatham,SW16 1BJ,Lambeth,51.4283,-0.1280,crisis.org.uk
+Crisis Charity Shop Walthamstow,community_support,Community Support,Walthamstow,E17 7BH,Waltham Forest,51.5886,-0.0200,crisis.org.uk

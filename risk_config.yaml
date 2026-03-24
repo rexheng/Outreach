@@ -1,0 +1,40 @@
+pillars:
+  socioeconomic:
+    weight: 0.5
+    indicators:
+      - column: "Health Deprivation and Disability Score"
+        label: "Health Deprivation & Disability"
+        weight: 0.30
+      - column: "Income Score (rate)"
+        label: "Income Deprivation"
+        weight: 0.25
+      - column: "Employment Score (rate)"
+        label: "Employment Deprivation"
+        weight: 0.20
+      - column: "Barriers to Housing and Services Score"
+        label: "Barriers to Housing & Services"
+        weight: 0.15
+      - column: "Crime Score"
+        label: "Crime"
+        weight: 0.10
+  demographic:
+    weight: 0.5
+    indicators:
+      - column: "long_term_sick"
+        denominator: "total_16plus"
+        label: "Long-term Sick Rate"
+        weight: 0.45
+      - column: "econ_inactive"
+        denominator: "total_16plus"
+        label: "Economic Inactivity Rate"
+        weight: 0.30
+      - column: "unemployed"
+        denominator: "total_16plus"
+        label: "Unemployment Rate"
+        weight: 0.25
+
+risk_tiers:
+  critical: { min: 8, max: 10, color: "#d32f2f", label: "Critical" }
+  high: { min: 6, max: 8, color: "#f57c00", label: "High" }
+  moderate: { min: 3, max: 6, color: "#fdd835", label: "Moderate" }
+  low: { min: 0, max: 3, color: "#388e3c", label: "Low" }

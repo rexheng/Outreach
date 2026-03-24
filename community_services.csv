@@ -1,0 +1,176 @@
+name,type,subtype,address,postcode,borough,lat,lon,easting,northing,assigned_lsoa
+Mind in Camden,mental_health_charity,Mind,"Barnes House, 9-15 Camden Road",NW1 0JH,Camden,51.535403,-0.138994,529171.0,183474.0,E01000947
+South East London Mind - Orpington (Head Office),mental_health_charity,Mind,"Anchor House, 5 Station Road, Orpington",BR6 0RZ,Bromley,51.37248,0.094482,545881.0,165795.0,E01000790
+South East London Mind - Bromley Recovery Works,mental_health_charity,Mind,"Stepping Stones, 38 Masons Hill, Bromley",BR2 9JG,Bromley,51.395313,0.025373,541001.0,168199.0,E01000671
+South East London Mind - Beckenham Centre,mental_health_charity,Mind,"20b Hayne Road, Beckenham",BR3 4HY,Bromley,51.409447,-0.034698,536780.0,169657.0,E01000709
+South East London Mind - Greenwich,mental_health_charity,Mind,"Forum at Greenwich, Trafalgar Rd",SE10 9EQ,Greenwich,51.485714,0.006244,539395.0,178215.0,E01034185
+South East London Mind - Lewisham,mental_health_charity,Mind,"91 Granville Park, Lewisham",SE13 7DW,Lewisham,51.46526,-0.007179,538525.0,175915.0,E01003201
+South East London Mind - Lambeth & Southwark,mental_health_charity,Mind,International House,SW9 7QE,Lambeth,,,,,
+West Central London Mind,mental_health_charity,Mind,23 Monck Street,SW1P 2AE,Westminster,51.495368,-0.130584,529868.0,179037.0,E01004733
+Mind in Brent Wandsworth Westminster - Kensington Hub,mental_health_charity,Mind,7 Thorpe Close,W10 5XL,Kensington and Chelsea,51.518173,-0.208911,524369.0,181437.0,E01002856
+Mind in Brent Wandsworth Westminster - Wandsworth,mental_health_charity,Mind,201-203 Tooting High Street,SW17 0SZ,Wandsworth,51.424426,-0.171152,527249.0,171077.0,E01004526
+Mind in Haringey - Finsbury Park,mental_health_charity,Mind,"73c Stapleton Hall Road, Finsbury Park",N4 3QF,Haringey,51.572542,-0.113074,530862.0,187650.0,E01002062
+Mind in Haringey - Tottenham,mental_health_charity,Mind,332 High Road,N15 4BN,Haringey,51.588544,-0.070274,533781.0,189507.0,E01002066
+Islington Mind,mental_health_charity,Mind,"Mental Health Resource Centre, Elthorne Road",N7 9DP,Islington,51.549411,-0.119685,530470.0,185066.0,E01002765
+Hammersmith Fulham & Ealing Mind,mental_health_charity,Mind,"Palingswick House, 241 King Street",W6 9LP,Hammersmith and Fulham,51.492875,-0.236712,522508.0,178577.0,E01001932
+Barnet Enfield Haringey Mind,mental_health_charity,Mind,"818 High Road, North Finchley",N12 0QE,Barnet,51.609143,-0.164821,527174.0,191629.0,E01000315
+Central London Samaritans,mental_health_charity,Samaritans,13 Salisbury Place,W1H 1FJ,Westminster,51.520918,-0.160269,527736.0,181826.0,E01004662
+North London Samaritans,mental_health_charity,Samaritans,"Shaftesbury Hall, Herbert Road",N11 2QN,Barnet,51.607206,-0.121358,530189.0,191490.0,E01001974
+Inner South West London Samaritans,mental_health_charity,Samaritans,"Princeton Court, 53-55 Felsham Road",SW15 1AZ,Wandsworth,51.465371,-0.218538,523844.0,175549.0,E01004608
+Lewisham Greenwich Southwark Samaritans,mental_health_charity,Samaritans,"1-5 Angus Street, New Cross",SE14 6LU,Lewisham,51.478106,-0.036775,536431.0,177288.0,E01003300
+Ealing Hammersmith Hounslow Samaritans,mental_health_charity,Samaritans,"26 Junction Road, Ealing",W5 4XL,Ealing,51.495769,-0.30931,517461.0,178780.0,E01001304
+Brent Samaritans,mental_health_charity,Samaritans,"Samaritans Centre, Brent",NW10 3QE,Brent,51.53596,-0.224881,523213.0,183388.0,E01000584
+Croydon & Sutton Samaritans,mental_health_charity,Samaritans,"Samaritans Centre, Croydon",CR0 1NR,Croydon,51.373793,-0.093628,532785.0,165584.0,E01034149
+Kingston Samaritans,mental_health_charity,Samaritans,"Samaritans Centre, Kingston",KT1 1HT,Kingston upon Thames,51.40925,-0.307888,517782.0,169161.0,E01002968
+Bromley & Orpington Samaritans,mental_health_charity,Samaritans,"Samaritans Centre, Bromley",BR1 1PX,Bromley,,,,,
+Harrow Samaritans,mental_health_charity,Samaritans,"Samaritans Centre, Harrow",HA1 1BA,Harrow,51.579837,-0.334942,515469.0,188088.0,E01034598
+Redbridge Samaritans,mental_health_charity,Samaritans,"Samaritans Centre, Ilford",IG1 1BY,Redbridge,51.558817,0.073429,543829.0,186474.0,E01003689
+Romford Samaritans,mental_health_charity,Samaritans,"Samaritans Centre, Romford",RM1 3ER,Havering,51.579412,0.182979,551354.0,188985.0,E01032741
+Leyton Samaritans,mental_health_charity,Samaritans,"Samaritans Centre, Leyton",E10 7AA,Waltham Forest,51.574423,-0.011368,537904.0,188046.0,E01004420
+Hillingdon (Uxbridge) Samaritans,mental_health_charity,Samaritans,"Samaritans Centre, Uxbridge",UB8 1JN,Hillingdon,51.545402,-0.478342,505613.0,184042.0,E01002521
+Bexley & Dartford Samaritans,mental_health_charity,Samaritans,"Samaritans Centre, Bexleyheath",DA6 7HJ,Bexley,51.455996,0.143776,549040.0,175181.0,E01000362
+Rethink Mental Illness - London HQ,mental_health_charity,Rethink,"The Dumont, 28 Albert Embankment",SE1 7GR,Lambeth,51.490753,-0.122,530477.0,178539.0,E01033862
+St Mungo's Head Office,homelessness_service,St Mungos,"3 Thomas More Square, Tower Hill",E1W 1YW,Tower Hamlets,51.507488,-0.0672,534232.0,180499.0,E01004293
+Crisis Head Office,homelessness_service,Crisis,50-52 Commercial Street,E1 6LT,Tower Hamlets,51.517445,-0.073337,533777.0,181595.0,E01004307
+Centrepoint,homelessness_service,Centrepoint,"Central House, 25 Camperdown Street",E1 8DZ,Tower Hamlets,51.513918,-0.071612,533907.0,181206.0,E01032767
+Shelter London,homelessness_service,Shelter,88 Old Street,EC1V 9HU,Islington,51.524434,-0.094334,532300.0,182334.0,E01002706
+Thames Reach - Lambeth,homelessness_service,Thames Reach,29 Peckham Road,SE11 5RD,Lambeth,51.487199,-0.115751,530921.0,178155.0,E01033863
+The Passage - Westminster,homelessness_service,Day Centre,"St Vincent's Centre, Carlisle Place",SW1P 3BT,Westminster,51.49803,-0.130014,529900.0,179334.0,E01004732
+St Mungo's - Broadway House,homelessness_service,St Mungos,"Broadway House, Wandsworth Road",SW8 2JB,Lambeth,51.485175,-0.126377,530189.0,177911.0,E01033208
+St Mungo's - Islington Mental Health,homelessness_service,St Mungos,Islington Mental Health Service,N7 6PA,Islington,51.555808,-0.115959,530710.0,185784.0,E01033491
+St Mungo's - North London Women's Hostel,homelessness_service,St Mungos,Church Walk,N16 5QP,Hackney,51.568882,-0.077137,533363.0,187308.0,E01001799
+Whitechapel Mission,homelessness_service,Day Centre,212 Whitechapel Road,E1 1BJ,Tower Hamlets,51.51932,-0.057301,534884.0,181833.0,E01004322
+The Connection at St Martin's,homelessness_service,Day Centre,12 Adelaide Street,WC2N 4JJ,Westminster,,,,,
+Glass Door Homeless Charity,homelessness_service,Night Shelter,"St Paul's Church, Battersea",SW11 3AD,Wandsworth,51.474142,-0.167394,527372.0,176612.0,E01004577
+Providence Row,homelessness_service,Day Centre,"The Dellow Centre, 82 Wentworth Street",E1 6QR,Tower Hamlets,51.520229,-0.073104,533785.0,181905.0,E01004307
+New Horizon Youth Centre,homelessness_service,Youth,68 Chalton Street,NW1 2HD,Camden,51.526403,-0.135742,529422.0,182479.0,E01035710
+Depaul UK - Nightstop London,homelessness_service,Youth,"Depaul House, Bermondsey",SE1 0NR,Southwark,51.504693,-0.098688,532055.0,180131.0,E01033867
+Euston Foodbank,foodbank,Trussell Trust,28 Phoenix Road,NW1 1TA,Camden,51.530504,-0.132388,529643.0,182941.0,E01000955
+Hackney Foodbank,foodbank,Trussell Trust,"Gilpin Road, Homerton",E5 0LH,Hackney,51.553287,-0.044963,535639.0,185633.0,E01001796
+North Enfield Foodbank,foodbank,Trussell Trust,Unit 2 Lumina Way,EN1 1FS,Enfield,51.644048,-0.058955,534401.0,195700.0,E01001484
+Brent Foodbank,foodbank,Trussell Trust,"Vestry Hall, Neasden Lane",NW10 2TS,Brent,51.549421,-0.248762,521521.0,184845.0,E01000508
+Wandsworth Foodbank,foodbank,Trussell Trust,"St Michael's Church, Wimbledon Park Road",SW18 4DJ,Wandsworth,51.451356,-0.191234,525779.0,174037.0,E01004494
+Lewisham Foodbank - Deptford,foodbank,Trussell Trust,"Deptford Methodist Mission, Creek Road",SE8 4NS,Lewisham,51.478244,-0.026241,537162.0,177323.0,E01003304
+Lewisham Foodbank - Catford,foodbank,Trussell Trust,"Catford and Bromley Synagogue, Cranfield Close",SE6 2RP,Lewisham,51.42909,-0.012996,538230.0,171882.0,E01003348
+Lewisham Foodbank - Forest Hill,foodbank,Trussell Trust,"All Saints Church, Sydenham Road",SE23 3HZ,Lewisham,51.435309,-0.05671,535173.0,172492.0,E01003256
+Southwark Foodbank,foodbank,Trussell Trust,"96 Clive Road, Norwood",SE21 8BU,Southwark,51.431549,-0.090548,532832.0,172012.0,E01003067
+Lambeth Foodbank,foodbank,Trussell Trust,"Oasis St Martin's Village, 155 Tulse Hill",SW2 3UP,Lambeth,51.444152,-0.10968,531466.0,173379.0,E01003169
+Croydon Foodbank,foodbank,Trussell Trust,"Croydon Minster, Church Street",CR0 2AJ,Croydon,51.381113,-0.099661,532344.0,166387.0,E01034143
+Barnet Foodbank - Chipping Barnet,foodbank,Trussell Trust,"Christ Church, St Albans Road",EN5 5SJ,Barnet,51.653029,-0.19932,524665.0,196450.0,E01000250
+Barnet Foodbank - Colindale,foodbank,Trussell Trust,"St Matthias Church, Rushgrove Avenue",NW9 5HR,Barnet,51.595348,-0.250114,521305.0,189950.0,E01033922
+Ealing Foodbank,foodbank,Trussell Trust,"St John's Church, Mattock Lane",W5 2BP,Ealing,,,,,
+Greenwich Foodbank,foodbank,Trussell Trust,Woolwich Common Baptist Church,SE18 6ST,Greenwich,51.495023,0.070331,543815.0,179374.0,E01033736
+Hammersmith & Fulham Foodbank,foodbank,Trussell Trust,Hammersmith Community Centre,W14 0HD,Hammersmith and Fulham,51.498133,-0.218111,523785.0,179193.0,E01001851
+Haringey Foodbank,foodbank,Trussell Trust,"Selby Centre, Selby Road",N15 4RX,Haringey,51.587191,-0.072222,533650.0,189353.0,E01002066
+Hillingdon Foodbank,foodbank,Trussell Trust,"Christ Church, Redfield Road, Uxbridge",UB8 1QS,Hillingdon,51.547539,-0.479525,505526.0,184278.0,E01002514
+Hounslow Foodbank,foodbank,Trussell Trust,"Holy Trinity Church, Hounslow High Street",TW3 1RH,Hounslow,51.470467,-0.35442,514393.0,175895.0,E01034036
+Islington Foodbank,foodbank,Independent,"Islington Baptist Church, Salters Hall Court",N1 7RE,Islington,51.529002,-0.087684,532748.0,182854.0,E01033711
+Kensington & Chelsea Foodbank,foodbank,Independent,"Dalgarno Community Centre, 1 Webb Close",W10 5AA,Kensington and Chelsea,51.524208,-0.214282,523980.0,182099.0,E01002905
+Kingston Foodbank,foodbank,Trussell Trust,"Kingston Baptist Church, Union Street",KT1 1HT,Kingston upon Thames,51.40925,-0.307888,517782.0,169161.0,E01002968
+Merton Foodbank - Wimbledon,foodbank,Trussell Trust,"Elim Church, Worple Road, Wimbledon",SW19 7PA,Merton,51.422331,-0.20905,524620.0,170779.0,E01003401
+Newham Foodbank,foodbank,Trussell Trust,"Newham Community Project, Barking Road",E13 8QE,Newham,51.52532,0.028673,540830.0,182662.0,E01003602
+Redbridge Foodbank,foodbank,Trussell Trust,"Ilford Baptist Church, Ilford",IG1 4NH,Redbridge,51.561213,0.069642,543559.0,186733.0,E01003783
+Richmond Foodbank,foodbank,Trussell Trust,"The Vineyard Church, Richmond",TW9 2NQ,Richmond upon Thames,51.464131,-0.301698,518071.0,175274.0,E01003860
+Sutton Foodbank,foodbank,Trussell Trust,"Trinity Church, Sutton High Street",SM1 1NR,Sutton,51.365887,-0.194028,525819.0,164528.0,E01034155
+Tower Hamlets Foodbank,foodbank,Trussell Trust,Tower Hamlets Community Hub,E1 4AA,Tower Hamlets,51.522215,-0.045299,535708.0,182177.0,E01035670
+Waltham Forest Foodbank,foodbank,Trussell Trust,Walthamstow Assembly Hall area,E17 5QP,Waltham Forest,,,,,
+Citizens Advice Tower Hamlets,citizens_advice,Citizens Advice,32 Greatorex Street,E1 5NP,Tower Hamlets,51.518661,-0.067476,534180.0,181741.0,E01004309
+Citizens Advice Hackney,citizens_advice,Citizens Advice,300 Mare Street,E8 1HE,Hackney,51.545306,-0.054939,534971.0,184727.0,E01001731
+Citizens Advice Newham,citizens_advice,Citizens Advice,"2nd Floor, The Hub, 123 Star Lane",E16 4PZ,Newham,51.519761,0.011518,539657.0,182011.0,E01003503
+Citizens Advice Westminster,citizens_advice,Citizens Advice,270-272 High Road,NW10 3QE,Westminster,51.53596,-0.224881,523213.0,183388.0,E01000584
+Citizens Advice Islington,citizens_advice,Citizens Advice,222 Upper Street,N7 8JG,Islington,51.549665,-0.108049,531276.0,185115.0,E01002739
+Citizens Advice Camden,citizens_advice,Citizens Advice,Tavistock Place,WC1H 9JR,Camden,51.526189,-0.129076,529885.0,182467.0,E01000943
+Citizens Advice Lambeth,citizens_advice,Citizens Advice,336-338 Brixton Road,SW9 8PS,Lambeth,51.462621,-0.111782,531267.0,175429.0,E01003047
+Citizens Advice Southwark,citizens_advice,Citizens Advice,97 Peckham High Street,SE5 0HF,Southwark,,,,,
+Citizens Advice Barnet,citizens_advice,Citizens Advice,"40 Church Hill Road, East Barnet",EN5 5TH,Barnet,51.654523,-0.200562,524575.0,196614.0,E01000250
+Citizens Advice Brent,citizens_advice,Citizens Advice,"270 High Road, Wembley",HA9 6AG,Brent,51.552978,-0.286923,518866.0,185178.0,E01000636
+Citizens Advice Bromley,citizens_advice,Citizens Advice,"Community House, South Street",BR1 1PX,Bromley,,,,,
+Citizens Advice Croydon,citizens_advice,Citizens Advice,"Croydon Clocktower, Katharine Street",CR0 1RX,Croydon,51.372481,-0.107533,531821.0,165413.0,E01001166
+Citizens Advice Ealing,citizens_advice,Citizens Advice,"Perceval House, 14-16 Uxbridge Road",W5 5JY,Ealing,51.512523,-0.303141,517846.0,180653.0,E01034030
+Citizens Advice Enfield,citizens_advice,Citizens Advice,"Chase Side, Enfield",EN2 6LU,Enfield,51.65241,-0.081323,532829.0,196589.0,E01001536
+Citizens Advice Greenwich,citizens_advice,Citizens Advice,"12 Wellington Street, Woolwich",SE18 6QX,Greenwich,51.49026,0.064512,543426.0,178833.0,E01033735
+Citizens Advice Haringey,citizens_advice,Citizens Advice,"595a High Road, Tottenham",N15 4RX,Haringey,51.587191,-0.072222,533650.0,189353.0,E01002066
+Citizens Advice Harrow,citizens_advice,Citizens Advice,"PO Box 383, Harrow",HA1 2AE,Harrow,51.583898,-0.331532,515695.0,188545.0,E01002130
+Citizens Advice Havering,citizens_advice,Citizens Advice,"5 Paines Brook Way, Romford",RM1 3ER,Havering,51.579412,0.182979,551354.0,188985.0,E01032741
+Citizens Advice Hillingdon,citizens_advice,Citizens Advice,"4 Civic Centre, High Street, Uxbridge",UB8 1HD,Hillingdon,51.545185,-0.478277,505618.0,184018.0,E01002521
+Citizens Advice Hounslow,citizens_advice,Citizens Advice,"45 Treaty Centre, High Street, Hounslow",TW3 1ES,Hounslow,51.468133,-0.363028,513801.0,175622.0,E01033083
+Citizens Advice Kensington & Chelsea,citizens_advice,Citizens Advice,"Chelsea Old Town Hall, King's Road",SW3 4LX,Kensington and Chelsea,51.490496,-0.161394,527743.0,178441.0,E01002902
+Citizens Advice Kingston,citizens_advice,Citizens Advice,"Siddeley House, 50 Canbury Park Road",KT1 1EU,Kingston upon Thames,51.40772,-0.305917,517923.0,168994.0,E01002968
+Citizens Advice Lewisham,citizens_advice,Citizens Advice,Catford Broadway,SE6 4RU,Lewisham,51.445254,-0.020153,537684.0,173666.0,E01003318
+Citizens Advice Merton,citizens_advice,Citizens Advice,"326 London Road, Mitcham",CR4 3EB,Merton,51.408681,-0.170112,527365.0,169328.0,E01003405
+Citizens Advice Redbridge,citizens_advice,Citizens Advice,"2nd Floor, 103 Cranbrook Road, Ilford",IG1 1BY,Redbridge,51.558817,0.073429,543829.0,186474.0,E01003689
+Citizens Advice Richmond,citizens_advice,Citizens Advice,"Sheen Lane Centre, Sheen Lane",TW1 3DY,Richmond upon Thames,51.445338,-0.325506,516465.0,173146.0,E01003896
+Citizens Advice Sutton,citizens_advice,Citizens Advice,"Sutton Gate, Carshalton Road",SM1 4LE,Sutton,51.361427,-0.191718,525992.0,164036.0,E01034156
+Citizens Advice Wandsworth,citizens_advice,Citizens Advice,Wandsworth High Street,SW18 4DJ,Wandsworth,51.451356,-0.191234,525779.0,174037.0,E01004494
+Citizens Advice Waltham Forest,citizens_advice,Citizens Advice,"Vestry House, Vestry Road, Walthamstow",E17 7JN,Waltham Forest,51.584478,-0.021034,537204.0,189146.0,E01004397
+Age UK Barnet,older_people_charity,Age UK,"Meritage Centre, Church End",NW4 4JT,Barnet,51.591208,-0.227073,522912.0,189528.0,E01000244
+Age UK Bexley,older_people_charity,Age UK,"Belvedere Community Centre, Mitchell Close",DA17 6AA,Bexley,51.491001,0.159695,550031.0,179106.0,E01000408
+Age UK Hillingdon Harrow Brent,older_people_charity,Age UK,"2 Chapel Court, 126 Church Road, Hayes",UB3 2LW,Hillingdon,51.516783,-0.418792,509811.0,180947.0,E01034610
+Age UK Bromley & Greenwich,older_people_charity,Age UK,"Community House, South Street",BR1 1RH,Bromley,51.406732,0.016589,540355.0,169452.0,E01034385
+Age UK Camden,older_people_charity,Age UK,"Henderson Court, 102 Fitzjohn's Avenue",NW3 6NS,Camden,51.554198,-0.176857,526493.0,185498.0,E01000895
+Age UK Croydon,older_people_charity,Age UK,"81 Brigstock Road, Thornton Heath",CR7 7JH,Croydon,51.39729,-0.103533,532028.0,168179.0,E01001000
+Age UK Ealing,older_people_charity,Age UK,"Greenford Community Centre, 170 Oldfield Lane South",UB6 9JS,Ealing,51.535871,-0.348774,514621.0,183177.0,E01001267
+Age UK Enfield,older_people_charity,Age UK,"John Jackson Library, 35 Agricola Place, Bush Hill Park",EN1 1DW,Enfield,51.645815,-0.066858,533849.0,195882.0,E01001514
+Age UK Hackney (East London),older_people_charity,Age UK,22 Dalston Lane,E8 3AZ,Hackney,51.546096,-0.072804,533730.0,184782.0,E01033700
+Age UK Hammersmith & Fulham,older_people_charity,Age UK,105 Greyhound Road,W6 8NJ,Hammersmith and Fulham,51.485845,-0.216012,523964.0,177830.0,E01001890
+Age UK Hounslow,older_people_charity,Age UK,"Southville Community Centre, Southville Road, Feltham",TW14 8AP,Hounslow,51.448714,-0.427116,509396.0,173365.0,E01002560
+Age UK Islington,older_people_charity,Age UK,6/9 Manor Gardens,N7 6LA,Islington,51.561109,-0.120718,530365.0,186365.0,E01002733
+Age UK Kensington & Chelsea,older_people_charity,Age UK,"1 Thorpe Close, North Kensington",W10 5XL,Kensington and Chelsea,51.518173,-0.208911,524369.0,181437.0,E01002856
+Age UK Lambeth,older_people_charity,Age UK,"10 Acre Lane, Brixton",SW2 5SG,Lambeth,51.461103,-0.117473,530876.0,175250.0,E01003055
+Age UK Lewisham & Southwark,older_people_charity,Age UK,"Stones End Day Centre, 11 Scovell Road",SE1 1QQ,Southwark,51.499562,-0.098916,532054.0,179560.0,E01033868
+Age UK Merton,older_people_charity,Age UK,"Elmwood Centre, 277 London Road, Mitcham",CR4 3NT,Merton,51.403737,-0.165105,527727.0,168787.0,E01003374
+Age UK Newham (East London),older_people_charity,Age UK,655 Barking Road,E13 9EX,Newham,51.529069,0.033929,541183.0,183089.0,E01003605
+Age UK Redbridge Barking Havering,older_people_charity,Age UK,"4th Floor, 103 Cranbrook Road, Ilford",IG1 4PU,Redbridge,51.561592,0.068592,543485.0,186773.0,E01003783
+Age UK Richmond upon Thames,older_people_charity,Age UK,"Parkway House, Sheen Lane, East Sheen",SW14 8LS,Richmond upon Thames,51.464469,-0.266399,520522.0,175369.0,E01003807
+Age UK Sutton,older_people_charity,Age UK,"Sutton Gate, 1 Carshalton Road",SM1 4LE,Sutton,51.361427,-0.191718,525992.0,164036.0,E01034156
+Age UK Tower Hamlets (East London),older_people_charity,Age UK,82 Russia Lane,E2 9LU,Tower Hamlets,51.531415,-0.052965,535149.0,183186.0,E01035661
+Age UK Waltham Forest,older_people_charity,Age UK,"Waltham Forest Resource Hub, 58 Hall Lane, Chingford",E4 8EU,Waltham Forest,51.617066,-0.021033,537106.0,192770.0,E01004452
+Age UK Wandsworth,older_people_charity,Age UK,549 Old York Road,SW18 1TQ,Wandsworth,51.459565,-0.189441,525881.0,174953.0,E01004514
+Age UK Westminster,older_people_charity,Age UK,"Beethoven Centre, Third Avenue",W10 4JL,Westminster,51.530703,-0.208549,524360.0,182831.0,E01004719
+Staywell (Kingston),older_people_charity,Age UK,"Raleigh House, 14 Nelson Road, New Malden",KT3 5EA,Kingston upon Thames,51.395693,-0.262704,520960.0,167727.0,E01002986
+Ealing Talking Therapies,nhs_talking_therapy,IAPT,"Ealing Hospital, Uxbridge Road",W5 5JY,Ealing,51.512523,-0.303141,517846.0,180653.0,E01034030
+Hounslow Talking Therapies,nhs_talking_therapy,IAPT,Hounslow Civic Centre,TW3 3EB,Hounslow,51.468168,-0.367475,513492.0,175619.0,E01002662
+Hammersmith & Fulham Talking Therapies,nhs_talking_therapy,IAPT,Hammersmith Hospital,W6 8LH,Hammersmith and Fulham,51.48589,-0.21784,523837.0,177832.0,E01001890
+Westminster Talking Therapies,nhs_talking_therapy,IAPT,"St Mary's Hospital, Praed Street",W2 1NY,Westminster,51.516971,-0.173545,526826.0,181364.0,E01033594
+Lambeth Talking Therapies (SLaM),nhs_talking_therapy,IAPT,"Maudsley Hospital, Denmark Hill",SE5 8AZ,Lambeth,51.468767,-0.091443,532662.0,176149.0,E01003913
+Southwark Talking Therapies,nhs_talking_therapy,IAPT,"Maudsley Hospital, Denmark Hill",SE5 8AZ,Southwark,51.468767,-0.091443,532662.0,176149.0,E01003913
+Lewisham Talking Therapies,nhs_talking_therapy,IAPT,University Hospital Lewisham,SE13 6LH,Lewisham,51.453022,-0.017917,537816.0,174534.0,E01003291
+Croydon Talking Therapies,nhs_talking_therapy,IAPT,"Bethlem Royal Hospital, Monks Orchard Road",CR7 7YE,Croydon,51.389128,-0.108758,531688.0,167262.0,E01001178
+Harrow Talking Therapies,nhs_talking_therapy,IAPT,"12-14 Station Road, Harrow",HA1 2SL,Harrow,51.589712,-0.332473,515615.0,189190.0,E01034592
+Barking & Dagenham Talking Therapies (NELFT),nhs_talking_therapy,IAPT,"Barking Community Hospital, Upney Lane",IG11 7LZ,Barking and Dagenham,51.535422,0.079302,544310.0,183884.0,E01034474
+Havering Talking Therapies (NELFT),nhs_talking_therapy,IAPT,"Queen's Hospital, Rom Valley Way",RM7 0AG,Havering,51.568649,0.179058,551118.0,187780.0,E01002248
+Redbridge Talking Therapies (NELFT),nhs_talking_therapy,IAPT,"King George Hospital, Barley Lane",IG3 8XJ,Redbridge,51.577994,0.110514,546338.0,188680.0,E01003770
+Waltham Forest Talking Therapies (NELFT),nhs_talking_therapy,IAPT,"Thorpe Coombe Hospital, 714 Forest Road",E17 3EA,Waltham Forest,51.589132,-0.007536,538125.0,189689.0,E01004470
+Camden & Islington Talking Therapies,nhs_talking_therapy,IAPT,"St Pancras Hospital, St Pancras Way",N19 5NF,Camden,51.566482,-0.139066,529078.0,186930.0,E01002770
+Barnet Talking Therapies,nhs_talking_therapy,IAPT,"Barnet Hospital, Wellhouse Lane",EN5 3DJ,Barnet,51.650646,-0.214622,523613.0,196159.0,E01000294
+Enfield Talking Therapies,nhs_talking_therapy,IAPT,"St Ann's Hospital, St Ann's Road",N18 1QX,Enfield,51.613096,-0.073725,533470.0,192231.0,E01032574
+Haringey Talking Therapies,nhs_talking_therapy,IAPT,"St Ann's Hospital, St Ann's Road",N15 3TH,Haringey,51.580628,-0.092071,532294.0,188587.0,E01002042
+Hackney Talking Therapies (ELFT),nhs_talking_therapy,IAPT,Homerton University Hospital,E9 6SR,Hackney,51.550635,-0.046072,535570.0,185336.0,E01001729
+Newham Talking Therapies (ELFT),nhs_talking_therapy,IAPT,Newham Centre for Mental Health,E13 8SL,Newham,51.522777,0.034744,541259.0,182391.0,E01003601
+Tower Hamlets Talking Therapies (ELFT),nhs_talking_therapy,IAPT,"Mile End Hospital, Bancroft Road",E1 4DG,Tower Hamlets,51.525049,-0.042179,535916.0,182498.0,E01035670
+Bexley Talking Therapies,nhs_talking_therapy,IAPT,"Queen Mary's Hospital, Frognal Avenue",DA6 8DX,Bexley,51.457638,0.132106,548224.0,175340.0,E01000361
+Bromley Talking Therapies,nhs_talking_therapy,IAPT,Princess Royal University Hospital,BR6 8ND,Bromley,51.366244,0.059174,543443.0,165032.0,E01000751
+Greenwich Talking Therapies,nhs_talking_therapy,IAPT,"Queen Elizabeth Hospital, Stadium Road",SE18 4QH,Greenwich,51.478194,0.050069,542461.0,177463.0,E01001701
+Kingston Talking Therapies,nhs_talking_therapy,IAPT,"Kingston Hospital, Galsworthy Road",KT2 7QB,Kingston upon Thames,51.414826,-0.282602,519526.0,169822.0,E01002954
+Merton Talking Therapies,nhs_talking_therapy,IAPT,"Wilson Hospital, Cranmer Road, Mitcham",CR4 4TP,Merton,51.397251,-0.163237,527875.0,168069.0,E01003375
+Richmond Talking Therapies,nhs_talking_therapy,IAPT,Teddington Memorial Hospital,TW1 3QJ,Richmond upon Thames,,,,,
+Sutton Talking Therapies,nhs_talking_therapy,IAPT,"Jubilee Health Centre, Shotfield",SM5 1AA,Sutton,51.380188,-0.183708,526498.0,166136.0,E01004128
+Wandsworth Talking Therapies,nhs_talking_therapy,IAPT,"Springfield University Hospital, Glenburnie Road",SW17 7DJ,Wandsworth,51.437358,-0.172348,527130.0,172513.0,E01004626
+Hillingdon Talking Therapies,nhs_talking_therapy,IAPT,"Hillingdon Hospital, Pield Heath Road",UB8 3NN,Hillingdon,51.526078,-0.461155,506850.0,181918.0,E01002412
+CMHT Walworth (Southwark),nhs_cmht,CMHT,"Chaucer Resource Centre, 13 Ann Moss Way",SE16 2TH,Southwark,51.497242,-0.055056,535105.0,179382.0,E01004031
+CMHT Dulwich (Southwark),nhs_cmht,CMHT,"St Giles House, 1 St Giles Road, Camberwell",SE5 7UD,Southwark,51.474172,-0.083801,533177.0,176764.0,E01003911
+CMHT Lambeth,nhs_cmht,CMHT,"Maudsley Hospital, Denmark Hill",SE5 8AZ,Lambeth,51.468767,-0.091443,532662.0,176149.0,E01003913
+CMHT North Islington (ELFT),nhs_cmht,CMHT,Highbury Corner Mental Health Centre,N7 6LB,Islington,51.560939,-0.123596,530166.0,186341.0,E01002733
+CMHT South Islington (ELFT),nhs_cmht,CMHT,South Islington CMHT,EC1V 2NZ,Islington,51.530436,-0.101249,531803.0,182989.0,E01002707
+CMHT Hackney (ELFT),nhs_cmht,CMHT,Homerton University Hospital,E9 6SR,Hackney,51.550635,-0.046072,535570.0,185336.0,E01001729
+CMHT Tower Hamlets (ELFT),nhs_cmht,CMHT,"Mile End Hospital, Bancroft Road",E1 4DG,Tower Hamlets,51.525049,-0.042179,535916.0,182498.0,E01035670
+CMHT Newham (ELFT),nhs_cmht,CMHT,Newham Centre for Mental Health,E13 8SL,Newham,51.522777,0.034744,541259.0,182391.0,E01003601
+CMHT Barnet (North London),nhs_cmht,CMHT,"Barnet Hospital, Wellhouse Lane",EN5 3DJ,Barnet,51.650646,-0.214622,523613.0,196159.0,E01000294
+CMHT Camden (North London),nhs_cmht,CMHT,"Royal Free Hospital, Pond Street",NW3 2QG,Camden,51.553227,-0.165298,527297.0,185410.0,E01000898
+CMHT Haringey (North London),nhs_cmht,CMHT,"St Ann's Hospital, St Ann's Road",N15 3TH,Haringey,51.580628,-0.092071,532294.0,188587.0,E01002042
+CMHT Enfield (North London),nhs_cmht,CMHT,Chase Farm Hospital,N18 1QX,Enfield,51.613096,-0.073725,533470.0,192231.0,E01032574
+Bromley by Bow Centre (Social Prescribing Pioneer),council_wellbeing_hub,Social Prescribing,"St Leonard's Street, Bromley-by-Bow",E3 3BT,Tower Hamlets,51.526392,-0.012409,537977.0,182703.0,E01004236
+Merton Recovery Cafe - Wimbledon,council_wellbeing_hub,Recovery Cafe,Wimbledon area,SW19 7PA,Merton,51.422331,-0.20905,524620.0,170779.0,E01003401
+Merton Assessment Team (Wilson Hospital),council_wellbeing_hub,Council MH Hub,"Wilson Hospital, Cranmer Road, Mitcham",CR4 4TP,Merton,51.397251,-0.163237,527875.0,168069.0,E01003375
+Highgate East - Inpatient Facility (North London),council_wellbeing_hub,Council MH Hub,Highgate Hill,N19 5NF,Camden,51.566482,-0.139066,529078.0,186930.0,E01002770
+Lowther Road ICMHC (Islington),council_wellbeing_hub,ICMHC,Lowther Road,N7 8US,Islington,51.550054,-0.11099,531071.0,185153.0,E01033486

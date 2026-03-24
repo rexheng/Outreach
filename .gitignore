@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Superpowers plugin
+.superpowers/
+
+# Large data downloads (re-downloadable)
+data_downloads/
+
+# Backup files
+*.backup
+
+# Python cache
+__pycache__/
+*.pyc

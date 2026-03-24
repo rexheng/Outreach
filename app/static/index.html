@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>London Loneliness Risk Dashboard</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="header-left">
+      <h1>London Loneliness Risk Dashboard</h1>
+      <p class="subtitle">Neighbourhood-level loneliness risk across 4,994 LSOAs</p>
+    </div>
+  </header>
+
+  <!-- Main layout -->
+  <div id="app">
+    <!-- Controls bar -->
+    <div id="controls">
+      <div class="control-group">
+        <label for="borough-select">Borough</label>
+        <select id="borough-select">
+          <option value="">All London</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label>Risk tiers</label>
+        <div id="tier-filters">
+          <label class="tier-chip critical"><input type="checkbox" value="Critical" checked> Critical</label>
+          <label class="tier-chip high"><input type="checkbox" value="High" checked> High</label>
+          <label class="tier-chip moderate"><input type="checkbox" value="Moderate" checked> Moderate</label>
+          <label class="tier-chip low"><input type="checkbox" value="Low" checked> Low</label>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="layer-select">Colour by</label>
+        <select id="layer-select">
+          <option value="lri_score">Loneliness Risk Index</option>
+          <option value="ind_Health Deprivation and Disability Score">Health Deprivation</option>
+          <option value="ind_Income Score (rate)">Income Deprivation</option>
+          <option value="ind_Employment Score (rate)">Employment Deprivation</option>
+          <option value="ind_long_term_sick">Long-term Sick Rate</option>
+          <option value="ind_econ_inactive">Economic Inactivity Rate</option>
+          <option value="ind_unemployed">Unemployment Rate</option>
+          <option value="imd_score">Overall IMD Score</option>
+          <option value="samhi_index_2022">SAMHI Index (2022)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar-closed">
+      <button id="sidebar-close" aria-label="Close sidebar">&times;</button>
+      <div id="sidebar-content">
+        <div class="sidebar-placeholder">
+          <p>Click an LSOA on the map to see details</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div id="legend">
+      <h4 id="legend-title">Loneliness Risk Index</h4>
+      <div id="legend-items"></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/js/map.js"></script>
+  <script src="/static/js/sidebar.js"></script>
+  <script src="/static/js/controls.js"></script>
+</body>
+</html>
