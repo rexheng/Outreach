@@ -93,7 +93,7 @@ def classify_intent(message: str) -> str:
 
 
 def get_london_overview() -> str:
-    """High-level London-wide statistics."""
+    """London-wide statistics with ALL 33 borough summaries."""
     if _gdf_cache is None or _borough_cache is None:
         return "Data not loaded."
 
@@ -106,19 +106,22 @@ def get_london_overview() -> str:
     moderate = (gdf["risk_tier"] == "Moderate").sum()
     low = (gdf["risk_tier"] == "Low").sum()
 
-    # Top 5 boroughs by mean CNI
-    top5 = sorted(_borough_cache, key=lambda b: b["mean_lri"], reverse=True)[:5]
-    top5_str = "\n".join(
-        f"  - {b['borough']}: mean CNI {b['mean_lri']:.2f}, {b['critical_count']} Critical + {b['high_count']} High-need LSOAs"
-        for b in top5
-    )
+    # ALL boroughs ranked by mean CNI (compact one-liner each)
+    ranked = sorted(_borough_cache, key=lambda b: b["mean_lri"], reverse=True)
+    borough_lines = []
+    for i, b in enumerate(ranked, 1):
+        borough_lines.append(
+            f"  {i}. {b['borough']}: CNI {b['mean_lri']:.2f} "
+            f"({b['critical_count']}C/{b['high_count']}H/{b['lsoa_count']} LSOAs, "
+            f"pop {b['total_population']:,.0f})"
+        )
 
     return f"""LONDON OVERVIEW:
 - Total LSOAs: {total}
 - Mean CNI: {mean_lri:.2f}, Median: {median_lri:.2f}
 - Need distribution: {critical} Critical, {high} High, {moderate} Moderate, {low} Low
-- Top 5 highest-need boroughs:
-{top5_str}"""
+- All 33 boroughs ranked by Composite Need Index (C=Critical, H=High-need LSOAs):
+{chr(10).join(borough_lines)}"""
 
 
 def get_top_boroughs(n: int = 10) -> str:
@@ -274,9 +277,6 @@ def build_chat_context(message: str, history: list[dict] = None) -> dict:
             context_parts.append(get_borough_comparison(boroughs))
             # Also add detail for the first borough mentioned
             context_parts.append(get_borough_summary(boroughs[0]))
-
-    if intent == "ranking" and not boroughs:
-        context_parts.append(get_top_boroughs(10))
 
     return {
         "context_text": "\n\n".join(context_parts),
