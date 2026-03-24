@@ -5,13 +5,13 @@ import logging
 import re
 import time
 
+import anthropic
 from google import genai
-from groq import Groq
 
 from app.config import (
     GEMINI_API_KEY,
-    GROQ_API_KEY,
-    GROQ_MODEL,
+    ANTHROPIC_API_KEY,
+    ANTHROPIC_MODEL,
     POLICY_MODEL,
     POLICY_PRECOMPUTE_TEMP,
     POLICY_DEEPDIVE_TEMP,
@@ -178,64 +178,56 @@ def _repair_json(text: str) -> str:
     return text.strip()
 
 
-def _call_groq_json(prompt: str, max_retries: int = 5) -> list[dict]:
-    """Call Groq (Llama 3.3 70B), parse JSON response, retry on failure."""
-    client = Groq(api_key=GROQ_API_KEY)
+def _call_haiku_json(prompt: str, max_retries: int = 5) -> list[dict]:
+    """Call Claude Haiku via Anthropic API, parse JSON response."""
+    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     last_error = None
 
     for attempt in range(max_retries):
         try:
-            response = client.chat.completions.create(
-                model=GROQ_MODEL,
-                messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": prompt},
-                ],
-                temperature=POLICY_PRECOMPUTE_TEMP,
+            response = client.messages.create(
+                model=ANTHROPIC_MODEL,
                 max_tokens=POLICY_MAX_TOKENS,
-                response_format={"type": "json_object"},
+                temperature=POLICY_PRECOMPUTE_TEMP,
+                system=SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": prompt}],
             )
-            text = _strip_markdown_fences(response.choices[0].message.content)
+            text = _strip_markdown_fences(response.content[0].text)
 
             try:
                 parsed = json.loads(text)
             except json.JSONDecodeError:
                 parsed = json.loads(_repair_json(text))
 
-            # Groq with json_object mode may wrap in {"recommendations": [...]}
             if isinstance(parsed, dict):
                 for key in ("recommendations", "data", "results", "items"):
                     if key in parsed and isinstance(parsed[key], list):
                         return parsed[key]
-                # If it's a single-item dict with a list value
                 for v in parsed.values():
                     if isinstance(v, list):
                         return v
-                raise ValueError(f"Expected array in JSON object, got keys: {list(parsed.keys())}")
+                raise ValueError(f"Expected array in JSON, got keys: {list(parsed.keys())}")
             if isinstance(parsed, list):
                 return parsed
-            raise ValueError(f"Expected JSON array or object, got {type(parsed).__name__}")
+            raise ValueError(f"Expected JSON array, got {type(parsed).__name__}")
 
         except Exception as e:
             last_error = e
-            logger.warning("Groq JSON call attempt %d/%d failed: %s", attempt + 1, max_retries, e)
+            logger.warning("Haiku JSON call attempt %d/%d failed: %s", attempt + 1, max_retries, e)
             if attempt < max_retries - 1:
-                backoff = 2 ** (attempt + 1)
-                time.sleep(backoff)
+                time.sleep(2 ** (attempt + 1))
 
-    raise RuntimeError(f"Failed to get valid JSON from Groq after {max_retries} attempts: {last_error}")
+    raise RuntimeError(f"Failed to get valid JSON from Haiku after {max_retries} attempts: {last_error}")
 
 
 def _call_gemini_json(prompt: str, max_retries: int = 5) -> list[dict]:
-    """Call Gemini, parse JSON response, retry with exponential backoff.
-    Falls back to Groq if Gemini is rate-limited.
-    """
-    # Try Groq first (higher rate limits for pre-compute)
-    if GROQ_API_KEY:
+    """Call LLM for JSON generation. Uses Haiku (primary), Gemini (fallback)."""
+    # Try Haiku first (no rate limit issues)
+    if ANTHROPIC_API_KEY:
         try:
-            return _call_groq_json(prompt, max_retries)
+            return _call_haiku_json(prompt, max_retries)
         except Exception as e:
-            logger.warning("Groq failed, falling back to Gemini: %s", e)
+            logger.warning("Haiku failed, falling back to Gemini: %s", e)
 
     # Gemini fallback
     client = genai.Client(api_key=GEMINI_API_KEY)
@@ -263,7 +255,7 @@ def _call_gemini_json(prompt: str, max_retries: int = 5) -> list[dict]:
             return recs
         except Exception as e:
             last_error = e
-            logger.warning("Gemini JSON call attempt %d/%d failed: %s", attempt + 1, max_retries, e)
+            logger.warning("Gemini attempt %d/%d failed: %s", attempt + 1, max_retries, e)
             if attempt < max_retries - 1:
                 time.sleep(2 ** (attempt + 1))
 

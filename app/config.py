@@ -35,7 +35,9 @@ CHAT_HISTORY_LIMIT = 10
 # Policy recommendation settings
 POLICY_MODEL = "gemini-2.5-flash"  # Gemini model for deep-dive
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
-GROQ_MODEL = "llama-3.3-70b-versatile"  # Groq model for pre-compute (higher rate limits)
+GROQ_MODEL = "llama-3.3-70b-versatile"
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"  # Haiku for pre-compute (fast + cheap)
 POLICY_PRECOMPUTE_TEMP = 0.3
 POLICY_DEEPDIVE_TEMP = 0.7
 POLICY_MAX_TOKENS = 4096

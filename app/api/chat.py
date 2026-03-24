@@ -1,12 +1,12 @@
-"""Chat endpoint — SSE streaming via Google Gemini API."""
+"""Chat endpoint — SSE streaming via Anthropic Claude API."""
 
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
-from google import genai
+import anthropic
 import json
 
-from app.config import GEMINI_API_KEY, CHAT_MODEL, CHAT_MAX_TOKENS, CHAT_HISTORY_LIMIT
+from app.config import ANTHROPIC_API_KEY, ANTHROPIC_MODEL, CHAT_MAX_TOKENS, CHAT_HISTORY_LIMIT
 
 router = APIRouter(prefix="/api")
 
@@ -63,42 +63,35 @@ async def chat(req: ChatRequest):
     # Trim history to limit
     history = req.history[-CHAT_HISTORY_LIMIT:]
 
-    # Build Gemini contents: history + current message
-    # Gemini uses "user"/"model" roles (not "assistant")
-    contents = []
+    # Build Anthropic messages: history + current message
+    messages = []
     for msg in history:
-        role = "model" if msg["role"] == "assistant" else "user"
-        contents.append({"role": role, "parts": [{"text": msg["content"]}]})
-    contents.append({"role": "user", "parts": [{"text": req.message}]})
+        messages.append({"role": msg["role"], "content": msg["content"]})
+    messages.append({"role": "user", "content": req.message})
 
     def generate():
         # Send detected entities first
         yield f"event: context\ndata: {json.dumps(ctx['entities'])}\n\n"
 
-        if not GEMINI_API_KEY:
-            yield f"event: token\ndata: {json.dumps({'text': 'API key not configured. Please set GEMINI_API_KEY in your .env file.'})}\n\n"
+        if not ANTHROPIC_API_KEY:
+            yield f"event: token\ndata: {json.dumps({'text': 'API key not configured. Please set ANTHROPIC_API_KEY in your .env file.'})}\n\n"
             yield "event: done\ndata: {}\n\n"
             return
 
         try:
-            client = genai.Client(api_key=GEMINI_API_KEY)
-            response = client.models.generate_content_stream(
-                model=CHAT_MODEL,
-                contents=contents,
-                config={
-                    "system_instruction": system_prompt,
-                    "max_output_tokens": CHAT_MAX_TOKENS,
-                },
-            )
-            for chunk in response:
-                if chunk.text:
-                    yield f"event: token\ndata: {json.dumps({'text': chunk.text})}\n\n"
+            client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+            with client.messages.stream(
+                model=ANTHROPIC_MODEL,
+                max_tokens=CHAT_MAX_TOKENS,
+                system=system_prompt,
+                messages=messages,
+            ) as stream:
+                for text in stream.text_stream:
+                    yield f"event: token\ndata: {json.dumps({'text': text})}\n\n"
+        except anthropic.AuthenticationError:
+            yield f"event: token\ndata: {json.dumps({'text': 'Invalid API key. Please check ANTHROPIC_API_KEY in your .env file.'})}\n\n"
         except Exception as e:
-            error_msg = str(e)
-            if 'API_KEY_INVALID' in error_msg or 'api key' in error_msg.lower():
-                yield f"event: token\ndata: {json.dumps({'text': 'Invalid API key. Please check GEMINI_API_KEY in your .env file.'})}\n\n"
-            else:
-                yield f"event: token\ndata: {json.dumps({'text': f'Error: {error_msg}'})}\n\n"
+            yield f"event: token\ndata: {json.dumps({'text': f'Error: {str(e)}'})}\n\n"
 
         yield "event: done\ndata: {}\n\n"
 

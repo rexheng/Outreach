@@ -70,6 +70,16 @@ window.applyBoroughFromURL = function () {
   }
 };
 
+// Sync briefing button state with current borough selection
+window.syncBriefingButton = function () {
+  const select = document.getElementById('borough-select');
+  const btn = document.getElementById('download-briefing');
+  if (select && btn && select.value) {
+    btn.href = '/api/briefing/' + encodeURIComponent(select.value);
+    btn.style.display = 'block';
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   // Borough filter
   const briefingBtn = document.getElementById('download-briefing');
