@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-03-24T18:33:40.201834+00:00",
+  "generated_at": "2026-03-24T18:41:24.456875+00:00",
   "signals_generated_at": null,
   "recommendations": [
     {
@@ -280,6 +280,143 @@
       ],
       "id": "brent-lt-6",
       "borough": "Brent",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish Foodbanks",
+      "description": "Croydon has a high need for foodbanks, especially in areas with high SAMHI scores. We recommend establishing foodbanks in areas like E01001021 and E01001080. This will help alleviate food poverty and improve mental health.",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "25 High Need areas"
+        },
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.300"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001021",
+        "E01001080"
+      ],
+      "id": "croydon-lt-1",
+      "borough": "Croydon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Increase NHS Therapy",
+      "description": "With a worsening SAMHI trajectory, increasing access to NHS Talking Therapies is crucial. We recommend expanding NHS therapy services to cover more LSOAs, especially those with high need tiers. This will help address mental health issues promptly.",
+      "evidence": [
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        },
+        {
+          "signal": "Tier breakdown",
+          "value": "10 Critical Need areas"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001079",
+        "E01001078"
+      ],
+      "id": "croydon-lt-2",
+      "borough": "Croydon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "low",
+      "title": "Citizens Advice Outreach",
+      "description": "Citizens Advice bureaux can provide vital support for mental health by addressing underlying issues like debt and housing. We recommend outreach programs to increase awareness and accessibility of Citizens Advice services in Croydon. This will help reduce stress and anxiety.",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "38 Lower Need areas"
+        },
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.300"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001052"
+      ],
+      "id": "croydon-lt-3",
+      "borough": "Croydon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Community Mental Health Teams",
+      "description": "Croydon needs a strategic approach to mental health, including Community Mental Health Teams. We recommend establishing CMHTs in areas with high need tiers to provide comprehensive support. This will help address complex mental health issues and reduce SAMHI scores.",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "25 High Need areas"
+        },
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.300"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001021",
+        "E01001080",
+        "E01001079"
+      ],
+      "id": "croydon-lt-4",
+      "borough": "Croydon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Homelessness Services Expansion",
+      "description": "Homelessness is a critical factor in mental health. We recommend expanding homelessness services in Croydon to cover more LSOAs, especially those with high need tiers. This will help address the root causes of mental health issues and reduce SAMHI scores.",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "10 Critical Need areas"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001078",
+        "E01001052"
+      ],
+      "id": "croydon-lt-5",
+      "borough": "Croydon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "low",
+      "title": "Wellbeing Hubs Establishment",
+      "description": "Wellbeing hubs can provide a safe space for mental health support and community engagement. We recommend establishing wellbeing hubs in areas with lower need tiers to promote preventative care and reduce SAMHI scores. This will help foster a culture of mental wellbeing in Croydon.",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "38 Lower Need areas"
+        },
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.300"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001052"
+      ],
+      "id": "croydon-lt-6",
+      "borough": "Croydon",
       "scope": "borough"
     }
   ]

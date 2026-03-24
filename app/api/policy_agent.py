@@ -1,4 +1,4 @@
-"""Policy recommendation agent — pre-compute and deep-dive modes via Gemini."""
+"""Policy recommendation agent — pre-compute (Groq) and deep-dive (Gemini) modes."""
 
 import json
 import logging
@@ -6,9 +6,12 @@ import re
 import time
 
 from google import genai
+from groq import Groq
 
 from app.config import (
     GEMINI_API_KEY,
+    GROQ_API_KEY,
+    GROQ_MODEL,
     POLICY_MODEL,
     POLICY_PRECOMPUTE_TEMP,
     POLICY_DEEPDIVE_TEMP,
@@ -165,42 +168,76 @@ def _strip_markdown_fences(text: str) -> str:
 
 
 def _repair_json(text: str) -> str:
-    """Attempt to repair common Gemini JSON issues."""
-    # Fix unescaped newlines inside string values
-    # Replace literal newlines inside strings with \\n
-    lines = text.split("\n")
-    repaired = []
-    in_string = False
-    for line in lines:
-        # Count unescaped quotes to track string state
-        repaired.append(line)
-
-    text = "\n".join(repaired)
-
-    # Try to extract just the JSON array if there's extra text
+    """Attempt to repair common LLM JSON issues."""
+    # Extract just the JSON array if there's extra text
     match = re.search(r"\[[\s\S]*\]", text)
     if match:
         text = match.group(0)
-
     # Fix trailing commas before ] or }
     text = re.sub(r",\s*([}\]])", r"\1", text)
+    return text.strip()
 
-    # Fix unterminated strings at end - add closing quote if needed
-    text = text.rstrip()
-    if text.endswith('"'):
-        pass  # already ends with quote
-    elif not text.endswith("]"):
-        # Truncated response - try to close it
-        # Find last complete object
-        last_brace = text.rfind("}")
-        if last_brace > 0:
-            text = text[:last_brace + 1] + "]"
 
-    return text
+def _call_groq_json(prompt: str, max_retries: int = 5) -> list[dict]:
+    """Call Groq (Llama 3.3 70B), parse JSON response, retry on failure."""
+    client = Groq(api_key=GROQ_API_KEY)
+    last_error = None
+
+    for attempt in range(max_retries):
+        try:
+            response = client.chat.completions.create(
+                model=GROQ_MODEL,
+                messages=[
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": prompt},
+                ],
+                temperature=POLICY_PRECOMPUTE_TEMP,
+                max_tokens=POLICY_MAX_TOKENS,
+                response_format={"type": "json_object"},
+            )
+            text = _strip_markdown_fences(response.choices[0].message.content)
+
+            try:
+                parsed = json.loads(text)
+            except json.JSONDecodeError:
+                parsed = json.loads(_repair_json(text))
+
+            # Groq with json_object mode may wrap in {"recommendations": [...]}
+            if isinstance(parsed, dict):
+                for key in ("recommendations", "data", "results", "items"):
+                    if key in parsed and isinstance(parsed[key], list):
+                        return parsed[key]
+                # If it's a single-item dict with a list value
+                for v in parsed.values():
+                    if isinstance(v, list):
+                        return v
+                raise ValueError(f"Expected array in JSON object, got keys: {list(parsed.keys())}")
+            if isinstance(parsed, list):
+                return parsed
+            raise ValueError(f"Expected JSON array or object, got {type(parsed).__name__}")
+
+        except Exception as e:
+            last_error = e
+            logger.warning("Groq JSON call attempt %d/%d failed: %s", attempt + 1, max_retries, e)
+            if attempt < max_retries - 1:
+                backoff = 2 ** (attempt + 1)
+                time.sleep(backoff)
+
+    raise RuntimeError(f"Failed to get valid JSON from Groq after {max_retries} attempts: {last_error}")
 
 
 def _call_gemini_json(prompt: str, max_retries: int = 5) -> list[dict]:
-    """Call Gemini, parse JSON response, retry with exponential backoff."""
+    """Call Gemini, parse JSON response, retry with exponential backoff.
+    Falls back to Groq if Gemini is rate-limited.
+    """
+    # Try Groq first (higher rate limits for pre-compute)
+    if GROQ_API_KEY:
+        try:
+            return _call_groq_json(prompt, max_retries)
+        except Exception as e:
+            logger.warning("Groq failed, falling back to Gemini: %s", e)
+
+    # Gemini fallback
     client = genai.Client(api_key=GEMINI_API_KEY)
     last_error = None
 
@@ -217,33 +254,20 @@ def _call_gemini_json(prompt: str, max_retries: int = 5) -> list[dict]:
                 },
             )
             text = _strip_markdown_fences(response.text)
-
-            # First try direct parse
             try:
                 recs = json.loads(text)
             except json.JSONDecodeError:
-                # Try repair
-                repaired = _repair_json(text)
-                recs = json.loads(repaired)
-
+                recs = json.loads(_repair_json(text))
             if not isinstance(recs, list):
                 raise ValueError(f"Expected JSON array, got {type(recs).__name__}")
             return recs
         except Exception as e:
             last_error = e
-            logger.warning(
-                "Gemini JSON call attempt %d/%d failed: %s",
-                attempt + 1,
-                max_retries,
-                e,
-            )
+            logger.warning("Gemini JSON call attempt %d/%d failed: %s", attempt + 1, max_retries, e)
             if attempt < max_retries - 1:
-                backoff = 2 ** (attempt + 1)  # 2s, 4s, 8s
-                time.sleep(backoff)
+                time.sleep(2 ** (attempt + 1))
 
-    raise RuntimeError(
-        f"Failed to get valid JSON from Gemini after {max_retries} attempts: {last_error}"
-    )
+    raise RuntimeError(f"Failed after {max_retries} attempts: {last_error}")
 
 
 # ---------------------------------------------------------------------------

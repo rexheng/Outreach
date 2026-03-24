@@ -71,7 +71,39 @@
     .ov-header-left {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 20px;
+    }
+
+    .ov-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: 8px;
+      padding-left: 20px;
+      border-left: 1px solid var(--border);
+    }
+
+    .ov-nav-link {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .ov-nav-link:hover {
+      color: var(--terra);
+      background: rgba(181, 114, 90, 0.08);
+    }
+
+    .ov-nav-link.active {
+      color: var(--terra);
+      background: rgba(181, 114, 90, 0.08);
+      font-weight: 600;
     }
 
     .ov-header h1 {
@@ -478,6 +510,10 @@
         <h1>Outreach</h1>
         <span class="subtitle">The Geography of Wellbeing</span>
       </div>
+      <nav class="ov-nav">
+        <span class="ov-nav-link active">Dashboard</span>
+        <a href="/explore" class="ov-nav-link">Map Explorer</a>
+      </nav>
     </div>
     <a href="/explore" class="ov-cta">Explore the Map &rarr;</a>
   </header>
