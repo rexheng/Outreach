@@ -1,6 +1,6 @@
 # Outreach -- The Geography of Wellbeing
 
-An interactive data tool mapping neighbourhood-level mental health need across London's 4,994 Lower Super Output Areas (LSOAs). Built for the [Wellcome Mental Health Data Prize 2026-2028](https://wellcome.org/).
+An interactive data tool mapping neighbourhood-level mental health need across London's 4,994 Lower Super Output Areas (LSOAs).
 
 **Live demo:** https://london-mental-health-atlas-production.up.railway.app/
 
@@ -88,5 +88,4 @@ Two-pillar weighted model scored 0-10:
 Risk tiers: **Critical** (8-10), **High** (6-8), **Moderate** (3-6), **Low** (0-3).
 
 ## Licence
-
-Built for the Wellcome Mental Health Data Prize 2026-2028. Data sources are Crown Copyright (ONS, MHCLG) and University of Bristol (SAMHI), used under open government licence.
+Data sources are Crown Copyright (ONS, MHCLG) and University of Bristol (SAMHI), used under open government licence.
