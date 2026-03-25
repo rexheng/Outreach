@@ -9,6 +9,19 @@
   const MAX_VISIBLE_HISTORY = 50;
   const API_HISTORY_LIMIT = 10;
 
+  const THINKING_PHRASES = [
+    'Analysing borough data',
+    'Cross-referencing indicators',
+    'Consulting policy frameworks',
+    'Mapping neighbourhood patterns',
+    'Reviewing deprivation indices',
+    'Synthesising mental health data',
+    'Examining community services',
+    'Comparing socioeconomic factors',
+    'Evaluating need across London',
+    'Assembling policy insights',
+  ];
+
   let chatOpen = false;
   let isStreaming = false;
   let conversationHistory = []; // {role, content}
@@ -124,12 +137,26 @@
     isStreaming = true;
     sendBtn.disabled = true;
 
-    // Create assistant message container with typing dots
+    // Create assistant message container with thinking indicator
     const msgDiv = document.createElement('div');
     msgDiv.className = 'chat-msg assistant';
-    msgDiv.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+    msgDiv.innerHTML = buildThinkingHTML();
     messagesEl.appendChild(msgDiv);
     scrollToBottom();
+
+    // Rotate thinking phrases while streaming
+    let thinkingIdx = 0;
+    const thinkingInterval = setInterval(() => {
+      thinkingIdx = (thinkingIdx + 1) % THINKING_PHRASES.length;
+      const phraseEl = msgDiv.querySelector('.thinking-phrase');
+      if (phraseEl) {
+        phraseEl.classList.add('thinking-fade');
+        setTimeout(() => {
+          phraseEl.textContent = THINKING_PHRASES[thinkingIdx];
+          phraseEl.classList.remove('thinking-fade');
+        }, 250);
+      }
+    }, 2800);
 
     let fullText = '';
 
@@ -147,7 +174,6 @@
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
       let buffer = '';
-      let firstToken = true;
 
       while (true) {
         const { done, value } = await reader.read();
@@ -159,26 +185,23 @@
 
         for (const event of events.parsed) {
           if (event.type === 'token') {
-            if (firstToken) {
-              msgDiv.innerHTML = ''; // Clear typing dots
-              firstToken = false;
-            }
             fullText += event.data.text;
-            msgDiv.textContent = fullText;
-            scrollToBottom();
           }
-          // context event — could be used for pre-highlighting, ignored for now
         }
       }
     } catch (err) {
       console.error('Chat error:', err);
       if (!fullText) {
+        clearInterval(thinkingInterval);
         msgDiv.innerHTML = '<span class="chat-error">Connection lost. Please try again.</span>';
       }
     }
 
-    // Post-process: markdown-light + entity links
+    clearInterval(thinkingInterval);
+
+    // Render formatted markdown + entity links
     if (fullText) {
+      msgDiv.classList.add('thinking-reveal');
       msgDiv.innerHTML = renderMarkdown(fullText);
       postProcessMessage(msgDiv);
       conversationHistory.push({ role: 'assistant', content: fullText });
@@ -233,34 +256,82 @@
   // === Light Markdown Renderer ===
 
   function renderMarkdown(text) {
-    // Escape HTML
-    let html = text
+    // Escape HTML first
+    let safe = text
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;');
 
-    // Bold
-    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    // Split into blocks on double-newline
+    const blocks = safe.split(/\n\n+/);
+    const out = [];
 
-    // Paragraphs (double newline)
-    html = html
-      .split(/\n\n+/)
-      .map(para => {
-        para = para.trim();
-        if (!para) return '';
-        // Check if paragraph is a list
-        if (/^[\s]*[-*\d+.]\s/m.test(para)) {
-          const items = para.split(/\n/).map(line => {
-            const content = line.replace(/^[\s]*[-*]\s+/, '').replace(/^\d+\.\s+/, '');
-            return `<li>${content}</li>`;
+    for (let block of blocks) {
+      block = block.trim();
+      if (!block) continue;
+
+      // --- Headers ---
+      const headerMatch = block.match(/^(#{1,4})\s+(.+)$/);
+      if (headerMatch) {
+        const level = headerMatch[1].length;
+        const content = inlineFormat(headerMatch[2]);
+        out.push(`<h${level + 2}>${content}</h${level + 2}>`);
+        continue;
+      }
+
+      // --- List block (bullet or numbered) ---
+      const lines = block.split('\n');
+      const isList = lines.every(l => /^\s*(?:[-*]|\d+\.)\s/.test(l));
+      if (isList) {
+        const isOrdered = lines.every(l => /^\s*\d+\.\s/.test(l));
+        const tag = isOrdered ? 'ol' : 'ul';
+        const items = lines.map(l => {
+          const content = l.replace(/^\s*(?:[-*]|\d+\.)\s+/, '');
+          return `<li>${inlineFormat(content)}</li>`;
+        }).join('');
+        out.push(`<${tag}>${items}</${tag}>`);
+        continue;
+      }
+
+      // --- Mixed block: some lines are list items, some aren't ---
+      // Split into runs of list vs non-list lines
+      let i = 0;
+      while (i < lines.length) {
+        if (/^\s*(?:[-*]|\d+\.)\s/.test(lines[i])) {
+          // Collect consecutive list lines
+          const listLines = [];
+          while (i < lines.length && /^\s*(?:[-*]|\d+\.)\s/.test(lines[i])) {
+            listLines.push(lines[i]);
+            i++;
+          }
+          const isOrd = listLines.every(l => /^\s*\d+\.\s/.test(l));
+          const ltag = isOrd ? 'ol' : 'ul';
+          const litems = listLines.map(l => {
+            const content = l.replace(/^\s*(?:[-*]|\d+\.)\s+/, '');
+            return `<li>${inlineFormat(content)}</li>`;
           }).join('');
-          return `<ul>${items}</ul>`;
+          out.push(`<${ltag}>${litems}</${ltag}>`);
+        } else {
+          // Collect consecutive non-list lines as a paragraph
+          const paraLines = [];
+          while (i < lines.length && !/^\s*(?:[-*]|\d+\.)\s/.test(lines[i])) {
+            paraLines.push(lines[i]);
+            i++;
+          }
+          out.push(`<p>${inlineFormat(paraLines.join('<br>'))}</p>`);
         }
-        return `<p>${para.replace(/\n/g, '<br>')}</p>`;
-      })
-      .join('');
+      }
+    }
 
-    return html;
+    return out.join('');
+  }
+
+  function inlineFormat(text) {
+    // Bold
+    text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    // Inline code
+    text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
+    return text;
   }
 
   // === Entity Link Post-Processing ===
@@ -336,6 +407,15 @@
     div.textContent = content;
     messagesEl.appendChild(div);
     scrollToBottom();
+  }
+
+  function buildThinkingHTML() {
+    const phrase = THINKING_PHRASES[Math.floor(Math.random() * THINKING_PHRASES.length)];
+    return `<div class="thinking-indicator">
+      <div class="thinking-shimmer"></div>
+      <span class="thinking-phrase">${phrase}</span>
+      <div class="thinking-dots"><span></span><span></span><span></span></div>
+    </div>`;
   }
 
   function scrollToBottom() {

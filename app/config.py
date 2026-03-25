@@ -26,9 +26,9 @@ DISPLAY_COLUMNS = [
     "unpaid_care_rate_pct",
 ]
 
-# Chat / LLM settings — all via Anthropic Claude
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
-ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"
+# Chat / LLM settings — via Groq (OpenAI-compatible)
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+GROQ_MODEL = "llama-3.3-70b-versatile"
 CHAT_MAX_TOKENS = 1500
 CHAT_HISTORY_LIMIT = 10
 

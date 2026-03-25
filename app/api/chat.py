@@ -1,12 +1,12 @@
-"""Chat endpoint — SSE streaming via Anthropic Claude API."""
+"""Chat endpoint — SSE streaming via Groq API (OpenAI-compatible)."""
 
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
-import anthropic
+from openai import OpenAI
 import json
 
-from app.config import ANTHROPIC_API_KEY, ANTHROPIC_MODEL, CHAT_MAX_TOKENS, CHAT_HISTORY_LIMIT
+from app.config import GROQ_API_KEY, GROQ_MODEL, CHAT_MAX_TOKENS, CHAT_HISTORY_LIMIT
 
 router = APIRouter(prefix="/api")
 
@@ -63,8 +63,8 @@ async def chat(req: ChatRequest):
     # Trim history to limit
     history = req.history[-CHAT_HISTORY_LIMIT:]
 
-    # Build Anthropic messages: history + current message
-    messages = []
+    # Build messages: system + history + current message
+    messages = [{"role": "system", "content": system_prompt}]
     for msg in history:
         messages.append({"role": msg["role"], "content": msg["content"]})
     messages.append({"role": "user", "content": req.message})
@@ -73,25 +73,32 @@ async def chat(req: ChatRequest):
         # Send detected entities first
         yield f"event: context\ndata: {json.dumps(ctx['entities'])}\n\n"
 
-        if not ANTHROPIC_API_KEY:
-            yield f"event: token\ndata: {json.dumps({'text': 'API key not configured. Please set ANTHROPIC_API_KEY in your .env file.'})}\n\n"
+        if not GROQ_API_KEY:
+            yield f"event: token\ndata: {json.dumps({'text': 'API key not configured. Please set GROQ_API_KEY in your .env file.'})}\n\n"
             yield "event: done\ndata: {}\n\n"
             return
 
         try:
-            client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-            with client.messages.stream(
-                model=ANTHROPIC_MODEL,
+            client = OpenAI(
+                api_key=GROQ_API_KEY,
+                base_url="https://api.groq.com/openai/v1",
+            )
+            stream = client.chat.completions.create(
+                model=GROQ_MODEL,
                 max_tokens=CHAT_MAX_TOKENS,
-                system=system_prompt,
                 messages=messages,
-            ) as stream:
-                for text in stream.text_stream:
-                    yield f"event: token\ndata: {json.dumps({'text': text})}\n\n"
-        except anthropic.AuthenticationError:
-            yield f"event: token\ndata: {json.dumps({'text': 'Invalid API key. Please check ANTHROPIC_API_KEY in your .env file.'})}\n\n"
+                stream=True,
+            )
+            for chunk in stream:
+                delta = chunk.choices[0].delta
+                if delta.content:
+                    yield f"event: token\ndata: {json.dumps({'text': delta.content})}\n\n"
         except Exception as e:
-            yield f"event: token\ndata: {json.dumps({'text': f'Error: {str(e)}'})}\n\n"
+            error_msg = str(e)
+            if "auth" in error_msg.lower() or "api key" in error_msg.lower():
+                yield f"event: token\ndata: {json.dumps({'text': 'Invalid API key. Please check GROQ_API_KEY in your .env file.'})}\n\n"
+            else:
+                yield f"event: token\ndata: {json.dumps({'text': f'Error: {error_msg}'})}\n\n"
 
         yield "event: done\ndata: {}\n\n"
 
