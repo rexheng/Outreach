@@ -1,38 +1,69 @@
+# Composite Need Index (CNI) Weighting Configuration - REFACTORED
+# This configuration prioritizes mental health indicators as the primary driver,
+# supported by health burden and socioeconomic deprivation.
+
 pillars:
-  socioeconomic:
-    weight: 0.5
+  # PRIMARY PILLAR: Mental Health
+  # Weight: 0.50 (50% of overall CNI score)
+  # Rationale: SAMHI is a validated composite index specifically designed to measure
+  # mental health need at LSOA level, integrating antidepressant prescriptions,
+  # QOF depression registers, mental health hospital admissions, and DLA/PIP rates.
+  # Making this the primary pillar aligns the CNI with the project's core mission
+  # to understand neighbourhood-level mental health determinants.
+  mental_health:
+    weight: 0.50
     indicators:
-      - column: "Health Deprivation and Disability Score"
-        label: "Health Deprivation & Disability"
+      - column: "samhi_index_2022"
+        label: "SAMHI Mental Health Index (2022)"
+        weight: 1.0
+
+  # SECONDARY PILLAR: Health Status & Burden
+  # Weight: 0.25 (25% of overall CNI score)
+  # Rationale: Replaces IMD health deprivation with direct Census-based measures
+  # of population health and caregiving burden. This trio captures:
+  # - Actual self-reported health status (health_bad_or_very_bad_pct)
+  # - Limiting disability prevalence (disability_rate_pct)
+  # - Unpaid care responsibilities (unpaid_care_rate_pct)
+  # These are more recent (Census 2021), granular, and directly interpretable
+  # than the IMD health deprivation score.
+  health_and_burden:
+    weight: 0.25
+    indicators:
+      - column: "health_bad_or_very_bad_pct"
+        label: "Self-Reported Bad/Very Bad Health (Census 2021)"
+        weight: 0.50
+      - column: "disability_rate_pct"
+        label: "Disability Rate (Census 2021)"
         weight: 0.30
+      - column: "unpaid_care_rate_pct"
+        label: "Unpaid Care Burden (Census 2021)"
+        weight: 0.20
+
+  # TERTIARY PILLAR: Socioeconomic Deprivation
+  # Weight: 0.25 (25% of overall CNI score)
+  # Rationale: Reduced from 0.50 to accommodate the new mental health priority.
+  # Retains material aspects of deprivation (income, employment, housing barriers)
+  # but removes crime score to avoid double-counting with economic stress.
+  # These IMD domains remain important contextual drivers of vulnerability.
+  socioeconomic:
+    weight: 0.25
+    indicators:
       - column: "Income Score (rate)"
         label: "Income Deprivation"
-        weight: 0.25
+        weight: 0.40
       - column: "Employment Score (rate)"
         label: "Employment Deprivation"
-        weight: 0.20
+        weight: 0.35
       - column: "Barriers to Housing and Services Score"
         label: "Barriers to Housing & Services"
-        weight: 0.15
-      - column: "Crime Score"
-        label: "Crime"
-        weight: 0.10
-  demographic:
-    weight: 0.5
-    indicators:
-      - column: "long_term_sick"
-        denominator: "total_16plus"
-        label: "Long-term Sick Rate"
-        weight: 0.45
-      - column: "econ_inactive"
-        denominator: "total_16plus"
-        label: "Economic Inactivity Rate"
-        weight: 0.30
-      - column: "unemployed"
-        denominator: "total_16plus"
-        label: "Unemployment Rate"
         weight: 0.25
 
+# Risk Tier Thresholds
+# Unchanged from original configuration. Boundaries define four tiers of need:
+# - Critical: 8-10 (highest 15% of neighbourhoods)
+# - High: 6-8 (next 20%)
+# - Moderate: 3-6 (middle band)
+# - Low: 0-3 (lowest threshold)
 risk_tiers:
   critical: { min: 8, max: 10, color: "#d32f2f", label: "Critical" }
   high: { min: 6, max: 8, color: "#f57c00", label: "High" }
