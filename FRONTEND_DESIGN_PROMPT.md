@@ -28,7 +28,7 @@ The name evokes both the act of reaching out (community outreach, mental health 
 
 Draw from the design language of organisations like:
 - **London Community Foundation** (londoncf.org.uk) -- warm, generous, human
-- **Wellcome Trust** publications -- editorial rigour with visual confidence
+- **Public health publications** -- editorial rigour with visual confidence
 - **The Guardian's data journalism** -- narrative-driven, map-forward, explanatory
 - **Our World in Data** -- clear, unhurried, deeply informative
 
@@ -50,7 +50,7 @@ The content is serious -- we're mapping mental health suffering. The design shou
 
 ## Colour System
 
-### Primary Palette -- Teal (Wellcome-adjacent)
+### Primary Palette -- Teal
 
 | Token | Hex | Usage |
 |---|---|---|
@@ -135,7 +135,7 @@ The page is a **single vertical scroll** -- like a long-form article with an int
    - "Outreach" wordmark
    - Subtitle: "Mapping mental health need across London's neighbourhoods"
    - Meta line: "4,994 neighbourhoods | 120 indicators | Data to 2022"
-   - Wellcome + Social Finance logos (small, understated)
+   - Project branding (small, understated)
 
 2. KPI STRIP
    - 6 headline numbers, edge-to-edge
@@ -182,7 +182,7 @@ The page is a **single vertical scroll** -- like a long-form article with an int
    - "How to cite this tool"
 
 10. FOOTER
-    - Wellcome Mental Health Data Prize 2026-2028
+    - "Built with open data. Code available on GitHub."
     - "Built with open data. Code available on GitHub."
     - Data last updated date
     - Contact / feedback link

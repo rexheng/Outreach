@@ -152,12 +152,12 @@ def _format_top_lsoas(lsoas: list) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Gemini call with JSON parsing and retry
+# LLM call with JSON parsing and retry
 # ---------------------------------------------------------------------------
 
 
 def _strip_markdown_fences(text: str) -> str:
-    """Remove markdown code fences (```json ... ```) from Gemini output."""
+    """Remove markdown code fences (```json ... ```) from LLM output."""
     text = text.strip()
     text = re.sub(r"^```(?:json)?\s*\n?", "", text)
     text = re.sub(r"\n?```\s*$", "", text)

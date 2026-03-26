@@ -1,6 +1,6 @@
 # References and Research Data
 
-This document provides full provenance, methodology, and citation information for every dataset used in the Outreach project. It is intended to support the Wellcome Mental Health Data Prize application (criterion B1: dataset selection, B3: data ethics) and to ensure reproducibility.
+This document provides full provenance, methodology, and citation information for every dataset used in the Outreach project. It is intended to ensure reproducibility and transparency in data sourcing.
 
 ---
 
@@ -542,5 +542,3 @@ All datasets used are publicly available under open licences (Open Government Li
 11. Smith, T., Noble, M., Noble, S., Wright, G., McLennan, D., & Plunkett, E. (2015). *The English Indices of Deprivation 2015: Technical Report*. London: DCLG.
 
 12. Postcodes.io (n.d.). *Free UK Postcode API*. Available at: postcodes.io. Used for geocoding community services to WGS84 coordinates and LSOA codes.
-
-13. Social Finance & Wellcome (2026). *Wellcome Mental Health Data Prize 2026-2028: Applicant Information Pack*. London: Social Finance. Local copy: `SF_WELLCOME_MHDP_FINAL10Feb.pdf`.

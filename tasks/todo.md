@@ -19,3 +19,13 @@
 - **Census coverage**: 4,994/4,994 (100%) for all three tables
 - **Old `master_lsoa_enriched_with_route_pressure` table**: dropped
 - **Backup**: `master_lsoa.gpkg.backup` preserved
+
+## Production Readiness Pass (March 2026)
+
+## Steps
+- [x] Step 1: Clean workspace noise from version control scope (local screenshots, ad-hoc artifacts, temp tool folders)
+- [x] Step 2: Update `.gitignore` for recurring local/generated files
+- [x] Step 3: Refresh `README.md` with production deployment guidance and environment requirements
+- [x] Step 4: Add portfolio-ready README summary section for external presentation
+- [x] Step 5: Run test/smoke verification before shipping
+- [x] Step 6: Commit and push production-readiness updates to GitHub

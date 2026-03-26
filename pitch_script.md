@@ -1,29 +1,49 @@
-# Outreach -- Pitch Script (2-3 minutes)
+# Outreach -- Demo Script (~2.5 minutes)
 
-## Opening (15 seconds)
+> Designed to be spoken over a live screen share. Stage directions in brackets. Pause points marked with [beat].
 
-Last summer I worked at a charity called Blackfriars Settlement in Southwark. I saw firsthand how borough councils allocate mental health funding based on aggregate statistics that completely miss what's happening at the neighbourhood level. A borough can look fine on paper while individual communities inside it are struggling with severe mental health need, high disability, and no services nearby.
+---
 
-## The Problem (20 seconds)
+**[Screen: browser open to the overview page]**
 
-The data to fix this already exists. ONS publishes health and disability statistics. MHCLG publishes deprivation indices. The University of Bristol publishes a mental health index covering every neighbourhood in England. But this data sits across six different agencies, in different formats, at different geographic scales. No frontline commissioner has the time to join it all up. So the funding keeps following the averages, and the most vulnerable communities keep falling through the gaps.
+So this is Outreach. It maps mental health need across all 4,994 neighbourhoods in London.
 
-## What Outreach Does (30 seconds)
+The reason I built it is pretty simple. Last summer I worked at a charity in Southwark and I saw how funding decisions get made -- boroughs look at aggregate statistics, and those averages hide what's actually happening street by street. The data to fix that already exists across ONS, MHCLG, the University of Bristol -- but nobody has time to join it up. So I did.
 
-Outreach solves this by assembling all of that data into one place. It maps mental health need across every single one of London's 4,994 neighbourhoods. Each one gets a Composite Need Index from 0 to 10, combining deprivation, health outcomes, disability rates, unemployment, and long-term sickness. You can filter by borough, toggle between nine different indicator layers, and click any neighbourhood to see a full breakdown of what's driving need there.
+**[Gesture at the KPI strip]**
 
-## The AI Chatbot (30 seconds)
+Up top, headline numbers for all of London. Average mental health index, antidepressant prescribing rates, depression prevalence, disability. Below that are five data-driven narratives -- things like the correlation between deprivation and mental health, or the fact that every single borough got worse between 2019 and 2022.
 
-The part I'm most excited about is the policy chatbot. Instead of reading a dashboard and trying to interpret the numbers yourself, you can ask questions in plain English. For example: "We have funding for three new community mental health teams. Which boroughs should get them?" And the chatbot gives you a commissioning-ready answer, grounded entirely in the data, with clickable links that take you straight to the specific neighbourhoods on the map. It speaks in the language of policy recommendations, telling you where to deploy outreach workers or expand talking therapies, rather than listing statistics.
+**[Scroll down briefly to show the borough table and scatter plot, then click "Map Explorer"]**
 
-## Demo Moment (20 seconds)
+Now this is the main tool. Every area gets a Composite Need Index from 0 to 10. It's built from two pillars -- socioeconomic deprivation and demographic vulnerability -- using weighted indicators like health deprivation, income, employment, long-term sickness.
 
-Let me show you quickly. I'll ask: "What's driving high need in Hackney and what should we do about it?" ... And you can see it pulls the borough data, identifies the top risk factors, and recommends specific interventions for specific neighbourhoods. Every borough name and LSOA is a clickable link that navigates the map.
+**[Toggle one or two layer radio cards on the left panel]**
 
-## How I Built It (20 seconds)
+Nine different layers you can switch between. Health deprivation. Income. SAMHI mental health index. Each one recolours the map instantly.
 
-I built this solo in two and a half hours using multiple Claude Code instances running in parallel. One agent assembled the dataset from six public sources. Another built the frontend with Leaflet. A third handled the FastAPI backend and chatbot integration. Everything feeds from a single GeoPackage file containing 120 indicators per neighbourhood. It's deployed live on Railway right now.
+**[Select "Barking and Dagenham" from the borough dropdown]**
 
-## Closing (15 seconds)
+Filter to a borough -- say Barking and Dagenham, which ranks highest for need in London. [beat] And now there's a "Download Briefing" button. That generates a one-page PDF with their headline KPIs, top five priority neighbourhoods, what's driving need in each one, and how the borough compares to the London average. Something a cabinet member can take into a budget meeting.
 
-The gap between having public data and making it actionable is where most health policy tools fall short. Outreach is designed to close that gap. I believe this is exactly the kind of AI application that helps people flourish, by giving the people who make funding decisions the neighbourhood-level intelligence they need to direct resources where they'll have the greatest impact.
+**[Click on a dark-shaded neighbourhood]**
+
+Click any neighbourhood and the sidebar gives you the full picture. Score, rank, indicator bars, a narrative about what's driving need here, nearest community services with distances.
+
+**[Close sidebar, open the chat panel in bottom-right]**
+
+And this is the part I think matters most. Instead of reading charts and trying to work out what they mean for policy, you just ask.
+
+**[Type: "We have funding for three new community mental health teams. Which boroughs should get them?"]**
+
+Plain English question, and it gives you a commissioning-ready answer. Specific boroughs, specific neighbourhoods, specific interventions -- expand talking therapies here, deploy outreach workers there. And every borough and neighbourhood name is a clickable link that takes you straight to it on the map.
+
+**[Click one of the entity links to show it navigates the map]**
+
+[beat]
+
+I built this solo with Claude Code. FastAPI backend, Leaflet frontend, 120 indicators per neighbourhood assembled from six public datasets, all in a single GeoPackage file. It's live on Railway right now.
+
+**[beat]**
+
+There's a lot of public data about mental health in this country. The problem has never been the data -- it's that nobody's made it actionable for the people who control the funding. That's what Outreach does.

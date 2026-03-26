@@ -1,21 +1,8 @@
-# Wellcome Mental Health Data Prize 2026-2028 -- Application Workspace
+# Outreach -- Project Overview
 
 ## Purpose
 
-Application preparation for the **Wellcome Mental Health Data Prize 2026-2028**, a UK-wide innovation programme funded by Wellcome and delivered by Social Finance. The prize supports teams developing scalable data tools that use existing mental health data to drive new insights, contributing to early intervention for anxiety, depression, and psychosis.
-
-## Prize Summary
-
-| Detail | Value |
-|---|---|
-| Funder | Wellcome (delivered by Social Finance) |
-| Application deadline | **8 May 2026, 12 pm** |
-| Prototyping Phase | Aug 2026 -- Apr 2027, up to GBP 100,000 per team |
-| Sustainability Phase | Jun 2027 -- Feb 2028, up to GBP 300,000 per team |
-| Teams selected | 6 for Prototyping, 3 for Sustainability |
-| Prize close | Mar 2028 |
-
-Full details: `SF_WELLCOME_MHDP_FINAL10Feb.pdf`
+Outreach is an interactive data tool that links mental health indicators, socioeconomic deprivation, health/disability data, and community service accessibility at LSOA level across London -- enabling researchers, policymakers, and practitioners to explore neighbourhood-level determinants of mental health.
 
 ## Research Motivation
 
@@ -41,10 +28,6 @@ aamental health data/
 |-- CLAUDE.md                        # AI assistant project instructions
 |-- master_lsoa.gpkg                 # Assembled GeoPackage (4,994 London LSOAs, 120 columns)
 |-- master_lsoa.gpkg.backup          # Pre-enrichment backup
-|-- SF_WELLCOME_MHDP_FINAL10Feb.pdf  # Prize information pack (28 pages)
-|-- Application-Documents.zip        # Contains:
-|   |-- Sample Application Form PDF (DO NOT SUBMIT via PDF)
-|   |-- WMHDP Budget Template Feb26.xlsx
 |-- data RAW/                        # Source datasets (read-only)
 |   |-- imd_2019.csv
 |   |-- census2021-ts006-lsoa-populationdensity.csv
@@ -321,7 +304,7 @@ An AI-powered chatbot integrated into the Outreach dashboard that helps policyma
 
 ### Architecture
 
-- **Backend**: FastAPI SSE streaming endpoint (`POST /api/chat`) calls Google Gemini API with dynamically-extracted data context from the cached GeoDataFrame
+- **Backend**: FastAPI SSE streaming endpoint (`POST /api/chat`) calls Anthropic Claude API with dynamically-extracted data context from the cached GeoDataFrame
 - **Frontend**: Floating chat panel (vanilla JS) with entity-link parsing that triggers map zoom/highlight actions via the existing `window.APP` global state
 - **Data context**: `chat_context.py` always sends all 33 borough summaries (~300 words) so the LLM can resolve landmarks/institutions to boroughs using world knowledge. When a specific borough or LSOA is detected, detailed drill-down data is appended (~150 extra words)
 
@@ -329,11 +312,11 @@ An AI-powered chatbot integrated into the Outreach dashboard that helps policyma
 
 | File | Role |
 |---|---|
-| `app/api/chat.py` | SSE streaming endpoint — orchestrates context + Gemini API |
+| `app/api/chat.py` | SSE streaming endpoint — orchestrates context + Anthropic Claude API |
 | `app/data/chat_context.py` | Entity detection (borough/LSOA/intent), data extraction from cached GDF, system prompt assembly |
 | `app/static/js/chat.js` | Chat panel UI, SSE consumption, message rendering, entity link → map navigation |
 | `app/static/css/chat.css` | Chat panel styles (toggle button, panel, messages, entity links) |
-| `.env` | `GEMINI_API_KEY` (gitignored, server-side only) |
+| `.env` | `ANTHROPIC_API_KEY` (gitignored, server-side only) |
 
 ### Entity Link Syntax
 
@@ -352,8 +335,8 @@ The system classifies user questions into 4 intents to tailor supplementary data
 
 | Setting | Value | Location |
 |---|---|---|
-| `GEMINI_API_KEY` | Required | `.env` file |
-| `CHAT_MODEL` | `gemini-2.5-flash` | `app/config.py` |
+| `ANTHROPIC_API_KEY` | Required | `.env` file |
+| `ANTHROPIC_MODEL` | `claude-haiku-4-5-20251001` | `app/config.py` |
 | `CHAT_MAX_TOKENS` | 1500 | `app/config.py` |
 | `CHAT_HISTORY_LIMIT` | 10 turns | `app/config.py` |
 
@@ -361,30 +344,17 @@ The system classifies user questions into 4 intents to tailor supplementary data
 
 Live at **https://london-mental-health-atlas-production.up.railway.app/**
 
-Deployed on Railway (persistent FastAPI server). Config files: `Procfile`, `runtime.txt` (Python 3.11), `nixpacks.toml` (system deps: libexpat, GDAL). `GEMINI_API_KEY` set as Railway environment variable.
+Deployed on Railway (persistent FastAPI server). Config files: `Procfile`, `runtime.txt` (Python 3.11), `nixpacks.toml` (system deps: libexpat, GDAL). `ANTHROPIC_API_KEY` set as Railway environment variable.
 
 ### Dependencies Added
 
-- `google-genai>=1.0.0` — Google Gemini SDK for LLM chat
+- `anthropic>=0.80.0` — Anthropic Claude SDK for LLM chat
 - `python-dotenv>=1.0.0` — Environment variable loading from `.env`
 
-## Outstanding Work
+## Future Improvements
 
-### Critical (before application)
-- [x] **Add mental health-specific variables** -- SAMHI v5.00 (composite index + sub-indicators) now included for 2019 and 2022
-- [x] **Add health/disability/care Census data** -- TS037, TS038, TS039 joined
-- [ ] **Identify primary mental health dataset** meeting Annex 3 criteria -- SAMHI is a composite; prize may require individual-level cohort data (e.g. ALSPAC, MCS, Understanding Society) with anxiety/depression/psychosis measures, respondents <30, 3+ waves
-- [ ] **Define the specific tool** -- interactive dashboard prototype exists; need to articulate how it serves researchers/policymakers
-- [ ] **Assemble team** -- need 5-10 people: mental health researcher, data scientist, tool developer, lived experience expert, policy person, practitioner, ethics specialist
-- [ ] **Draft lived experience engagement plan** -- non-extractive, central to all phases, representative
-- [ ] **Complete application** on Submit platform (not via PDF)
-- [ ] **Prepare budget** using `WMHDP Budget Template Feb26.xlsx`
-
-### Data Assembly Improvements
-- [x] Map SAMHI 2011 LSOAs to 2021 boundaries via ONS lookup (splits duplicated, merges averaged)
-- [x] Add SAMHI 2019 pre-COVID baseline for temporal comparison
 - [ ] Resolve 335 null-IMD LSOAs (have SAMHI/Census data but no IMD match)
-- [ ] Consider expanding beyond London if the chosen mental health dataset has national coverage
+- [ ] Consider expanding beyond London for national coverage
 - [ ] Add green space / air quality data for environmental mental health determinants
 - [ ] Add NHS service utilisation data if accessible
 

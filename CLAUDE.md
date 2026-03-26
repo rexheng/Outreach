@@ -1,18 +1,8 @@
-# Wellcome Mental Health Data Prize -- Project Instructions
+# Outreach -- Project Instructions
 
 ## Project Context
 
-Application workspace for the **Wellcome Mental Health Data Prize 2026-2028** (Social Finance / Wellcome). Building a data tool that links mental health indicators, socioeconomic deprivation, health/disability data, and community service accessibility at LSOA level across London -- enabling researchers, policymakers, and practitioners to explore neighbourhood-level determinants of mental health.
-
-**Application deadline: 8 May 2026, 12 pm.**
-
-The tool must be **in scope** for the prize:
-- Data discovery or documentation
-- Data analysis
-- Facilitating data analysis (cleaning, manipulation)
-- Sharing insights from data analysis
-
-**Not** clinical decision-making tools, chatbots, mood trackers, or symptom management apps.
+An interactive data tool that links mental health indicators, socioeconomic deprivation, health/disability data, and community service accessibility at LSOA level across London -- enabling researchers, policymakers, and practitioners to explore neighbourhood-level determinants of mental health.
 
 ## Key Files
 
@@ -30,8 +20,6 @@ The tool must be **in scope** for the prize:
 | `.env` | `ANTHROPIC_API_KEY` (gitignored, required for chatbot) |
 | `dashboard/index.html` | Legacy static dashboard (serve via HTTP) |
 | `build_dashboard.py` | Regenerates legacy dashboard data files from GPKG |
-| `SF_WELLCOME_MHDP_FINAL10Feb.pdf` | Prize information pack (28 pages, full evaluation criteria) |
-| `Application-Documents.zip` | Sample application form PDF + budget template XLSX |
 | `data RAW/` | Source CSVs/Excel -- do not modify |
 | `data_downloads/` | Downloaded enrichment datasets (SAMHI, Census TS037/38/39, LSOA lookup) |
 | `Project_Overview.md` | Full project documentation and data dictionary |
@@ -82,7 +70,6 @@ All project data **must** live in a single file: `master_lsoa.gpkg`. This is non
 - **Antidepressant rate**: Per 1,000 population. Range: 8.6 to 42.5. Outer London boroughs often score higher than inner.
 - **COVID impact**: Every borough's SAMHI worsened between 2019 and 2022. Use `samhi_index_2019` for pre-COVID baseline.
 - SAMHI is a composite of 4 sub-indicators (antidepressants, QOF depression, MH hospital admissions, DLA/PIP). The sub-indicators are also available individually for decomposed analysis.
-- A proper mental health dataset meeting Annex 3 criteria (individual-level cohort, <30 respondents, 3+ waves) still needs to be sourced.
 
 ## Tooling
 
