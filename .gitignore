@@ -59,3 +59,14 @@ explore-*.png
 overview-*.png
 logo-preview*.png
 logo-final-verify.png
+
+# Refactored/template configuration (keep working version only)
+risk_config_REFACTORED.yaml
+risk_config_OLD_BACKUP.yaml
+
+# Analysis and evaluation documents
+EVALUATION_CNI_WEIGHTING.md
+CNI_ANALYSIS_COLLINEARITY.py
+CNI_VALIDATION_TESTS.py
+CNI_REFACTORING_COMPLETE.md
+quick_validation.py
