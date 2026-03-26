@@ -32,13 +32,13 @@ def _check_rate_limit(ip: str) -> bool:
 
 def _load_signals() -> dict:
     if not POLICY_SIGNALS_PATH.exists():
-        raise HTTPException(status_code=503, detail="Policy signals not yet generated. Run build_policy_recs.py first.")
+        raise HTTPException(status_code=503, detail="Policy signals not yet generated. Run scripts/build_policy_recs.py first.")
     return json.loads(POLICY_SIGNALS_PATH.read_text())
 
 
 def _load_recs() -> dict:
     if not POLICY_RECS_PATH.exists():
-        raise HTTPException(status_code=503, detail="Policy recommendations not yet generated. Run build_policy_recs.py first.")
+        raise HTTPException(status_code=503, detail="Policy recommendations not yet generated. Run scripts/build_policy_recs.py first.")
     return json.loads(POLICY_RECS_PATH.read_text())
 
 

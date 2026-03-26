@@ -103,7 +103,7 @@ app/
 master_lsoa.gpkg       # All data (4,994 LSOAs, 120 columns)
 ```
 
-See `Project_Overview.md` for the full data dictionary and column reference.
+See [docs/Project_Overview.md](docs/Project_Overview.md) for the full data dictionary and column reference.
 
 ## Composite Need Index (CNI)
 
