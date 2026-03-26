@@ -29,6 +29,10 @@ build/
 
 # Superpowers plugin
 .superpowers/
+docs/superpowers/specs/
+
+# Raw source data (read-only reference copies, not needed by app)
+data RAW/
 
 # Large data downloads (re-downloadable)
 data_downloads/

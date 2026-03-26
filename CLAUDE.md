@@ -128,7 +128,7 @@ Lowest need `#F5F0EB` → `#E5D5C5` → `#D4A574` → `#B5725A` → Highest need
 - "Composite Need Index" (not "Loneliness Risk Index")
 - Need tiers: "Critical Need", "High Need", "Elevated", "Lower Need"
 - "Neighbourhoods" (not "LSOAs" in UI)
-- See `docs/project/FRONTEND_DESIGN_PROMPT.md` for full design specification
+- See `FRONTEND_DESIGN_PROMPT.md` for full design specification
 
 ## Task Management
 
