@@ -69,7 +69,7 @@ aamental health data/
 |-- community_services.csv           # 175 geocoded community services
 |-- enrich_community_services.py     # Community services enrichment script
 |-- References_and_Research_Data.md   # Full dataset provenance, methodology, citations
-|-- FRONTEND_DESIGN_PROMPT.md        # Full frontend design specification (colours, typography, layout)
+|-- docs/project/FRONTEND_DESIGN_PROMPT.md  # Full frontend design specification (colours, typography, layout)
 |-- .env                             # API keys (gitignored)
 |-- tasks/
 |   |-- todo.md                      # Current task tracking
