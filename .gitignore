@@ -39,3 +39,23 @@ data_downloads/
 # Python cache
 __pycache__/
 *.pyc
+
+# Local agent and automation artifacts
+.claude/
+.playwright-mcp/
+.pytest_cache/
+
+# Local planning/output scratch space
+docs/superpowers/plans/
+
+# Generated exports and ad-hoc binary artifacts
+Application-Documents.zip
+Outreach-Briefing-*.pdf
+master_lsoa.geojson
+
+# Local design and QA image captures (root-level)
+dashboard-*.png
+explore-*.png
+overview-*.png
+logo-preview*.png
+logo-final-verify.png
