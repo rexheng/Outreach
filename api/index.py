@@ -14,6 +14,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, field_validator
+import httpx
 from groq import Groq
 
 from _config import (
@@ -94,7 +95,7 @@ async def chat(req: ChatRequest):
             yield "event: done\ndata: {}\n\n"
             return
         try:
-            client = Groq(api_key=GROQ_API_KEY)
+            client = Groq(api_key=GROQ_API_KEY, http_client=httpx.Client(verify=True))
             stream = client.chat.completions.create(model=GROQ_MODEL, max_tokens=CHAT_MAX_TOKENS, messages=messages, stream=True)
             for chunk in stream:
                 delta = chunk.choices[0].delta
