@@ -101,7 +101,9 @@ async def chat(req: ChatRequest):
                 if delta.content:
                     yield f"event: token\ndata: {json.dumps({'text': delta.content})}\n\n"
         except Exception as e:
-            yield f"event: token\ndata: {json.dumps({'text': f'Error: {e}'})}\n\n"
+            import traceback
+            tb = traceback.format_exc()
+            yield f"event: token\ndata: {json.dumps({'text': f'Error: {e} | Key starts with: {GROQ_API_KEY[:10]}... | Traceback: {tb[-200:]}'})}\n\n"
         yield "event: done\ndata: {}\n\n"
 
     return StreamingResponse(generate(), media_type="text/event-stream")
