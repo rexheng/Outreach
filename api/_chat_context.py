@@ -3,7 +3,7 @@
 import json
 import re
 from pathlib import Path
-from api._config import DATA_DIR
+from _config import DATA_DIR
 
 # Lazy-loaded caches
 _chat_data = None

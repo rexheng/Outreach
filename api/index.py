@@ -2,22 +2,27 @@
 
 import io
 import json
+import os
 import re
+import sys
 import time
 import logging
+
+# Ensure api/ directory is on the import path for sibling imports
+sys.path.insert(0, os.path.dirname(__file__))
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, field_validator
 from openai import OpenAI
 
-from api._config import (
+from _config import (
     GROQ_API_KEY, GROQ_MODEL, CHAT_MAX_TOKENS, CHAT_HISTORY_LIMIT,
     ANTHROPIC_API_KEY, ANTHROPIC_MODEL, POLICY_DEEPDIVE_MAX_TOKENS,
     POLICY_MAX_QUESTION_LEN, DATA_DIR,
 )
-from api._chat_context import build_chat_context
-from api._briefing_generator import generate_pdf
+from _chat_context import build_chat_context
+from _briefing_generator import generate_pdf
 
 logger = logging.getLogger(__name__)
 app = FastAPI()
@@ -210,7 +215,7 @@ async def deep_dive(req: DeepDiveRequest):
 
 @app.get("/api/lsoa/{lsoa_code}")
 def lsoa_detail(lsoa_code: str):
-    from api._chat_context import _load_lsoa_lookup
+    from _chat_context import _load_lsoa_lookup
     lookup = _load_lsoa_lookup()
     if lsoa_code not in lookup:
         raise HTTPException(404, "LSOA not found")

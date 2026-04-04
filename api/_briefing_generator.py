@@ -12,7 +12,7 @@ from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Spacer, Par
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER
 
-from api._config import DATA_DIR
+from _config import DATA_DIR
 
 TERRA = HexColor("#B5725A")
 TERRA_DARK = HexColor("#6B4A3A")
