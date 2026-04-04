@@ -1,0 +1,3391 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-03-24T18:52:05.130636+00:00",
+  "signals_generated_at": null,
+  "recommendations": [
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Rapid Response for Critical Need Neighbourhoods",
+      "description": "Immediately deploy targeted outreach and support services to the 48 LSOAs identified as 'Critical Need' across London, with a particular focus on the top 10 highest-risk LSOAs. This should involve mobile teams from organisations like Mind and Samaritans, alongside NHS Community Mental Health Teams (CMHTs), to provide urgent mental health support and connect residents with essential services like foodbanks and Citizens Advice bureaux.",
+      "evidence": [
+        {
+          "signal": "Total LSOAs in 'Critical Need' tier",
+          "value": "48"
+        },
+        {
+          "signal": "Top 10 LSOAs by risk",
+          "value": "E01001021 (Croydon), E01001080 (Croydon), E01000386 (Bexley), E01002277 (Havering), E01002280 (Havering), E01000720 (Bromley), E01002276 (Havering), E01002283 (Havering), E01001364 (Ealing), E01001079 (Croydon)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001021",
+        "E01001080",
+        "E01000386",
+        "E01002277",
+        "E01002280",
+        "E01000720",
+        "E01002276",
+        "E01002283",
+        "E01001364",
+        "E01001079"
+      ],
+      "id": "london-short-term-1",
+      "borough": "London",
+      "scope": "london_wide"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Boost Services in High-Risk, Worsening Boroughs",
+      "description": "Prioritise increased funding and staffing for NHS Talking Therapies (formerly IAPT) and local council wellbeing hubs in boroughs identified as both 'highest risk' and having a 'worsening trajectory'. This includes Barking and Dagenham, Bexley, Enfield, Greenwich, and Havering, to manage immediate demand and prevent further decline in mental wellbeing across their populations (estimated at 8,237,043.0 London-wide in mid-2015).",
+      "evidence": [
+        {
+          "signal": "Boroughs with highest risk",
+          "value": "Barking and Dagenham, Havering, Enfield, Bexley, Greenwich"
+        },
+        {
+          "signal": "Boroughs with worsening trajectory",
+          "value": "Barking and Dagenham, Bexley, Enfield, Greenwich, Havering (overlap)"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "london-short-term-2",
+      "borough": "London",
+      "scope": "london_wide"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Strengthen Community Support Networks",
+      "description": "Invest in existing community-led initiatives and services within the 544 'High Need' LSOAs to provide accessible, non-clinical support. This involves enhancing the capacity of local foodbanks, Age UK branches, and Citizens Advice bureaux, as well as promoting council wellbeing hubs, to address social determinants of mental health and offer immediate practical assistance.",
+      "evidence": [
+        {
+          "signal": "Total LSOAs in 'High Need' tier",
+          "value": "544"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "london-short-term-3",
+      "borough": "London",
+      "scope": "london_wide"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop Integrated Mental Health Pathways",
+      "description": "Establish comprehensive, integrated mental health care pathways across all 18 boroughs experiencing a 'worsening trajectory'. This strategy should link primary care, Community Mental Health Teams (CMHTs), homelessness services, and council wellbeing hubs, ensuring seamless transitions and holistic support for individuals with complex needs over the next 1-5 years.",
+      "evidence": [
+        {
+          "signal": "Boroughs with worsening trajectory",
+          "value": "Barking and Dagenham, Barnet, Bexley, Brent, Bromley, Croydon, Ealing, Enfield, Greenwich, Hammersmith and Fulham, Haringey, Harrow, Havering, Hillingdon, Lambeth, Lewisham, Redbridge, Richmond upon Thames"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "london-long-term-4",
+      "borough": "London",
+      "scope": "london_wide"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Data-Driven Prevention and Resource Allocation",
+      "description": "Implement a robust, borough-level data collection and analysis system to monitor mental health indicators, including SAMHI scores, and service utilisation more granularly. This will allow for proactive, evidence-based resource allocation and the development of targeted preventative programmes, particularly in the 2899 'Elevated' LSOAs, aiming to prevent escalation to 'High' or 'Critical Need' tiers.",
+      "evidence": [
+        {
+          "signal": "Mean SAMHI 2022 (London-wide)",
+          "value": "-0.288"
+        },
+        {
+          "signal": "Total LSOAs in 'Elevated' tier",
+          "value": "2899"
+        },
+        {
+          "signal": "SAMHI data missing for top LSOAs",
+          "value": "N/A for E01001021, E01001080, etc."
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "london-long-term-5",
+      "borough": "London",
+      "scope": "london_wide"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Sustainable Workforce Development and Capacity Building",
+      "description": "Invest strategically in the recruitment, training, and retention of mental health professionals across London over the next 1-5 years. This includes expanding the workforce for NHS Talking Therapies and CMHTs, as well as providing sustained funding and support for community organisations like Mind and Samaritans to grow their volunteer base and reach, ensuring long-term capacity to meet the needs of London's diverse population.",
+      "evidence": [
+        {
+          "signal": "Total estimated population (mid-2015)",
+          "value": "8,237,043.0"
+        },
+        {
+          "signal": "Total LSOAs in 'Elevated' tier",
+          "value": "2899"
+        },
+        {
+          "signal": "Total LSOAs in 'High Need' tier",
+          "value": "544"
+        },
+        {
+          "signal": "Total LSOAs in 'Critical Need' tier",
+          "value": "48"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "london-long-term-6",
+      "borough": "London",
+      "scope": "london_wide"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Conduct Rapid Needs Assessment and Data Improvement for High-Risk LSOAs",
+      "description": "Given the lack of specific SAMHI data for the top LSOAs and N/A service coverage, a rapid assessment is crucial. This will involve gathering up-to-date local data on mental health needs and existing informal support networks in areas like E01000601 (Brent 021B) and E01000485 (Brent 006C) to inform targeted interventions.",
+      "evidence": [
+        {
+          "signal": "Top LSOAs by risk (SAMHI, tier, pop_16plus)",
+          "value": "N/A for all listed top LSOAs"
+        },
+        {
+          "signal": "Service coverage",
+          "value": "N/A for all listed service types"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000601",
+        "E01000485",
+        "E01000599",
+        "E01000605",
+        "E01000509"
+      ],
+      "id": "brent-lt-1",
+      "borough": "Brent",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Enhance Accessible Early Intervention and Crisis Support Promotion",
+      "description": "With a worsening mental health trajectory and a mean SAMHI of -0.389 (worse than London average), immediate access to support is vital. Promote existing services like Samaritans and NHS Talking Therapies more widely, especially in the 137 LSOAs identified as 'Elevated' or 'High Need', to ensure residents know where to turn for help.",
+      "evidence": [
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.389 (London average: -0.288)"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        },
+        {
+          "signal": "Tier breakdown",
+          "value": "116 'Elevated' and 21 'High Need' LSOAs"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "brent-lt-2",
+      "borough": "Brent",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Strengthen Community Outreach for Basic Wellbeing and Advice",
+      "description": "Focus on proactive outreach in the 137 'Elevated' and 'High Need' LSOAs, which represent a significant portion of Brent's approximate 307,474 population. Partner with local community groups to promote Citizens Advice bureaux and foodbanks, addressing immediate social and financial stressors that impact mental wellbeing.",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "116 'Elevated' and 21 'High Need' LSOAs"
+        },
+        {
+          "signal": "Estimated population (mid-2015)",
+          "value": "307,474.0"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "brent-lt-3",
+      "borough": "Brent",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Establish Integrated Community Wellbeing Hubs Across Brent",
+      "description": "To address the borough's overall high mental health need and worsening trajectory, develop new council wellbeing hubs or Mind centres. These hubs should co-locate services like NHS Talking Therapies, Citizens Advice, and potentially Age UK branches, creating accessible, holistic support points for residents in the 137 LSOAs with 'Elevated' or 'High Need'.",
+      "evidence": [
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.389 (London average: -0.288)"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        },
+        {
+          "signal": "Tier breakdown",
+          "value": "116 'Elevated' and 21 'High Need' LSOAs"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "brent-lt-4",
+      "borough": "Brent",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Increase Capacity and Accessibility of Community Mental Health Teams (CMHTs)",
+      "description": "With a large population of approximately 307,474 and a worsening mental health trajectory, Brent needs robust support for more complex mental health needs. Invest in increasing the capacity of Community Mental Health Teams (CMHTs) and improving referral pathways, ensuring timely and sustained care for residents across the borough.",
+      "evidence": [
+        {
+          "signal": "Estimated population (mid-2015)",
+          "value": "307,474.0"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        },
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.389 (London average: -0.288)"
+        }
+      ],
+      "affected_lsoas": [],
+      "id": "brent-lt-5",
+      "borough": "Brent",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Integrate Mental Health Support with Socio-Economic Services",
+      "description": "Recognising that socio-economic factors heavily influence mental wellbeing, develop stronger, integrated pathways between mental health services and support for housing and financial stability. This includes closer collaboration with homelessness services, foodbanks, and Citizens Advice bureaux to provide comprehensive support for vulnerable residents, particularly in areas like E01000601 (Brent 021B) and E01000485 (Brent 006C).",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "116 'Elevated' and 21 'High Need' LSOAs"
+        },
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.389 (London average: -0.288)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000601",
+        "E01000485",
+        "E01000599",
+        "E01000605",
+        "E01000509"
+      ],
+      "id": "brent-lt-6",
+      "borough": "Brent",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish Foodbanks",
+      "description": "Croydon has a high need for foodbanks, especially in areas with high SAMHI scores. We recommend establishing foodbanks in areas like E01001021 and E01001080. This will help alleviate food poverty and improve mental health.",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "25 High Need areas"
+        },
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.300"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001021",
+        "E01001080"
+      ],
+      "id": "croydon-lt-1",
+      "borough": "Croydon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Increase NHS Therapy",
+      "description": "With a worsening SAMHI trajectory, increasing access to NHS Talking Therapies is crucial. We recommend expanding NHS therapy services to cover more LSOAs, especially those with high need tiers. This will help address mental health issues promptly.",
+      "evidence": [
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        },
+        {
+          "signal": "Tier breakdown",
+          "value": "10 Critical Need areas"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001079",
+        "E01001078"
+      ],
+      "id": "croydon-lt-2",
+      "borough": "Croydon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "low",
+      "title": "Citizens Advice Outreach",
+      "description": "Citizens Advice bureaux can provide vital support for mental health by addressing underlying issues like debt and housing. We recommend outreach programs to increase awareness and accessibility of Citizens Advice services in Croydon. This will help reduce stress and anxiety.",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "38 Lower Need areas"
+        },
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.300"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001052"
+      ],
+      "id": "croydon-lt-3",
+      "borough": "Croydon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Community Mental Health Teams",
+      "description": "Croydon needs a strategic approach to mental health, including Community Mental Health Teams. We recommend establishing CMHTs in areas with high need tiers to provide comprehensive support. This will help address complex mental health issues and reduce SAMHI scores.",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "25 High Need areas"
+        },
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.300"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001021",
+        "E01001080",
+        "E01001079"
+      ],
+      "id": "croydon-lt-4",
+      "borough": "Croydon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Homelessness Services Expansion",
+      "description": "Homelessness is a critical factor in mental health. We recommend expanding homelessness services in Croydon to cover more LSOAs, especially those with high need tiers. This will help address the root causes of mental health issues and reduce SAMHI scores.",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "10 Critical Need areas"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001078",
+        "E01001052"
+      ],
+      "id": "croydon-lt-5",
+      "borough": "Croydon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "low",
+      "title": "Wellbeing Hubs Establishment",
+      "description": "Wellbeing hubs can provide a safe space for mental health support and community engagement. We recommend establishing wellbeing hubs in areas with lower need tiers to promote preventative care and reduce SAMHI scores. This will help foster a culture of mental wellbeing in Croydon.",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "38 Lower Need areas"
+        },
+        {
+          "signal": "Mean SAMHI 2022",
+          "value": "-0.300"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001052"
+      ],
+      "id": "croydon-lt-6",
+      "borough": "Croydon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish baseline service audit across all 104 LSOAs",
+      "description": "Conduct immediate mapping of existing foodbanks, NHS Talking Therapies, Citizens Advice bureaux, CMHTs, and homelessness services across Barking and Dagenham. Current data shows N/A for all service types, preventing targeted intervention. Complete audit within 6 months to identify service gaps in high-need and critical-need areas.",
+      "evidence": [
+        {
+          "signal": "Service coverage data completeness",
+          "value": "All 6 service types show N/A locations and 0% LSOA coverage"
+        },
+        {
+          "signal": "High-need LSOAs requiring urgent mapping",
+          "value": "54 LSOAs in High Need tier, 4 in Critical Need tier"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000053",
+        "E01000106",
+        "E01000034",
+        "E01000086",
+        "E01000061"
+      ],
+      "id": "barking-and-dagenham-lt-1",
+      "borough": "Barking and Dagenham",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Launch emergency mental health support hub in critical-need areas",
+      "description": "Open at least one integrated wellbeing hub offering NHS Talking Therapies signposting, Citizens Advice support, and foodbank access in the 4 Critical Need LSOAs within 9 months. Partner with existing community centres to minimise setup costs. Prioritise E01000053, E01000106, E01000034, and E01000086 based on risk profile.",
+      "evidence": [
+        {
+          "signal": "Critical Need tier concentration",
+          "value": "4 LSOAs classified as Critical Need"
+        },
+        {
+          "signal": "Borough-level mental health trajectory",
+          "value": "SAMHI score worsening; mean SAMHI -0.288 matches London average but declining trend"
+        },
+        {
+          "signal": "Population scale requiring intervention",
+          "value": "187,241 residents across 104 LSOAs with zero documented service locations"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000053",
+        "E01000106",
+        "E01000034",
+        "E01000086"
+      ],
+      "id": "barking-and-dagenham-lt-2",
+      "borough": "Barking and Dagenham",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Establish foodbank network covering 42 Elevated-tier LSOAs",
+      "description": "Partner with existing charities (e.g. Trussell Trust) to open or expand foodbanks in at least 8\u201310 Elevated-tier LSOAs within 12 months. Food insecurity is a documented driver of mental health decline. Target E01000061 and similar neighbourhoods with high deprivation indicators.",
+      "evidence": [
+        {
+          "signal": "Elevated Need tier prevalence",
+          "value": "42 LSOAs in Elevated tier, representing 40% of all LSOAs"
+        },
+        {
+          "signal": "Current foodbank coverage",
+          "value": "N/A locations, 0% LSOA coverage across borough"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000061",
+        "E01000053",
+        "E01000106",
+        "E01000034",
+        "E01000086"
+      ],
+      "id": "barking-and-dagenham-lt-3",
+      "borough": "Barking and Dagenham",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop integrated mental health pathway with NHS and local partners",
+      "description": "Over 3\u20135 years, establish a formal integrated care system linking NHS Talking Therapies, Community Mental Health Teams, and council wellbeing services. Secure NHS commissioning agreements to guarantee NHS therapy coverage in all 104 LSOAs. Establish performance targets: 80% of High Need LSOAs with CMHT access within 3 years.",
+      "evidence": [
+        {
+          "signal": "NHS therapy service absence",
+          "value": "N/A locations, 0% LSOA coverage"
+        },
+        {
+          "signal": "CMHT service absence",
+          "value": "N/A locations, 0% LSOA coverage"
+        },
+        {
+          "signal": "High-need population scale",
+          "value": "54 High Need LSOAs require systematic NHS access"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000053",
+        "E01000106",
+        "E01000034",
+        "E01000086",
+        "E01000061"
+      ],
+      "id": "barking-and-dagenham-lt-4",
+      "borough": "Barking and Dagenham",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Reverse worsening SAMHI trajectory through targeted prevention",
+      "description": "Implement a 5-year prevention strategy addressing root causes of mental health decline: housing insecurity, employment support, and social isolation. Establish homelessness services and Age UK partnerships in High Need LSOAs. Set measurable goal: improve borough SAMHI score from -0.288 to above London average by 2029.",
+      "evidence": [
+        {
+          "signal": "Worsening trajectory",
+          "value": "Borough SAMHI declining; current mean -0.288 at London average but trend negative"
+        },
+        {
+          "signal": "Homelessness service gap",
+          "value": "N/A locations, 0% LSOA coverage"
+        },
+        {
+          "signal": "Deprivation-linked mental health risk",
+          "value": "54 High Need LSOAs suggest significant socioeconomic drivers"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000053",
+        "E01000106",
+        "E01000034",
+        "E01000086",
+        "E01000061"
+      ],
+      "id": "barking-and-dagenham-lt-5",
+      "borough": "Barking and Dagenham",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Build community mental health literacy and peer support infrastructure",
+      "description": "Over 4\u20135 years, train 200+ community volunteers as mental health champions in High and Elevated Need LSOAs. Establish peer support groups, Mind-style community centres, and Citizens Advice outreach in partnership with local organisations. Target: 60% of High Need LSOAs with active peer support by year 5.",
+      "evidence": [
+        {
+          "signal": "Mental health charity service gap",
+          "value": "N/A locations, 0% LSOA coverage"
+        },
+        {
+          "signal": "Citizens Advice absence",
+          "value": "N/A locations, 0% LSOA coverage"
+        },
+        {
+          "signal": "Large population requiring support",
+          "value": "187,241 residents with minimal documented community mental health infrastructure"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000053",
+        "E01000106",
+        "E01000034",
+        "E01000086",
+        "E01000061"
+      ],
+      "id": "barking-and-dagenham-lt-6",
+      "borough": "Barking and Dagenham",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Conduct urgent service mapping audit across all 205 LSOAs",
+      "description": "Barnet currently has no recorded locations for foodbanks, mental health charities, NHS therapy services, Citizens Advice, CMHTs, or homelessness support\u2014a critical data gap that prevents evidence-based commissioning. Immediately audit all existing services (statutory and voluntary) across the borough to establish baseline coverage and identify genuine gaps versus data recording failures. This audit must be completed within 3 months to inform emergency service placement.",
+      "evidence": [
+        {
+          "signal": "Service coverage data completeness",
+          "value": "All 6 service types show N/A locations and 0% LSOA coverage across 205 LSOAs"
+        },
+        {
+          "signal": "Borough population requiring services",
+          "value": "362,195 residents with no mapped access to core mental health and wellbeing services"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000221",
+        "E01000195",
+        "E01000153",
+        "E01000121",
+        "E01000223"
+      ],
+      "id": "barnet-lt-1",
+      "borough": "Barnet",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish mental health crisis response in 12 highest-need LSOAs",
+      "description": "Barnet has 12 LSOAs in the 'High Need' tier and a mean SAMHI score of -0.404 (worse than London average of -0.288), indicating elevated mental health distress. Within 6 months, establish dedicated crisis support in the 12 highest-need areas through partnership with NHS Talking Therapies, local CMHTs, and Samaritans to provide same-day assessment and signposting. Prioritise LSOAs E01000221, E01000195, E01000153, E01000121, and E01000223 as immediate entry points.",
+      "evidence": [
+        {
+          "signal": "Mean SAMHI score",
+          "value": "-0.404 (London average: -0.288) indicating worsening composite wellbeing"
+        },
+        {
+          "signal": "High Need tier count",
+          "value": "12 LSOAs classified as High Need requiring urgent intervention"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "Worsening trend across the borough"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000221",
+        "E01000195",
+        "E01000153",
+        "E01000121",
+        "E01000223"
+      ],
+      "id": "barnet-lt-2",
+      "borough": "Barnet",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Launch rapid foodbank and Citizens Advice hub network",
+      "description": "With zero recorded foodbank or Citizens Advice locations, Barnet's 112 Elevated-tier LSOAs lack basic economic and welfare support infrastructure. Within 9 months, establish at least 8\u201310 foodbank collection points and 3\u20134 Citizens Advice drop-in hubs distributed across the borough, prioritising areas with high deprivation and the 12 High Need LSOAs. Partner with existing community centres, libraries, and GP practices to minimise setup costs.",
+      "evidence": [
+        {
+          "signal": "Foodbank coverage",
+          "value": "N/A locations, 0% LSOA coverage across 205 LSOAs"
+        },
+        {
+          "signal": "Citizens Advice coverage",
+          "value": "N/A locations, 0% LSOA coverage across 205 LSOAs"
+        },
+        {
+          "signal": "Elevated-tier LSOAs",
+          "value": "112 LSOAs in Elevated tier requiring economic and welfare support"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000221",
+        "E01000195",
+        "E01000153",
+        "E01000121",
+        "E01000223"
+      ],
+      "id": "barnet-lt-3",
+      "borough": "Barnet",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop integrated mental health and economic wellbeing strategy",
+      "description": "Barnet's worsening SAMHI trajectory and absence of mapped services indicate systemic underinvestment in composite wellbeing. Over 1\u20132 years, co-design a borough-wide strategy linking mental health services (CMHTs, NHS Talking Therapies), economic support (Citizens Advice, employment services), and housing stability (homelessness prevention) to address root causes of distress. Establish a cross-sector steering group including Public Health, Adult Social Care, Housing, and voluntary sector partners.",
+      "evidence": [
+        {
+          "signal": "Mean SAMHI score and trajectory",
+          "value": "-0.404 with worsening trend indicates composite wellbeing decline"
+        },
+        {
+          "signal": "Service infrastructure gap",
+          "value": "Zero mapped locations across all 6 core service types suggests fragmented or absent commissioning"
+        },
+        {
+          "signal": "Population scale",
+          "value": "362,195 residents require coordinated, integrated support"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000221",
+        "E01000195",
+        "E01000153",
+        "E01000121",
+        "E01000223"
+      ],
+      "id": "barnet-lt-4",
+      "borough": "Barnet",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Commission comprehensive CMHT and homelessness service expansion",
+      "description": "Barnet has zero recorded CMHT or homelessness service locations despite 362,195 residents and worsening mental health trends. Over 2\u20133 years, commission expanded Community Mental Health Teams (targeting the 12 High Need LSOAs and 112 Elevated-tier areas) and integrated homelessness prevention services. Align commissioning with NHS Long Term Plan mental health targets and ensure services are co-located with primary care and housing support to reduce fragmentation.",
+      "evidence": [
+        {
+          "signal": "CMHT coverage",
+          "value": "N/A locations, 0% LSOA coverage"
+        },
+        {
+          "signal": "Homelessness service coverage",
+          "value": "N/A locations, 0% LSOA coverage"
+        },
+        {
+          "signal": "High Need and Elevated tier prevalence",
+          "value": "124 LSOAs (12 High Need + 112 Elevated) require specialist mental health and housing support"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000221",
+        "E01000195",
+        "E01000153",
+        "E01000121",
+        "E01000223"
+      ],
+      "id": "barnet-lt-5",
+      "borough": "Barnet",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Establish mental health charity and peer support infrastructure",
+      "description": "Barnet has zero recorded mental health charity locations (e.g. Mind centres, Age UK branches) despite a population of 362,195 and worsening wellbeing. Over 2\u20133 years, develop partnerships with national mental health charities to establish local branches or satellite services, and fund community peer support groups in the 12 High Need LSOAs. Prioritise services for older adults, young people, and economically disadvantaged groups identified through the service mapping audit.",
+      "evidence": [
+        {
+          "signal": "Mental health charity coverage",
+          "value": "N/A locations, 0% LSOA coverage across 205 LSOAs"
+        },
+        {
+          "signal": "Mean SAMHI and trajectory",
+          "value": "-0.404 (worsening) indicates need for accessible community-based mental health support"
+        },
+        {
+          "signal": "High Need tier concentration",
+          "value": "12 LSOAs require targeted peer and community mental health services"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000221",
+        "E01000195",
+        "E01000153",
+        "E01000121",
+        "E01000223"
+      ],
+      "id": "barnet-lt-6",
+      "borough": "Barnet",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish baseline service audit and gap analysis",
+      "description": "Conduct an urgent audit of all mental health and wellbeing services currently operating in Bexley, as the data shows N/A coverage across all tracked service types (foodbanks, mental health charities, NHS therapy, Citizens Advice, CMHTs, homelessness services). This audit must map existing provision against the 144 LSOAs and identify which neighbourhoods have no access to critical support. Engage NHS Integrated Care Board, local voluntary sector, and council teams to compile a comprehensive service directory within 3 months.",
+      "evidence": [
+        {
+          "signal": "Service coverage data",
+          "value": "All 6 service types show N/A locations and N/A% LSOA coverage"
+        },
+        {
+          "signal": "SAMHI trajectory",
+          "value": "Worsening trend indicates growing unmet need"
+        },
+        {
+          "signal": "Tier distribution",
+          "value": "34 LSOAs in High Need or Critical Need tiers (28 + 6) require urgent intervention"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000386",
+        "E01000374",
+        "E01000434",
+        "E01000429",
+        "E01000428"
+      ],
+      "id": "bexley-lt-1",
+      "borough": "Bexley",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Activate emergency foodbank and crisis support network",
+      "description": "Establish or activate at least 4 foodbank locations across Bexley's highest-need LSOAs (E01000386, E01000374, E01000434, E01000429, E01000428) within 6 months, prioritising areas with no current coverage. Partner with local food banks, community centres, and faith organisations to ensure weekly distribution. Simultaneously, ensure all foodbank staff receive mental health awareness training and have referral pathways to NHS Talking Therapies and local crisis services.",
+      "evidence": [
+        {
+          "signal": "Service gap",
+          "value": "Zero foodbank locations recorded despite 237,854 population"
+        },
+        {
+          "signal": "High-need LSOAs",
+          "value": "28 LSOAs in High Need tier; 6 in Critical Need tier"
+        },
+        {
+          "signal": "SAMHI performance",
+          "value": "Mean SAMHI 0.072 is above London average (-0.288), but worsening trajectory suggests deteriorating conditions"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000386",
+        "E01000374",
+        "E01000434",
+        "E01000429",
+        "E01000428"
+      ],
+      "id": "bexley-lt-2",
+      "borough": "Bexley",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Commission rapid mental health awareness campaign and signposting",
+      "description": "Launch a borough-wide mental health awareness campaign within 3 months, with targeted messaging in high-need LSOAs. Distribute simple, multilingual signposting materials (posters, leaflets, QR codes) in GP surgeries, libraries, community centres, and council buildings directing residents to NHS Talking Therapies, Samaritans, Mind, and local crisis support. Include information on how to access foodbanks and Citizens Advice for financial wellbeing support.",
+      "evidence": [
+        {
+          "signal": "Service awareness gap",
+          "value": "N/A coverage across all tracked services suggests residents may not know where to access help"
+        },
+        {
+          "signal": "Worsening trajectory",
+          "value": "Mental health need is deteriorating; early intervention through awareness can prevent escalation"
+        },
+        {
+          "signal": "Population scale",
+          "value": "237,854 residents across 144 LSOAs need accessible information"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000386",
+        "E01000374",
+        "E01000434",
+        "E01000429",
+        "E01000428"
+      ],
+      "id": "bexley-lt-3",
+      "borough": "Bexley",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop integrated mental health and wellbeing hub network",
+      "description": "Over 18\u201324 months, establish 3\u20134 integrated wellbeing hubs across Bexley, each serving 35\u201350 LSOAs. Each hub should co-locate or coordinate NHS Talking Therapies, Community Mental Health Teams, Citizens Advice, foodbank access, and council wellbeing services. Prioritise locations serving the 34 High Need and Critical Need LSOAs. Secure capital funding through NHS Integrated Care Board, council reserves, and Levelling Up bids.",
+      "evidence": [
+        {
+          "signal": "Tier concentration",
+          "value": "34 LSOAs (24% of total) in High Need or Critical Need tiers require coordinated, intensive support"
+        },
+        {
+          "signal": "Service fragmentation",
+          "value": "All 6 service types show zero coverage, indicating fragmented or absent provision"
+        },
+        {
+          "signal": "Population need",
+          "value": "237,854 residents with worsening SAMHI trajectory need accessible, joined-up services"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000386",
+        "E01000374",
+        "E01000434",
+        "E01000429",
+        "E01000428"
+      ],
+      "id": "bexley-lt-4",
+      "borough": "Bexley",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Implement targeted prevention and early intervention in Elevated tier LSOAs",
+      "description": "Design and deliver a 3-year prevention programme targeting the 78 Elevated tier LSOAs to prevent progression to High Need or Critical Need. Interventions should include community mental health awareness, peer support networks, workplace wellbeing initiatives, and school-based mental health training. Partner with local employers, schools, and community organisations. Measure impact through annual SAMHI updates and tier movement tracking.",
+      "evidence": [
+        {
+          "signal": "Elevated tier prevalence",
+          "value": "78 LSOAs (54% of total) in Elevated tier represent early intervention opportunity"
+        },
+        {
+          "signal": "Worsening trajectory",
+          "value": "Current trend suggests Elevated tier LSOAs may progress to higher need without intervention"
+        },
+        {
+          "signal": "Cost-effectiveness",
+          "value": "Prevention in early-stage LSOAs is more cost-effective than crisis response in High Need/Critical Need areas"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000386",
+        "E01000374",
+        "E01000434",
+        "E01000429",
+        "E01000428"
+      ],
+      "id": "bexley-lt-5",
+      "borough": "Bexley",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Establish data infrastructure and annual SAMHI monitoring system",
+      "description": "Over 2 years, build a robust data infrastructure to enable annual SAMHI updates and LSOA-level tracking of mental health and wellbeing outcomes. Work with NHS Integrated Care Board, Public Health England, and local data teams to integrate health, social care, and council data. Publish annual borough mental health reports with LSOA-level breakdowns to inform commissioning and accountability. Link data to service coverage metrics to close current N/A gaps.",
+      "evidence": [
+        {
+          "signal": "Data gaps",
+          "value": "Top 5 LSOAs show N/A SAMHI scores and tier classifications; all service coverage shows N/A"
+        },
+        {
+          "signal": "Trajectory uncertainty",
+          "value": "Worsening trajectory noted but granular LSOA-level data unavailable to target interventions"
+        },
+        {
+          "signal": "Accountability need",
+          "value": "Councillors and public health directors require reliable, timely data to make evidence-based decisions"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000386",
+        "E01000374",
+        "E01000434",
+        "E01000429",
+        "E01000428"
+      ],
+      "id": "bexley-lt-6",
+      "borough": "Bexley",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Conduct urgent service audit and gap analysis across Bromley",
+      "description": "All six core service types (foodbank, mental health charity, NHS therapy, Citizens Advice, CMHT, homelessness) show N/A coverage across Bromley's 195 LSOAs. Immediately commission a comprehensive audit to establish baseline service locations, capacity, and accessibility. This is essential before any targeted intervention can be designed.",
+      "evidence": [
+        {
+          "signal": "Service coverage data",
+          "value": "All six service types report N/A locations and N/A% LSOA coverage"
+        },
+        {
+          "signal": "LSOA count",
+          "value": "195 LSOAs across Bromley with no mapped service provision"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000720",
+        "E01000739",
+        "E01000730",
+        "E01000721",
+        "E01000729"
+      ],
+      "id": "bromley-lt-1",
+      "borough": "Bromley",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish mental health support hub in highest-need neighbourhoods",
+      "description": "Five LSOAs (E01000720, E01000739, E01000730, E01000721, E01000729) are flagged as top-risk areas. Within 6 months, open at least one integrated wellbeing hub offering NHS Talking Therapies signposting, Citizens Advice support, and mental health charity drop-in services in or near these neighbourhoods to reduce access barriers.",
+      "evidence": [
+        {
+          "signal": "Top LSOAs by risk",
+          "value": "Five LSOAs identified as highest priority: E01000720, E01000739, E01000730, E01000721, E01000729"
+        },
+        {
+          "signal": "SAMHI trajectory",
+          "value": "Worsening mental health composite wellbeing trend across borough"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000720",
+        "E01000739",
+        "E01000730",
+        "E01000721",
+        "E01000729"
+      ],
+      "id": "bromley-lt-2",
+      "borough": "Bromley",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Partner with foodbank network to address material hardship",
+      "description": "With 28 High Need and 5 Critical Need LSOAs, material hardship is likely a significant driver of poor mental health. Within 9 months, establish partnerships with existing foodbank networks (e.g. Trussell Trust) to place at least 3\u20134 accessible locations across Bromley, prioritising the five top-risk LSOAs and other High/Critical Need areas.",
+      "evidence": [
+        {
+          "signal": "Tier breakdown",
+          "value": "28 High Need LSOAs and 5 Critical Need LSOAs (33 areas requiring urgent support)"
+        },
+        {
+          "signal": "Service gap",
+          "value": "Foodbank coverage currently N/A across all 195 LSOAs"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000720",
+        "E01000739",
+        "E01000730",
+        "E01000721",
+        "E01000729"
+      ],
+      "id": "bromley-lt-3",
+      "borough": "Bromley",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Build integrated Community Mental Health Team infrastructure",
+      "description": "Bromley's CMHT coverage is currently N/A. Over 3\u20135 years, develop a dedicated CMHT network with at least 2\u20133 bases serving the borough's 321,430 residents, with explicit focus on the 33 High/Critical Need LSOAs. CMHTs should offer assessment, care coordination, and crisis support to reduce reliance on emergency services.",
+      "evidence": [
+        {
+          "signal": "CMHT coverage",
+          "value": "N/A locations across entire borough"
+        },
+        {
+          "signal": "Population size",
+          "value": "321,430 residents (mid-2015 estimate) with no mapped specialist mental health team provision"
+        },
+        {
+          "signal": "Tier concentration",
+          "value": "33 High/Critical Need LSOAs require intensive, coordinated support"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000720",
+        "E01000739",
+        "E01000730",
+        "E01000721",
+        "E01000729"
+      ],
+      "id": "bromley-lt-4",
+      "borough": "Bromley",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Reverse worsening SAMHI trajectory through targeted prevention",
+      "description": "Bromley's mean SAMHI score (0.090) is above London average (\u22120.288), but trajectory is worsening. Over 1\u20135 years, implement a multi-sector prevention strategy combining workplace mental health promotion, school-based resilience programmes, and community social prescribing. Measure impact annually against SAMHI to track reversal of decline.",
+      "evidence": [
+        {
+          "signal": "SAMHI mean score",
+          "value": "0.090 (above London average of \u22120.288)"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "Worsening trend indicates deteriorating composite wellbeing despite current relative advantage"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000720",
+        "E01000739",
+        "E01000730",
+        "E01000721",
+        "E01000729"
+      ],
+      "id": "bromley-lt-5",
+      "borough": "Bromley",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Develop homelessness prevention and mental health pathway",
+      "description": "Homelessness services show N/A coverage despite mental health and housing being closely linked. Over 3\u20135 years, establish a joint pathway between housing, mental health, and social care services. Prioritise rough-sleeper outreach teams and supported housing with integrated mental health support in the five top-risk LSOAs and other High Need areas.",
+      "evidence": [
+        {
+          "signal": "Homelessness service coverage",
+          "value": "N/A locations across all 195 LSOAs"
+        },
+        {
+          "signal": "High/Critical Need concentration",
+          "value": "33 LSOAs likely to have elevated homelessness and housing insecurity"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000720",
+        "E01000739",
+        "E01000730",
+        "E01000721",
+        "E01000729"
+      ],
+      "id": "bromley-lt-6",
+      "borough": "Bromley",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Conduct urgent service mapping audit across all 124 LSOAs",
+      "description": "All service coverage data (foodbank, mental health charity, NHS therapy, Citizens Advice, CMHT, homelessness) currently shows N/A, preventing evidence-based commissioning. Commission an immediate audit to establish baseline locations and coverage percentages across Camden's 124 LSOAs within 6 months. This will enable targeted gap-filling and prevent service deserts in high-need areas.",
+      "evidence": [
+        {
+          "signal": "Service coverage completeness",
+          "value": "100% of service types missing location and coverage data"
+        },
+        {
+          "signal": "LSOA count",
+          "value": "124 LSOAs requiring service mapping"
+        },
+        {
+          "signal": "Population at risk",
+          "value": "227,558 residents (mid-2015 estimate) with unknown service access"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000902",
+        "E01000858",
+        "E01000935",
+        "E01000890",
+        "E01000907"
+      ],
+      "id": "camden-lt-1",
+      "borough": "Camden",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish wellbeing hub in High Need LSOA (1 identified area)",
+      "description": "Camden has only 1 High Need LSOA tier area. Immediately establish or expand a council wellbeing hub in this location offering signposting to NHS Talking Therapies, foodbank access, and Citizens Advice services. Prioritise this area within 3 months to prevent escalation of mental health need across the borough's 227,558 residents.",
+      "evidence": [
+        {
+          "signal": "High Need tier count",
+          "value": "1 LSOA in High Need tier"
+        },
+        {
+          "signal": "Elevated tier count",
+          "value": "57 LSOAs in Elevated tier requiring preventive support"
+        },
+        {
+          "signal": "Borough SAMHI stability",
+          "value": "Mean SAMHI -0.286 (stable, matching London average -0.288)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000902",
+        "E01000858",
+        "E01000935",
+        "E01000890",
+        "E01000907"
+      ],
+      "id": "camden-lt-2",
+      "borough": "Camden",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Pilot integrated mental health and food security screening",
+      "description": "Given missing foodbank coverage data and stable but below-average SAMHI (-0.286), pilot a joint screening programme in 10-15 Elevated tier LSOAs to identify residents facing both mental health and food insecurity. Partner with existing NHS Talking Therapies services and local community organisations to deliver within 9 months, generating evidence for borough-wide rollout.",
+      "evidence": [
+        {
+          "signal": "Elevated tier prevalence",
+          "value": "57 of 124 LSOAs (46%) in Elevated tier"
+        },
+        {
+          "signal": "SAMHI trajectory",
+          "value": "Stable at -0.286, indicating sustained mental health pressure"
+        },
+        {
+          "signal": "Service gap",
+          "value": "Foodbank coverage unknown across all LSOAs"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000902",
+        "E01000858",
+        "E01000935",
+        "E01000890",
+        "E01000907"
+      ],
+      "id": "camden-lt-3",
+      "borough": "Camden",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop comprehensive mental health infrastructure plan (1-5 years)",
+      "description": "With 57 Elevated tier LSOAs and complete absence of documented CMHT, NHS therapy, and mental health charity locations, commission a 5-year infrastructure strategy. Establish minimum service standards: at least one NHS Talking Therapies access point per 20,000 population, one CMHT per 50,000, and mental health charity presence in all Elevated+ tier areas. Secure capital and revenue funding through integrated care board partnerships.",
+      "evidence": [
+        {
+          "signal": "Elevated tier coverage",
+          "value": "57 LSOAs (46% of borough) in Elevated tier"
+        },
+        {
+          "signal": "Population scale",
+          "value": "227,558 residents requiring mental health infrastructure"
+        },
+        {
+          "signal": "Service documentation gap",
+          "value": "Zero documented CMHT, NHS therapy, and mental health charity locations"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000902",
+        "E01000858",
+        "E01000935",
+        "E01000890",
+        "E01000907"
+      ],
+      "id": "camden-lt-4",
+      "borough": "Camden",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Build integrated homelessness and mental health pathway (1-5 years)",
+      "description": "Homelessness service coverage is currently unmapped (N/A). Develop a strategic partnership between housing, mental health, and social care to create integrated assessment and support pathways. Establish co-located services in high-risk LSOAs, ensuring people experiencing homelessness access mental health support within 48 hours of contact. Align with NHS Talking Therapies and CMHT capacity planning.",
+      "evidence": [
+        {
+          "signal": "Service gap",
+          "value": "Homelessness service coverage unknown across all 124 LSOAs"
+        },
+        {
+          "signal": "High Need tier",
+          "value": "1 LSOA in High Need tier likely includes homelessness risk"
+        },
+        {
+          "signal": "Borough stability",
+          "value": "SAMHI stable at -0.286 suggests sustained underlying need"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000902",
+        "E01000858",
+        "E01000935",
+        "E01000890",
+        "E01000907"
+      ],
+      "id": "camden-lt-5",
+      "borough": "Camden",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Establish LSOA-level mental health data governance and monitoring",
+      "description": "Implement a live dashboard updating SAMHI scores, service coverage, and tier classifications quarterly for all 124 LSOAs. Establish data-sharing agreements with NHS partners, foodbanks, Citizens Advice, and homelessness services to populate missing metrics. This enables early warning of deterioration and evidence-based resource allocation by 2027.",
+      "evidence": [
+        {
+          "signal": "Data completeness",
+          "value": "Top 5 risk LSOAs missing SAMHI, tier, and population_16plus data"
+        },
+        {
+          "signal": "LSOA granularity",
+          "value": "124 LSOAs require individual monitoring infrastructure"
+        },
+        {
+          "signal": "Trajectory tracking",
+          "value": "Current 'stable' trajectory requires ongoing validation"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000902",
+        "E01000858",
+        "E01000935",
+        "E01000890",
+        "E01000907"
+      ],
+      "id": "camden-lt-6",
+      "borough": "Camden",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish baseline mental health needs assessment across all 6 LSOAs",
+      "description": "The City of London currently has no SAMHI scores, service coverage data, or tier classifications recorded for any of its 6 LSOAs. Conduct an urgent needs assessment to establish baseline mental health and wellbeing metrics for the resident population (6,687 mid-2015 estimate) and identify which neighbourhoods require targeted intervention. This will enable evidence-based service planning.",
+      "evidence": [
+        {
+          "signal": "Missing SAMHI data for all LSOAs",
+          "value": "E01000001, E01000003, E01000005, E01032739, E01032740, and one additional LSOA have no recorded SAMHI scores"
+        },
+        {
+          "signal": "Zero service coverage recorded",
+          "value": "No foodbank, mental health charity, NHS therapy, Citizens Advice, CMHT, or homelessness service locations mapped"
+        },
+        {
+          "signal": "Tier classification incomplete",
+          "value": "No Lower Need/Elevated/High Need tier assignments available for any LSOA"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000001",
+        "E01000003",
+        "E01000005",
+        "E01032739",
+        "E01032740"
+      ],
+      "id": "city-of-london-lt-1",
+      "borough": "City of London",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Map and audit existing mental health and wellbeing services in City of London",
+      "description": "Conduct a comprehensive audit of all mental health, social care, and wellbeing services currently operating in or accessible to City of London residents, including NHS Talking Therapies, Community Mental Health Teams, foodbanks, Citizens Advice bureaux, and homelessness support. Document service locations, capacity, and LSOA coverage to identify gaps and inform commissioning decisions.",
+      "evidence": [
+        {
+          "signal": "Complete absence of service location data",
+          "value": "All service types (foodbank, mh_charity, nhs_therapy, citizens_advice, cmht, homelessness) show N/A locations and N/A% LSOA coverage"
+        },
+        {
+          "signal": "Small, concentrated population",
+          "value": "6,687 residents across 6 LSOAs may be underserved by standard commissioning models designed for larger boroughs"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000001",
+        "E01000003",
+        "E01000005",
+        "E01032739",
+        "E01032740"
+      ],
+      "id": "city-of-london-lt-2",
+      "borough": "City of London",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Establish cross-borough partnership for mental health service access",
+      "description": "Given the City of London's small population (6,687) and lack of recorded services, establish formal partnership agreements with adjacent boroughs (Tower Hamlets, Islington, Hackney) to ensure residents can access NHS Talking Therapies, Community Mental Health Teams, and crisis support without geographic barriers. Negotiate shared access arrangements and clear referral pathways.",
+      "evidence": [
+        {
+          "signal": "Insufficient population to sustain dedicated services",
+          "value": "6,687 residents across 6 LSOAs is below critical mass for standalone mental health service provision"
+        },
+        {
+          "signal": "Improving trajectory despite low baseline",
+          "value": "Mean SAMHI of -1.110 (below London average of -0.288) but trajectory is improving, suggesting responsive intervention will be effective"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000001",
+        "E01000003",
+        "E01000005",
+        "E01032739",
+        "E01032740"
+      ],
+      "id": "city-of-london-lt-3",
+      "borough": "City of London",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop integrated workplace mental health and wellbeing programme",
+      "description": "The City of London's population is predominantly working-age professionals in the financial services sector. Develop a targeted, long-term workplace mental health programme in partnership with major employers, including mental health awareness training, peer support networks, and clear pathways to NHS Talking Therapies and occupational health services. Embed wellbeing into corporate governance.",
+      "evidence": [
+        {
+          "signal": "Unique demographic profile",
+          "value": "City of London has distinctive working-age, high-income population concentrated in financial services"
+        },
+        {
+          "signal": "Improving mental health trajectory",
+          "value": "Mean SAMHI -1.110 with improving trajectory suggests population is responsive to targeted intervention"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000001",
+        "E01000003",
+        "E01000005",
+        "E01032739",
+        "E01032740"
+      ],
+      "id": "city-of-london-lt-4",
+      "borough": "City of London",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Create dedicated mental health hub for City of London residents",
+      "description": "Over 1\u20135 years, establish a dedicated mental health and wellbeing hub (physical or hybrid) within the City of London that provides signposting, peer support, financial advice (via Citizens Advice partnership), and access to digital mental health tools. Co-design with residents and employers to ensure it meets the needs of a small, concentrated, professional population.",
+      "evidence": [
+        {
+          "signal": "Zero mental health charity locations recorded",
+          "value": "mh_charity coverage is N/A, indicating no dedicated mental health support infrastructure"
+        },
+        {
+          "signal": "Small population requires bespoke approach",
+          "value": "6,687 residents across 6 LSOAs need accessible, locally-rooted services rather than generic borough-wide provision"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000001",
+        "E01000003",
+        "E01000005",
+        "E01032739",
+        "E01032740"
+      ],
+      "id": "city-of-london-lt-5",
+      "borough": "City of London",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Establish longitudinal SAMHI monitoring and early intervention system",
+      "description": "Implement annual SAMHI data collection and analysis for all 6 LSOAs to track mental health and wellbeing trends over time. Use data to identify emerging hotspots (e.g., E01032739 if it moves to Elevated tier) and trigger early intervention. Link monitoring to service commissioning and performance management.",
+      "evidence": [
+        {
+          "signal": "Improving trajectory despite baseline deficit",
+          "value": "Mean SAMHI -1.110 is below London average (-0.288) but trajectory is improving, indicating need for sustained monitoring"
+        },
+        {
+          "signal": "One LSOA already in Elevated tier",
+          "value": "1 of 6 LSOAs classified as Elevated Need; longitudinal tracking will prevent escalation"
+        }
+      ],
+      "affected_lsoas": [
+        "E01000001",
+        "E01000003",
+        "E01000005",
+        "E01032739",
+        "E01032740"
+      ],
+      "id": "city-of-london-lt-6",
+      "borough": "City of London",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish baseline service audit and gap analysis",
+      "description": "Conduct an immediate audit of all mental health and wellbeing services currently operating in Ealing to establish why service coverage data is missing (N/A across all service types). This audit should map foodbanks, Mind centres, NHS Talking Therapies, Citizens Advice bureaux, CMHTs, and homelessness services to identify geographic gaps. Use findings to populate the service coverage dashboard and inform targeted commissioning.",
+      "evidence": [
+        {
+          "signal": "Service coverage data completeness",
+          "value": "All 6 service types show N/A locations and N/A% LSOA coverage"
+        },
+        {
+          "signal": "Borough population requiring services",
+          "value": "335,822 residents across 193 LSOAs"
+        },
+        {
+          "signal": "High need tier prevalence",
+          "value": "47 LSOAs in High Need tier + 2 in Critical Need tier (25.5% of LSOAs)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001364",
+        "E01001210",
+        "E01001257",
+        "E01001320",
+        "E01001324"
+      ],
+      "id": "ealing-lt-1",
+      "borough": "Ealing",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Urgent intervention in 5 highest-risk LSOAs",
+      "description": "Prioritise rapid needs assessment and service deployment in the five LSOAs identified as highest risk: E01001364 (Ealing 026E), E01001210 (Ealing 016A), E01001257 (Ealing 008A), E01001320 (Ealing 003E), and E01001324 (Ealing 008B). Establish pop-up wellbeing hubs or mobile outreach from existing NHS Talking Therapies services within 6 months to reach residents in these areas.",
+      "evidence": [
+        {
+          "signal": "Critical and high need concentration",
+          "value": "2 LSOAs in Critical Need tier; 5 LSOAs flagged as top risk areas"
+        },
+        {
+          "signal": "Borough-level wellbeing trajectory",
+          "value": "SAMHI score worsening despite being at London average (-0.288)"
+        },
+        {
+          "signal": "Tier distribution risk",
+          "value": "95 Elevated tier LSOAs indicate widespread vulnerability across borough"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001364",
+        "E01001210",
+        "E01001257",
+        "E01001320",
+        "E01001324"
+      ],
+      "id": "ealing-lt-2",
+      "borough": "Ealing",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Commission rapid foodbank and Citizens Advice expansion",
+      "description": "Within 6 months, establish at least one foodbank location and one Citizens Advice bureau in Ealing to address immediate material hardship and debt/welfare advice gaps. Partner with existing community organisations and council facilities to minimise setup costs. Prioritise locations accessible to the 5 highest-risk LSOAs and areas with high Elevated tier concentrations.",
+      "evidence": [
+        {
+          "signal": "Service coverage gap",
+          "value": "Foodbank and Citizens Advice both show N/A locations and 0% LSOA coverage"
+        },
+        {
+          "signal": "Elevated tier prevalence",
+          "value": "95 LSOAs in Elevated tier (49.2% of all LSOAs) indicate widespread material vulnerability"
+        },
+        {
+          "signal": "Population scale",
+          "value": "335,822 residents require access to basic hardship and advice services"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001364",
+        "E01001210",
+        "E01001257",
+        "E01001320",
+        "E01001324"
+      ],
+      "id": "ealing-lt-3",
+      "borough": "Ealing",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop integrated mental health and wellbeing hub network",
+      "description": "Over 3-5 years, establish a network of 4-6 integrated wellbeing hubs across Ealing, each co-locating NHS Talking Therapies, CMHT outreach, foodbank access, Citizens Advice, and council wellbeing support. Design hubs to serve clusters of High Need and Elevated tier LSOAs. Use hub data to track SAMHI improvement and adjust service mix based on local demand.",
+      "evidence": [
+        {
+          "signal": "Service fragmentation",
+          "value": "All 6 service types currently show N/A coverage, indicating no integrated provision"
+        },
+        {
+          "signal": "Tier distribution complexity",
+          "value": "49 Lower Need, 95 Elevated, 47 High Need, 2 Critical Need LSOAs require differentiated service intensity"
+        },
+        {
+          "signal": "Worsening trajectory",
+          "value": "SAMHI score worsening despite London-average baseline suggests current service model is insufficient"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001364",
+        "E01001210",
+        "E01001257",
+        "E01001320",
+        "E01001324"
+      ],
+      "id": "ealing-lt-4",
+      "borough": "Ealing",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Establish CMHT and homelessness service infrastructure",
+      "description": "Commission and embed Community Mental Health Teams and dedicated homelessness mental health services across Ealing over 3-5 years. Currently both services show N/A coverage. Target High Need and Critical Need LSOAs first, then expand to Elevated tier areas. Ensure CMHTs have capacity for early intervention and crisis support to reverse worsening SAMHI trajectory.",
+      "evidence": [
+        {
+          "signal": "Critical service absence",
+          "value": "CMHT and homelessness services both show N/A locations and 0% LSOA coverage"
+        },
+        {
+          "signal": "High need concentration",
+          "value": "47 High Need LSOAs + 2 Critical Need LSOAs (25.5% of borough) require specialist mental health intervention"
+        },
+        {
+          "signal": "Deteriorating wellbeing",
+          "value": "Worsening SAMHI trajectory indicates urgent need for proactive mental health infrastructure"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001364",
+        "E01001210",
+        "E01001257",
+        "E01001320",
+        "E01001324"
+      ],
+      "id": "ealing-lt-5",
+      "borough": "Ealing",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Implement SAMHI monitoring and targeted prevention in Elevated tier LSOAs",
+      "description": "Over 2-4 years, establish quarterly SAMHI tracking and targeted prevention programmes in the 95 Elevated tier LSOAs to prevent progression to High Need status. Partner with Mind, Age UK, and local community organisations to deliver early intervention activities (peer support, financial resilience, social connection). Use SAMHI data to identify which prevention activities are most effective in reversing worsening trends.",
+      "evidence": [
+        {
+          "signal": "Elevated tier scale",
+          "value": "95 LSOAs (49.2% of borough) in Elevated tier represent prevention opportunity"
+        },
+        {
+          "signal": "Worsening trajectory",
+          "value": "Borough-level SAMHI score worsening suggests prevention investment needed to avoid further deterioration"
+        },
+        {
+          "signal": "Service coverage gap",
+          "value": "Mind centres and Age UK branches show N/A coverage; prevention services must be commissioned"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001364",
+        "E01001210",
+        "E01001257",
+        "E01001320",
+        "E01001324"
+      ],
+      "id": "ealing-lt-6",
+      "borough": "Ealing",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish baseline service audit across Enfield's 180 LSOAs",
+      "description": "Conduct an immediate census of existing foodbanks, NHS Talking Therapies sites, Citizens Advice bureaux, CMHTs, and homelessness services currently operating in Enfield. The complete absence of service location data (all N/A) prevents targeted intervention. Map current provision against the 103 Elevated-tier and 47 High Need LSOAs to identify coverage gaps.",
+      "evidence": [
+        {
+          "signal": "Service coverage data completeness",
+          "value": "All 6 service types show N/A locations and N/A% LSOA coverage"
+        },
+        {
+          "signal": "High-need LSOA count",
+          "value": "150 LSOAs in Elevated or High Need tiers (83% of 180 total)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001545",
+        "E01033148",
+        "E01001447",
+        "E01001551",
+        "E01001412"
+      ],
+      "id": "enfield-lt-1",
+      "borough": "Enfield",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Deploy rapid mental health support to 4 Critical Need LSOAs",
+      "description": "Identify and resource the 4 Critical Need LSOAs with emergency mental health outreach within 6 months. Partner with existing NHS Talking Therapies services and local Mind centres to establish weekly drop-in clinics or mobile counselling in these areas. Prioritise Enfield 002B (E01001545), 003F (E01033148), 003C (E01001447), and 002E (E01001551) for immediate assessment and intervention.",
+      "evidence": [
+        {
+          "signal": "Critical Need tier count",
+          "value": "4 LSOAs classified as Critical Need"
+        },
+        {
+          "signal": "Borough SAMHI trajectory",
+          "value": "Worsening trend with mean SAMHI -0.298 (below London average -0.288)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001545",
+        "E01033148",
+        "E01001447",
+        "E01001551"
+      ],
+      "id": "enfield-lt-2",
+      "borough": "Enfield",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Establish foodbank and welfare support coordination hub",
+      "description": "Within 12 months, create a central coordination point (online portal or phone line) linking Enfield residents to foodbanks, Citizens Advice bureaux, and emergency welfare support. Current N/A coverage suggests either services are unmapped or absent. Partner with Enfield Council's welfare team and local charities to ensure all 103 Elevated-tier LSOAs have documented access to at least one foodbank within 2 miles.",
+      "evidence": [
+        {
+          "signal": "Foodbank coverage",
+          "value": "N/A locations and N/A% LSOA coverage recorded"
+        },
+        {
+          "signal": "Elevated-tier LSOA prevalence",
+          "value": "103 LSOAs in Elevated tier (57% of total)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001545",
+        "E01033148",
+        "E01001447",
+        "E01001551",
+        "E01001412"
+      ],
+      "id": "enfield-lt-3",
+      "borough": "Enfield",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Expand NHS Talking Therapies capacity to reach 80% LSOA coverage",
+      "description": "Over 3\u20135 years, work with NHS England and Enfield CCG to increase NHS Talking Therapies (IAPT) sites from current N/A locations to achieve 80% coverage of the 180 LSOAs. Target the 150 Elevated and High Need LSOAs first. Integrate with Community Mental Health Teams to ensure seamless referral pathways and reduce waiting times below 6 weeks for first appointment.",
+      "evidence": [
+        {
+          "signal": "NHS therapy coverage",
+          "value": "N/A locations and N/A% LSOA coverage"
+        },
+        {
+          "signal": "High-need population scale",
+          "value": "150 LSOAs (83%) in Elevated or High Need tiers; estimated 323,392 total population"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001545",
+        "E01033148",
+        "E01001447",
+        "E01001551",
+        "E01001412"
+      ],
+      "id": "enfield-lt-4",
+      "borough": "Enfield",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Reverse worsening SAMHI trajectory through integrated wellbeing strategy",
+      "description": "Develop a 5-year Enfield Mental Health and Wellbeing Strategy targeting the worsening SAMHI trend (-0.298, below London average). Integrate housing, employment, and community support services with mental health provision. Establish council-led wellbeing hubs in each of the 4 Critical Need and 10 highest-risk High Need LSOAs, co-locating mental health, debt advice, and employment support.",
+      "evidence": [
+        {
+          "signal": "SAMHI trajectory",
+          "value": "Worsening; mean -0.298 vs London average -0.288"
+        },
+        {
+          "signal": "Critical and High Need concentration",
+          "value": "51 LSOAs (28%) in Critical or High Need tiers"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001545",
+        "E01033148",
+        "E01001447",
+        "E01001551",
+        "E01001412"
+      ],
+      "id": "enfield-lt-5",
+      "borough": "Enfield",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Build homelessness prevention and mental health integration pathway",
+      "description": "Over 4\u20135 years, establish dedicated homelessness services with embedded mental health support across Enfield. Current N/A coverage suggests no mapped provision. Partner with housing associations and voluntary sector to create 24/7 crisis accommodation linked to CMHTs. Prioritise E01001545, E01033148, E01001447, E01001551, and E01001412 where homelessness risk is likely highest given Critical and High Need tiers.",
+      "evidence": [
+        {
+          "signal": "Homelessness service coverage",
+          "value": "N/A locations and N/A% LSOA coverage"
+        },
+        {
+          "signal": "High-need LSOA concentration",
+          "value": "47 High Need LSOAs where housing instability risk is elevated"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001545",
+        "E01033148",
+        "E01001447",
+        "E01001551",
+        "E01001412"
+      ],
+      "id": "enfield-lt-6",
+      "borough": "Enfield",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Urgent audit of mental health service provision across Greenwich",
+      "description": "Greenwich has 139 LSOAs with 248,488 residents, yet all service coverage metrics (foodbanks, mental health charities, NHS therapy, Citizens Advice, CMHTs, homelessness services) show N/A or zero locations. This represents a critical data and service gap. Conduct an immediate audit to map existing provision, identify gaps, and establish baseline coverage targets for each service type within 6 months.",
+      "evidence": [
+        {
+          "signal": "Service coverage data",
+          "value": "All 6 service types report N/A or 0% LSOA coverage across 139 LSOAs"
+        },
+        {
+          "signal": "Population at risk",
+          "value": "248,488 residents with 94 LSOAs in Elevated tier and 26 in High Need tier"
+        },
+        {
+          "signal": "Wellbeing trajectory",
+          "value": "SAMHI mean -0.126 (better than London average -0.288) but trajectory worsening"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001653",
+        "E01001575",
+        "E01001655",
+        "E01001661",
+        "E01001576"
+      ],
+      "id": "greenwich-lt-1",
+      "borough": "Greenwich",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish NHS Talking Therapies access points in high-need areas",
+      "description": "With 26 LSOAs in High Need tier and a worsening wellbeing trajectory, Greenwich residents lack documented access to NHS Talking Therapies (IAPT). Partner with NHS South East London to open or expand at least 2 dedicated therapy access points in the highest-risk LSOAs (E01001653, E01001575, E01001655, E01001661, E01001576) within 9 months, with target of 500+ referrals in year one.",
+      "evidence": [
+        {
+          "signal": "High Need tier LSOAs",
+          "value": "26 LSOAs classified as High Need requiring intensive intervention"
+        },
+        {
+          "signal": "Service gap",
+          "value": "nhs_therapy shows N/A locations and 0% LSOA coverage"
+        },
+        {
+          "signal": "Trajectory concern",
+          "value": "Worsening wellbeing despite above-average SAMHI score suggests emerging crisis"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001653",
+        "E01001575",
+        "E01001655",
+        "E01001661",
+        "E01001576"
+      ],
+      "id": "greenwich-lt-2",
+      "borough": "Greenwich",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Launch emergency foodbank and welfare support network",
+      "description": "Foodbank coverage is currently N/A across all 139 LSOAs. Establish partnerships with 3\u20134 community organisations to operate foodbanks in Elevated and High Need tier areas within 6 months. Coordinate with Citizens Advice (also currently absent) to provide welfare benefits advice alongside food provision, targeting the 120 LSOAs in Elevated or High Need tiers.",
+      "evidence": [
+        {
+          "signal": "Foodbank coverage",
+          "value": "N/A locations and 0% LSOA coverage across entire borough"
+        },
+        {
+          "signal": "Elevated and High Need tiers",
+          "value": "120 LSOAs (86% of total) in Elevated or High Need tier"
+        },
+        {
+          "signal": "Population scale",
+          "value": "248,488 residents with no documented basic support infrastructure"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001653",
+        "E01001575",
+        "E01001655",
+        "E01001661",
+        "E01001576"
+      ],
+      "id": "greenwich-lt-3",
+      "borough": "Greenwich",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Build integrated Community Mental Health Team infrastructure",
+      "description": "CMHTs currently show N/A locations. Over 18\u201324 months, develop a borough-wide CMHT network with at least 3 hubs serving Elevated and High Need areas, integrated with primary care, social services, and housing. Target capacity of 2,000+ active cases by year 3, with specialist pathways for crisis support, early intervention, and recovery.",
+      "evidence": [
+        {
+          "signal": "CMHT coverage gap",
+          "value": "N/A locations across 139 LSOAs"
+        },
+        {
+          "signal": "Tier distribution",
+          "value": "94 Elevated + 26 High Need LSOAs require intensive, coordinated mental health support"
+        },
+        {
+          "signal": "Worsening trajectory",
+          "value": "Declining wellbeing trend indicates need for proactive, integrated service model"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001653",
+        "E01001575",
+        "E01001655",
+        "E01001661",
+        "E01001576"
+      ],
+      "id": "greenwich-lt-4",
+      "borough": "Greenwich",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop homelessness prevention and mental health support pathway",
+      "description": "Homelessness services currently show N/A coverage. Over 2\u20133 years, establish a dedicated homelessness prevention service linked to mental health support, including crisis accommodation, assertive outreach, and peer support. Integrate with CMHTs and housing teams to address the intersection of housing insecurity and mental health across High Need LSOAs.",
+      "evidence": [
+        {
+          "signal": "Homelessness service gap",
+          "value": "N/A locations and 0% LSOA coverage"
+        },
+        {
+          "signal": "High Need concentration",
+          "value": "26 LSOAs with acute need likely include housing-vulnerable populations"
+        },
+        {
+          "signal": "Worsening wellbeing",
+          "value": "Trajectory decline suggests unmet needs in vulnerable subgroups including homeless/at-risk"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001653",
+        "E01001575",
+        "E01001655",
+        "E01001661",
+        "E01001576"
+      ],
+      "id": "greenwich-lt-5",
+      "borough": "Greenwich",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Establish mental health charity and peer support network",
+      "description": "Mental health charities (e.g. Mind, Samaritans) currently show N/A locations. Over 2\u20133 years, fund and coordinate 2\u20133 community mental health charity hubs offering peer support, crisis lines, and signposting. Prioritise Elevated tier LSOAs and ensure 24/7 crisis access. Target 1,000+ peer support contacts annually by year 3.",
+      "evidence": [
+        {
+          "signal": "Mental health charity coverage",
+          "value": "N/A locations across all 139 LSOAs"
+        },
+        {
+          "signal": "Elevated tier scale",
+          "value": "94 LSOAs in Elevated tier require accessible, low-barrier support"
+        },
+        {
+          "signal": "Service gap complementarity",
+          "value": "Peer support and crisis lines fill gap between primary care and specialist CMHTs"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001653",
+        "E01001575",
+        "E01001655",
+        "E01001661",
+        "E01001576"
+      ],
+      "id": "greenwich-lt-6",
+      "borough": "Greenwich",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Audit and map all mental health and wellbeing services across Hackney",
+      "description": "Hackney has 136 LSOAs with 249,777 residents, yet service coverage data is completely absent (N/A for foodbanks, mental health charities, NHS therapy, Citizens Advice, CMHTs, and homelessness services). Conduct an urgent audit of all existing services\u2014NHS Talking Therapies, Community Mental Health Teams, Mind centres, Samaritans, foodbanks, and council wellbeing hubs\u2014to establish baseline coverage and identify gaps. This audit must be completed within 6 months to inform resource allocation.",
+      "evidence": [
+        {
+          "signal": "Service coverage data completeness",
+          "value": "0% (all service types listed as N/A)"
+        },
+        {
+          "signal": "Borough population",
+          "value": "249,777 (mid-2015 estimate)"
+        },
+        {
+          "signal": "LSOA count",
+          "value": "136 neighbourhoods"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001842",
+        "E01001821",
+        "E01001845",
+        "E01001840",
+        "E01001846"
+      ],
+      "id": "hackney-lt-1",
+      "borough": "Hackney",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish rapid-access mental health hubs in 17 High Need LSOAs",
+      "description": "Hackney has 17 LSOAs classified as High Need tier, representing approximately 36,000\u201340,000 residents. Within 12 months, establish at least 3\u20134 accessible mental health hubs (co-located with existing council facilities, libraries, or health centres) offering NHS Talking Therapies signposting, peer support, crisis information, and links to Citizens Advice for debt/housing issues. Prioritise the five highest-risk LSOAs: E01001842, E01001821, E01001845, E01001840, and E01001846.",
+      "evidence": [
+        {
+          "signal": "High Need tier LSOAs",
+          "value": "17 neighbourhoods"
+        },
+        {
+          "signal": "Elevated tier LSOAs",
+          "value": "105 neighbourhoods (77% of total)"
+        },
+        {
+          "signal": "Mean SAMHI score",
+          "value": "0.109 (above London average of -0.288, indicating higher composite wellbeing need)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001842",
+        "E01001821",
+        "E01001845",
+        "E01001840",
+        "E01001846"
+      ],
+      "id": "hackney-lt-2",
+      "borough": "Hackney",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Commission rapid data collection on SAMHI and tier status for top 5 LSOAs",
+      "description": "The five highest-risk LSOAs (E01001842, E01001821, E01001845, E01001840, E01001846) lack SAMHI scores, tier assignments, and adult population data. Within 3 months, commission local data collection (via GP records, council surveys, or community partners) to establish baseline wellbeing metrics and adult population estimates for these neighbourhoods. This will enable targeted service design and monitoring of progress.",
+      "evidence": [
+        {
+          "signal": "Missing SAMHI data for top 5 LSOAs",
+          "value": "All listed as N/A"
+        },
+        {
+          "signal": "Missing tier classification",
+          "value": "All listed as blank"
+        },
+        {
+          "signal": "Missing adult population data",
+          "value": "All listed as N/A"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001842",
+        "E01001821",
+        "E01001845",
+        "E01001840",
+        "E01001846"
+      ],
+      "id": "hackney-lt-3",
+      "borough": "Hackney",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop integrated wellbeing pathway linking mental health, food security, and housing",
+      "description": "Over 1\u20132 years, design and implement an integrated service pathway for Hackney's 105 Elevated-tier LSOAs. This pathway should connect NHS Talking Therapies, Community Mental Health Teams, foodbank networks, homelessness prevention services, and Citizens Advice into a single referral system. Train frontline staff (GPs, council workers, community leaders) to identify and refer residents experiencing multiple deprivation (mental health + food insecurity + housing instability). Pilot in 3 High Need LSOAs before borough-wide rollout.",
+      "evidence": [
+        {
+          "signal": "Elevated tier LSOAs",
+          "value": "105 (77% of Hackney's 136 LSOAs)"
+        },
+        {
+          "signal": "High Need tier LSOAs",
+          "value": "17 neighbourhoods requiring intensive support"
+        },
+        {
+          "signal": "Stable trajectory",
+          "value": "Indicates sustained, not worsening, need\u2014window for preventive intervention"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001842",
+        "E01001821",
+        "E01001845",
+        "E01001840",
+        "E01001846"
+      ],
+      "id": "hackney-lt-4",
+      "borough": "Hackney",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Build community mental health capacity through peer support and volunteer networks",
+      "description": "Over 2\u20133 years, establish peer support groups and volunteer-led wellbeing networks across Hackney's 136 LSOAs, with particular focus on High Need areas. Partner with Mind, Age UK, and local community organisations to train and supervise peer supporters, run mental health awareness campaigns, and create low-barrier access points (e.g., community centres, faith settings). This reduces reliance on stretched NHS services and builds social cohesion in Elevated-tier neighbourhoods.",
+      "evidence": [
+        {
+          "signal": "CMHT service coverage",
+          "value": "N/A (no baseline data on NHS Community Mental Health Team capacity)"
+        },
+        {
+          "signal": "Mental health charity coverage",
+          "value": "N/A (no existing Mind or similar provision mapped)"
+        },
+        {
+          "signal": "Borough population",
+          "value": "249,777 residents across 136 LSOAs (average 1,836 per LSOA)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001842",
+        "E01001821",
+        "E01001845",
+        "E01001840",
+        "E01001846"
+      ],
+      "id": "hackney-lt-5",
+      "borough": "Hackney",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Establish annual SAMHI monitoring and refresh service model based on trends",
+      "description": "Over 3\u20135 years, commit to annual SAMHI data collection and analysis for all 136 Hackney LSOAs. Use this data to track whether the stable trajectory continues, identify emerging hotspots, and adjust service provision accordingly. Link SAMHI monitoring to council performance management and Public Health annual reports. This ensures evidence-based resource allocation and accountability to residents.",
+      "evidence": [
+        {
+          "signal": "Current mean SAMHI",
+          "value": "0.109 (above London average of -0.288)"
+        },
+        {
+          "signal": "Trajectory status",
+          "value": "Stable (no worsening, but no improvement)"
+        },
+        {
+          "signal": "Data completeness",
+          "value": "5 of 136 LSOAs lack SAMHI scores; full borough-wide monitoring needed"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001842",
+        "E01001821",
+        "E01001845",
+        "E01001840",
+        "E01001846"
+      ],
+      "id": "hackney-lt-6",
+      "borough": "Hackney",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish baseline service audit across all 111 LSOAs",
+      "description": "All service coverage data is currently missing (N/A), preventing targeted allocation. Conduct an immediate audit of existing foodbanks, NHS Talking Therapies sites, Citizens Advice bureaux, CMHTs, and homelessness services across Hammersmith and Fulham to establish baseline coverage and identify gaps. This audit must map services against the 55 Elevated-tier and 3 High-Need LSOAs to inform emergency resource deployment.",
+      "evidence": [
+        {
+          "signal": "Service coverage data completeness",
+          "value": "0% of service types have location or coverage data recorded"
+        },
+        {
+          "signal": "Borough population requiring services",
+          "value": "176,681 residents across 111 LSOAs with no mapped provision"
+        },
+        {
+          "signal": "Elevated-tier LSOAs",
+          "value": "55 LSOAs classified as Elevated need with unknown service access"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001885",
+        "E01001876",
+        "E01001944",
+        "E01001959",
+        "E01001940"
+      ],
+      "id": "hammersmith-and-fulham-lt-1",
+      "borough": "Hammersmith and Fulham",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Deploy rapid mental health support to 3 High-Need LSOAs",
+      "description": "Three LSOAs are classified as High Need but have no identified mental health services. Within 6 months, establish temporary NHS Talking Therapies drop-in clinics or Community Mental Health Team outreach in these areas, prioritising E01001885, E01001876, and E01001944. Partner with existing GP practices and community centres to deliver low-barrier access to psychological support.",
+      "evidence": [
+        {
+          "signal": "High-Need tier LSOAs",
+          "value": "3 LSOAs with highest risk classification"
+        },
+        {
+          "signal": "CMHT coverage",
+          "value": "0 CMHT locations recorded across borough"
+        },
+        {
+          "signal": "NHS therapy coverage",
+          "value": "0 NHS Talking Therapies sites mapped"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001885",
+        "E01001876",
+        "E01001944"
+      ],
+      "id": "hammersmith-and-fulham-lt-2",
+      "borough": "Hammersmith and Fulham",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Establish emergency foodbank network in Elevated-tier areas",
+      "description": "With zero foodbank locations recorded and 55 Elevated-tier LSOAs, launch an emergency food provision scheme within 3 months. Partner with local charities, faith organisations, and community centres to create at least 5 foodbank hubs covering the most deprived Elevated-tier neighbourhoods. Link foodbank access to mental health screening and signposting to support services.",
+      "evidence": [
+        {
+          "signal": "Foodbank coverage",
+          "value": "0 locations across entire borough"
+        },
+        {
+          "signal": "Elevated-tier LSOAs requiring support",
+          "value": "55 LSOAs with elevated mental health need"
+        },
+        {
+          "signal": "SAMHI trajectory",
+          "value": "Worsening trend indicates growing need for basic support services"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001885",
+        "E01001876",
+        "E01001944",
+        "E01001959",
+        "E01001940"
+      ],
+      "id": "hammersmith-and-fulham-lt-3",
+      "borough": "Hammersmith and Fulham",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Build integrated mental health and wellbeing hub network",
+      "description": "Over 3\u20135 years, develop 8\u201310 co-located wellbeing hubs across the borough, each combining NHS Talking Therapies, Citizens Advice, foodbank access, and peer support. Prioritise hubs in High-Need and Elevated-tier areas (E01001885, E01001876, E01001944, E01001959, E01001940) to create one-stop access to mental health, financial advice, and practical support. Design hubs around existing community infrastructure (libraries, leisure centres, GP practices).",
+      "evidence": [
+        {
+          "signal": "Service fragmentation",
+          "value": "All service types currently absent or unmapped"
+        },
+        {
+          "signal": "SAMHI performance vs London",
+          "value": "-0.239 (better than London average -0.288) but worsening trajectory"
+        },
+        {
+          "signal": "Population scale",
+          "value": "176,681 residents requiring coordinated access to multiple support types"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001885",
+        "E01001876",
+        "E01001944",
+        "E01001959",
+        "E01001940"
+      ],
+      "id": "hammersmith-and-fulham-lt-4",
+      "borough": "Hammersmith and Fulham",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Reverse worsening SAMHI trajectory through targeted prevention",
+      "description": "Hammersmith and Fulham's worsening SAMHI trajectory despite above-average baseline requires a 5-year prevention strategy. Invest in community mental health promotion, workplace wellbeing programmes, and early intervention services targeting the 55 Elevated-tier LSOAs. Establish quarterly SAMHI monitoring with borough-wide targets to reverse decline and achieve London-average performance by 2029.",
+      "evidence": [
+        {
+          "signal": "SAMHI trajectory",
+          "value": "Worsening despite current score of -0.239"
+        },
+        {
+          "signal": "Comparative performance",
+          "value": "Currently above London average (-0.288) but declining trend is concerning"
+        },
+        {
+          "signal": "Elevated-tier prevalence",
+          "value": "55 of 111 LSOAs (49.5%) in Elevated tier require prevention focus"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001885",
+        "E01001876",
+        "E01001944",
+        "E01001959",
+        "E01001940"
+      ],
+      "id": "hammersmith-and-fulham-lt-5",
+      "borough": "Hammersmith and Fulham",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Develop data infrastructure and real-time service mapping",
+      "description": "Implement a live service mapping system (dashboard or online directory) to track all mental health, foodbank, homelessness, and advice services across the 111 LSOAs. Require annual service provider updates and integrate with NHS Talking Therapies and CMHT data. Use this infrastructure to identify persistent coverage gaps and inform commissioning decisions for the next 5 years.",
+      "evidence": [
+        {
+          "signal": "Data completeness",
+          "value": "All service coverage fields currently N/A, preventing evidence-based planning"
+        },
+        {
+          "signal": "LSOA granularity",
+          "value": "111 LSOAs require detailed, updatable service mapping for effective targeting"
+        },
+        {
+          "signal": "Service coordination need",
+          "value": "Multiple service types (foodbank, CMHT, Citizens Advice, homelessness) require integrated visibility"
+        }
+      ],
+      "affected_lsoas": [
+        "E01001885",
+        "E01001876",
+        "E01001944",
+        "E01001959",
+        "E01001940"
+      ],
+      "id": "hammersmith-and-fulham-lt-6",
+      "borough": "Hammersmith and Fulham",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Urgent service mapping and gap analysis across Haringey",
+      "description": "Haringey has 98 LSOAs in Elevated tier and a worsening SAMHI trajectory (-0.356, below London average of -0.288), yet service coverage data is entirely absent. Immediately commission a comprehensive audit of existing mental health, foodbank, homelessness, and advice services to establish baseline coverage and identify gaps. This must include NHS Talking Therapies, Community Mental Health Teams, Citizens Advice bureaux, and voluntary sector provision.",
+      "evidence": [
+        {
+          "signal": "Mean SAMHI score",
+          "value": "-0.356 (London average: -0.288)"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        },
+        {
+          "signal": "Elevated tier LSOAs",
+          "value": "98 out of 143 (68.5%)"
+        },
+        {
+          "signal": "Service coverage data",
+          "value": "All services showing N/A locations and coverage"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002082",
+        "E01002090",
+        "E01002093",
+        "E01002096",
+        "E01002036"
+      ],
+      "id": "haringey-lt-1",
+      "borough": "Haringey",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish mental health crisis and support hubs in high-need areas",
+      "description": "With 8 High Need LSOAs and 98 Elevated tier areas across a population of 263,248, Haringey requires accessible mental health support points. Within 6 months, establish at least 2 council-led wellbeing hubs in or near the identified high-risk LSOAs (E01002082, E01002090, E01002093, E01002096, E01002036) offering signposting to NHS Talking Therapies, Samaritans, and local Mind services. Partner with existing community centres to minimise setup costs.",
+      "evidence": [
+        {
+          "signal": "High Need tier LSOAs",
+          "value": "8 LSOAs"
+        },
+        {
+          "signal": "Elevated tier LSOAs",
+          "value": "98 LSOAs"
+        },
+        {
+          "signal": "Total population",
+          "value": "263,248"
+        },
+        {
+          "signal": "Worsening mental health trajectory",
+          "value": "SAMHI declining"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002082",
+        "E01002090",
+        "E01002093",
+        "E01002096",
+        "E01002036"
+      ],
+      "id": "haringey-lt-2",
+      "borough": "Haringey",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Rapid foodbank and emergency support network activation",
+      "description": "Current foodbank coverage is N/A despite economic pressures reflected in the worsening SAMHI score. Within 3 months, map existing foodbank locations (including voluntary sector partners) and establish a referral pathway from NHS services, Citizens Advice bureaux, and council teams. Prioritise coverage in the 5 highest-risk LSOAs to address immediate material hardship that compounds mental health need.",
+      "evidence": [
+        {
+          "signal": "Foodbank coverage",
+          "value": "N/A locations, N/A% LSOA coverage"
+        },
+        {
+          "signal": "Mean SAMHI score",
+          "value": "-0.356 (below London average)"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002082",
+        "E01002090",
+        "E01002093",
+        "E01002096",
+        "E01002036"
+      ],
+      "id": "haringey-lt-3",
+      "borough": "Haringey",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop integrated mental health and wellbeing commissioning strategy",
+      "description": "Over 1\u20132 years, Haringey must develop a comprehensive, data-driven commissioning strategy that addresses the borough's below-average SAMHI score and worsening trajectory. This should include: (1) expanding NHS Talking Therapies capacity to meet demand in Elevated and High Need areas; (2) embedding mental health support in primary care and community hubs; (3) establishing Community Mental Health Team coverage across all 143 LSOAs; and (4) integrating homelessness, foodbank, and advice services with mental health pathways.",
+      "evidence": [
+        {
+          "signal": "Mean SAMHI score",
+          "value": "-0.356 (London average: -0.288)"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        },
+        {
+          "signal": "High Need LSOAs",
+          "value": "8"
+        },
+        {
+          "signal": "Elevated tier LSOAs",
+          "value": "98"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002082",
+        "E01002090",
+        "E01002093",
+        "E01002096",
+        "E01002036"
+      ],
+      "id": "haringey-lt-4",
+      "borough": "Haringey",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Build preventive mental health capacity in schools and early intervention",
+      "description": "Over 2\u20133 years, establish a borough-wide early intervention and prevention programme targeting children, young people, and families in Elevated and High Need areas. Partner with schools, GPs, and voluntary sector (including Age UK for older adults) to deliver mental health literacy, peer support, and early help. This addresses the worsening trajectory by intervening before crisis, reducing future demand on acute services.",
+      "evidence": [
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        },
+        {
+          "signal": "Elevated tier LSOAs",
+          "value": "98 (68.5% of borough)"
+        },
+        {
+          "signal": "Mean SAMHI score",
+          "value": "-0.356"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002082",
+        "E01002090",
+        "E01002093",
+        "E01002096",
+        "E01002036"
+      ],
+      "id": "haringey-lt-5",
+      "borough": "Haringey",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Establish data-driven LSOA-level monitoring and accountability framework",
+      "description": "Over 1\u20132 years, implement a robust monitoring system to track SAMHI scores, service coverage, and outcomes at LSOA level (particularly for the 5 highest-risk areas). Establish quarterly reporting to council leadership and public health directors, with clear accountability for service providers (NHS, voluntary sector, council). Use this data to adjust commissioning and resource allocation, ensuring the worsening trajectory is reversed.",
+      "evidence": [
+        {
+          "signal": "LSOA count",
+          "value": "143"
+        },
+        {
+          "signal": "Service coverage data",
+          "value": "All services N/A \u2014 no baseline for monitoring"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "worsening"
+        },
+        {
+          "signal": "Top risk LSOAs identified",
+          "value": "5 LSOAs with highest need"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002082",
+        "E01002090",
+        "E01002093",
+        "E01002096",
+        "E01002036"
+      ],
+      "id": "haringey-lt-6",
+      "borough": "Haringey",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish baseline service audit across all 132 LSOAs",
+      "description": "Harrow currently has no recorded locations for foodbanks, mental health charities, NHS therapy services, Citizens Advice, CMHTs, or homelessness support. Conduct an urgent audit to map existing provision (including informal and voluntary services) and identify genuine gaps. This will enable targeted commissioning and prevent duplication.",
+      "evidence": [
+        {
+          "signal": "Service coverage data completeness",
+          "value": "All 6 service types show N/A locations and 0% LSOA coverage across 132 LSOAs"
+        },
+        {
+          "signal": "Population requiring services",
+          "value": "233,566 residents with mean SAMHI of -0.394 (worse than London average of -0.288)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002227",
+        "E01002185",
+        "E01002114",
+        "E01002131",
+        "E01002151"
+      ],
+      "id": "harrow-lt-1",
+      "borough": "Harrow",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Commission rapid mental health needs assessment for 12 Critical and High Need LSOAs",
+      "description": "Harrow has 13 LSOAs in Critical or High Need tiers (1 Critical, 12 High Need). Conduct qualitative interviews and focus groups in these areas within 6 months to understand barriers to accessing support, cultural factors affecting help-seeking, and local assets. Use findings to co-design interventions with residents.",
+      "evidence": [
+        {
+          "signal": "Concentration of highest-need areas",
+          "value": "13 LSOAs (9.8% of total) classified as Critical or High Need"
+        },
+        {
+          "signal": "Worsening trajectory",
+          "value": "Mean SAMHI declining, indicating deteriorating composite wellbeing"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002227",
+        "E01002185",
+        "E01002114",
+        "E01002131",
+        "E01002151"
+      ],
+      "id": "harrow-lt-2",
+      "borough": "Harrow",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Launch council wellbeing hub pilot in 2\u20133 accessible town-centre locations",
+      "description": "Within 12 months, open drop-in hubs offering signposting to mental health support, benefits advice, and basic counselling in central Harrow and at least one other high-footfall location. Partner with existing voluntary sector (Age UK, Mind, Samaritans) to staff and co-deliver. Target the 83 Elevated-tier LSOAs as early adopters.",
+      "evidence": [
+        {
+          "signal": "Elevated-tier prevalence",
+          "value": "83 LSOAs (62.9%) in Elevated tier, indicating widespread moderate need"
+        },
+        {
+          "signal": "Service gap",
+          "value": "No recorded Citizens Advice, CMHT, or mental health charity locations"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002227",
+        "E01002185",
+        "E01002114",
+        "E01002131",
+        "E01002151"
+      ],
+      "id": "harrow-lt-3",
+      "borough": "Harrow",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop integrated mental health and economic support pathway over 3 years",
+      "description": "Harrow's worsening SAMHI trajectory and absence of foodbank and homelessness services suggest unmet material need driving mental health decline. Commission a co-located service model combining NHS Talking Therapies, Citizens Advice debt support, foodbank access, and housing advice. Pilot in 2\u20133 high-need LSOAs (E01002227, E01002185, E01002114) and scale based on outcomes.",
+      "evidence": [
+        {
+          "signal": "Composite wellbeing decline",
+          "value": "Mean SAMHI -0.394 vs London average -0.288; trajectory worsening"
+        },
+        {
+          "signal": "Service absence",
+          "value": "Zero recorded foodbank, homelessness, or Citizens Advice locations despite 233,566 residents"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002227",
+        "E01002185",
+        "E01002114",
+        "E01002131",
+        "E01002151"
+      ],
+      "id": "harrow-lt-4",
+      "borough": "Harrow",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Establish Community Mental Health Team hubs with culturally competent staffing",
+      "description": "Over 3\u20135 years, commission at least 2 CMHT hubs (one north, one south Harrow) with staff reflecting Harrow's diverse population. Embed peer support workers from high-need communities. Ensure services are available in community languages and culturally adapted. Link to primary care and social prescribing networks.",
+      "evidence": [
+        {
+          "signal": "CMHT absence",
+          "value": "Zero CMHT locations recorded across 132 LSOAs"
+        },
+        {
+          "signal": "High-need concentration",
+          "value": "13 LSOAs in Critical/High Need tiers require specialist mental health intervention"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002227",
+        "E01002185",
+        "E01002114",
+        "E01002131",
+        "E01002151"
+      ],
+      "id": "harrow-lt-5",
+      "borough": "Harrow",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Build data infrastructure to track SAMHI and service coverage annually",
+      "description": "Establish a joint council\u2013NHS data-sharing agreement to capture SAMHI scores, service utilisation, and outcomes at LSOA level annually. Use this to monitor whether interventions are reversing the worsening trajectory. Publish transparent dashboards for councillors and residents. This enables evidence-based reallocation of resources.",
+      "evidence": [
+        {
+          "signal": "Data gaps",
+          "value": "Top 5 LSOAs lack SAMHI scores and population-16+ figures; service coverage entirely missing"
+        },
+        {
+          "signal": "Trajectory uncertainty",
+          "value": "Worsening trend identified but granular LSOA-level data unavailable to pinpoint drivers"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002227",
+        "E01002185",
+        "E01002114",
+        "E01002131",
+        "E01002151"
+      ],
+      "id": "harrow-lt-6",
+      "borough": "Harrow",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish baseline service audit across all 148 LSOAs",
+      "description": "All service coverage fields are currently marked N/A, preventing targeted intervention. Conduct an immediate audit of existing foodbanks, NHS Talking Therapies hubs, Citizens Advice bureaux, CMHTs, Mind centres, and homelessness services across Havering to establish baseline coverage and identify service deserts. This data is essential for all subsequent planning.",
+      "evidence": [
+        {
+          "signal": "Service coverage data completeness",
+          "value": "100% of service types (6/6) showing N/A locations and coverage percentages"
+        },
+        {
+          "signal": "LSOA count",
+          "value": "148 LSOAs require systematic mapping"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002277",
+        "E01002280",
+        "E01002276",
+        "E01002283",
+        "E01002282"
+      ],
+      "id": "havering-lt-1",
+      "borough": "Havering",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Launch mental health needs assessment in 13 Critical Need LSOAs",
+      "description": "Havering has 13 LSOAs classified as Critical Need. Conduct rapid qualitative needs assessments in these areas through community engagement, GP surgeries, and local services to understand specific barriers to mental health support. Use findings to design targeted interventions for depression, anxiety, and crisis support.",
+      "evidence": [
+        {
+          "signal": "Critical Need LSOA count",
+          "value": "13 LSOAs (8.8% of total)"
+        },
+        {
+          "signal": "Mean SAMHI score",
+          "value": "0.127 (above London average of -0.288, indicating higher composite wellbeing need)"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "Worsening"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002277",
+        "E01002280",
+        "E01002276",
+        "E01002283",
+        "E01002282"
+      ],
+      "id": "havering-lt-2",
+      "borough": "Havering",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Establish council mental health and wellbeing hub in central Havering",
+      "description": "Create a single-access point offering signposting to NHS Talking Therapies, Citizens Advice debt support, foodbank referrals, and homelessness services. Prioritise locations accessible to the 34 Elevated Need LSOAs. Staff with trained navigators to reduce stigma and improve uptake among residents in Elevated and High Need areas.",
+      "evidence": [
+        {
+          "signal": "Elevated Need LSOA count",
+          "value": "83 LSOAs (56% of total)"
+        },
+        {
+          "signal": "High Need LSOA count",
+          "value": "34 LSOAs (23% of total)"
+        },
+        {
+          "signal": "Total population",
+          "value": "244,747 (mid-2015 estimate)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002277",
+        "E01002280",
+        "E01002276",
+        "E01002283",
+        "E01002282"
+      ],
+      "id": "havering-lt-3",
+      "borough": "Havering",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop integrated mental health and economic support pathway",
+      "description": "Over 1\u20135 years, co-design a pathway linking NHS Talking Therapies, Citizens Advice debt counselling, foodbank access, and employment support. Havering's worsening trajectory and high SAMHI score suggest economic stress is a key driver. Integrate with local authority housing and welfare teams to address root causes of poor mental health.",
+      "evidence": [
+        {
+          "signal": "Trajectory",
+          "value": "Worsening"
+        },
+        {
+          "signal": "Mean SAMHI score relative to London",
+          "value": "0.127 vs -0.288 (Havering 0.415 points higher, indicating greater composite need)"
+        },
+        {
+          "signal": "High and Critical Need combined",
+          "value": "47 LSOAs (31.8% of total) in greatest need"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002277",
+        "E01002280",
+        "E01002276",
+        "E01002283",
+        "E01002282"
+      ],
+      "id": "havering-lt-4",
+      "borough": "Havering",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Build CMHT and community mental health capacity in underserved areas",
+      "description": "Establish or expand Community Mental Health Teams in the 13 Critical Need and 34 High Need LSOAs. Prioritise early intervention for working-age adults and older people (partner with Age UK). Ensure culturally competent services reflecting Havering's diverse population. Target completion within 3\u20135 years.",
+      "evidence": [
+        {
+          "signal": "Critical Need LSOA count",
+          "value": "13 LSOAs"
+        },
+        {
+          "signal": "High Need LSOA count",
+          "value": "34 LSOAs"
+        },
+        {
+          "signal": "Current CMHT coverage",
+          "value": "N/A locations (no baseline data available)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002277",
+        "E01002280",
+        "E01002276",
+        "E01002283",
+        "E01002282"
+      ],
+      "id": "havering-lt-5",
+      "borough": "Havering",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Establish prevention and early intervention programme for Elevated Need LSOAs",
+      "description": "Design a 3\u20135 year prevention strategy targeting the 83 Elevated Need LSOAs to prevent progression to High or Critical Need. Include mental health literacy campaigns, peer support networks, workplace wellbeing initiatives, and school-based resilience programmes. Partner with local employers, schools, and community organisations.",
+      "evidence": [
+        {
+          "signal": "Elevated Need LSOA count",
+          "value": "83 LSOAs (56% of total)"
+        },
+        {
+          "signal": "Trajectory",
+          "value": "Worsening (indicates risk of further deterioration without intervention)"
+        },
+        {
+          "signal": "Population in Elevated Need areas",
+          "value": "Approximately 137,000 (56% of 244,747)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002277",
+        "E01002280",
+        "E01002276",
+        "E01002283",
+        "E01002282"
+      ],
+      "id": "havering-lt-6",
+      "borough": "Havering",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish baseline service audit across Hillingdon's 153 LSOAs",
+      "description": "Conduct an immediate audit of existing mental health and wellbeing services across all 153 LSOAs to establish accurate baseline coverage. This will identify service gaps and enable targeted deployment of resources to the 78 Elevated-tier and 37 High Need LSOAs. Work with NHS Hillingdon CCG, local charities, and council teams to map foodbanks, Mind centres, NHS Talking Therapies, Citizens Advice bureaux, CMHTs, and homelessness services.",
+      "evidence": [
+        {
+          "signal": "Service coverage data missing",
+          "value": "All service types show N/A locations and N/A% LSOA coverage across the borough"
+        },
+        {
+          "signal": "High proportion of elevated need",
+          "value": "78 of 153 LSOAs (51%) are in Elevated tier; 37 (24%) in High Need"
+        },
+        {
+          "signal": "Worsening trajectory",
+          "value": "SAMHI mean -0.290 (vs London average -0.288) with worsening trend"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002545",
+        "E01002528",
+        "E01002493",
+        "E01002444",
+        "E01002505"
+      ],
+      "id": "hillingdon-lt-1",
+      "borough": "Hillingdon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Deploy rapid-access mental health support to top 5 highest-risk LSOAs",
+      "description": "Prioritise E01002545 (Hillingdon 023C), E01002528 (Hillingdon 028D), E01002493 (Hillingdon 032E), E01002444 (Hillingdon 031A), and E01002505 (Hillingdon 026D) for immediate intervention. Establish pop-up NHS Talking Therapies clinics, partner with Samaritans for crisis support, and co-locate Citizens Advice services in community hubs within 6 months to reduce acute mental health demand.",
+      "evidence": [
+        {
+          "signal": "Critical and high-need concentration",
+          "value": "1 Critical Need LSOA and 37 High Need LSOAs require urgent intervention"
+        },
+        {
+          "signal": "Population scale",
+          "value": "269,860 residents across borough; top 5 LSOAs represent significant proportion"
+        },
+        {
+          "signal": "Service gap",
+          "value": "Zero documented NHS therapy, Citizens Advice, or CMHT locations currently mapped"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002545",
+        "E01002528",
+        "E01002493",
+        "E01002444",
+        "E01002505"
+      ],
+      "id": "hillingdon-lt-2",
+      "borough": "Hillingdon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Establish council wellbeing hub with foodbank and debt advice co-location",
+      "description": "Open a central wellbeing hub within 9 months offering foodbank access, Citizens Advice debt counselling, and signposting to mental health services. This addresses the complete absence of mapped foodbank and Citizens Advice locations (N/A coverage) and provides immediate economic support to reduce financial stress-driven mental health decline. Target location in a High Need LSOA with good transport links.",
+      "evidence": [
+        {
+          "signal": "Zero foodbank coverage",
+          "value": "N/A locations and N/A% LSOA coverage across Hillingdon"
+        },
+        {
+          "signal": "Zero Citizens Advice coverage",
+          "value": "N/A locations and N/A% LSOA coverage across Hillingdon"
+        },
+        {
+          "signal": "Worsening wellbeing trajectory",
+          "value": "SAMHI mean -0.290 with worsening trend indicates economic and social stress"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002545",
+        "E01002528",
+        "E01002493",
+        "E01002444",
+        "E01002505"
+      ],
+      "id": "hillingdon-lt-3",
+      "borough": "Hillingdon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop integrated Community Mental Health Team network across all 153 LSOAs",
+      "description": "Over 3-5 years, establish CMHT presence across all 153 LSOAs with target coverage of at least 80% by year 5. Recruit and train community mental health practitioners, establish integrated care pathways with NHS Talking Therapies, and embed CMHTs in primary care. This addresses the current zero CMHT coverage and will reverse the worsening SAMHI trajectory by providing continuity of care for the 115 Elevated and High Need LSOAs.",
+      "evidence": [
+        {
+          "signal": "Zero CMHT coverage",
+          "value": "N/A locations and N/A% LSOA coverage across Hillingdon"
+        },
+        {
+          "signal": "75% of LSOAs in elevated or high need",
+          "value": "115 of 153 LSOAs (75%) are Elevated or High Need tier"
+        },
+        {
+          "signal": "Worsening trajectory requires sustained intervention",
+          "value": "SAMHI mean -0.290 with worsening trend requires long-term structural change"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002545",
+        "E01002528",
+        "E01002493",
+        "E01002444",
+        "E01002505"
+      ],
+      "id": "hillingdon-lt-4",
+      "borough": "Hillingdon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Build comprehensive mental health charity infrastructure with Mind and Samaritans",
+      "description": "Establish Mind centres and Samaritans crisis support in at least 15 locations across Hillingdon by year 4, targeting High Need and Elevated LSOAs. Partner with local voluntary sector to provide peer support groups, crisis counselling, and community mental health promotion. This addresses zero current mental health charity coverage and creates sustainable community-based alternatives to NHS-only provision.",
+      "evidence": [
+        {
+          "signal": "Zero mental health charity coverage",
+          "value": "N/A locations and N/A% LSOA coverage across Hillingdon"
+        },
+        {
+          "signal": "High need concentration",
+          "value": "37 High Need LSOAs require dedicated charity-led support infrastructure"
+        },
+        {
+          "signal": "Population scale supports sustainability",
+          "value": "269,860 residents can sustain multiple charity locations with proper commissioning"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002545",
+        "E01002528",
+        "E01002493",
+        "E01002444",
+        "E01002505"
+      ],
+      "id": "hillingdon-lt-5",
+      "borough": "Hillingdon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Establish homelessness prevention and mental health support integration",
+      "description": "Over 3-4 years, develop integrated homelessness services with embedded mental health support across Hillingdon, addressing zero current homelessness service coverage. Create housing-first pathways with community mental health support, partner with Age UK for older homeless adults, and establish rough sleeper outreach teams. This prevents mental health crises from escalating to homelessness and supports the 1 Critical Need LSOA.",
+      "evidence": [
+        {
+          "signal": "Zero homelessness service coverage",
+          "value": "N/A locations and N/A% LSOA coverage across Hillingdon"
+        },
+        {
+          "signal": "Critical need LSOA exists",
+          "value": "1 LSOA in Critical Need tier requires intensive multi-service support"
+        },
+        {
+          "signal": "Service integration gap",
+          "value": "No mapped integration between mental health and homelessness services"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002545",
+        "E01002528",
+        "E01002493",
+        "E01002444",
+        "E01002505"
+      ],
+      "id": "hillingdon-lt-6",
+      "borough": "Hillingdon",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish baseline service mapping and gap analysis",
+      "description": "Hounslow currently has no recorded locations for foodbanks, mental health charities, NHS therapy services, Citizens Advice, CMHTs, or homelessness support\u2014a critical data gap that prevents targeted commissioning. Conduct an urgent audit of all existing mental health and wellbeing services across the 135 LSOAs to establish true coverage and identify deserts. This will enable the council and NHS partners to prioritise resource allocation to the 75 Elevated-tier and 32 High Need LSOAs.",
+      "evidence": [
+        {
+          "signal": "Service coverage data completeness",
+          "value": "All 6 service types show N/A locations and 0% LSOA coverage"
+        },
+        {
+          "signal": "Borough mental health need",
+          "value": "Mean SAMHI -0.363, worse than London average -0.288"
+        },
+        {
+          "signal": "High-need population",
+          "value": "107 LSOAs in Elevated or High Need tiers (79% of 135 LSOAs)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002615",
+        "E01002606",
+        "E01002561",
+        "E01002559",
+        "E01002673"
+      ],
+      "id": "hounslow-lt-1",
+      "borough": "Hounslow",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Commission rapid mental health triage and signposting hub",
+      "description": "With 246,859 residents and no recorded NHS therapy or CMHT locations, establish a single-point-of-contact mental health triage service (online, phone, and walk-in) within 6 months. Partner with NHS Talking Therapies and local GPs to ensure residents in the 5 highest-risk LSOAs (E01002615, E01002606, E01002561, E01002559, E01002673) can access assessment and onward referral without delay. This addresses the stable but persistently elevated SAMHI score and prevents crisis escalation.",
+      "evidence": [
+        {
+          "signal": "NHS therapy service coverage",
+          "value": "N/A locations, 0% LSOA coverage across 135 LSOAs"
+        },
+        {
+          "signal": "CMHT coverage",
+          "value": "N/A locations, 0% LSOA coverage"
+        },
+        {
+          "signal": "Population size",
+          "value": "246,859 residents (mid-2015) with no recorded mental health access point"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002615",
+        "E01002606",
+        "E01002561",
+        "E01002559",
+        "E01002673"
+      ],
+      "id": "hounslow-lt-2",
+      "borough": "Hounslow",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Pilot foodbank and welfare support co-location in 3 high-need areas",
+      "description": "Zero foodbank locations are recorded despite 107 LSOAs in Elevated or High Need tiers. Launch a 12-month pilot placing foodbanks and Citizens Advice services in 3 high-need neighbourhoods (prioritising E01002615, E01002606, E01002561) to address material hardship and signpost to mental health support. Partner with local food banks, council welfare teams, and Citizens Advice to ensure integrated advice on benefits, debt, and mental health.",
+      "evidence": [
+        {
+          "signal": "Foodbank coverage",
+          "value": "N/A locations, 0% LSOA coverage"
+        },
+        {
+          "signal": "Citizens Advice coverage",
+          "value": "N/A locations, 0% LSOA coverage"
+        },
+        {
+          "signal": "High-need population concentration",
+          "value": "32 High Need LSOAs plus 75 Elevated-tier LSOAs (79% of total)"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002615",
+        "E01002606",
+        "E01002561",
+        "E01002559",
+        "E01002673"
+      ],
+      "id": "hounslow-lt-3",
+      "borough": "Hounslow",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop integrated mental health and homelessness pathway",
+      "description": "Over 1\u20135 years, co-commission a dedicated homelessness and mental health integration service with housing, social care, and NHS partners. Currently zero homelessness service locations are recorded. Design a pathway that identifies rough sleepers and at-risk housed populations in high-need LSOAs, provides mental health assessment, and links to stable housing and ongoing support. This addresses the stable but elevated SAMHI score and prevents crisis-driven demand.",
+      "evidence": [
+        {
+          "signal": "Homelessness service coverage",
+          "value": "N/A locations, 0% LSOA coverage"
+        },
+        {
+          "signal": "Persistent mental health need",
+          "value": "SAMHI -0.363 (stable trajectory, but worse than London average)"
+        },
+        {
+          "signal": "High-need concentration",
+          "value": "107 LSOAs in Elevated or High Need tiers"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002615",
+        "E01002606",
+        "E01002561",
+        "E01002559",
+        "E01002673"
+      ],
+      "id": "hounslow-lt-4",
+      "borough": "Hounslow",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Build community mental health infrastructure across all 135 LSOAs",
+      "description": "Over 3\u20135 years, establish a network of community mental health hubs (one per 15\u201320 LSOAs, approximately 7\u20139 hubs) offering peer support, group therapy, crisis support, and signposting. Ensure each hub is co-located with or linked to foodbanks, Citizens Advice, and homelessness services. This addresses the zero coverage across all 6 service types and creates a sustainable, preventative infrastructure that reduces reliance on crisis services.",
+      "evidence": [
+        {
+          "signal": "Mental health charity coverage",
+          "value": "N/A locations, 0% LSOA coverage across 135 LSOAs"
+        },
+        {
+          "signal": "CMHT coverage",
+          "value": "N/A locations, 0% LSOA coverage"
+        },
+        {
+          "signal": "Borough population and need",
+          "value": "246,859 residents with mean SAMHI -0.363 and 79% in Elevated/High Need tiers"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002615",
+        "E01002606",
+        "E01002561",
+        "E01002559",
+        "E01002673"
+      ],
+      "id": "hounslow-lt-5",
+      "borough": "Hounslow",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Establish data-driven commissioning framework and annual SAMHI monitoring",
+      "description": "Over 2\u20133 years, implement a formal commissioning cycle that uses SAMHI scores, tier data, and service coverage metrics to allocate resources annually. Set targets for service coverage (e.g., 100% LSOA coverage for NHS therapy, foodbanks, and CMHTs by year 5) and establish a dashboard accessible to councillors and public health teams. This ensures accountability, prevents service gaps, and allows early intervention in deteriorating LSOAs.",
+      "evidence": [
+        {
+          "signal": "Current data gaps",
+          "value": "All service coverage metrics are N/A; SAMHI data missing for top 5 risk LSOAs"
+        },
+        {
+          "signal": "Stable but elevated need",
+          "value": "SAMHI -0.363 (stable trajectory) indicates persistent, unmet need"
+        },
+        {
+          "signal": "Tier distribution",
+          "value": "1 Critical Need LSOA plus 32 High Need LSOAs require targeted monitoring"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002615",
+        "E01002606",
+        "E01002561",
+        "E01002559",
+        "E01002673"
+      ],
+      "id": "hounslow-lt-6",
+      "borough": "Hounslow",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Audit and map all mental health and wellbeing services across Islington",
+      "description": "Islington's service coverage data is entirely missing (N/A across foodbanks, mental health charities, NHS therapy, Citizens Advice, CMHTs, and homelessness services), making it impossible to assess gaps. Conduct an urgent audit of all existing services\u2014NHS Talking Therapies, Community Mental Health Teams, Mind centres, Samaritans, and council-run wellbeing hubs\u2014to establish baseline coverage and identify underserved neighbourhoods. This audit must be completed within 6 months to inform resource allocation.",
+      "evidence": [
+        {
+          "signal": "Service coverage data completeness",
+          "value": "All 6 service types show N/A locations and N/A% LSOA coverage"
+        },
+        {
+          "signal": "Borough population requiring services",
+          "value": "219,385 residents across 120 LSOAs"
+        },
+        {
+          "signal": "High-need LSOAs identified but uncharacterised",
+          "value": "8 LSOAs in High Need tier lack detailed SAMHI and population data"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002784",
+        "E01002732",
+        "E01002773",
+        "E01002713",
+        "E01002778"
+      ],
+      "id": "islington-lt-1",
+      "borough": "Islington",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "high",
+      "title": "Establish rapid-access mental health drop-in hubs in 5 highest-risk LSOAs",
+      "description": "Five LSOAs (E01002784, E01002732, E01002773, E01002713, E01002778) are flagged as top-risk neighbourhoods but lack detailed characterisation. Establish low-barrier, walk-in mental health and wellbeing drop-in centres in these areas within 9 months, offering signposting to NHS Talking Therapies, crisis support, and peer support. Partner with existing community venues (libraries, children's centres, community halls) to minimise setup costs.",
+      "evidence": [
+        {
+          "signal": "Top 5 LSOAs by risk",
+          "value": "E01002784, E01002732, E01002773, E01002713, E01002778 identified as highest priority"
+        },
+        {
+          "signal": "SAMHI trajectory",
+          "value": "Stable at -0.055 (better than London average of -0.288), but 8 LSOAs remain in High Need tier"
+        },
+        {
+          "signal": "Service gap",
+          "value": "No mapped mental health charity or CMHT locations reported"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002784",
+        "E01002732",
+        "E01002773",
+        "E01002713",
+        "E01002778"
+      ],
+      "id": "islington-lt-2",
+      "borough": "Islington",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "short-term",
+      "priority": "medium",
+      "title": "Commission data validation and SAMHI recalculation for all 120 LSOAs",
+      "description": "The top 5 risk LSOAs have missing SAMHI scores and tier classifications, preventing evidence-based targeting. Commission a data validation exercise within 3 months to confirm SAMHI scores, tier assignments, and adult population figures for all 120 LSOAs. This will enable precise identification of which neighbourhoods need foodbanks, Citizens Advice, homelessness support, and mental health services.",
+      "evidence": [
+        {
+          "signal": "Data completeness for top-risk LSOAs",
+          "value": "All 5 highest-risk LSOAs show SAMHI=N/A, tier=blank, pop_16plus=N/A"
+        },
+        {
+          "signal": "Borough-level SAMHI available",
+          "value": "Mean SAMHI 2022 = -0.055 (better than London average), but granular LSOA data missing"
+        },
+        {
+          "signal": "Population baseline uncertain",
+          "value": "Mid-2015 estimate of 219,385 is 8+ years old; current distribution across LSOAs unknown"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002784",
+        "E01002732",
+        "E01002773",
+        "E01002713",
+        "E01002778"
+      ],
+      "id": "islington-lt-3",
+      "borough": "Islington",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Develop integrated mental health and economic support pathway for 83 Elevated-tier LSOAs",
+      "description": "Islington has 83 LSOAs in the Elevated tier, representing the majority of neighbourhoods. Over 18\u201324 months, design and pilot an integrated pathway linking NHS Talking Therapies, Citizens Advice debt and employment support, foodbanks, and council wellbeing services. This should address the interconnection between mental health, financial stress, and housing insecurity. Pilot in 10\u201315 Elevated LSOAs, then scale borough-wide.",
+      "evidence": [
+        {
+          "signal": "Elevated-tier prevalence",
+          "value": "83 of 120 LSOAs (69%) in Elevated tier"
+        },
+        {
+          "signal": "Stable but not improving trajectory",
+          "value": "Mean SAMHI -0.055 is better than London average (-0.288), but no improvement trend noted"
+        },
+        {
+          "signal": "Service fragmentation",
+          "value": "No mapped integration between mental health charities, Citizens Advice, foodbanks, or CMHTs"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002784",
+        "E01002732",
+        "E01002773",
+        "E01002713",
+        "E01002778"
+      ],
+      "id": "islington-lt-4",
+      "borough": "Islington",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "high",
+      "title": "Build community mental health workforce in High-Need LSOAs through training and employment",
+      "description": "The 8 High-Need LSOAs require sustained, locally-rooted mental health support. Over 2\u20133 years, establish a community mental health worker training programme (e.g., mental health first aid, peer support, community health worker roles) targeting residents in these LSOAs. Partner with local colleges, Mind, and NHS to create employment pathways. This builds local capacity, reduces stigma, and creates jobs in underserved areas.",
+      "evidence": [
+        {
+          "signal": "High-Need concentration",
+          "value": "8 LSOAs in High Need tier require targeted, sustained intervention"
+        },
+        {
+          "signal": "Service gap in community mental health",
+          "value": "No mapped CMHT or mental health charity locations; community-based provision absent"
+        },
+        {
+          "signal": "Population scale",
+          "value": "219,385 residents across 120 LSOAs; community workforce can improve access and trust"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002784",
+        "E01002732",
+        "E01002773",
+        "E01002713",
+        "E01002778"
+      ],
+      "id": "islington-lt-5",
+      "borough": "Islington",
+      "scope": "borough"
+    },
+    {
+      "timeframe": "long-term",
+      "priority": "medium",
+      "title": "Establish real-time SAMHI monitoring and annual LSOA-level reporting dashboard",
+      "description": "Islington's stable SAMHI trajectory masks potential variation across neighbourhoods. Over 2\u20133 years, work with Public Health England and NHS partners to establish annual LSOA-level SAMHI updates and a public-facing dashboard. This enables councillors and service leaders to track progress in High-Need and Elevated LSOAs, identify emerging hotspots, and adjust resource allocation. Include indicators for service coverage (foodbanks, therapy, Citizens Advice, CMHTs, homelessness).",
+      "evidence": [
+        {
+          "signal": "Trajectory stability without granular insight",
+          "value": "Borough mean SAMHI -0.055 is stable, but LSOA-level trends unknown"
+        },
+        {
+          "signal": "Data gaps prevent accountability",
+          "value": "Service coverage data entirely missing; no mechanism to track whether services reach high-need areas"
+        },
+        {
+          "signal": "Population data currency",
+          "value": "Mid-2015 estimates are outdated; annual refresh needed for accurate resource planning"
+        }
+      ],
+      "affected_lsoas": [
+        "E01002784",
+        "E01002732",
+        "E01002773",
+        "E01002713",
+        "E01002778"
+      ],
+      "id": "islington-lt-6",
+      "borough": "Islington",
+      "scope": "borough"
+    }
+  ]
+}
