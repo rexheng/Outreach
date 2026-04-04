@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outreach -- The Geography of Wellbeing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Sora:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/chat.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="header-left">
+      <div class="header-brand">
+        <div class="brand-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="14" r="13" stroke="#B5725A" stroke-width="1.5" fill="none"/>
+            <path d="M14 8C11.5 8 9.5 10 9.5 12.5C9.5 16.5 14 20 14 20C14 20 18.5 16.5 18.5 12.5C18.5 10 16.5 8 14 8Z" fill="#B5725A" opacity="0.7"/>
+            <circle cx="14" cy="12.5" r="1.5" fill="#FAF7F3"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Outreach</h1>
+          <p class="subtitle">The Geography of Wellbeing</p>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <a href="/" class="header-nav-link">Dashboard</a>
+        <span class="header-nav-link active">Map Explorer</span>
+      </nav>
+    </div>
+    <div class="header-right">
+      <span class="header-meta">4,994 neighbourhoods across London</span>
+    </div>
+  </header>
+
+  <!-- Main layout -->
+  <div id="app">
+    <!-- Left editorial panel -->
+    <aside id="left-panel">
+      <div class="editorial-intro">
+        <p class="editorial-lead">
+          <span class="drop-cap">M</span>ental health need varies sharply across
+          London's 4,994 neighbourhoods. This tool maps that variation at LSOA level,
+          combining health deprivation, economic inactivity and service accessibility
+          into a single composite index.
+        </p>
+        <p class="editorial-body">
+          Use the layers below to switch indicators. Click any neighbourhood
+          for a detailed breakdown. Filter by borough or ask the chatbot to
+          compare areas.
+        </p>
+      </div>
+
+      <!-- Borough filter -->
+      <div class="panel-section">
+        <label class="panel-section-label" for="borough-select">Filter by Borough</label>
+        <select id="borough-select">
+          <option value="">All London</option>
+        </select>
+        <a id="download-briefing" class="btn-briefing" style="display:none"
+           href="#" download>Download Briefing</a>
+      </div>
+
+      <!-- Layer selector as radio cards -->
+      <div class="panel-section">
+        <span class="panel-section-label">Colour the map by</span>
+        <div id="layer-selector" class="radio-card-group">
+          <label class="radio-card selected">
+            <input type="radio" name="layer" value="lri_score" checked>
+            <div class="radio-card-inner">
+              <span class="radio-card-title">Composite Need Index</span>
+              <span class="radio-card-desc">Overall wellbeing risk score</span>
+            </div>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="layer" value="ind_Health Deprivation and Disability Score">
+            <div class="radio-card-inner">
+              <span class="radio-card-title">Health Deprivation</span>
+              <span class="radio-card-desc">Disability and health need</span>
+            </div>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="layer" value="ind_Income Score (rate)">
+            <div class="radio-card-inner">
+              <span class="radio-card-title">Income Deprivation</span>
+              <span class="radio-card-desc">Low-income households rate</span>
+            </div>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="layer" value="ind_Employment Score (rate)">
+            <div class="radio-card-inner">
+              <span class="radio-card-title">Employment Deprivation</span>
+              <span class="radio-card-desc">Worklessness indicator</span>
+            </div>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="layer" value="ind_long_term_sick">
+            <div class="radio-card-inner">
+              <span class="radio-card-title">Long-term Sick Rate</span>
+              <span class="radio-card-desc">Chronic illness prevalence</span>
+            </div>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="layer" value="ind_econ_inactive">
+            <div class="radio-card-inner">
+              <span class="radio-card-title">Economic Inactivity</span>
+              <span class="radio-card-desc">Not in the labour force</span>
+            </div>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="layer" value="ind_unemployed">
+            <div class="radio-card-inner">
+              <span class="radio-card-title">Unemployment Rate</span>
+              <span class="radio-card-desc">Actively seeking work</span>
+            </div>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="layer" value="imd_score">
+            <div class="radio-card-inner">
+              <span class="radio-card-title">Overall IMD Score</span>
+              <span class="radio-card-desc">Index of Multiple Deprivation</span>
+            </div>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="layer" value="samhi_index_2022">
+            <div class="radio-card-inner">
+              <span class="radio-card-title">SAMHI Index (2022)</span>
+              <span class="radio-card-desc">Small area mental health</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Need level filters -->
+      <div class="panel-section">
+        <span class="panel-section-label">Need Level</span>
+        <div id="tier-filters">
+          <label class="tier-chip critical"><input type="checkbox" value="Critical" checked><span class="tier-dot"></span> Critical Need</label>
+          <label class="tier-chip high"><input type="checkbox" value="High" checked><span class="tier-dot"></span> High Need</label>
+          <label class="tier-chip moderate"><input type="checkbox" value="Moderate" checked><span class="tier-dot"></span> Elevated</label>
+          <label class="tier-chip low"><input type="checkbox" value="Low" checked><span class="tier-dot"></span> Lower Need</label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Map -->
+    <div id="map-container">
+      <div id="map"></div>
+
+      <!-- Legend -->
+      <div id="legend">
+        <h4 id="legend-title">Composite Need Index</h4>
+        <div id="legend-items"></div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar-closed">
+      <button id="sidebar-close" aria-label="Close sidebar">&times;</button>
+      <div id="sidebar-content">
+        <div class="sidebar-placeholder">
+          <div class="placeholder-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="13" r="5" stroke="#B5725A" stroke-width="1.5" fill="none"/>
+              <path d="M16 6C12.13 6 9 9.13 9 13C9 19 16 26 16 26C16 26 23 19 23 13C23 9.13 19.87 6 16 6Z" stroke="#B5725A" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <p>Select a neighbourhood on the map to explore its wellbeing profile</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat -->
+    <button id="chat-toggle" aria-label="Open AI assistant">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+    </button>
+    <div id="chat-panel" class="chat-closed">
+      <div class="chat-header">
+        <span>Policy Assistant</span>
+        <button id="chat-minimize">&minus;</button>
+      </div>
+      <div id="chat-messages"></div>
+      <div class="chat-input-bar">
+        <textarea id="chat-input" placeholder="Ask about wellbeing and need..." rows="1"></textarea>
+        <button id="chat-send" aria-label="Send">&#10148;</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/js/map.js"></script>
+  <script src="/js/sidebar.js"></script>
+  <script src="/js/controls.js"></script>
+  <script src="/js/chat.js"></script>
+</body>
+</html>

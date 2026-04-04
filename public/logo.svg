@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 72" width="64" height="72">
+  <!--
+    Outreach Logo
+    Map pin with two overlapping circles — representing
+    community connection across London neighbourhoods.
+    The vesica piscis overlap is the shared space of care.
+  -->
+
+  <defs>
+    <!-- Clip to keep inner shapes within the pin head -->
+    <clipPath id="head">
+      <circle cx="32" cy="25" r="16.5"/>
+    </clipPath>
+    <!-- Clip for computing the overlap lens -->
+    <clipPath id="lc">
+      <circle cx="27" cy="24.5" r="11"/>
+    </clipPath>
+  </defs>
+
+  <!-- Pin teardrop silhouette -->
+  <path
+    d="M32 68 C32 68 8 38 8 25 C8 11.745 18.745 1 32 1 C45.255 1 56 11.745 56 25 C56 38 32 68 32 68Z"
+    fill="#B5725A"
+  />
+
+  <!-- Cream window in pin head -->
+  <circle cx="32" cy="25" r="16.5" fill="#FAF7F3"/>
+
+  <!-- Inner circles, clipped to the cream window -->
+  <g clip-path="url(#head)">
+    <!-- Left circle — deep brown -->
+    <circle cx="27" cy="24.5" r="11" fill="#6B4A3A"/>
+    <!-- Right circle — clay accent -->
+    <circle cx="37" cy="24.5" r="11" fill="#D4A574"/>
+    <!-- Overlap lens — terracotta connection zone -->
+    <circle cx="37" cy="24.5" r="11" fill="#B5725A" clip-path="url(#lc)"/>
+  </g>
+
+</svg>
