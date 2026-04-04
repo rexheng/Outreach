@@ -1,0 +1,18 @@
+app/
+dashboard/
+data RAW/
+data_downloads/
+master_lsoa.gpkg
+scripts/
+tests/
+docs/
+tasks/
+.superpowers/
+.playwright-mcp/
+Procfile
+nixpacks.toml
+runtime.txt
+*.gpkg
+risk_config.yaml
+policy_signals.json
+policy_recommendations.json
