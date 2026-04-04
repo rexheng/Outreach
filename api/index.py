@@ -235,3 +235,25 @@ def borough_briefing(borough_name: str):
         media_type="application/pdf",
         headers={"Content-Disposition": f'attachment; filename="Outreach-Briefing-{safe_name}.pdf"'},
     )
+
+
+# ─── Debug (temporary) ───
+
+@app.get("/api/debug")
+def debug_paths():
+    """Temporary endpoint to debug file paths on Vercel. Remove after deployment works."""
+    import glob
+    api_dir = os.path.dirname(__file__)
+    project_root = os.path.dirname(api_dir)
+    return {
+        "cwd": os.getcwd(),
+        "__file__": __file__,
+        "api_dir": api_dir,
+        "project_root": project_root,
+        "DATA_DIR": str(DATA_DIR),
+        "DATA_DIR_exists": DATA_DIR.exists(),
+        "ls_project_root": os.listdir(project_root)[:20] if os.path.exists(project_root) else "NOT_FOUND",
+        "ls_api_dir": os.listdir(api_dir) if os.path.exists(api_dir) else "NOT_FOUND",
+        "glob_public": glob.glob(os.path.join(project_root, "public", "data", "*.json"))[:5],
+        "glob_varask": glob.glob("/var/task/public/data/*.json")[:5],
+    }
