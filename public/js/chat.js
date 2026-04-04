@@ -171,21 +171,29 @@
         throw new Error(`Server error: ${response.status}`);
       }
 
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = '';
+      const contentType = response.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        // JSON response (Vercel serverless)
+        const data = await response.json();
+        fullText = data.text || '';
+      } else {
+        // SSE streaming response (local dev / Railway)
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
 
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
 
-        buffer += decoder.decode(value, { stream: true });
-        const events = parseSSE(buffer);
-        buffer = events.remaining;
+          buffer += decoder.decode(value, { stream: true });
+          const events = parseSSE(buffer);
+          buffer = events.remaining;
 
-        for (const event of events.parsed) {
-          if (event.type === 'token') {
-            fullText += event.data.text;
+          for (const event of events.parsed) {
+            if (event.type === 'token') {
+              fullText += event.data.text;
+            }
           }
         }
       }

@@ -80,49 +80,42 @@ class ChatRequest(BaseModel):
 
 @app.post("/api/chat")
 async def chat(req: ChatRequest):
-    ctx = build_chat_context(req.message, req.history)
-    system_prompt = CHAT_SYSTEM_PROMPT.format(context_json=ctx["context_text"])
+    import urllib.request
+    import ssl
+
+    chat_ctx = build_chat_context(req.message, req.history)
+    system_prompt = CHAT_SYSTEM_PROMPT.format(context_json=chat_ctx["context_text"])
     history = req.history[-CHAT_HISTORY_LIMIT:]
     messages = [{"role": "system", "content": system_prompt}]
     for msg in history:
         messages.append({"role": msg["role"], "content": msg["content"]})
     messages.append({"role": "user", "content": req.message})
 
-    def generate():
-        yield f"event: context\ndata: {json.dumps(ctx['entities'])}\n\n"
-        if not GROQ_API_KEY:
-            yield f"event: token\ndata: {json.dumps({'text': 'API key not configured.'})}\n\n"
-            yield "event: done\ndata: {}\n\n"
-            return
-        try:
-            import urllib.request
-            import ssl
-            payload = json.dumps({
-                "model": GROQ_MODEL,
-                "max_tokens": CHAT_MAX_TOKENS,
-                "messages": messages,
-                "stream": False,
-            }).encode()
-            req = urllib.request.Request(
-                "https://api.groq.com/openai/v1/chat/completions",
-                data=payload,
-                headers={
-                    "Authorization": f"Bearer {GROQ_API_KEY}",
-                    "Content-Type": "application/json",
-                },
-            )
-            ctx = ssl.create_default_context()
-            with urllib.request.urlopen(req, context=ctx, timeout=50) as resp:
-                body = json.loads(resp.read().decode())
-                text = body["choices"][0]["message"]["content"]
-                yield f"event: token\ndata: {json.dumps({'text': text})}\n\n"
-        except Exception as e:
-            import traceback
-            tb = traceback.format_exc()
-            yield f"event: token\ndata: {json.dumps({'text': f'Error: {e} | Traceback: {tb[-300:]}'})}\n\n"
-        yield "event: done\ndata: {}\n\n"
+    if not GROQ_API_KEY:
+        return {"entities": chat_ctx["entities"], "text": "API key not configured."}
 
-    return StreamingResponse(generate(), media_type="text/event-stream")
+    try:
+        payload = json.dumps({
+            "model": GROQ_MODEL,
+            "max_tokens": CHAT_MAX_TOKENS,
+            "messages": messages,
+            "stream": False,
+        }).encode()
+        api_req = urllib.request.Request(
+            "https://api.groq.com/openai/v1/chat/completions",
+            data=payload,
+            headers={
+                "Authorization": f"Bearer {GROQ_API_KEY}",
+                "Content-Type": "application/json",
+            },
+        )
+        ssl_ctx = ssl.create_default_context()
+        with urllib.request.urlopen(api_req, context=ssl_ctx, timeout=50) as resp:
+            body = json.loads(resp.read().decode())
+            text = body["choices"][0]["message"]["content"]
+            return {"entities": chat_ctx["entities"], "text": text}
+    except Exception as e:
+        return {"entities": chat_ctx["entities"], "text": f"Error: {e}"}
 
 
 # ─── Policy endpoints ───
