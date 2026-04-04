@@ -32,6 +32,10 @@ GROQ_MODEL = "llama-3.3-70b-versatile"
 CHAT_MAX_TOKENS = 1500
 CHAT_HISTORY_LIMIT = 10
 
+# Anthropic (policy deep-dive)
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-20250514")
+
 # Policy recommendation settings
 POLICY_PRECOMPUTE_TEMP = 0.3
 POLICY_DEEPDIVE_TEMP = 0.7
