@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, field_validator
-from openai import OpenAI
+from groq import Groq
 
 from _config import (
     GROQ_API_KEY, GROQ_MODEL, CHAT_MAX_TOKENS, CHAT_HISTORY_LIMIT,
@@ -94,7 +94,7 @@ async def chat(req: ChatRequest):
             yield "event: done\ndata: {}\n\n"
             return
         try:
-            client = OpenAI(api_key=GROQ_API_KEY, base_url="https://api.groq.com/openai/v1")
+            client = Groq(api_key=GROQ_API_KEY)
             stream = client.chat.completions.create(model=GROQ_MODEL, max_tokens=CHAT_MAX_TOKENS, messages=messages, stream=True)
             for chunk in stream:
                 delta = chunk.choices[0].delta
