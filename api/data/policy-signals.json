@@ -1,0 +1,2874 @@
+{
+  "london": {
+    "total_lsoas": 4994,
+    "tier_counts": {
+      "Elevated": 2899,
+      "Lower Need": 1503,
+      "High Need": 544,
+      "Critical Need": 48
+    },
+    "mean_composite_need": 0.3302,
+    "trajectory_summary": {
+      "worsening": 3138,
+      "improving": 1856,
+      "stable": 0,
+      "pct_worsening": 62.84
+    },
+    "top_10_boroughs": [
+      {
+        "borough_name": "Barking and Dagenham",
+        "borough_slug": "barking-and-dagenham",
+        "mean_composite_need": 0.5114,
+        "lsoa_count": 104,
+        "mh_trajectory": "worsening"
+      },
+      {
+        "borough_name": "Havering",
+        "borough_slug": "havering",
+        "mean_composite_need": 0.4474,
+        "lsoa_count": 148,
+        "mh_trajectory": "worsening"
+      },
+      {
+        "borough_name": "Enfield",
+        "borough_slug": "enfield",
+        "mean_composite_need": 0.4105,
+        "lsoa_count": 180,
+        "mh_trajectory": "worsening"
+      },
+      {
+        "borough_name": "Bexley",
+        "borough_slug": "bexley",
+        "mean_composite_need": 0.3926,
+        "lsoa_count": 144,
+        "mh_trajectory": "worsening"
+      },
+      {
+        "borough_name": "Greenwich",
+        "borough_slug": "greenwich",
+        "mean_composite_need": 0.3924,
+        "lsoa_count": 139,
+        "mh_trajectory": "worsening"
+      },
+      {
+        "borough_name": "Hackney",
+        "borough_slug": "hackney",
+        "mean_composite_need": 0.386,
+        "lsoa_count": 136,
+        "mh_trajectory": "stable"
+      },
+      {
+        "borough_name": "Hounslow",
+        "borough_slug": "hounslow",
+        "mean_composite_need": 0.3827,
+        "lsoa_count": 135,
+        "mh_trajectory": "stable"
+      },
+      {
+        "borough_name": "Ealing",
+        "borough_slug": "ealing",
+        "mean_composite_need": 0.3797,
+        "lsoa_count": 193,
+        "mh_trajectory": "worsening"
+      },
+      {
+        "borough_name": "Hillingdon",
+        "borough_slug": "hillingdon",
+        "mean_composite_need": 0.3772,
+        "lsoa_count": 153,
+        "mh_trajectory": "worsening"
+      },
+      {
+        "borough_name": "Croydon",
+        "borough_slug": "croydon",
+        "mean_composite_need": 0.3748,
+        "lsoa_count": 215,
+        "mh_trajectory": "worsening"
+      }
+    ]
+  },
+  "boroughs": {
+    "Barking and Dagenham": {
+      "borough_name": "Barking and Dagenham",
+      "borough_slug": "barking-and-dagenham",
+      "lsoa_count": 104,
+      "population_est_2015": 187241.0,
+      "tier_counts": {
+        "High Need": 54,
+        "Elevated": 42,
+        "Critical Need": 4,
+        "Lower Need": 4
+      },
+      "mean_composite_need": 0.5114,
+      "max_composite_need": 0.7953,
+      "mean_samhi_2022": -0.2876,
+      "mean_samhi_2019": -0.4475,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.16,
+      "pct_lsoas_worsening": 66.35,
+      "mean_service_desert": 0.3764,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 4820.6,
+          "lsoas_beyond_threshold": 94
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3706.9,
+          "lsoas_beyond_threshold": 78
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2516.6,
+          "lsoas_beyond_threshold": 35
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3706.9,
+          "lsoas_beyond_threshold": 78
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 7277.6,
+          "lsoas_beyond_threshold": 86
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 13420.2,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.6624,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01000053",
+          "lsoa_name": "Barking and Dagenham 020A",
+          "composite_need_score": 0.7953328920042624,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01000106",
+          "lsoa_name": "Barking and Dagenham 014D",
+          "composite_need_score": 0.7554619197832841,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01000034",
+          "lsoa_name": "Barking and Dagenham 003A",
+          "composite_need_score": 0.7537874241883854,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01000086",
+          "lsoa_name": "Barking and Dagenham 013F",
+          "composite_need_score": 0.7534524772594933,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01000061",
+          "lsoa_name": "Barking and Dagenham 006C",
+          "composite_need_score": 0.7490905198136085,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Barnet": {
+      "borough_name": "Barnet",
+      "borough_slug": "barnet",
+      "lsoa_count": 205,
+      "population_est_2015": 362195.0,
+      "tier_counts": {
+        "Elevated": 112,
+        "Lower Need": 81,
+        "High Need": 12
+      },
+      "mean_composite_need": 0.2969,
+      "max_composite_need": 0.7009,
+      "mean_samhi_2022": -0.4043,
+      "mean_samhi_2019": -0.5267,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.1224,
+      "pct_lsoas_worsening": 72.68,
+      "mean_service_desert": 0.1611,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3232.1,
+          "lsoas_beyond_threshold": 118
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3797.9,
+          "lsoas_beyond_threshold": 134
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 4413.0,
+          "lsoas_beyond_threshold": 177
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 4594.7,
+          "lsoas_beyond_threshold": 171
+        },
+        "cmht": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 4348.9,
+          "lsoas_beyond_threshold": 77
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 8934.1,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.3243,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01000221",
+          "lsoa_name": "Barnet 039B",
+          "composite_need_score": 0.7008824975201634,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01000195",
+          "lsoa_name": "Barnet 013A",
+          "composite_need_score": 0.5848171530475098,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01000153",
+          "lsoa_name": "Barnet 026D",
+          "composite_need_score": 0.5825924623171304,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01000121",
+          "lsoa_name": "Barnet 010C",
+          "composite_need_score": 0.5763841580391997,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01000223",
+          "lsoa_name": "Barnet 039C",
+          "composite_need_score": 0.5612554165464009,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Bexley": {
+      "borough_name": "Bexley",
+      "borough_slug": "bexley",
+      "lsoa_count": 144,
+      "population_est_2015": 237854.0,
+      "tier_counts": {
+        "Elevated": 78,
+        "Lower Need": 32,
+        "High Need": 28,
+        "Critical Need": 6
+      },
+      "mean_composite_need": 0.3926,
+      "max_composite_need": 0.9915,
+      "mean_samhi_2022": 0.0723,
+      "mean_samhi_2019": -0.296,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.3684,
+      "pct_lsoas_worsening": 85.42,
+      "mean_service_desert": 0.217,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 6296.2,
+          "lsoas_beyond_threshold": 144
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2951.0,
+          "lsoas_beyond_threshold": 69
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2807.6,
+          "lsoas_beyond_threshold": 65
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 6226.7,
+          "lsoas_beyond_threshold": 143
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 9998.3,
+          "lsoas_beyond_threshold": 144
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 14883.7,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.1805,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01000386",
+          "lsoa_name": "Bexley 028D",
+          "composite_need_score": 0.9915475409826366,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01000374",
+          "lsoa_name": "Bexley 019A",
+          "composite_need_score": 0.8607870119848783,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01000434",
+          "lsoa_name": "Bexley 008G",
+          "composite_need_score": 0.8196258355156397,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01000429",
+          "lsoa_name": "Bexley 008B",
+          "composite_need_score": 0.8027626106555126,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01000428",
+          "lsoa_name": "Bexley 027D",
+          "composite_need_score": 0.788067160280685,
+          "need_tier": "Critical Need"
+        }
+      ]
+    },
+    "Brent": {
+      "borough_name": "Brent",
+      "borough_slug": "brent",
+      "lsoa_count": 167,
+      "population_est_2015": 307474.0,
+      "tier_counts": {
+        "Elevated": 116,
+        "Lower Need": 30,
+        "High Need": 21
+      },
+      "mean_composite_need": 0.3494,
+      "max_composite_need": 0.7335,
+      "mean_samhi_2022": -0.3885,
+      "mean_samhi_2019": -0.5776,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.1891,
+      "pct_lsoas_worsening": 71.26,
+      "mean_service_desert": 0.1686,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2304.5,
+          "lsoas_beyond_threshold": 42
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2781.2,
+          "lsoas_beyond_threshold": 75
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 4356.0,
+          "lsoas_beyond_threshold": 146
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 2,
+          "mean_dist_m": 1940.6,
+          "lsoas_beyond_threshold": 22
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 6801.8,
+          "lsoas_beyond_threshold": 119
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 9331.3,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.5671,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01000601",
+          "lsoa_name": "Brent 021B",
+          "composite_need_score": 0.7335348166993287,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01000485",
+          "lsoa_name": "Brent 006C",
+          "composite_need_score": 0.6195166952186189,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01000599",
+          "lsoa_name": "Brent 027D",
+          "composite_need_score": 0.6184928830406784,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01000605",
+          "lsoa_name": "Brent 021F",
+          "composite_need_score": 0.6066703988347327,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01000509",
+          "lsoa_name": "Brent 014B",
+          "composite_need_score": 0.6063491743545798,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Bromley": {
+      "borough_name": "Bromley",
+      "borough_slug": "bromley",
+      "lsoa_count": 195,
+      "population_est_2015": 321430.0,
+      "tier_counts": {
+        "Elevated": 93,
+        "Lower Need": 69,
+        "High Need": 28,
+        "Critical Need": 5
+      },
+      "mean_composite_need": 0.3435,
+      "max_composite_need": 0.9555,
+      "mean_samhi_2022": 0.0905,
+      "mean_samhi_2019": -0.0655,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.156,
+      "pct_lsoas_worsening": 73.85,
+      "mean_service_desert": 0.1687,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 6146.2,
+          "lsoas_beyond_threshold": 158
+        },
+        "mh_charity": {
+          "lsoas_with_service": 4,
+          "mean_dist_m": 2308.6,
+          "lsoas_beyond_threshold": 47
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 4264.4,
+          "lsoas_beyond_threshold": 162
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 4469.5,
+          "lsoas_beyond_threshold": 138
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 12300.3,
+          "lsoas_beyond_threshold": 195
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 14652.2,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.0757,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01000720",
+          "lsoa_name": "Bromley 019B",
+          "composite_need_score": 0.9555182693777032,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01000739",
+          "lsoa_name": "Bromley 014E",
+          "composite_need_score": 0.8145059118483912,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01000730",
+          "lsoa_name": "Bromley 014B",
+          "composite_need_score": 0.772701386186483,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01000721",
+          "lsoa_name": "Bromley 019C",
+          "composite_need_score": 0.7601643388296212,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01000729",
+          "lsoa_name": "Bromley 014A",
+          "composite_need_score": 0.7537523086294448,
+          "need_tier": "Critical Need"
+        }
+      ]
+    },
+    "Camden": {
+      "borough_name": "Camden",
+      "borough_slug": "camden",
+      "lsoa_count": 124,
+      "population_est_2015": 227558.0,
+      "tier_counts": {
+        "Lower Need": 66,
+        "Elevated": 57,
+        "High Need": 1
+      },
+      "mean_composite_need": 0.2467,
+      "max_composite_need": 0.5608,
+      "mean_samhi_2022": -0.2863,
+      "mean_samhi_2019": -0.289,
+      "mh_trajectory": "stable",
+      "mean_trajectory_delta": 0.0028,
+      "pct_lsoas_worsening": 51.61,
+      "mean_service_desert": 0.103,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2425.0,
+          "lsoas_beyond_threshold": 44
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2003.9,
+          "lsoas_beyond_threshold": 14
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2857.2,
+          "lsoas_beyond_threshold": 52
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2419.0,
+          "lsoas_beyond_threshold": 41
+        },
+        "cmht": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1640.6,
+          "lsoas_beyond_threshold": 0
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2685.2,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.9733,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01000902",
+          "lsoa_name": "Camden 012B",
+          "composite_need_score": 0.5608430120282425,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01000858",
+          "lsoa_name": "Camden 018B",
+          "composite_need_score": 0.49122509691436744,
+          "need_tier": "Elevated"
+        },
+        {
+          "lsoa_code": "E01000935",
+          "lsoa_name": "Camden 020E",
+          "composite_need_score": 0.48518979667237566,
+          "need_tier": "Elevated"
+        },
+        {
+          "lsoa_code": "E01000890",
+          "lsoa_name": "Camden 007B",
+          "composite_need_score": 0.4739424132335244,
+          "need_tier": "Elevated"
+        },
+        {
+          "lsoa_code": "E01000907",
+          "lsoa_name": "Camden 001A",
+          "composite_need_score": 0.4633219812913478,
+          "need_tier": "Elevated"
+        }
+      ]
+    },
+    "City of London": {
+      "borough_name": "City of London",
+      "borough_slug": "city-of-london",
+      "lsoa_count": 6,
+      "population_est_2015": 6687.0,
+      "tier_counts": {
+        "Lower Need": 5,
+        "Elevated": 1
+      },
+      "mean_composite_need": 0.1732,
+      "max_composite_need": 0.2719,
+      "mean_samhi_2022": -1.1101,
+      "mean_samhi_2019": -0.9762,
+      "mh_trajectory": "improving",
+      "mean_trajectory_delta": -0.1339,
+      "pct_lsoas_worsening": 33.33,
+      "mean_service_desert": 0.0983,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 1507.8,
+          "lsoas_beyond_threshold": 0
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3488.7,
+          "lsoas_beyond_threshold": 5
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3632.4,
+          "lsoas_beyond_threshold": 5
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 1683.2,
+          "lsoas_beyond_threshold": 0
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 1656.7,
+          "lsoas_beyond_threshold": 0
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 717.1,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.552,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01000005",
+          "lsoa_name": "City of London 001E",
+          "composite_need_score": 0.2719382882043603,
+          "need_tier": "Elevated"
+        },
+        {
+          "lsoa_code": "E01032739",
+          "lsoa_name": "City of London 001F",
+          "composite_need_score": 0.24390582821772722,
+          "need_tier": "Lower Need"
+        },
+        {
+          "lsoa_code": "E01000003",
+          "lsoa_name": "City of London 001C",
+          "composite_need_score": 0.21454618063682385,
+          "need_tier": "Lower Need"
+        },
+        {
+          "lsoa_code": "E01032740",
+          "lsoa_name": "City of London 001G",
+          "composite_need_score": 0.18280630744307194,
+          "need_tier": "Lower Need"
+        },
+        {
+          "lsoa_code": "E01000001",
+          "lsoa_name": "City of London 001A",
+          "composite_need_score": 0.09315175046142779,
+          "need_tier": "Lower Need"
+        }
+      ]
+    },
+    "Croydon": {
+      "borough_name": "Croydon",
+      "borough_slug": "croydon",
+      "lsoa_count": 215,
+      "population_est_2015": 365457.0,
+      "tier_counts": {
+        "Elevated": 142,
+        "Lower Need": 38,
+        "High Need": 25,
+        "Critical Need": 10
+      },
+      "mean_composite_need": 0.3748,
+      "max_composite_need": 1.0,
+      "mean_samhi_2022": -0.2999,
+      "mean_samhi_2019": -0.4562,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.1563,
+      "pct_lsoas_worsening": 75.81,
+      "mean_service_desert": 0.2159,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3562.7,
+          "lsoas_beyond_threshold": 101
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3535.8,
+          "lsoas_beyond_threshold": 116
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3850.7,
+          "lsoas_beyond_threshold": 117
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3772.7,
+          "lsoas_beyond_threshold": 140
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 11196.5,
+          "lsoas_beyond_threshold": 215
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 12917.3,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.3137,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01001021",
+          "lsoa_name": "Croydon 044D",
+          "composite_need_score": 1.0,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01001080",
+          "lsoa_name": "Croydon 036C",
+          "composite_need_score": 0.9997289676353515,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01001079",
+          "lsoa_name": "Croydon 036B",
+          "composite_need_score": 0.8893106879417811,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01001078",
+          "lsoa_name": "Croydon 032D",
+          "composite_need_score": 0.836490775151931,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01001052",
+          "lsoa_name": "Croydon 030B",
+          "composite_need_score": 0.8217856431086824,
+          "need_tier": "Critical Need"
+        }
+      ]
+    },
+    "Ealing": {
+      "borough_name": "Ealing",
+      "borough_slug": "ealing",
+      "lsoa_count": 193,
+      "population_est_2015": 335822.0,
+      "tier_counts": {
+        "Elevated": 95,
+        "Lower Need": 49,
+        "High Need": 47,
+        "Critical Need": 2
+      },
+      "mean_composite_need": 0.3797,
+      "max_composite_need": 0.8932,
+      "mean_samhi_2022": -0.2881,
+      "mean_samhi_2019": -0.5042,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.2161,
+      "pct_lsoas_worsening": 72.02,
+      "mean_service_desert": 0.2276,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3147.5,
+          "lsoas_beyond_threshold": 97
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3502.1,
+          "lsoas_beyond_threshold": 116
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3159.2,
+          "lsoas_beyond_threshold": 103
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3099.4,
+          "lsoas_beyond_threshold": 94
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 12204.0,
+          "lsoas_beyond_threshold": 193
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 12436.2,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.5487,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01001364",
+          "lsoa_name": "Ealing 026E",
+          "composite_need_score": 0.893244750151025,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01001210",
+          "lsoa_name": "Ealing 016A",
+          "composite_need_score": 0.7563502371995772,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01001257",
+          "lsoa_name": "Ealing 008A",
+          "composite_need_score": 0.747906004346575,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01001320",
+          "lsoa_name": "Ealing 003E",
+          "composite_need_score": 0.7379202723595849,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01001324",
+          "lsoa_name": "Ealing 008B",
+          "composite_need_score": 0.7365727957718292,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Enfield": {
+      "borough_name": "Enfield",
+      "borough_slug": "enfield",
+      "lsoa_count": 180,
+      "population_est_2015": 323392.0,
+      "tier_counts": {
+        "Elevated": 103,
+        "High Need": 47,
+        "Lower Need": 26,
+        "Critical Need": 4
+      },
+      "mean_composite_need": 0.4105,
+      "max_composite_need": 0.8366,
+      "mean_samhi_2022": -0.2981,
+      "mean_samhi_2019": -0.3567,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.0585,
+      "pct_lsoas_worsening": 62.78,
+      "mean_service_desert": 0.259,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2856.0,
+          "lsoas_beyond_threshold": 82
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 4930.2,
+          "lsoas_beyond_threshold": 137
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3772.9,
+          "lsoas_beyond_threshold": 111
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2936.3,
+          "lsoas_beyond_threshold": 97
+        },
+        "cmht": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3772.9,
+          "lsoas_beyond_threshold": 51
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 8205.2,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.3927,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01001545",
+          "lsoa_name": "Enfield 002B",
+          "composite_need_score": 0.8366422741071365,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01033148",
+          "lsoa_name": "Enfield 003F",
+          "composite_need_score": 0.8264876670729281,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01001447",
+          "lsoa_name": "Enfield 003C",
+          "composite_need_score": 0.8022553302809833,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01001551",
+          "lsoa_name": "Enfield 002E",
+          "composite_need_score": 0.7922607586422313,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01001412",
+          "lsoa_name": "Enfield 004C",
+          "composite_need_score": 0.7370456505181284,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Greenwich": {
+      "borough_name": "Greenwich",
+      "borough_slug": "greenwich",
+      "lsoa_count": 139,
+      "population_est_2015": 248488.0,
+      "tier_counts": {
+        "Elevated": 94,
+        "High Need": 26,
+        "Lower Need": 19
+      },
+      "mean_composite_need": 0.3924,
+      "max_composite_need": 0.7388,
+      "mean_samhi_2022": -0.1263,
+      "mean_samhi_2019": -0.2978,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.1714,
+      "pct_lsoas_worsening": 67.63,
+      "mean_service_desert": 0.2253,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2841.9,
+          "lsoas_beyond_threshold": 64
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3744.7,
+          "lsoas_beyond_threshold": 100
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2676.8,
+          "lsoas_beyond_threshold": 49
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2842.5,
+          "lsoas_beyond_threshold": 69
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 6028.5,
+          "lsoas_beyond_threshold": 94
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 9634.0,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.5567,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01001653",
+          "lsoa_name": "Greenwich 029A",
+          "composite_need_score": 0.7388112003609484,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01001575",
+          "lsoa_name": "Greenwich 003A",
+          "composite_need_score": 0.6930005727328075,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01001655",
+          "lsoa_name": "Greenwich 029C",
+          "composite_need_score": 0.6860815457320233,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01001661",
+          "lsoa_name": "Greenwich 029E",
+          "composite_need_score": 0.6686383057975419,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01001576",
+          "lsoa_name": "Greenwich 003B",
+          "composite_need_score": 0.6643913041022632,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Hackney": {
+      "borough_name": "Hackney",
+      "borough_slug": "hackney",
+      "lsoa_count": 136,
+      "population_est_2015": 249777.0,
+      "tier_counts": {
+        "Elevated": 105,
+        "High Need": 17,
+        "Lower Need": 14
+      },
+      "mean_composite_need": 0.386,
+      "max_composite_need": 0.7217,
+      "mean_samhi_2022": 0.1086,
+      "mean_samhi_2019": 0.1008,
+      "mh_trajectory": "stable",
+      "mean_trajectory_delta": 0.0078,
+      "pct_lsoas_worsening": 44.85,
+      "mean_service_desert": 0.1761,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 2,
+          "mean_dist_m": 1558.5,
+          "lsoas_beyond_threshold": 5
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3100.7,
+          "lsoas_beyond_threshold": 79
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1675.6,
+          "lsoas_beyond_threshold": 4
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1538.1,
+          "lsoas_beyond_threshold": 0
+        },
+        "cmht": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1518.4,
+          "lsoas_beyond_threshold": 0
+        },
+        "homelessness": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1800.7,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -1.178,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01001842",
+          "lsoa_name": "Hackney 023D",
+          "composite_need_score": 0.7216975496634406,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01001821",
+          "lsoa_name": "Hackney 024F",
+          "composite_need_score": 0.6533405815901887,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01001845",
+          "lsoa_name": "Hackney 022E",
+          "composite_need_score": 0.6349054511913532,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01001840",
+          "lsoa_name": "Hackney 022B",
+          "composite_need_score": 0.5976762970461463,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01001846",
+          "lsoa_name": "Hackney 018A",
+          "composite_need_score": 0.5967990045664211,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Hammersmith and Fulham": {
+      "borough_name": "Hammersmith and Fulham",
+      "borough_slug": "hammersmith-and-fulham",
+      "lsoa_count": 111,
+      "population_est_2015": 176681.0,
+      "tier_counts": {
+        "Elevated": 55,
+        "Lower Need": 53,
+        "High Need": 3
+      },
+      "mean_composite_need": 0.2626,
+      "max_composite_need": 0.5984,
+      "mean_samhi_2022": -0.2391,
+      "mean_samhi_2019": -0.3261,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.087,
+      "pct_lsoas_worsening": 66.67,
+      "mean_service_desert": 0.101,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1674.4,
+          "lsoas_beyond_threshold": 0
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1599.2,
+          "lsoas_beyond_threshold": 0
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1767.1,
+          "lsoas_beyond_threshold": 11
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3313.3,
+          "lsoas_beyond_threshold": 72
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 7567.2,
+          "lsoas_beyond_threshold": 111
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 4090.2,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -1.1399,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01001885",
+          "lsoa_name": "Hammersmith and Fulham 015A",
+          "composite_need_score": 0.5984223973431168,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01001876",
+          "lsoa_name": "Hammersmith and Fulham 001C",
+          "composite_need_score": 0.5553548390338031,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01001944",
+          "lsoa_name": "Hammersmith and Fulham 004B",
+          "composite_need_score": 0.5236646504515038,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01001959",
+          "lsoa_name": "Hammersmith and Fulham 003C",
+          "composite_need_score": 0.481650699203424,
+          "need_tier": "Elevated"
+        },
+        {
+          "lsoa_code": "E01001940",
+          "lsoa_name": "Hammersmith and Fulham 005B",
+          "composite_need_score": 0.4734356225479097,
+          "need_tier": "Elevated"
+        }
+      ]
+    },
+    "Haringey": {
+      "borough_name": "Haringey",
+      "borough_slug": "haringey",
+      "lsoa_count": 143,
+      "population_est_2015": 263248.0,
+      "tier_counts": {
+        "Elevated": 98,
+        "Lower Need": 37,
+        "High Need": 8
+      },
+      "mean_composite_need": 0.3216,
+      "max_composite_need": 0.6609,
+      "mean_samhi_2022": -0.356,
+      "mean_samhi_2019": -0.4393,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.0833,
+      "pct_lsoas_worsening": 65.03,
+      "mean_service_desert": 0.1299,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2656.7,
+          "lsoas_beyond_threshold": 55
+        },
+        "mh_charity": {
+          "lsoas_with_service": 3,
+          "mean_dist_m": 1409.9,
+          "lsoas_beyond_threshold": 2
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1766.5,
+          "lsoas_beyond_threshold": 13
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2545.6,
+          "lsoas_beyond_threshold": 52
+        },
+        "cmht": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1916.8,
+          "lsoas_beyond_threshold": 0
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3178.8,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.7883,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01002082",
+          "lsoa_name": "Haringey 013A",
+          "composite_need_score": 0.6609481004401637,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002090",
+          "lsoa_name": "Haringey 005A",
+          "composite_need_score": 0.561724409371212,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002093",
+          "lsoa_name": "Haringey 005B",
+          "composite_need_score": 0.5524202704170257,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002096",
+          "lsoa_name": "Haringey 005C",
+          "composite_need_score": 0.5430826295826824,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002036",
+          "lsoa_name": "Haringey 002A",
+          "composite_need_score": 0.5360693213172318,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Harrow": {
+      "borough_name": "Harrow",
+      "borough_slug": "harrow",
+      "lsoa_count": 132,
+      "population_est_2015": 233566.0,
+      "tier_counts": {
+        "Elevated": 83,
+        "Lower Need": 36,
+        "High Need": 12,
+        "Critical Need": 1
+      },
+      "mean_composite_need": 0.3269,
+      "max_composite_need": 0.753,
+      "mean_samhi_2022": -0.3939,
+      "mean_samhi_2019": -0.6604,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.2665,
+      "pct_lsoas_worsening": 82.58,
+      "mean_service_desert": 0.1954,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 5993.4,
+          "lsoas_beyond_threshold": 120
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2937.4,
+          "lsoas_beyond_threshold": 65
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2702.9,
+          "lsoas_beyond_threshold": 58
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2828.6,
+          "lsoas_beyond_threshold": 60
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 10904.2,
+          "lsoas_beyond_threshold": 132
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 15846.7,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.2379,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01002227",
+          "lsoa_name": "Harrow 003A",
+          "composite_need_score": 0.7529562180840886,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01002185",
+          "lsoa_name": "Harrow 009A",
+          "composite_need_score": 0.7331101655687424,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002114",
+          "lsoa_name": "Harrow 001B",
+          "composite_need_score": 0.6913994108363894,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002131",
+          "lsoa_name": "Harrow 023D",
+          "composite_need_score": 0.6666572879754553,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002151",
+          "lsoa_name": "Harrow 006D",
+          "composite_need_score": 0.6611120829272649,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Havering": {
+      "borough_name": "Havering",
+      "borough_slug": "havering",
+      "lsoa_count": 148,
+      "population_est_2015": 244747.0,
+      "tier_counts": {
+        "Elevated": 83,
+        "High Need": 34,
+        "Lower Need": 18,
+        "Critical Need": 13
+      },
+      "mean_composite_need": 0.4474,
+      "max_composite_need": 0.9699,
+      "mean_samhi_2022": 0.1274,
+      "mean_samhi_2019": -0.153,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.2805,
+      "pct_lsoas_worsening": 83.78,
+      "mean_service_desert": 0.3138,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 9960.0,
+          "lsoas_beyond_threshold": 148
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3536.2,
+          "lsoas_beyond_threshold": 89
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3678.6,
+          "lsoas_beyond_threshold": 96
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3545.4,
+          "lsoas_beyond_threshold": 89
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 13430.3,
+          "lsoas_beyond_threshold": 148
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 19272.6,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.161,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01002277",
+          "lsoa_name": "Havering 002A",
+          "composite_need_score": 0.9698682415929858,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01002280",
+          "lsoa_name": "Havering 004A",
+          "composite_need_score": 0.956706942952685,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01002276",
+          "lsoa_name": "Havering 001A",
+          "composite_need_score": 0.8976506492768488,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01002283",
+          "lsoa_name": "Havering 002D",
+          "composite_need_score": 0.8954795804765424,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01002282",
+          "lsoa_name": "Havering 004B",
+          "composite_need_score": 0.8789185281545969,
+          "need_tier": "Critical Need"
+        }
+      ]
+    },
+    "Hillingdon": {
+      "borough_name": "Hillingdon",
+      "borough_slug": "hillingdon",
+      "lsoa_count": 153,
+      "population_est_2015": 269860.0,
+      "tier_counts": {
+        "Elevated": 78,
+        "High Need": 37,
+        "Lower Need": 37,
+        "Critical Need": 1
+      },
+      "mean_composite_need": 0.3772,
+      "max_composite_need": 0.8153,
+      "mean_samhi_2022": -0.2897,
+      "mean_samhi_2019": -0.3889,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.0992,
+      "pct_lsoas_worsening": 65.36,
+      "mean_service_desert": 0.2499,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 4916.1,
+          "lsoas_beyond_threshold": 126
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 4636.2,
+          "lsoas_beyond_threshold": 121
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 4039.0,
+          "lsoas_beyond_threshold": 106
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 4545.5,
+          "lsoas_beyond_threshold": 121
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 18228.3,
+          "lsoas_beyond_threshold": 153
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 20104.0,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.1491,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01002545",
+          "lsoa_name": "Hillingdon 023C",
+          "composite_need_score": 0.815308091182385,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01002528",
+          "lsoa_name": "Hillingdon 028D",
+          "composite_need_score": 0.7139541662890445,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002493",
+          "lsoa_name": "Hillingdon 032E",
+          "composite_need_score": 0.6693081408997872,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002444",
+          "lsoa_name": "Hillingdon 031A",
+          "composite_need_score": 0.6674859842522557,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002505",
+          "lsoa_name": "Hillingdon 026D",
+          "composite_need_score": 0.6671029980199283,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Hounslow": {
+      "borough_name": "Hounslow",
+      "borough_slug": "hounslow",
+      "lsoa_count": 135,
+      "population_est_2015": 246859.0,
+      "tier_counts": {
+        "Elevated": 75,
+        "High Need": 32,
+        "Lower Need": 27,
+        "Critical Need": 1
+      },
+      "mean_composite_need": 0.3827,
+      "max_composite_need": 0.7631,
+      "mean_samhi_2022": -0.3633,
+      "mean_samhi_2019": -0.4091,
+      "mh_trajectory": "stable",
+      "mean_trajectory_delta": 0.0459,
+      "pct_lsoas_worsening": 56.3,
+      "mean_service_desert": 0.2513,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2973.1,
+          "lsoas_beyond_threshold": 59
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 5107.9,
+          "lsoas_beyond_threshold": 100
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2712.0,
+          "lsoas_beyond_threshold": 54
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2932.5,
+          "lsoas_beyond_threshold": 65
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 16507.9,
+          "lsoas_beyond_threshold": 135
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 13521.0,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.2647,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01002615",
+          "lsoa_name": "Hounslow 026E",
+          "composite_need_score": 0.763104272621316,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01002606",
+          "lsoa_name": "Hounslow 026C",
+          "composite_need_score": 0.7358710830392144,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002561",
+          "lsoa_name": "Hounslow 023E",
+          "composite_need_score": 0.692871552126675,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002559",
+          "lsoa_name": "Hounslow 023C",
+          "composite_need_score": 0.6620042886137147,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002673",
+          "lsoa_name": "Hounslow 020E",
+          "composite_need_score": 0.6617859082583624,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Islington": {
+      "borough_name": "Islington",
+      "borough_slug": "islington",
+      "lsoa_count": 120,
+      "population_est_2015": 219385.0,
+      "tier_counts": {
+        "Elevated": 83,
+        "Lower Need": 29,
+        "High Need": 8
+      },
+      "mean_composite_need": 0.321,
+      "max_composite_need": 0.6449,
+      "mean_samhi_2022": -0.0548,
+      "mean_samhi_2019": -0.057,
+      "mh_trajectory": "stable",
+      "mean_trajectory_delta": 0.0023,
+      "pct_lsoas_worsening": 53.33,
+      "mean_service_desert": 0.1327,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2460.4,
+          "lsoas_beyond_threshold": 42
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1524.9,
+          "lsoas_beyond_threshold": 4
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2627.4,
+          "lsoas_beyond_threshold": 49
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1501.6,
+          "lsoas_beyond_threshold": 0
+        },
+        "cmht": {
+          "lsoas_with_service": 2,
+          "mean_dist_m": 1202.9,
+          "lsoas_beyond_threshold": 0
+        },
+        "homelessness": {
+          "lsoas_with_service": 2,
+          "mean_dist_m": 1289.0,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -1.126,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01002784",
+          "lsoa_name": "Islington 010C",
+          "composite_need_score": 0.644897441272847,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002732",
+          "lsoa_name": "Islington 005A",
+          "composite_need_score": 0.5884007022004818,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002773",
+          "lsoa_name": "Islington 004D",
+          "composite_need_score": 0.5399432183938934,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002713",
+          "lsoa_name": "Islington 015C",
+          "composite_need_score": 0.5251736960575996,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002778",
+          "lsoa_name": "Islington 012B",
+          "composite_need_score": 0.5153351346157903,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Kensington and Chelsea": {
+      "borough_name": "Kensington and Chelsea",
+      "borough_slug": "kensington-and-chelsea",
+      "lsoa_count": 99,
+      "population_est_2015": 152697.0,
+      "tier_counts": {
+        "Lower Need": 50,
+        "Elevated": 40,
+        "High Need": 9
+      },
+      "mean_composite_need": 0.2575,
+      "max_composite_need": 0.7185,
+      "mean_samhi_2022": -0.349,
+      "mean_samhi_2019": -0.2914,
+      "mh_trajectory": "improving",
+      "mean_trajectory_delta": -0.0576,
+      "pct_lsoas_worsening": 41.41,
+      "mean_service_desert": 0.1023,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2033.5,
+          "lsoas_beyond_threshold": 24
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1997.0,
+          "lsoas_beyond_threshold": 19
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2440.0,
+          "lsoas_beyond_threshold": 16
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2001.4,
+          "lsoas_beyond_threshold": 14
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 5924.4,
+          "lsoas_beyond_threshold": 87
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3453.5,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -1.0022,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01002842",
+          "lsoa_name": "Kensington and Chelsea 021C",
+          "composite_need_score": 0.7184723472118627,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002843",
+          "lsoa_name": "Kensington and Chelsea 021D",
+          "composite_need_score": 0.583316784113684,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002907",
+          "lsoa_name": "Kensington and Chelsea 002D",
+          "composite_need_score": 0.5573439674173992,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002853",
+          "lsoa_name": "Kensington and Chelsea 001B",
+          "composite_need_score": 0.5472807167224262,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002857",
+          "lsoa_name": "Kensington and Chelsea 001E",
+          "composite_need_score": 0.538820894172168,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Kingston upon Thames": {
+      "borough_name": "Kingston upon Thames",
+      "borough_slug": "kingston-upon-thames",
+      "lsoa_count": 97,
+      "population_est_2015": 168822.0,
+      "tier_counts": {
+        "Lower Need": 55,
+        "Elevated": 40,
+        "High Need": 2
+      },
+      "mean_composite_need": 0.2471,
+      "max_composite_need": 0.6318,
+      "mean_samhi_2022": -0.2048,
+      "mean_samhi_2019": -0.0931,
+      "mh_trajectory": "improving",
+      "mean_trajectory_delta": -0.1117,
+      "pct_lsoas_worsening": 31.96,
+      "mean_service_desert": 0.1097,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2979.1,
+          "lsoas_beyond_threshold": 48
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3026.2,
+          "lsoas_beyond_threshold": 48
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2849.1,
+          "lsoas_beyond_threshold": 41
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2881.0,
+          "lsoas_beyond_threshold": 43
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 15839.5,
+          "lsoas_beyond_threshold": 97
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 12090.1,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.2691,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01002948",
+          "lsoa_name": "Kingston upon Thames 020C",
+          "composite_need_score": 0.6318178625937281,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002950",
+          "lsoa_name": "Kingston upon Thames 020E",
+          "composite_need_score": 0.5514477094037784,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01002923",
+          "lsoa_name": "Kingston upon Thames 013A",
+          "composite_need_score": 0.49174791328102174,
+          "need_tier": "Elevated"
+        },
+        {
+          "lsoa_code": "E01002940",
+          "lsoa_name": "Kingston upon Thames 020A",
+          "composite_need_score": 0.4703111252703304,
+          "need_tier": "Elevated"
+        },
+        {
+          "lsoa_code": "E01003000",
+          "lsoa_name": "Kingston upon Thames 017C",
+          "composite_need_score": 0.4598891258077507,
+          "need_tier": "Elevated"
+        }
+      ]
+    },
+    "Lambeth": {
+      "borough_name": "Lambeth",
+      "borough_slug": "lambeth",
+      "lsoa_count": 176,
+      "population_est_2015": 315603.0,
+      "tier_counts": {
+        "Elevated": 138,
+        "Lower Need": 33,
+        "High Need": 5
+      },
+      "mean_composite_need": 0.3332,
+      "max_composite_need": 0.5996,
+      "mean_samhi_2022": -0.1082,
+      "mean_samhi_2019": -0.1755,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.0673,
+      "pct_lsoas_worsening": 59.09,
+      "mean_service_desert": 0.1467,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 2,
+          "mean_dist_m": 2361.1,
+          "lsoas_beyond_threshold": 58
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1969.8,
+          "lsoas_beyond_threshold": 34
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2793.8,
+          "lsoas_beyond_threshold": 75
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2118.6,
+          "lsoas_beyond_threshold": 38
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3269.7,
+          "lsoas_beyond_threshold": 19
+        },
+        "homelessness": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3491.7,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.8375,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01003070",
+          "lsoa_name": "Lambeth 033E",
+          "composite_need_score": 0.5995542215418829,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003037",
+          "lsoa_name": "Lambeth 013A",
+          "composite_need_score": 0.5569507636518741,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003087",
+          "lsoa_name": "Lambeth 031E",
+          "composite_need_score": 0.541712714830508,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003044",
+          "lsoa_name": "Lambeth 018B",
+          "composite_need_score": 0.520911414521723,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003014",
+          "lsoa_name": "Lambeth 036B",
+          "composite_need_score": 0.5159681620349807,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Lewisham": {
+      "borough_name": "Lewisham",
+      "borough_slug": "lewisham",
+      "lsoa_count": 166,
+      "population_est_2015": 287121.0,
+      "tier_counts": {
+        "Elevated": 125,
+        "Lower Need": 29,
+        "High Need": 12
+      },
+      "mean_composite_need": 0.3524,
+      "max_composite_need": 0.624,
+      "mean_samhi_2022": -0.0528,
+      "mean_samhi_2019": -0.1919,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.1392,
+      "pct_lsoas_worsening": 69.88,
+      "mean_service_desert": 0.1312,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 3,
+          "mean_dist_m": 1607.4,
+          "lsoas_beyond_threshold": 6
+        },
+        "mh_charity": {
+          "lsoas_with_service": 2,
+          "mean_dist_m": 2097.8,
+          "lsoas_beyond_threshold": 37
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2420.2,
+          "lsoas_beyond_threshold": 54
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2323.6,
+          "lsoas_beyond_threshold": 39
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 5158.3,
+          "lsoas_beyond_threshold": 87
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 7121.5,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.6704,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01003290",
+          "lsoa_name": "Lewisham 041E",
+          "composite_need_score": 0.6239680369017664,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003266",
+          "lsoa_name": "Lewisham 031C",
+          "composite_need_score": 0.6058760868262583,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003351",
+          "lsoa_name": "Lewisham 026C",
+          "composite_need_score": 0.5853251541039625,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003291",
+          "lsoa_name": "Lewisham 041D",
+          "composite_need_score": 0.5785816016136344,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003318",
+          "lsoa_name": "Lewisham 020B",
+          "composite_need_score": 0.5491758296953078,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Merton": {
+      "borough_name": "Merton",
+      "borough_slug": "merton",
+      "lsoa_count": 122,
+      "population_est_2015": 200851.0,
+      "tier_counts": {
+        "Lower Need": 72,
+        "Elevated": 45,
+        "High Need": 5
+      },
+      "mean_composite_need": 0.2462,
+      "max_composite_need": 0.5894,
+      "mean_samhi_2022": -0.3221,
+      "mean_samhi_2019": -0.2247,
+      "mh_trajectory": "improving",
+      "mean_trajectory_delta": -0.0974,
+      "pct_lsoas_worsening": 40.98,
+      "mean_service_desert": 0.1139,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2508.9,
+          "lsoas_beyond_threshold": 44
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2958.8,
+          "lsoas_beyond_threshold": 59
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2369.0,
+          "lsoas_beyond_threshold": 33
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2378.2,
+          "lsoas_beyond_threshold": 37
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 9736.3,
+          "lsoas_beyond_threshold": 122
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 7683.8,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.4872,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01003391",
+          "lsoa_name": "Merton 014B",
+          "composite_need_score": 0.5893615707539512,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003432",
+          "lsoa_name": "Merton 019D",
+          "composite_need_score": 0.57980064439072,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003452",
+          "lsoa_name": "Merton 024E",
+          "composite_need_score": 0.5199746441055568,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003430",
+          "lsoa_name": "Merton 019B",
+          "composite_need_score": 0.517657805596192,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003447",
+          "lsoa_name": "Merton 016D",
+          "composite_need_score": 0.5128083393428403,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Newham": {
+      "borough_name": "Newham",
+      "borough_slug": "newham",
+      "lsoa_count": 152,
+      "population_est_2015": 299711.0,
+      "tier_counts": {
+        "Elevated": 121,
+        "Lower Need": 25,
+        "High Need": 6
+      },
+      "mean_composite_need": 0.3344,
+      "max_composite_need": 0.598,
+      "mean_samhi_2022": -0.8374,
+      "mean_samhi_2019": -0.7861,
+      "mh_trajectory": "improving",
+      "mean_trajectory_delta": -0.0514,
+      "pct_lsoas_worsening": 42.76,
+      "mean_service_desert": 0.2096,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1760.2,
+          "lsoas_beyond_threshold": 6
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3526.2,
+          "lsoas_beyond_threshold": 112
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1885.5,
+          "lsoas_beyond_threshold": 13
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2204.6,
+          "lsoas_beyond_threshold": 27
+        },
+        "cmht": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2092.2,
+          "lsoas_beyond_threshold": 0
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 6824.2,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.8844,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01003486",
+          "lsoa_name": "Newham 033C",
+          "composite_need_score": 0.5979736740415903,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003487",
+          "lsoa_name": "Newham 033D",
+          "composite_need_score": 0.5829001766563612,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003515",
+          "lsoa_name": "Newham 036D",
+          "composite_need_score": 0.5555018122006244,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003601",
+          "lsoa_name": "Newham 028A",
+          "composite_need_score": 0.5232547852388532,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01033584",
+          "lsoa_name": "Newham 034I",
+          "composite_need_score": 0.5134739376210707,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Redbridge": {
+      "borough_name": "Redbridge",
+      "borough_slug": "redbridge",
+      "lsoa_count": 159,
+      "population_est_2015": 292138.0,
+      "tier_counts": {
+        "Lower Need": 89,
+        "Elevated": 59,
+        "High Need": 11
+      },
+      "mean_composite_need": 0.2672,
+      "max_composite_need": 0.7334,
+      "mean_samhi_2022": -0.7293,
+      "mean_samhi_2019": -0.8636,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.1343,
+      "pct_lsoas_worsening": 71.07,
+      "mean_service_desert": 0.1545,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2962.4,
+          "lsoas_beyond_threshold": 75
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2982.4,
+          "lsoas_beyond_threshold": 75
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2666.9,
+          "lsoas_beyond_threshold": 63
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2992.6,
+          "lsoas_beyond_threshold": 80
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 6901.5,
+          "lsoas_beyond_threshold": 138
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 10389.5,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.4824,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01003726",
+          "lsoa_name": "Redbridge 002D",
+          "composite_need_score": 0.7333539703728039,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003761",
+          "lsoa_name": "Redbridge 009C",
+          "composite_need_score": 0.6825265822931528,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003720",
+          "lsoa_name": "Redbridge 002A",
+          "composite_need_score": 0.6630302701825439,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003723",
+          "lsoa_name": "Redbridge 002C",
+          "composite_need_score": 0.6616520145620491,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003727",
+          "lsoa_name": "Redbridge 003D",
+          "composite_need_score": 0.6491856694830319,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Richmond upon Thames": {
+      "borough_name": "Richmond upon Thames",
+      "borough_slug": "richmond-upon-thames",
+      "lsoa_count": 115,
+      "population_est_2015": 194124.0,
+      "tier_counts": {
+        "Lower Need": 77,
+        "Elevated": 34,
+        "High Need": 4
+      },
+      "mean_composite_need": 0.2269,
+      "max_composite_need": 0.7363,
+      "mean_samhi_2022": -0.256,
+      "mean_samhi_2019": -0.4634,
+      "mh_trajectory": "worsening",
+      "mean_trajectory_delta": 0.2073,
+      "pct_lsoas_worsening": 77.39,
+      "mean_service_desert": 0.0881,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2547.7,
+          "lsoas_beyond_threshold": 37
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3797.6,
+          "lsoas_beyond_threshold": 82
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2705.6,
+          "lsoas_beyond_threshold": 44
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2790.0,
+          "lsoas_beyond_threshold": 47
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 15525.1,
+          "lsoas_beyond_threshold": 115
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 10945.6,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.4487,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01003832",
+          "lsoa_name": "Richmond upon Thames 020E",
+          "composite_need_score": 0.7363276194885094,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003829",
+          "lsoa_name": "Richmond upon Thames 020B",
+          "composite_need_score": 0.6259578636224665,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003826",
+          "lsoa_name": "Richmond upon Thames 023E",
+          "composite_need_score": 0.522949137366942,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003833",
+          "lsoa_name": "Richmond upon Thames 020F",
+          "composite_need_score": 0.5198407088061945,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003907",
+          "lsoa_name": "Richmond upon Thames 010C",
+          "composite_need_score": 0.4981434448810185,
+          "need_tier": "Elevated"
+        }
+      ]
+    },
+    "Southwark": {
+      "borough_name": "Southwark",
+      "borough_slug": "southwark",
+      "lsoa_count": 154,
+      "population_est_2015": 283749.0,
+      "tier_counts": {
+        "Elevated": 110,
+        "Lower Need": 30,
+        "High Need": 14
+      },
+      "mean_composite_need": 0.3466,
+      "max_composite_need": 0.6771,
+      "mean_samhi_2022": -0.0871,
+      "mean_samhi_2019": -0.1066,
+      "mh_trajectory": "stable",
+      "mean_trajectory_delta": 0.0195,
+      "pct_lsoas_worsening": 53.25,
+      "mean_service_desert": 0.1776,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3008.9,
+          "lsoas_beyond_threshold": 79
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2425.8,
+          "lsoas_beyond_threshold": 26
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2384.5,
+          "lsoas_beyond_threshold": 47
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2068.2,
+          "lsoas_beyond_threshold": 20
+        },
+        "cmht": {
+          "lsoas_with_service": 3,
+          "mean_dist_m": 1622.5,
+          "lsoas_beyond_threshold": 0
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2674.3,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.8764,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01004042",
+          "lsoa_name": "Southwark 010D",
+          "composite_need_score": 0.6770773654271254,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003995",
+          "lsoa_name": "Southwark 014B",
+          "composite_need_score": 0.6090595704089581,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004055",
+          "lsoa_name": "Southwark 001E",
+          "composite_need_score": 0.5916161687971865,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003994",
+          "lsoa_name": "Southwark 012E",
+          "composite_need_score": 0.5591355284655342,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01003979",
+          "lsoa_name": "Southwark 006E",
+          "composite_need_score": 0.5529802379609645,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Sutton": {
+      "borough_name": "Sutton",
+      "borough_slug": "sutton",
+      "lsoa_count": 119,
+      "population_est_2015": 195762.0,
+      "tier_counts": {
+        "Elevated": 59,
+        "Lower Need": 48,
+        "High Need": 11,
+        "Critical Need": 1
+      },
+      "mean_composite_need": 0.3115,
+      "max_composite_need": 0.7665,
+      "mean_samhi_2022": 0.1337,
+      "mean_samhi_2019": 0.1664,
+      "mh_trajectory": "stable",
+      "mean_trajectory_delta": -0.0327,
+      "pct_lsoas_worsening": 51.26,
+      "mean_service_desert": 0.1432,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2262.5,
+          "lsoas_beyond_threshold": 30
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 5631.8,
+          "lsoas_beyond_threshold": 115
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2620.9,
+          "lsoas_beyond_threshold": 47
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2150.5,
+          "lsoas_beyond_threshold": 18
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 13234.6,
+          "lsoas_beyond_threshold": 119
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 12262.6,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.2285,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01004083",
+          "lsoa_name": "Sutton 019A",
+          "composite_need_score": 0.7664602547202759,
+          "need_tier": "Critical Need"
+        },
+        {
+          "lsoa_code": "E01004088",
+          "lsoa_name": "Sutton 019C",
+          "composite_need_score": 0.677716929817123,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004185",
+          "lsoa_name": "Sutton 001D",
+          "composite_need_score": 0.6757425039936845,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004090",
+          "lsoa_name": "Sutton 021A",
+          "composite_need_score": 0.6671223030898553,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004125",
+          "lsoa_name": "Sutton 001A",
+          "composite_need_score": 0.5899824896985095,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Tower Hamlets": {
+      "borough_name": "Tower Hamlets",
+      "borough_slug": "tower-hamlets",
+      "lsoa_count": 119,
+      "population_est_2015": 227200.0,
+      "tier_counts": {
+        "Elevated": 88,
+        "Lower Need": 25,
+        "High Need": 6
+      },
+      "mean_composite_need": 0.3263,
+      "max_composite_need": 0.5932,
+      "mean_samhi_2022": -0.4094,
+      "mean_samhi_2019": -0.3196,
+      "mh_trajectory": "improving",
+      "mean_trajectory_delta": -0.0898,
+      "pct_lsoas_worsening": 46.22,
+      "mean_service_desert": 0.1896,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 1564.8,
+          "lsoas_beyond_threshold": 3
+        },
+        "mh_charity": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3978.7,
+          "lsoas_beyond_threshold": 96
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 1921.8,
+          "lsoas_beyond_threshold": 21
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1889.5,
+          "lsoas_beyond_threshold": 15
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 1684.3,
+          "lsoas_beyond_threshold": 0
+        },
+        "homelessness": {
+          "lsoas_with_service": 4,
+          "mean_dist_m": 1899.8,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -1.1419,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01004245",
+          "lsoa_name": "Tower Hamlets 018A",
+          "composite_need_score": 0.5931509262263361,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004268",
+          "lsoa_name": "Tower Hamlets 012E",
+          "composite_need_score": 0.5395544925735245,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004249",
+          "lsoa_name": "Tower Hamlets 018D",
+          "composite_need_score": 0.5275259607154933,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004222",
+          "lsoa_name": "Tower Hamlets 001A",
+          "composite_need_score": 0.5221142404110968,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004248",
+          "lsoa_name": "Tower Hamlets 018C",
+          "composite_need_score": 0.5199617574936488,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Waltham Forest": {
+      "borough_name": "Waltham Forest",
+      "borough_slug": "waltham-forest",
+      "lsoa_count": 142,
+      "population_est_2015": 265332.0,
+      "tier_counts": {
+        "Elevated": 92,
+        "Lower Need": 40,
+        "High Need": 10
+      },
+      "mean_composite_need": 0.3261,
+      "max_composite_need": 0.7001,
+      "mean_samhi_2022": -0.4143,
+      "mean_samhi_2019": -0.409,
+      "mh_trajectory": "stable",
+      "mean_trajectory_delta": -0.0053,
+      "pct_lsoas_worsening": 52.82,
+      "mean_service_desert": 0.1665,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2417.4,
+          "lsoas_beyond_threshold": 46
+        },
+        "mh_charity": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2601.9,
+          "lsoas_beyond_threshold": 42
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2397.4,
+          "lsoas_beyond_threshold": 41
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2497.9,
+          "lsoas_beyond_threshold": 50
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 4092.6,
+          "lsoas_beyond_threshold": 25
+        },
+        "homelessness": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 5586.5,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.6641,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01004349",
+          "lsoa_name": "Waltham Forest 001A",
+          "composite_need_score": 0.7000608706260232,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004350",
+          "lsoa_name": "Waltham Forest 001B",
+          "composite_need_score": 0.6109114755212698,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004384",
+          "lsoa_name": "Waltham Forest 003A",
+          "composite_need_score": 0.6031372219052451,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004390",
+          "lsoa_name": "Waltham Forest 003E",
+          "composite_need_score": 0.5716522546994106,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004334",
+          "lsoa_name": "Waltham Forest 024B",
+          "composite_need_score": 0.5627584616933071,
+          "need_tier": "High Need"
+        }
+      ]
+    },
+    "Wandsworth": {
+      "borough_name": "Wandsworth",
+      "borough_slug": "wandsworth",
+      "lsoa_count": 174,
+      "population_est_2015": 308193.0,
+      "tier_counts": {
+        "Lower Need": 109,
+        "Elevated": 63,
+        "High Need": 2
+      },
+      "mean_composite_need": 0.231,
+      "max_composite_need": 0.5863,
+      "mean_samhi_2022": -0.4559,
+      "mean_samhi_2019": -0.4706,
+      "mh_trajectory": "stable",
+      "mean_trajectory_delta": 0.0147,
+      "pct_lsoas_worsening": 52.87,
+      "mean_service_desert": 0.1098,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2405.4,
+          "lsoas_beyond_threshold": 49
+        },
+        "mh_charity": {
+          "lsoas_with_service": 2,
+          "mean_dist_m": 2147.3,
+          "lsoas_beyond_threshold": 30
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2449.8,
+          "lsoas_beyond_threshold": 62
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 2131.9,
+          "lsoas_beyond_threshold": 21
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 6811.4,
+          "lsoas_beyond_threshold": 145
+        },
+        "homelessness": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 3465.9,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -0.8196,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01004573",
+          "lsoa_name": "Wandsworth 023D",
+          "composite_need_score": 0.5862872124586684,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004575",
+          "lsoa_name": "Wandsworth 013C",
+          "composite_need_score": 0.5412430985613781,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004524",
+          "lsoa_name": "Wandsworth 037D",
+          "composite_need_score": 0.4949268158692737,
+          "need_tier": "Elevated"
+        },
+        {
+          "lsoa_code": "E01004539",
+          "lsoa_name": "Wandsworth 003A",
+          "composite_need_score": 0.49470306741858106,
+          "need_tier": "Elevated"
+        },
+        {
+          "lsoa_code": "E01004570",
+          "lsoa_name": "Wandsworth 023B",
+          "composite_need_score": 0.4848822621475873,
+          "need_tier": "Elevated"
+        }
+      ]
+    },
+    "Westminster": {
+      "borough_name": "Westminster",
+      "borough_slug": "westminster",
+      "lsoa_count": 115,
+      "population_est_2015": 218019.0,
+      "tier_counts": {
+        "Lower Need": 69,
+        "Elevated": 43,
+        "High Need": 3
+      },
+      "mean_composite_need": 0.2114,
+      "max_composite_need": 0.7072,
+      "mean_samhi_2022": -0.6163,
+      "mean_samhi_2019": -0.5667,
+      "mh_trajectory": "stable",
+      "mean_trajectory_delta": -0.0497,
+      "pct_lsoas_worsening": 43.48,
+      "mean_service_desert": 0.096,
+      "service_coverage": {
+        "foodbank": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2583.7,
+          "lsoas_beyond_threshold": 27
+        },
+        "mh_charity": {
+          "lsoas_with_service": 2,
+          "mean_dist_m": 1172.0,
+          "lsoas_beyond_threshold": 0
+        },
+        "nhs_therapy": {
+          "lsoas_with_service": 1,
+          "mean_dist_m": 1957.3,
+          "lsoas_beyond_threshold": 25
+        },
+        "citizens_advice": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 2324.6,
+          "lsoas_beyond_threshold": 25
+        },
+        "cmht": {
+          "lsoas_with_service": 0,
+          "mean_dist_m": 3770.0,
+          "lsoas_beyond_threshold": 2
+        },
+        "homelessness": {
+          "lsoas_with_service": 2,
+          "mean_dist_m": 2564.7,
+          "lsoas_beyond_threshold": 0
+        }
+      },
+      "mean_geo_barriers_score": -1.1801,
+      "top_5_lsoas": [
+        {
+          "lsoa_code": "E01004732",
+          "lsoa_name": "Westminster 020B",
+          "composite_need_score": 0.707188606987641,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004670",
+          "lsoa_name": "Westminster 009A",
+          "composite_need_score": 0.5352370484757671,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01033598",
+          "lsoa_name": "Westminster 009F",
+          "composite_need_score": 0.5227628337298758,
+          "need_tier": "High Need"
+        },
+        {
+          "lsoa_code": "E01004754",
+          "lsoa_name": "Westminster 010A",
+          "composite_need_score": 0.45390760951084025,
+          "need_tier": "Elevated"
+        },
+        {
+          "lsoa_code": "E01004740",
+          "lsoa_name": "Westminster 021A",
+          "composite_need_score": 0.44715417047327166,
+          "need_tier": "Elevated"
+        }
+      ]
+    }
+  }
+}

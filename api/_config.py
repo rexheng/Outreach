@@ -15,13 +15,5 @@ POLICY_DEEPDIVE_MAX_TOKENS = 2000
 POLICY_MAX_QUESTION_LEN = 1000
 POLICY_RATE_LIMIT = 20
 
-# Data directory — try multiple paths for Vercel compatibility
-_api_dir = Path(__file__).resolve().parent
-_candidates = [
-    _api_dir.parent / "public" / "data",      # local dev: api/../public/data
-    _api_dir / "public" / "data",              # Vercel includeFiles alongside function
-    Path("/var/task/public/data"),              # Vercel absolute path
-    Path("/var/task/api/public/data"),          # Vercel function-relative
-]
-
-DATA_DIR = next((p for p in _candidates if p.exists()), _candidates[0])
+# Data directory — api/data/ is bundled with the serverless function
+DATA_DIR = Path(__file__).resolve().parent / "data"
