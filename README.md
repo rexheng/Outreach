@@ -1,84 +1,48 @@
-# Outreach -- The Geography of Wellbeing
+# Outreach
 
-An interactive data tool mapping neighbourhood-level mental health need across London's 4,994 Lower Super Output Areas (LSOAs).
+**A geospatial policy tool that maps mental health need across every neighbourhood in London.**
 
-**Live demo:** https://london-mental-health-atlas-production.up.railway.app/
+> Where should we place three new community mental health teams?
+>
+> Outreach answers that with data, not intuition.
 
-## What it does
+Built at the [Claude Hackathon at Imperial College London](https://claude-hackathon-at-imperial.devpost.com/), March 2026 | Solo build | Top 8 of 130+ participants
 
-Outreach links mental health indicators, socioeconomic deprivation, disability, unpaid care burden, and community service accessibility into a single geospatial dataset -- then makes it explorable through an interactive dashboard with an AI policy chatbot.
+**Live:** [outreach-london.vercel.app](https://outreach-london.vercel.app)
 
-The tool helps researchers, policymakers, and practitioners:
-- Identify neighbourhoods where mental health need is highest
-- Understand what socioeconomic factors drive that need
-- Find gaps in community service coverage
-- Ask natural-language questions and get data-grounded answers
+---
 
-## Features
+## The Problem
 
-- **Choropleth map** -- 4,994 LSOAs colour-coded by Composite Need Index (0-10), with 9 switchable indicator layers
-- **Borough and risk-tier filtering** -- drill into any of London's 33 boroughs or filter by need severity (Critical / High / Moderate / Low)
-- **LSOA detail sidebar** -- click any neighbourhood for a full breakdown: need score, indicator bars, borough comparison, nearest community services
-- **AI policy chatbot** -- ask questions like "Which boroughs should we prioritise?" or "What drives risk in Hackney?" and get streamed, data-grounded responses with clickable map links
-- **Borough briefing packs** -- downloadable one-page PDFs with headline KPIs, priority neighbourhoods, and policy-ready summaries
-- **Composite Need Index** -- two-pillar weighted model combining socioeconomic (IMD health, income, employment, housing, crime) and demographic (long-term sickness, economic inactivity, unemployment) indicators
+London has 4,994 neighbourhoods. Mental health need varies dramatically between them, but policymakers don't have a single tool that combines deprivation data, health indicators, disability burden, and community service coverage into something they can actually act on.
 
-## Data sources
+The data exists across a dozen government sources. Nobody has stitched it together and made it queryable. So resource allocation decisions get made on borough-level averages that mask the neighbourhoods where need is most concentrated.
 
-| Dataset | Source | Coverage |
-|---------|--------|----------|
-| Index of Multiple Deprivation 2019 | MHCLG | 7 domains, scores/ranks/deciles |
-| SAMHI v5.00 (2019, 2022) | University of Bristol / PLDR | Composite mental health index + 4 sub-indicators |
-| Census 2021 TS037/TS038/TS039 | ONS via Nomis | General health, disability, unpaid care |
-| Census 2021 TS006/TS066 | ONS | Population density, economic activity |
-| Community services | Geocoded from public directories | 175 services across 8 categories |
+## How It Works
 
-All data is assembled into a single GeoPackage: `master_lsoa.gpkg` (4,994 LSOAs, 120 columns).
-
-## Quick start
-
-```bash
-# Clone and install
-git clone https://github.com/rexheng/Outreach.git
-cd Outreach
-python -m venv .venv && source .venv/bin/activate  # or .venv\Scripts\activate on Windows
-pip install -r requirements.txt
-
-# Set up API key for chatbot (optional)
-echo "ANTHROPIC_API_KEY=your-key-here" > .env
-
-# Run
-uvicorn app.main:app --reload
-# Open http://localhost:8000
-```
-
-## Tech stack
-
-- **Backend:** FastAPI, geopandas, pyogrio
-- **Frontend:** Vanilla JS, Leaflet, Chart.js
-- **LLM:** Anthropic Claude (SSE streaming)
-- **Data:** Single GeoPackage file (no database)
-- **Deployment:** Railway
-
-## Project structure
+Outreach combines 120 columns of public health data into a single GeoPackage, computes a Composite Need Index for every LSOA, and renders it as an interactive choropleth map with an AI policy advisor.
 
 ```
-app/
-  main.py              # FastAPI entry point
-  config.py            # Settings, display columns, API keys
-  api/routes.py        # Data API (/api/geojson, /api/boroughs, /api/lsoa/{code})
-  api/chat.py          # LLM chat endpoint (POST /api/chat, SSE)
-  api/policy_agent.py  # Policy recommendation engine
-  data/loader.py       # GPKG loading, CNI computation, GeoJSON cache
-  data/risk_model.py   # Composite Need Index model
-  data/chat_context.py # Entity detection, intent classification
-  static/              # HTML, CSS, JS frontend
-master_lsoa.gpkg       # All data (4,994 LSOAs, 120 columns)
+┌──────────────────────────────────────────────────────────┐
+│  DATA PIPELINE                                            │
+│                                                           │
+│  IMD 2019 ──┐                                            │
+│  SAMHI v5 ──┤                                            │
+│  Census 21 ─┤──> GeoPackage (4,994 LSOAs, 120 cols)     │
+│  GP data ───┤       |                                    │
+│  Services ──┘       v                                    │
+│              Composite Need Index (0-10)                  │
+│              Two pillars, weighted indicators             │
+│                     |                                    │
+│         +-----------+-----------+                        │
+│         v           v           v                        │
+│    Choropleth   AI Policy    Borough                     │
+│    Map (9       Chatbot      Briefing                    │
+│    layers)      (Groq LLM)   PDFs                        │
+└──────────────────────────────────────────────────────────┘
 ```
 
-See `Project_Overview.md` for the full data dictionary and column reference.
-
-## Composite Need Index (CNI)
+### Composite Need Index
 
 Two-pillar weighted model scored 0-10:
 
@@ -88,6 +52,116 @@ Two-pillar weighted model scored 0-10:
 | Demographic | 50% | Long-term sick rate (45%), Economic inactivity (30%), Unemployment (25%) |
 
 Risk tiers: **Critical** (8-10), **High** (6-8), **Moderate** (3-6), **Low** (0-3).
+
+### The Map
+
+9 switchable indicator layers across all 4,994 LSOAs. Filter by borough, filter by risk tier. Click any neighbourhood for a full breakdown with indicator bars and borough comparisons.
+
+### The Chatbot
+
+Ask natural-language questions. Get data-grounded answers with clickable map links.
+
+- "Which boroughs should we prioritise for community mental health teams?"
+- "What drives risk in Hackney?"
+- "Compare Southwark and Lambeth"
+
+The chatbot detects borough names and LSOA codes in your message, pulls the relevant data, and frames responses as commissioning-ready policy briefs.
+
+### Borough Briefing Packs
+
+One-page downloadable PDFs per borough. KPIs, top 5 priority neighbourhoods, key drivers narrative, borough-vs-London comparison table. Generated on demand.
+
+## The Build
+
+Solo developer. One-day hackathon. Four concurrent Claude Code terminals orchestrating different parts of the system:
+
+- **Agent 1** -- Cleaning and merging mental health datasets, economic indicators, and IMD scores into a unified GeoJSON
+- **Agent 2** -- Building the frontend (HTML, CSS, Leaflet map, sidebar)
+- **Agent 3** -- Handling the mapping logic, choropleth rendering, layer switching
+- **Agent 4** -- Integration, API routes, chat context engine
+
+Most of the day was spent moving between terminals, resolving conflicts where agents stepped on each other, and keeping the architecture coherent.
+
+## Data Sources
+
+| Dataset | Source | Coverage |
+|---------|--------|----------|
+| Index of Multiple Deprivation 2019 | MHCLG | 7 domains, scores/ranks/deciles |
+| SAMHI v5.00 (2019, 2022) | University of Bristol / PLDR | Composite mental health index + 4 sub-indicators |
+| Census 2021 TS037/TS038/TS039 | ONS via Nomis | General health, disability, unpaid care |
+| Census 2021 TS006/TS066 | ONS | Population density, economic activity |
+| Community services | Geocoded from public directories | 175 services across 8 categories |
+
+## Tech Stack
+
+| Component | Technology | Why |
+|-----------|-----------|-----|
+| Backend | FastAPI | Lightweight, async, Python-native |
+| Data | GeoPackage (single file, 120 cols) | No database needed, portable |
+| Geospatial | geopandas, pyogrio, Shapely | Industry standard for LSOA-level analysis |
+| Frontend | Vanilla JS, Leaflet, Chart.js | Zero build step, fast iteration |
+| Chat LLM | Groq (Llama 3.3 70B) | Fast inference for streaming responses |
+| Policy LLM | Anthropic Claude | Structured policy recommendations |
+| Deployment | Vercel (static + serverless) | Pre-computed data on CDN, API as serverless functions |
+
+## Install
+
+```bash
+git clone https://github.com/rexheng/Outreach.git
+cd Outreach
+
+# Local dev (full pipeline with GDAL)
+pip install -r requirements-local.txt
+echo "GROQ_API_KEY=your-key" > .env
+uvicorn app.main:app --reload
+# Open http://localhost:8000
+
+# Rebuild static data for Vercel
+python scripts/build_vercel_data.py
+```
+
+## Project Structure
+
+```
+app/
+  main.py              # FastAPI entry point
+  config.py            # Settings, API keys, display columns
+  api/
+    routes.py          # Data API (/api/geojson, /api/boroughs, /api/lsoa/{code})
+    chat.py            # Chat endpoint (SSE streaming)
+    briefing.py        # Borough PDF generation (reportlab)
+    policy_agent.py    # Policy recommendation engine (Claude)
+    policy_routes.py   # Policy API endpoints
+  data/
+    loader.py          # GeoPackage loading, CNI computation, caching
+    risk_model.py      # Composite Need Index model
+    chat_context.py    # Entity detection, intent classification, data grounding
+
+api/                   # Vercel serverless functions
+  index.py             # FastAPI app (chat, policy, briefing)
+  _config.py           # Shared config
+  _chat_context.py     # Chat context (reads pre-computed JSON)
+  _briefing_generator.py # PDF generation (reads pre-computed JSON)
+  data/                # Pre-computed JSON for serverless
+
+public/                # Vercel static assets
+  index.html           # Overview dashboard
+  explore.html         # Map explorer
+  js/                  # Leaflet map, sidebar, controls, chat
+  css/                 # Design system (terracotta palette)
+  data/                # Static JSON served via CDN
+
+master_lsoa.gpkg       # All data (4,994 LSOAs, 120 columns)
+```
+
+## Hackathon
+
+- **Event**: [Claude Hackathon at Imperial College London](https://claude-hackathon-at-imperial.devpost.com/)
+- **Organiser**: Claude Builder Club @ Imperial
+- **Date**: March 2026
+- **Result**: Top 8 of 130+ participants
+- **Team**: Solo build
+- **Devpost**: [devpost.com/software/outreach-bd6iyo](https://devpost.com/software/outreach-bd6iyo)
 
 ## Licence
 
