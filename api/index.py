@@ -107,6 +107,8 @@ async def chat(req: ChatRequest):
             headers={
                 "Authorization": f"Bearer {GROQ_API_KEY}",
                 "Content-Type": "application/json",
+                "User-Agent": "Outreach/1.0",
+                "Accept": "application/json",
             },
         )
         ssl_ctx = ssl.create_default_context()
