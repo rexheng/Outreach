@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 
 # Vercel injects env vars directly — no .env loading needed
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "").strip()
 GROQ_MODEL = "llama-3.3-70b-versatile"
 CHAT_MAX_TOKENS = 1500
 CHAT_HISTORY_LIMIT = 10
