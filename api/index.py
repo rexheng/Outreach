@@ -114,6 +114,9 @@ async def chat(req: ChatRequest):
             body = json.loads(resp.read().decode())
             text = body["choices"][0]["message"]["content"]
             return {"entities": chat_ctx["entities"], "text": text}
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode() if e.fp else ""
+        return {"entities": chat_ctx["entities"], "text": f"Groq API error ({e.code}): {error_body[:500]}"}
     except Exception as e:
         return {"entities": chat_ctx["entities"], "text": f"Error: {e}"}
 
