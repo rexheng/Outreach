@@ -95,16 +95,35 @@ async def chat(req: ChatRequest):
             yield "event: done\ndata: {}\n\n"
             return
         try:
-            client = Groq(api_key=GROQ_API_KEY, http_client=httpx.Client(verify=True))
-            stream = client.chat.completions.create(model=GROQ_MODEL, max_tokens=CHAT_MAX_TOKENS, messages=messages, stream=True)
-            for chunk in stream:
-                delta = chunk.choices[0].delta
-                if delta.content:
-                    yield f"event: token\ndata: {json.dumps({'text': delta.content})}\n\n"
+            import urllib.request
+            import ssl
+            payload = json.dumps({
+                "model": GROQ_MODEL,
+                "max_tokens": CHAT_MAX_TOKENS,
+                "messages": messages,
+                "stream": True,
+            }).encode()
+            req = urllib.request.Request(
+                "https://api.groq.com/openai/v1/chat/completions",
+                data=payload,
+                headers={
+                    "Authorization": f"Bearer {GROQ_API_KEY}",
+                    "Content-Type": "application/json",
+                },
+            )
+            ctx = ssl.create_default_context()
+            with urllib.request.urlopen(req, context=ctx) as resp:
+                for line in resp:
+                    line = line.decode().strip()
+                    if line.startswith("data: ") and line != "data: [DONE]":
+                        chunk = json.loads(line[6:])
+                        delta = chunk.get("choices", [{}])[0].get("delta", {})
+                        if delta.get("content"):
+                            yield f"event: token\ndata: {json.dumps({'text': delta['content']})}\n\n"
         except Exception as e:
             import traceback
             tb = traceback.format_exc()
-            yield f"event: token\ndata: {json.dumps({'text': f'Error: {e} | Key starts with: {GROQ_API_KEY[:10]}... | Traceback: {tb[-200:]}'})}\n\n"
+            yield f"event: token\ndata: {json.dumps({'text': f'Error: {e} | Traceback: {tb[-300:]}'})}\n\n"
         yield "event: done\ndata: {}\n\n"
 
     return StreamingResponse(generate(), media_type="text/event-stream")
