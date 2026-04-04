@@ -7,15 +7,21 @@
         "maxLambdaSize": "50mb",
         "includeFiles": ["public/data/**", "api/_*.py"]
       }
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/index.py" },
-    { "src": "/explore", "dest": "/explore.html" },
-    {
-      "src": "/data/(.*)",
-      "headers": { "Cache-Control": "public, max-age=86400, s-maxage=86400" },
-      "continue": true
-    }
+    { "src": "/explore", "dest": "/public/explore.html" },
+    { "src": "/data/(.*)", "dest": "/public/data/$1", "headers": { "Cache-Control": "public, max-age=86400, s-maxage=86400" } },
+    { "src": "/css/(.*)", "dest": "/public/css/$1" },
+    { "src": "/js/(.*)", "dest": "/public/js/$1" },
+    { "src": "/favicon.svg", "dest": "/public/favicon.svg" },
+    { "src": "/logo.svg", "dest": "/public/logo.svg" },
+    { "src": "/(.*\\.html)", "dest": "/public/$1" },
+    { "src": "/", "dest": "/public/index.html" }
   ]
 }
