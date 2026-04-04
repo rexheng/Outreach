@@ -1,22 +1,21 @@
 {
-  "buildCommand": null,
-  "outputDirectory": null,
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/index.py" },
-    { "source": "/explore", "destination": "/explore.html" }
-  ],
-  "headers": [
+  "builds": [
     {
-      "source": "/data/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, s-maxage=86400" }
-      ]
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb",
+        "includeFiles": ["public/data/**", "api/_*.py"]
+      }
     }
   ],
-  "functions": {
-    "api/index.py": {
-      "maxDuration": 60,
-      "includeFiles": "public/data/**"
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/index.py" },
+    { "src": "/explore", "dest": "/explore.html" },
+    {
+      "src": "/data/(.*)",
+      "headers": { "Cache-Control": "public, max-age=86400, s-maxage=86400" },
+      "continue": true
     }
-  }
+  ]
 }

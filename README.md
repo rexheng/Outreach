@@ -2,7 +2,7 @@
 
 An interactive data tool mapping neighbourhood-level mental health need across London's 4,994 Lower Super Output Areas (LSOAs).
 
-**Live demo:** outreach-claude.up.railway.app
+**Live demo:** https://london-mental-health-atlas-production.up.railway.app/
 
 ## What it does
 
@@ -45,7 +45,7 @@ python -m venv .venv && source .venv/bin/activate  # or .venv\Scripts\activate o
 pip install -r requirements.txt
 
 # Set up API key for chatbot (optional)
-echo "GROQ_API_KEY=your-key-here" > .env
+echo "ANTHROPIC_API_KEY=your-key-here" > .env
 
 # Run
 uvicorn app.main:app --reload
@@ -56,36 +56,9 @@ uvicorn app.main:app --reload
 
 - **Backend:** FastAPI, geopandas, pyogrio
 - **Frontend:** Vanilla JS, Leaflet, Chart.js
-- **LLM:** Groq (OpenAI-compatible API, SSE streaming)
+- **LLM:** Anthropic Claude (SSE streaming)
 - **Data:** Single GeoPackage file (no database)
 - **Deployment:** Railway
-
-## Production readiness
-
-Use this checklist before deploying:
-
-- Confirm `.env` is present in the deploy environment with `GROQ_API_KEY` set
-- Keep `master_lsoa.gpkg` available at repo root (required by `app/config.py`)
-- Run `uvicorn app.main:app --host 0.0.0.0 --port 8000` locally before shipping
-- Run tests (`pytest`) and verify no regressions
-- Ensure local artifacts are not included in commits (screenshots, temporary folders, ad-hoc exports)
-- Deploy via `Procfile`: `web: uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}`
-
-Recommended env vars:
-
-- `GROQ_API_KEY`: API key for chat and policy generation features
-- `PORT`: injected by hosting platform (defaults to `8000` locally)
-
-## Portfolio README blurb
-
-Use this in your profile README or project portfolio:
-
-> **Outreach -- The Geography of Wellbeing** is a geospatial policy intelligence tool that maps mental health need across all 4,994 London neighbourhoods. It combines IMD deprivation, SAMHI mental-health indicators, Census health/disability measures, and community service access into a single interactive dashboard with AI-assisted policy briefing support. Built with FastAPI, GeoPandas, Leaflet, and a production deployment on Railway.
-
-Project links:
-
-- Live app: https://london-mental-health-atlas-production.up.railway.app/
-- Repository: https://github.com/rexheng/Outreach
 
 ## Project structure
 
@@ -103,7 +76,7 @@ app/
 master_lsoa.gpkg       # All data (4,994 LSOAs, 120 columns)
 ```
 
-See [docs/Project_Overview.md](docs/Project_Overview.md) for the full data dictionary and column reference.
+See `Project_Overview.md` for the full data dictionary and column reference.
 
 ## Composite Need Index (CNI)
 
@@ -117,4 +90,5 @@ Two-pillar weighted model scored 0-10:
 Risk tiers: **Critical** (8-10), **High** (6-8), **Moderate** (3-6), **Low** (0-3).
 
 ## Licence
+
 Data sources are Crown Copyright (ONS, MHCLG) and University of Bristol (SAMHI), used under open government licence.
