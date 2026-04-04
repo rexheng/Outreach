@@ -101,7 +101,7 @@ async def chat(req: ChatRequest):
                 "model": GROQ_MODEL,
                 "max_tokens": CHAT_MAX_TOKENS,
                 "messages": messages,
-                "stream": True,
+                "stream": False,
             }).encode()
             req = urllib.request.Request(
                 "https://api.groq.com/openai/v1/chat/completions",
@@ -112,14 +112,10 @@ async def chat(req: ChatRequest):
                 },
             )
             ctx = ssl.create_default_context()
-            with urllib.request.urlopen(req, context=ctx) as resp:
-                for line in resp:
-                    line = line.decode().strip()
-                    if line.startswith("data: ") and line != "data: [DONE]":
-                        chunk = json.loads(line[6:])
-                        delta = chunk.get("choices", [{}])[0].get("delta", {})
-                        if delta.get("content"):
-                            yield f"event: token\ndata: {json.dumps({'text': delta['content']})}\n\n"
+            with urllib.request.urlopen(req, context=ctx, timeout=50) as resp:
+                body = json.loads(resp.read().decode())
+                text = body["choices"][0]["message"]["content"]
+                yield f"event: token\ndata: {json.dumps({'text': text})}\n\n"
         except Exception as e:
             import traceback
             tb = traceback.format_exc()
